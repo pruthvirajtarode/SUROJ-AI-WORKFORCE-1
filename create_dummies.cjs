@@ -13,7 +13,7 @@ for (const file of files) {
   let content = fs.readFileSync(file, 'utf8');
   
   // Find all dummy buttons
-  const regex = /<a([^>]+)href="#files"([^>]*)>📄\\s*([^<]+)<\\/a>/g;
+  const regex = new RegExp('<a([^>]+)href="#files"([^>]*)>📄\\\\s*([^<]+)</a>', 'g');
   
   let match;
   // We have to restart the regex index if we replace within the string,
