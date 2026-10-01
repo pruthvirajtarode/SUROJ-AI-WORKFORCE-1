@@ -1442,7 +1442,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (i === idx) {
           s.style.display = 'block';
           const body = s.querySelector('.section-body');
-          if (body) body.style.display = 'block';
+          if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
         } else {
           s.style.display = 'none';
         }
@@ -1456,7 +1456,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (idx === 0) {
       sec.style.display = 'block';
       const body = sec.querySelector('.section-body');
-      if (body) body.style.display = 'block';
+      if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
     } else {
       sec.style.display = 'none';
     }
@@ -1555,7 +1555,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (i === idx) {
           s.style.display = 'block';
           const body = s.querySelector('.section-body');
-          if (body) body.style.display = 'block';
+          if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
         } else {
           s.style.display = 'none';
         }
@@ -1569,7 +1569,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (idx === 0) {
       sec.style.display = 'block';
       const body = sec.querySelector('.section-body');
-      if (body) body.style.display = 'block';
+      if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
     } else {
       sec.style.display = 'none';
     }
@@ -1652,6 +1652,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
+
 
 
 
