@@ -1450,10 +1450,44 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     tabsContainer.appendChild(btn);
     
-    const sectionHead = sec.querySelector('.section-head');
-    if (sectionHead) sectionHead.style.display = 'none';
-    
-    if (idx === 0) {
+          const sectionHead = sec.querySelector('.section-head');
+      if (sectionHead) sectionHead.style.display = 'none';
+      
+      const navContainer = document.createElement('div');
+      navContainer.style.display = 'flex';
+      navContainer.style.justifyContent = 'space-between';
+      navContainer.style.marginTop = '20px';
+      navContainer.style.padding = '10px 24px 24px';
+      
+      if (idx > 0) {
+        const prevBtn = document.createElement('button');
+        prevBtn.innerText = '<- Previous';
+        prevBtn.className = 'tab-btn';
+        prevBtn.onclick = () => {
+            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
+            if(tabs[idx - 1]) tabs[idx - 1].click();
+        };
+        navContainer.appendChild(prevBtn);
+      } else {
+        navContainer.appendChild(document.createElement('div'));
+      }
+      
+      if (idx < sections.length - 1) {
+        const nextBtn = document.createElement('button');
+        nextBtn.innerText = 'Next ->';
+        nextBtn.className = 'tab-btn';
+        nextBtn.style.background = 'var(--accent)';
+        nextBtn.style.color = 'white';
+        nextBtn.onclick = () => {
+            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
+            if(tabs[idx + 1]) tabs[idx + 1].click();
+        };
+        navContainer.appendChild(nextBtn);
+      }
+      
+      sec.appendChild(navContainer);
+      
+      if (idx === 0) {
       sec.style.display = 'block';
       const body = sec.querySelector('.section-body');
       if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
@@ -1563,10 +1597,44 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     tabsContainer.appendChild(btn);
     
-    const sectionHead = sec.querySelector('.section-head');
-    if (sectionHead) sectionHead.style.display = 'none';
-    
-    if (idx === 0) {
+          const sectionHead = sec.querySelector('.section-head');
+      if (sectionHead) sectionHead.style.display = 'none';
+      
+      const navContainer = document.createElement('div');
+      navContainer.style.display = 'flex';
+      navContainer.style.justifyContent = 'space-between';
+      navContainer.style.marginTop = '20px';
+      navContainer.style.padding = '10px 24px 24px';
+      
+      if (idx > 0) {
+        const prevBtn = document.createElement('button');
+        prevBtn.innerText = '<- Previous';
+        prevBtn.className = 'tab-btn';
+        prevBtn.onclick = () => {
+            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
+            if(tabs[idx - 1]) tabs[idx - 1].click();
+        };
+        navContainer.appendChild(prevBtn);
+      } else {
+        navContainer.appendChild(document.createElement('div'));
+      }
+      
+      if (idx < sections.length - 1) {
+        const nextBtn = document.createElement('button');
+        nextBtn.innerText = 'Next ->';
+        nextBtn.className = 'tab-btn';
+        nextBtn.style.background = 'var(--accent)';
+        nextBtn.style.color = 'white';
+        nextBtn.onclick = () => {
+            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
+            if(tabs[idx + 1]) tabs[idx + 1].click();
+        };
+        navContainer.appendChild(nextBtn);
+      }
+      
+      sec.appendChild(navContainer);
+      
+      if (idx === 0) {
       sec.style.display = 'block';
       const body = sec.querySelector('.section-body');
       if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
