@@ -63,14 +63,14 @@ const Dashboard = () => {
               
               <div className="bg-white p-6 rounded-xl shadow-inner border border-rule">
                 <QRCodeSVG 
-                  value="https://suroj-ai-workforce.vercel.app/"
+                  value="https://suroj-ai-workforce-1.vercel.app/"
                   size={240}
                   bgColor={"#ffffff"}
                   fgColor={"#14161A"}
                   level={"Q"}
                 />
               </div>
-              <p className="font-mono text-xs text-ink-3 mt-6 uppercase tracking-widest">suroj-ai-workforce.vercel.app</p>
+              <p className="font-mono text-xs text-ink-3 mt-6 uppercase tracking-widest">suroj-ai-workforce-1.vercel.app</p>
             </motion.div>
           </motion.div>
         )}
@@ -118,7 +118,7 @@ const Dashboard = () => {
         >
           <div className="bg-white/90 p-2 rounded-lg group-hover:bg-white transition-colors">
             <QRCodeSVG 
-              value="https://suroj-ai-workforce.vercel.app/"
+              value="https://suroj-ai-workforce-1.vercel.app/"
               size={64}
               bgColor={"transparent"}
               fgColor={"#14161A"} // text-ink color
