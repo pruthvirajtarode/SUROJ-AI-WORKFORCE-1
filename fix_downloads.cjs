@@ -37,8 +37,7 @@ for (const file of files) {
   }
 
   // Regex to find download buttons with base64 data URIs
-  // <a class="dlbtn" download="filename.csv" href="data:text/csv;base64,...">
-  const regex = /<a\s+[^>]*?class=["']dlbtn["'][^>]*?download=["']([^"']+)["'][^>]*?href=["']data:text\/csv;base64,([^"']+)["'][^>]*?>/gi;
+  const regex = /<a\\s+[^>]*?class=["']dlbtn["'][^>]*?download=["']([^"']+)["'][^>]*?href=["']data:text\\/csv;base64,([^"']+)["'][^>]*?>/gi;
   
   let match;
   while ((match = regex.exec(content)) !== null) {
@@ -53,8 +52,8 @@ for (const file of files) {
     
     // Replace in HTML to point to the actual file and add target="_top"
     const newAnchor = fullMatch
-      .replace(/href=["']data:text\/csv;base64,[^"']+["']/, \`href="/\${filename}" target="_top"\`)
-      .replace(/download=["'][^"']+["']/, \`download="\${filename}"\`);
+      .replace(/href=["']data:text\\/csv;base64,[^"']+["']/, 'href="/' + filename + '" target="_top"')
+      .replace(/download=["'][^"']+["']/, 'download="' + filename + '"');
       
     content = content.replace(fullMatch, newAnchor);
   }
