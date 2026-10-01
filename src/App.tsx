@@ -11,6 +11,8 @@ import Schedule from './pages/Schedule';
 import ProgressImpact from './pages/ProgressImpact';
 import ResourceCentre from './pages/ResourceCentre';
 
+import Leaderboard from './pages/Leaderboard';
+
 function App() {
   return (
     <Routes>
@@ -22,6 +24,7 @@ function App() {
         <Route path="schedule" element={<Schedule />} />
         <Route path="progress" element={<ProgressImpact />} />
         <Route path="resources" element={<ResourceCentre />} />
+        <Route path="leaderboard" element={<Leaderboard />} />
       </Route>
     </Routes>
   );

@@ -16,7 +16,8 @@ import {
   Menu,
   X,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Trophy
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,6 +27,7 @@ const navItems = [
   { to: '/programme', icon: Map, label: 'Programme Overview' },
   { to: '/sessions', icon: BookOpen, label: '6 Sessions' },
   { to: '/schedule', icon: Calendar, label: 'Workshop Schedule' },
+  { to: '/leaderboard', icon: Trophy, label: 'Leaderboard & Analytics' },
   { to: '/progress', icon: BarChart, label: 'Progress & Impact' },
   { to: '/resources', icon: FileDown, label: 'Resource Centre' },
 ];
