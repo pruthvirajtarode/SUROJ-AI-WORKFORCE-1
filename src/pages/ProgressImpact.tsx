@@ -26,7 +26,7 @@ const ProgressImpact = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: 'Sessions Completed', value: '8/8' },
+          { label: 'Sessions Completed', value: '6/6' },
           { label: 'Prompts Saved', value: '34' },
           { label: 'Workflows Embedded', value: '12' },
           { label: 'Exercises Completed', value: '24' }
