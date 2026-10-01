@@ -1,4 +1,4 @@
 Quote_ID,Date,Vendor,Item,Rate,Freight,Payment_Terms
-Q001,02-Sep-2026,Vendor A,TMT Steel,57700,Included,15 Days
-Q002,02-Sep-2026,Vendor B,TMT Steel,57800,Included,30 Days
-Q003,03-Sep-2026,Vendor C,TMT Steel,55900,1650,Advance
+Q001,="02-="Sep-2026"",Vendor A,TMT Steel,57700,Included,15 Days
+Q002,="02-="Sep-2026"",Vendor B,TMT Steel,57800,Included,30 Days
+Q003,="03-="Sep-2026"",Vendor C,TMT Steel,55900,1650,Advance
