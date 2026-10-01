@@ -24,7 +24,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/programme', icon: Map, label: 'Programme Overview' },
-  { to: '/sessions', icon: BookOpen, label: '8 Sessions' },
+  { to: '/sessions', icon: BookOpen, label: '6 Sessions' },
   { to: '/schedule', icon: Calendar, label: 'Workshop Schedule' },
   { to: '/progress', icon: BarChart, label: 'Progress & Impact' },
   { to: '/resources', icon: FileDown, label: 'Resource Centre' },
