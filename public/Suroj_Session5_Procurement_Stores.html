@@ -166,7 +166,66 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 @media print{body{background:#fff;color:#000}.section-body{display:block!important}.copy-btn{display:none}}
 
 .module-header{background:linear-gradient(135deg,#BF360C 0%,#E65100 60%,#F57C00 100%)}
-.module-header { position: relative; } .module-header .tag { color: white !important; background: rgba(0,0,0,0.5) !important; } .module-header h1, .module-header p { color: white !important; } </style>
+.module-header { position: relative; } .module-header .tag { color: white !important; background: rgba(0,0,0,0.5) !important; } .module-header h1, .module-header p { color: white !important; } 
+  /* Table and Row Enhancements */
+  table {
+    border-collapse: separate !important;
+    border-spacing: 0 10px !important;
+    width: 100% !important;
+  }
+  tr {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  tr:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+    z-index: 10;
+  }
+  td, th {
+    border: none !important;
+    padding: 16px 20px !important;
+  }
+  td:first-child, th:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  td:last-child, th:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  /* Typography enhancements for the tables */
+  td {
+    line-height: 1.6 !important;
+    color: #334155 !important;
+    transition: color 0.3s ease;
+  }
+  tr:hover td {
+    color: #0f172a !important;
+  }
+  /* Enhance the Tier labels / Badges */
+  span[style*="font-family: monospace"] {
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  tr:hover span[style*="font-family: monospace"] {
+    transform: scale(1.05);
+    font-weight: 700;
+  }
+  
+  /* Additional block enhancements for 'The anonymisation method' */
+  .tab-content > div[style*="background: var(--card-bg)"] {
+    transition: all 0.3s ease !important;
+    border: 1px solid transparent;
+  }
+  .tab-content > div[style*="background: var(--card-bg)"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(176, 67, 30, 0.1) !important;
+    border-color: rgba(176, 67, 30, 0.2);
+  }
+
+</style>
 
 <style>
   /* Elegant Dynamic Enhancements */
