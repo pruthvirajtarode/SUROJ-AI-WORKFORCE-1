@@ -1,1 +1,4 @@
-Vendor_Name,Invoice_No,Invoice_Date,Acceptance_Date,Amount,Enterprise_Type\nNavkar Electricals,NAV/26-27/0833,01-Aug-2026,05-Aug-2026,177000,Micro\nChakan Fabricators,CHA/26-27/0591,05-Aug-2026,10-Aug-2026,295000,Small\nGujarat Steel Mart,GUJ/26-27/0244,12-Aug-2026,15-Aug-2026,472000,Large
+Vendor_Name,Invoice_No,Invoice_Date,Acceptance_Date,Amount,Enterprise_Type
+Navkar Electricals,NAV/26-27/0833,01-Aug-2026,05-Aug-2026,177000,Micro
+Chakan Fabricators,CHA/26-27/0591,05-Aug-2026,10-Aug-2026,295000,Small
+Gujarat Steel Mart,GUJ/26-27/0244,12-Aug-2026,15-Aug-2026,472000,Large

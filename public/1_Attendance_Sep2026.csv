@@ -1,1 +1,4 @@
-Emp_ID,Name,Date,In_Time,Out_Time,Status\nE101,Rahul Sharma,01-Sep-2026,08:50,18:10,Present\nE102,Priya Patel,01-Sep-2026,09:15,18:00,Late\nE103,Amit Kumar,01-Sep-2026,09:00,14:00,Half Day
+Emp_ID,Name,Date,In_Time,Out_Time,Status
+E101,Rahul Sharma,01-Sep-2026,08:50,18:10,Present
+E102,Priya Patel,01-Sep-2026,09:15,18:00,Late
+E103,Amit Kumar,01-Sep-2026,09:00,14:00,Half Day

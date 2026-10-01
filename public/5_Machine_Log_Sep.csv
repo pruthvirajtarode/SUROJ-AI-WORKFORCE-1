@@ -1,1 +1,4 @@
-Machine_ID,Date,Start_Meter,End_Meter,Hours_Logged,Diesel_Issued\nM01,01-Sep-2026,1000,1008,8,120\nM02,01-Sep-2026,2000,2010,10,150\nM03,02-Sep-2026,1500,1505,5,75
+Machine_ID,Date,Start_Meter,End_Meter,Hours_Logged,Diesel_Issued
+M01,01-Sep-2026,1000,1008,8,120
+M02,01-Sep-2026,2000,2010,10,150
+M03,02-Sep-2026,1500,1505,5,75

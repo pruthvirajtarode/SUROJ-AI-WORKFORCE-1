@@ -1,1 +1,4 @@
-Incident_ID,Site,Date,Category,Description,Status\nINC001,Kurkumbh,02-Sep-2026,Near Miss,Scaffolding issue,Closed\nINC002,Chakan,08-Sep-2026,First Aid,Minor cut,Open\nINC003,Bhiwandi,14-Sep-2026,Observation,No helmet,Closed
+Incident_ID,Site,Date,Category,Description,Status
+INC001,Kurkumbh,02-Sep-2026,Near Miss,Scaffolding issue,Closed
+INC002,Chakan,08-Sep-2026,First Aid,Minor cut,Open
+INC003,Bhiwandi,14-Sep-2026,Observation,No helmet,Closed

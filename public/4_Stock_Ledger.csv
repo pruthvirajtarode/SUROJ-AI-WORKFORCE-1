@@ -1,1 +1,4 @@
-Site,Item,Opening_Bal,Receipts,Issues,Closing_Bal\nKurkumbh,Cement,100,500,450,150\nChakan,TMT Steel,50,200,180,70\nBhiwandi,Sand,200,1000,900,300
+Site,Item,Opening_Bal,Receipts,Issues,Closing_Bal
+Kurkumbh,Cement,100,500,450,150
+Chakan,TMT Steel,50,200,180,70
+Bhiwandi,Sand,200,1000,900,300
