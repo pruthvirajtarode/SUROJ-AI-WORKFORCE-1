@@ -1,1 +1,1 @@
-ID,Data\n1,Dummy dataset for testing\n
+GRN_No,Date,PO_No,Challan_No,Item,Qty_Received,Accepted\nGRN001,10-Sep-2026,PO001,CH101,Cement,500,Yes\nGRN002,15-Sep-2026,PO002,CH205,TMT Steel,198,Yes\nGRN003,18-Sep-2026,PO003,CH301,Sand,1000,No

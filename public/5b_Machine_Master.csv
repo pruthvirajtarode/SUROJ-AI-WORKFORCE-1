@@ -1,1 +1,1 @@
-ID,Data\n1,Dummy dataset for testing\n
+Machine_ID,Type,Capacity,Vendor,Hire_Rate\nM01,Excavator,20 Ton,ABC Earthmovers,1200\nM02,Crane,50 Ton,XYZ Lifts,2500\nM03,JCB,3D,Local Hire,800

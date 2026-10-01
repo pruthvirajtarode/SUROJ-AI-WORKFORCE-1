@@ -1,1 +1,1 @@
-ID,Data\n1,Dummy dataset for testing\n
+Quote_ID,Date,Vendor,Item,Rate,Freight,Payment_Terms\nQ001,02-Sep-2026,Vendor A,TMT Steel,57700,Included,15 Days\nQ002,02-Sep-2026,Vendor B,TMT Steel,57800,Included,30 Days\nQ003,03-Sep-2026,Vendor C,TMT Steel,55900,1650,Advance
