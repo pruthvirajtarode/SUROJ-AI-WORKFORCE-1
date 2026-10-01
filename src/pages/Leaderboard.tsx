@@ -143,7 +143,7 @@ export default function Leaderboard() {
                   stroke="none"
                 >
                   {participationData.map((entry, index) => (
-                    <Cell key={\`cell-\${index}\`} fill={COLORS[index % COLORS.length]} />
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
                 <Tooltip contentStyle={{ backgroundColor: '#F6F2E9', borderColor: '#C9C0AA', borderRadius: '8px' }} />
