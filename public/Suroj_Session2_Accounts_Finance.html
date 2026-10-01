@@ -1394,8 +1394,8 @@ payment and for the year, and which notification or rule last changed it?</div>
 </div>
 
 <script>
-function toggle(el){el.parentElement.classList.toggle('open')}
-function toggleCS(el){if(el.classList.contains('case-study'))el.classList.toggle('cs-open')}
+function toggle(el){ var p=el.parentElement; var o=p.classList.toggle('open'); if(o){setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'start'})},100);} }
+function toggleCS(el){if(el.classList.contains('case-study')){var o=el.classList.toggle('cs-open');if(o){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},100);}}}
 function copyPrompt(btn,ev){var c=btn.parentElement.cloneNode(true);c.querySelectorAll('button,.stamp').forEach(function(b){b.remove()});var t=c.innerText.trim();
 function done(){btn.textContent='✓ Copied!';setTimeout(function(){btn.textContent='📋 Copy'},2000)}
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
@@ -1708,6 +1708,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
 
 
 
