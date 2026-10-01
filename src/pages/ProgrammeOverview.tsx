@@ -114,7 +114,7 @@ const ProgrammeOverview = () => {
                 whileInView={{ scale: 1 }}
                 transition={{ type: "spring", delay: step.delay + 0.2 }}
               >
-                <span className="font-mono font-bold text-lg">{['A','B','C','D'][idx]}</span>
+                <span className="font-mono font-bold text-lg">{idx + 1}</span>
               </motion.div>
             </div>
             
