@@ -1063,5 +1063,105 @@ document.querySelectorAll('.bbsec').forEach(function(sec){
  });
 });
 </script>
-</body>
+\n<!-- INJECTED TABS START -->\n
+<style>
+/* Override colors for light theme readability */
+.diagram { background: var(--card2) !important; color: var(--text) !important; border: 1px solid var(--border) !important; }
+.diagram .node { background: var(--card) !important; color: var(--text) !important; border-color: var(--border) !important; }
+.diagram .node-danger { border-color: var(--red) !important; color: var(--red) !important; }
+.diagram .node-safe { border-color: var(--green) !important; color: var(--green) !important; }
+.tip { background: rgba(176, 67, 30, 0.08) !important; color: var(--text) !important; border-color: var(--accent) !important; }
+.warning { background: rgba(160, 52, 34, 0.08) !important; color: var(--text) !important; border-color: var(--red) !important; }
+.success { background: rgba(78, 107, 46, 0.08) !important; color: var(--text) !important; border-color: var(--green) !important; }
+.info-box { background: rgba(53, 86, 107, 0.08) !important; color: var(--text) !important; border-color: var(--blue) !important; }
+.prompt { background: #2d2d2d !important; border-color: var(--border) !important; color: #e0e0e0 !important; }
+.prompt-label { background: var(--text) !important; color: var(--card) !important; }
+.copy-btn { color: #e0e0e0 !important; }
+
+/* Tabs Layout CSS */
+.tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  background: var(--card2);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.tab-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab-btn:hover {
+  background: rgba(0,0,0,0.05);
+}
+.tab-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+</style>
+\n
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.querySelector('.container');
+  const sections = Array.from(document.querySelectorAll('.section'));
+  
+  if (sections.length === 0) return;
+
+  const tabsContainer = document.createElement('div');
+  tabsContainer.className = 'tabs-container';
+  
+  sections.forEach((sec, idx) => {
+    const head = sec.querySelector('.section-head h2');
+    let title = head ? head.innerText.trim() : 'Tab ' + (idx + 1);
+    title = title.replace('▼', '').trim();
+    
+    if (title.length > 30) {
+      const match = title.match(/^(?:Part \d+:|Brain Break \d+[:-])?([^—-]+)/i);
+      if (match) title = match[0].trim();
+    }
+    
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
+    btn.innerText = title;
+    btn.onclick = () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      sections.forEach((s, i) => {
+        if (i === idx) {
+          s.style.display = 'block';
+          const body = s.querySelector('.section-body');
+          if (body) body.style.display = 'block';
+        } else {
+          s.style.display = 'none';
+        }
+      });
+    };
+    tabsContainer.appendChild(btn);
+    
+    const sectionHead = sec.querySelector('.section-head');
+    if (sectionHead) sectionHead.style.display = 'none';
+    
+    if (idx === 0) {
+      sec.style.display = 'block';
+      const body = sec.querySelector('.section-body');
+      if (body) body.style.display = 'block';
+    } else {
+      sec.style.display = 'none';
+    }
+  });
+  
+  container.insertBefore(tabsContainer, sections[0]);
+});
+</script>
+\n<!-- INJECTED TABS END -->\n</body>
 </html>
