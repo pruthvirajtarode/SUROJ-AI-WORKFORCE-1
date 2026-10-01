@@ -1,0 +1,1743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Suroj × Be10x · Part 3 of 5 — Numbers, Drawings & Systems · Sessions 3–5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ---------- tokens ---------- */
+:root {
+  --paper:        #F6F2E9;
+  --paper-2:      #EFE9DB;
+  --paper-3:      #E7DFCB;
+  --ink:          #14161A;
+  --ink-2:        #3A3D42;
+  --ink-3:        #6A6B6C;
+  --rule:         #C9C0AA;
+  --rule-2:       #A9A08B;
+  --rust:         #B0431E;      /* primary accent */
+  --steel:        #35566B;      /* secondary */
+  --moss:         #5C6A3A;
+  --iron:         #4A4A4A;
+  --brick:        #7A2E1F;
+  --ochre:        #B58022;
+  --indigo:       #2E3F63;
+  --slate:        #445362;
+  --olive:        #6B6D2A;
+  --wash:         #F0DEB0;      /* callout wash */
+  --wash-cool:    #DEE3E6;
+  --danger:       #A03422;
+  --ok:           #4E6B2E;
+  color-scheme: light;
+}
+:root:not([data-theme="light"]) {
+  /* keep same tokens under prefers-color-scheme:dark — this is a working paper document,
+     dark mode changes the feel too much and is not what a trainer wants in a lit room. */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 8px; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.55;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--wash); color: var(--ink); }
+
+/* ---------- layout shell ---------- */
+.shell {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100%;
+}
+aside.nav {
+  border-right: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 22px 20px 40px 22px;
+  font-size: 13.5px;
+}
+main {
+  min-width: 0;
+  padding: 0 0 120px 0;
+}
+.content {
+  max-width: 78ch;
+  padding: 40px 44px;
+  margin: 0;
+}
+.content.wide { max-width: 100ch; }
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  aside.nav {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .content { padding: 28px 20px; }
+}
+
+/* ---------- nav ---------- */
+.brand {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.brand strong { color: var(--ink); letter-spacing: 0.02em; }
+.nav-group { margin: 18px 0 6px 0; }
+.nav-group-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  padding: 0 0 6px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+.nav ol { list-style: none; padding: 0; margin: 0; }
+.nav a {
+  display: block;
+  padding: 6px 8px 6px 12px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+.nav a:hover { color: var(--ink); background: rgba(255,255,255,0.4); }
+.nav a .idx {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-right: 8px;
+}
+.nav a .heads {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  float: right;
+}
+.nav a.s1 { border-left-color: var(--rust); }
+.nav a.s2 { border-left-color: var(--brick); }
+.nav a.s3 { border-left-color: var(--indigo); }
+.nav a.s4 { border-left-color: var(--steel); }
+.nav a.s5 { border-left-color: var(--slate); }
+.nav a.s6 { border-left-color: var(--ochre); }
+.nav a.s7 { border-left-color: var(--iron); }
+.nav a.s8 { border-left-color: var(--moss); }
+
+/* ---------- title block ---------- */
+.title-block {
+  padding: 56px 44px 44px 44px;
+  border-bottom: 1px solid var(--rule-2);
+  background:
+    linear-gradient(180deg, var(--paper) 0, var(--paper) 60%, var(--paper-2) 100%);
+}
+.title-block .stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  margin-bottom: 22px;
+}
+.title-block h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px 0;
+  max-width: 22ch;
+}
+.title-block .subtitle {
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-2);
+  max-width: 50ch;
+  margin: 0 0 28px 0;
+}
+.title-block .meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.title-block .meta .k {
+  color: var(--ink-3);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+.title-block .meta .v { color: var(--ink); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+@media (max-width: 700px) { .title-block .meta { grid-template-columns: repeat(2, 1fr); } .title-block h1 { font-size: 32px; } }
+
+/* ---------- typography ---------- */
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 44px 0 14px 0;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 30px 0 8px 0;
+  color: var(--ink);
+}
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 6px 0;
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.02em;
+}
+p { margin: 0 0 12px 0; }
+p.lede {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+ul, ol { padding-left: 20px; margin: 6px 0 14px 0; }
+li { margin: 4px 0; }
+strong { color: var(--ink); font-weight: 600; }
+em { font-style: italic; }
+a { color: var(--rust); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 32px 0;
+}
+code, .mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.92em;
+  background: var(--paper-3);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* ---------- section header for each session ---------- */
+.session-head {
+  padding: 44px 0 22px 0;
+  border-top: 3px solid var(--ink);
+  margin-top: 20px;
+  position: relative;
+}
+.session-head .stripe {
+  position: absolute;
+  top: -3px; left: -44px; right: 0; height: 3px;
+}
+.session-head .s-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.session-head h2 { margin-top: 0; font-size: 32px; }
+.session-head .participants {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin: 8px 0 0 0;
+}
+.session-head .participants span.heads {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+/* per-session accent — used on session-head stripe and small ornaments */
+.s1 .stripe, .s1 .accent { background: var(--rust); }
+.s2 .stripe, .s2 .accent { background: var(--brick); }
+.s3 .stripe, .s3 .accent { background: var(--indigo); }
+.s4 .stripe, .s4 .accent { background: var(--steel); }
+.s5 .stripe, .s5 .accent { background: var(--slate); }
+.s6 .stripe, .s6 .accent { background: var(--ochre); }
+.s7 .stripe, .s7 .accent { background: var(--iron); }
+.s8 .stripe, .s8 .accent { background: var(--moss); }
+
+/* ---------- callouts / working boxes ---------- */
+.box {
+  border: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  padding: 16px 18px;
+  margin: 18px 0;
+  border-left: 4px solid var(--ink-2);
+}
+.box.warn { background: #F5E4D8; border-left-color: var(--danger); }
+.box.ok   { background: #E6EBDA; border-left-color: var(--ok); }
+.box.data { background: var(--paper-3); border-left-color: var(--iron); }
+.box h4 { margin-top: 0; }
+.box .tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* prompt block — for teachable prompt patterns */
+.prompt {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  background: #1B1E22;
+  color: #E4DCC8;
+  padding: 16px 18px;
+  border-left: 4px solid var(--wash);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 10px 0 16px 0;
+}
+.prompt .p-label {
+  color: #B58022;
+  font-weight: 600;
+}
+
+/* exercise block */
+.exercise {
+  border: 1px solid var(--rule-2);
+  background: #FDFBF5;
+  padding: 18px 20px;
+  margin: 20px 0;
+  position: relative;
+}
+.exercise .ex-header {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.exercise .ex-header .lvl { color: var(--ink-2); }
+.exercise h3 { margin-top: 0; font-size: 18px; }
+.exercise .duration {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--rule-2);
+  border-radius: 2px;
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-left: 8px;
+}
+
+/* synthetic data display */
+details.synth {
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  margin: 12px 0;
+  padding: 0;
+}
+details.synth summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  background: var(--paper-3);
+  list-style: none;
+}
+details.synth summary::-webkit-details-marker { display: none; }
+details.synth summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s;
+  color: var(--ink-3);
+}
+details.synth[open] summary::before { transform: rotate(90deg); }
+details.synth .doc {
+  padding: 16px 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  background: #FDFBF5;
+  border-top: 1px solid var(--rule);
+  max-height: 640px;
+  overflow-y: auto;
+}
+details.synth .doc.narrow { max-width: 88ch; }
+details.synth .doc table {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  border-collapse: collapse;
+  margin: 10px 0;
+  width: 100%;
+}
+details.synth .doc table th, details.synth .doc table td {
+  border: 1px solid var(--rule);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+details.synth .doc table th {
+  background: var(--paper-3);
+  font-weight: 600;
+}
+
+/* generic table */
+table.data {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0;
+  font-size: 13.5px;
+}
+table.data th, table.data td {
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+table.data th {
+  border-bottom: 2px solid var(--ink);
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-transform: none;
+}
+
+/* two-col split */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin: 14px 0;
+}
+@media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+
+/* pill row */
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px 0; }
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--rule-2);
+  border-radius: 999px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+}
+.pill.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* callout for facilitator */
+.facilitator {
+  border: 1px dashed var(--ink-3);
+  padding: 12px 16px;
+  margin: 16px 0;
+  background: transparent;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+}
+.facilitator strong {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* footer note */
+.foot {
+  padding: 40px 44px;
+  border-top: 1px solid var(--rule-2);
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 40px;
+}
+.foot .rule-row {
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* running order card */
+.orderline {
+  display: grid;
+  grid-template-columns: 32px 140px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.orderline .n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.orderline .lbl { font-weight: 600; }
+.orderline:last-child { border-bottom: 0; }
+
+/* print */
+@media print {
+  body { background: white; }
+  aside.nav, .foot { display: none; }
+  .shell { grid-template-columns: 1fr; }
+  main { padding: 0; }
+  .prompt { background: white; color: black; border: 1px solid #888; }
+  .session-head { page-break-before: always; }
+  details.synth { border: 1px solid #888; }
+  details.synth summary { background: #eee; }
+}
+
+
+/* ---------- parts-nav banner (across the top) ---------- */
+.parts-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.pn-item {
+  display: block;
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: background 0.1s;
+}
+.pn-item:last-child { border-right: 0; }
+.pn-item:hover { background: rgba(255,255,255,0.5); }
+.pn-item.current {
+  background: var(--ink);
+  color: var(--paper);
+  cursor: default;
+}
+.pn-item.current .pn-n { color: var(--wash); }
+.pn-item .pn-n {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+.pn-item .pn-t {
+  display: block;
+  font-size: 11.5px;
+  color: inherit;
+  line-height: 1.25;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+@media (max-width: 900px) {
+  .parts-nav { grid-template-columns: repeat(2, 1fr); }
+  .pn-item { border-bottom: 1px solid var(--rule); }
+  .pn-item:nth-last-child(-n+2) { border-bottom: 0; }
+}
+
+</style>
+</head>
+<body>
+<nav class="parts-nav" aria-label="Workshop parts"><a class="pn-item" href="./part1_foundations.html"><span class="pn-n">Part 1</span><span class="pn-t">Foundations & Data Safety</span></a><a class="pn-item" href="./part2_winning_work.html"><span class="pn-n">Part 2</span><span class="pn-t">Winning Work · Sessions 1–2</span></a><a class="pn-item current" href="#"><span class="pn-n">Part 3</span><span class="pn-t">Numbers, Drawings & Systems · Sessions 3–5</span></a><a class="pn-item" href="./part4_site_people.html"><span class="pn-n">Part 4</span><span class="pn-t">Running Site & People · Sessions 6–8</span></a><a class="pn-item" href="./part5_playbook.html"><span class="pn-n">Part 5</span><span class="pn-t">Trainer's Playbook</span></a></nav>
+<div class="shell">
+<aside class="nav"><div class="brand"><strong>SUROJ BUILDCON × BE10x</strong><br>AI Workforce Transformation<br>Part 3 of 5 · v1</div><div class="nav-group"><div class="nav-group-title">In this part</div><ol><li><a class="s3" href="#s3">03 · Accounts & Finance<span class="heads">39</span></a></li><li><a class="s4" href="#s4">04 · Cost, Planning & Systems<span class="heads">26</span></a></li><li><a class="s5" href="#s5">05 · Design, Drawings & Quantities<span class="heads">18</span></a></li></ol></div></aside>
+<main>
+
+<div class="title-block">
+  <div class="stamp">SUROJ BUILDCON × BE10x · PART 3 OF 5 · NUMBERS, DRAWINGS & SYSTEMS · SESSIONS 3–5</div>
+  <h1>Numbers, drawings and systems — checking what others produced, turning it into reports and quantities</h1>
+  <p class="subtitle">Three sessions sharing one spine: spreadsheet analysis, checking someone else's numbers, and turning analysis into a report management can read. Session 3 is the largest single room in the workshop. Suggested for Day 2 across morning, afternoon and late-afternoon.</p>
+  <div class="meta">
+    <div><span class="k">PART</span><span class="v">3 of 5</span></div>
+    <div><span class="k">SESSIONS</span><span class="v">3</span></div>
+    <div><span class="k">HEADCOUNT REACHED</span><span class="v">83</span></div>
+    <div><span class="k">FORMAT</span><span class="v">Trainer's reference</span></div>
+  </div>
+</div>
+
+<section class="content wide s3" id="s3">
+  <div class="session-head s3">
+    <div class="stripe"></div>
+    <div class="s-tag">SESSION 03 · NUMBERS · DAY 2 MORNING (SUGGESTED)</div>
+    <h2>Accounts &amp; Finance</h2>
+    <p class="participants"><span class="heads">39 heads</span> Accounts, whole department, single room</p>
+  </div>
+
+  <h3>The room, honestly</h3>
+  <p>The biggest room of the workshop, and the one where the data-safety rules sit the tightest. Thirty-nine people who work across forty sites' invoices, GSTR-2A reconciliations, TDS compliance, statutory returns, bank reconciliations, vendor payments, and GST/Income Tax notices. Their work is high-volume, deadline-driven, and full of scattered documents that need to be reconciled — which is a very specific match to what AI is best at. It is also the work where a leaked figure or a leaked PAN is a real breach, not a theoretical one. Both halves of that sentence carry equal weight in this room.</p>
+
+  <h3>The real problem, before we get to tools</h3>
+  <ol>
+    <li><strong>GSTR-2A / 2B reconciliation.</strong> Every month, matching what vendors filed on their GSTR-1 against Suroj's purchase register. Invoices missing on 2A. Amounts different. HSN codes swapped. Vendor GSTIN wrong. The exercise is repetitive and prone to fatigue errors.</li>
+    <li><strong>TDS compliance.</strong> Section 194C (contractors), 194J (professional), 194Q (purchase). Correct rate. Correct threshold. Certificate of no-deduction. Return filing. Late-filing fees for a single missed vendor can be substantial.</li>
+    <li><strong>Bank reconciliation across sites.</strong> Site petty-cash reconciling to head-office ledger, with a two-week lag and paper vouchers.</li>
+    <li><strong>Notice response drafting.</strong> GST DRC-01A, income-tax 143(1), TDS 200A, PF/ESI, professional tax. Each has a template answer for a standard reason and a serious answer for a genuine issue. Getting the first draft written well is 60% of the work.</li>
+  </ol>
+
+  
+  <h3>Case study — Eight days to five</h3>
+  <div class="box">
+    
+    <p><strong>An infrastructure contractor in Pune, ₹340 Cr turnover, 28 sites.</strong> Their monthly close ran on a predictable but painful cycle. Site MIS closed on the 5th. Accounts consolidated across sites through the 8th. GST reconciliation ran the 9th and 10th. TDS returns filing on the 11th. Management MIS to the Directors on the 12th. Every month, eight working days from period-end to closed books. Every month, one person on the reconciliation team worked the weekend.</p>
+
+    <p>In April 2024, the finance head ran a small experiment. Three volunteers from a nine-person reconciliation team spent one hour on a Saturday learning to use Excel Copilot for the GSTR-2A vs. purchase register match. On the May close, those three ran the reconciliation with Copilot; the other six ran it the traditional way, on the same data volume — roughly 480 vendor invoices for the month.</p>
+
+    <p>Copilot cohort: reconciliation complete in one working day. Traditional cohort: still working at the end of day two. Same accuracy on a spot-audit of 60 randomly-selected invoices. The difference was concentrated on the "amount mismatch" category — Copilot's sorted variance report let the team address the ₹5,000+ mismatches first and treat the ₹200 timing differences as a batch at the end.</p>
+
+    <p>By August the whole reconciliation team was on Copilot. Close cycle: 8 days → 5 days. The freed-up time was reallocated: two people to notice-response drafting (previously outsourced to the consultant, at ₹18,000 per notice), one to a monthly vendor-master audit that had been on the wishlist for two years.</p>
+
+    <p><strong>What did not change.</strong> The notice draft still went to the consultant for review before submission. The GST filing still went through the tax consultant. The controls did not weaken. Only the drafting labour moved in-house.</p>
+
+    <p><strong>Takeaway for the room.</strong> The pattern to notice: <em>one hour of training, one supervised close cycle, then general adoption</em>. Not a company-wide rollout, not a big project. One volunteer team, one visible result, then diffusion. The finance head's role was to protect the experiment, not to mandate the change.</p>
+
+  </div>
+<h3>Tool stack for this room — and what stays out</h3>
+  <div class="pills">
+    <span class="pill primary">Excel + Copilot (in-tenant, safest)</span>
+    <span class="pill primary">Claude / ChatGPT (drafting, formula help)</span>
+    <span class="pill">Adobe Acrobat AI (extracting invoice text)</span>
+    <span class="pill">Perplexity (statutory rate &amp; date lookup)</span>
+  </div>
+  <div class="box warn">
+    <h4>Non-negotiables for this room</h4>
+    <ul>
+      <li>Real GSTINs, PANs, bank account numbers, vendor names, employee salary figures, and specific payment amounts do <strong>not</strong> get pasted into public tools. Excel + Copilot inside Microsoft 365 is the safer place for real data (in-tenant, not used to train the model).</li>
+      <li>For public-tool exercises, replace real values with placeholders. The AI is checking your logic and formulas; it does not need the real figures.</li>
+      <li>If the exercise requires real data, do it in Excel with Copilot enabled, not in a browser chat.</li>
+    </ul>
+  </div>
+
+  <h3>Theoretical foundation for this session</h3>
+  <h4 class="mono">WHY EXCEL + COPILOT IS THE PRIMARY TOOL HERE, NOT A BROWSER CHAT</h4>
+  <p>Two reasons. First, data safety: Copilot inside Excel operates on your file in your tenant and does not send it to a public model. Second, competence: for arithmetic on hundreds or thousands of rows, an LLM chatting in a browser is the wrong tool — it will be slower, wronger, and lossier than a formula. What Copilot in Excel does well: <em>write the formula for you</em>, explain what a nested formula does, generate a pivot analysis in natural language, spot outliers, draft the narrative that goes with the table. What the browser chat does well: <em>draft the notice response</em>, <em>explain the statute</em>, <em>rewrite a paragraph for the CA's signature</em>.</p>
+  <h4 class="mono">STRUCTURED FILES — WHY PDFs ARE HARD</h4>
+  <p>A GST notice is a PDF. Extracting text from a well-typed PDF is easy; from a scanned or ill-typed PDF it needs OCR. Adobe Acrobat AI does both well. For the workshop, pre-extracted text is provided; in real life, the first step of the workflow is "get the notice into clean text."</p>
+  <h4 class="mono">TWO-PASS RECONCILIATION</h4>
+  <p>The workflow that this room should walk out with: Pass 1 — Copilot in Excel groups the raw purchase register and GSTR-2A by vendor GSTIN, sums the invoice values, and produces a variance report. Pass 2 — a browser chat drafts the vendor communication for each variance category (missing on 2A, amount mismatch, wrong GSTIN, timing difference). The variance report is spreadsheet work; the communication is drafting work. Different tools, correctly used.</p>
+
+  <h3>Prompt patterns for this room</h3>
+
+  <h4 class="mono">PATTERN 1 · EXCEL COPILOT — RECONCILIATION VARIANCE</h4>
+  <div class="prompt"><span class="p-label">// Used inside Excel with two sheets: PR (purchase register) and GSTR2A</span>
+Build a reconciliation between the sheet PR and the sheet GSTR2A.
+
+Join on Vendor_GSTIN and Invoice_Number.
+
+Produce a new sheet "Variance" with the following columns:
+  - Vendor_GSTIN
+  - Vendor_Name (from PR where available; else from GSTR2A)
+  - Invoice_Number
+  - Amount_in_PR (blank if not in PR)
+  - Amount_in_GSTR2A (blank if not in GSTR2A)
+  - Difference (Amount_in_PR minus Amount_in_GSTR2A)
+  - Status: one of "matched", "missing_in_2A", "missing_in_PR",
+    "amount_mismatch", "vendor_mismatch"
+
+Sort by Status, then by absolute Difference descending.
+
+At the top, add a summary block:
+  Total invoices in PR : count and sum
+  Total invoices in GSTR2A : count and sum
+  Total matched : count and sum
+  Total missing_in_2A : count and sum
+  Total amount_mismatch : count and sum</div>
+
+  <h4 class="mono">PATTERN 2 · DRAFTING A NOTICE RESPONSE</h4>
+  <div class="prompt">You are drafting a first-cut response to a GST notice for
+review by our tax consultant.
+
+CONTEXT
+Below is the notice (redacted; company name replaced with [FIRM],
+GSTIN with [GSTIN]) and the underlying facts as we understand them.
+
+TASK
+Draft a formal response in the format required by the notice.
+The response should:
+  - Acknowledge the notice by its reference number and date
+  - Address every allegation, one by one
+  - Attach a schedule of evidence where a figure is disputed
+  - Not concede where facts are contested
+  - Not deny where the facts are correct — instead, explain the
+    circumstances
+  - End with the standard professional courtesies
+
+RULES
+- Do not add facts that are not in the "facts as we understand
+  them" note below.
+- Where a fact is missing, insert [TO BE CONFIRMED] rather than
+  guessing.
+- Match the tone of a chartered accountant's letter — formal,
+  precise, not argumentative.
+
+NOTICE: """[…]"""
+FACTS AS WE UNDERSTAND THEM: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 3 · TDS COMPLIANCE CHECK</h4>
+  <div class="prompt">Below is a list of vendor payments made in the quarter
+[Q3 2025-26]. Each row has: vendor name, PAN, nature of service,
+gross amount, invoice date, payment date, TDS section deducted,
+TDS amount, TDS rate applied.
+
+TASK
+For each row, tell me:
+  - Is the TDS section correct? (194C / 194J / 194Q / other)
+  - Is the rate correct given whether the PAN is present, whether
+    the vendor has a certificate of lower deduction, and the
+    threshold at which each section applies
+  - Was TDS deducted at the earlier of invoice date or payment date
+    where required
+  - Any red flags (missing PAN, gross amount below threshold but
+    aggregate exceeds it, exempt entities)
+
+RULES
+- If any input is missing, say what is needed rather than guess.
+- Rates for FY 2025-26 apply.
+- Do not assume a certificate of lower deduction unless the row
+  says so.
+
+PAYMENTS: """[…]"""</div>
+
+  <h3>Hands-on exercises</h3>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 1 · GSTR-2A RECONCILIATION IN EXCEL</span><span class="lvl">Warm-up · individual</span></div>
+    <h3>Reconcile 20 lines with Copilot in Excel <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Individual, laptops open, Excel with Copilot enabled where available. Download the synthetic Purchase Register and GSTR-2A extracts below into two sheets, then run Pattern 1. Compare results across three neighbours — the interesting cases are the ones the AI misclassifies.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC PURCHASE REGISTER · Suroj Buildcon, September 2026 extract</summary>
+      <div class="doc">
+Purchase Register — Suroj Buildcon Pvt. Ltd. — GSTIN 27AAACS9876F1Z3
+Period: September 2026 (extract of 20 invoices)
+
+<table>
+<tr><th>Sr</th><th>Invoice No.</th><th>Invoice Date</th><th>Vendor Name</th><th>Vendor GSTIN</th><th>HSN</th><th>Taxable Value ₹</th><th>CGST ₹</th><th>SGST ₹</th><th>IGST ₹</th><th>Total ₹</th></tr>
+<tr><td>1</td><td>KCL/26-27/1284</td><td>02-09-2026</td><td>Kesar Cement Ltd</td><td>27AAECK1234B1Z9</td><td>2523</td><td>8,42,000</td><td>1,05,250</td><td>1,05,250</td><td>—</td><td>10,52,500</td></tr>
+<tr><td>2</td><td>TSI/2026/0417</td><td>04-09-2026</td><td>Tata Steel &amp; Iron LLP</td><td>27AACCT4567D1Z7</td><td>7213</td><td>28,60,000</td><td>2,57,400</td><td>2,57,400</td><td>—</td><td>33,74,800</td></tr>
+<tr><td>3</td><td>APB/1148</td><td>05-09-2026</td><td>Aggarwal Pipes &amp; Bends</td><td>27AGGPA5678E1Z2</td><td>7304</td><td>4,15,000</td><td>37,350</td><td>37,350</td><td>—</td><td>4,89,700</td></tr>
+<tr><td>4</td><td>SGE/26-27/0092</td><td>08-09-2026</td><td>Sanghavi Electricals</td><td>27AABCS2345M1Z8</td><td>8544</td><td>1,86,400</td><td>16,776</td><td>16,776</td><td>—</td><td>2,19,952</td></tr>
+<tr><td>5</td><td>DHL/INV/09/0033</td><td>10-09-2026</td><td>Deshpande Hardware &amp; Locks</td><td>27ABCPD9876Q1Z4</td><td>8302</td><td>68,500</td><td>6,165</td><td>6,165</td><td>—</td><td>80,830</td></tr>
+<tr><td>6</td><td>MRC/2609/0451</td><td>12-09-2026</td><td>Mahalaxmi Ready-Mix Concrete</td><td>27AAAAM8888A1Z0</td><td>3824</td><td>12,50,000</td><td>1,12,500</td><td>1,12,500</td><td>—</td><td>14,75,000</td></tr>
+<tr><td>7</td><td>NKB/9992</td><td>14-09-2026</td><td>NKB Bricks Suppliers</td><td>27AVBPN1122K1Z6</td><td>6810</td><td>1,24,800</td><td>3,744</td><td>3,744</td><td>—</td><td>1,32,288</td></tr>
+<tr><td>8</td><td>PCP/26-27/0278</td><td>15-09-2026</td><td>Pune Crane &amp; Plant Hirers</td><td>27AABFP4433T1Z1</td><td>9973</td><td>3,50,000</td><td>31,500</td><td>31,500</td><td>—</td><td>4,13,000</td></tr>
+<tr><td>9</td><td>VSG/INV/2687</td><td>17-09-2026</td><td>Vindhya Sand &amp; Grit</td><td>27AAECV6543M1Z7</td><td>2517</td><td>2,84,000</td><td>14,200</td><td>14,200</td><td>—</td><td>3,12,400</td></tr>
+<tr><td>10</td><td>KTC/09/2026/044</td><td>19-09-2026</td><td>Kirloskar Turbo Compressors</td><td>27AAACK4455K1Z2</td><td>8414</td><td>7,42,000</td><td>66,780</td><td>66,780</td><td>—</td><td>8,75,560</td></tr>
+<tr><td>11</td><td>ARL/1401</td><td>20-09-2026</td><td>Ashwin Rebars Ltd</td><td>27AAACA9988J1Z5</td><td>7214</td><td>18,60,000</td><td>1,67,400</td><td>1,67,400</td><td>—</td><td>21,94,800</td></tr>
+<tr><td>12</td><td>MPD/26/0187</td><td>22-09-2026</td><td>M P Diesels &amp; Lubricants</td><td>27AACPM3344L1Z9</td><td>2710</td><td>4,60,000</td><td>41,400</td><td>41,400</td><td>—</td><td>5,42,800</td></tr>
+<tr><td>13</td><td>BSA/INV/1129</td><td>23-09-2026</td><td>Bhagwati Shuttering &amp; Aluminium</td><td>27AABCB5566P1Z3</td><td>7610</td><td>6,20,000</td><td>55,800</td><td>55,800</td><td>—</td><td>7,31,600</td></tr>
+<tr><td>14</td><td>SEC/09/26/0912</td><td>25-09-2026</td><td>Sarvottam Elevators Co.</td><td>27AAACS4477Q1Z8</td><td>8428</td><td>5,80,000</td><td>52,200</td><td>52,200</td><td>—</td><td>6,84,400</td></tr>
+<tr><td>15</td><td>KCL/26-27/1341</td><td>26-09-2026</td><td>Kesar Cement Ltd</td><td>27AAECK1234B1Z9</td><td>2523</td><td>9,12,000</td><td>1,14,000</td><td>1,14,000</td><td>—</td><td>11,40,000</td></tr>
+<tr><td>16</td><td>APB/1189</td><td>26-09-2026</td><td>Aggarwal Pipes &amp; Bends</td><td>27AGGPA5678E1Z2</td><td>7304</td><td>2,05,000</td><td>18,450</td><td>18,450</td><td>—</td><td>2,41,900</td></tr>
+<tr><td>17</td><td>NSS/2609/22</td><td>27-09-2026</td><td>National Safety Services</td><td>29AAACN7788M1Z1</td><td>9987</td><td>1,40,000</td><td>—</td><td>—</td><td>25,200</td><td>1,65,200</td></tr>
+<tr><td>18</td><td>OPC/INV/0954</td><td>28-09-2026</td><td>Om Prakash &amp; Co (Architects)</td><td>27ABCPO7788R1Z6</td><td>9983</td><td>3,20,000</td><td>28,800</td><td>28,800</td><td>—</td><td>3,77,600</td></tr>
+<tr><td>19</td><td>MRC/2609/0489</td><td>29-09-2026</td><td>Mahalaxmi Ready-Mix Concrete</td><td>27AAAAM8888A1Z0</td><td>3824</td><td>14,80,000</td><td>1,33,200</td><td>1,33,200</td><td>—</td><td>17,46,400</td></tr>
+<tr><td>20</td><td>ARL/1445</td><td>30-09-2026</td><td>Ashwin Rebars Ltd</td><td>27AAACA9988J1Z5</td><td>7214</td><td>22,10,000</td><td>1,98,900</td><td>1,98,900</td><td>—</td><td>26,07,800</td></tr>
+</table>
+      </div>
+    </details>
+
+    <details class="synth">
+      <summary>SYNTHETIC GSTR-2A · September 2026 — deliberate mismatches for the exercise</summary>
+      <div class="doc">
+GSTR-2A — Suroj Buildcon Pvt. Ltd. — GSTIN 27AAACS9876F1Z3
+Return Period: September 2026 (extract, sorted by supplier GSTIN)
+
+<table>
+<tr><th>Supplier GSTIN</th><th>Supplier Name</th><th>Invoice No.</th><th>Invoice Date</th><th>Taxable Value ₹</th><th>Tax Amt ₹</th><th>Total ₹</th><th>Filing Status</th></tr>
+<tr><td>27AAAAM8888A1Z0</td><td>Mahalaxmi Ready-Mix Concrete</td><td>MRC/2609/0451</td><td>12-09-2026</td><td>12,50,000</td><td>2,25,000</td><td>14,75,000</td><td>Filed</td></tr>
+<tr><td>27AAAAM8888A1Z0</td><td>Mahalaxmi Ready-Mix Concrete</td><td>MRC/2609/0489</td><td>29-09-2026</td><td>14,80,000</td><td>2,66,400</td><td>17,46,400</td><td>Filed</td></tr>
+<tr><td>27AAACA9988J1Z5</td><td>Ashwin Rebars Ltd</td><td>ARL/1401</td><td>20-09-2026</td><td>18,60,000</td><td>3,34,800</td><td>21,94,800</td><td>Filed</td></tr>
+<tr><td>27AAACA9988J1Z5</td><td>Ashwin Rebars Ltd</td><td>ARL/1445</td><td>30-09-2026</td><td>22,10,000</td><td>3,97,800</td><td>26,07,800</td><td>Filed</td></tr>
+<tr><td>27AAACK4455K1Z2</td><td>Kirloskar Turbo Compressors</td><td>KTC/09/2026/044</td><td>19-09-2026</td><td>7,42,000</td><td>1,33,560</td><td>8,75,560</td><td>Filed</td></tr>
+<tr><td>27AAACS4477Q1Z8</td><td>Sarvottam Elevators Co.</td><td>SEC/09/26/0912</td><td>25-09-2026</td><td>5,80,000</td><td>1,04,400</td><td>6,84,400</td><td>Filed</td></tr>
+<tr><td>27AABCB5566P1Z3</td><td>Bhagwati Shuttering &amp; Aluminium</td><td>BSA/INV/1129</td><td>23-09-2026</td><td>6,20,000</td><td>1,11,600</td><td>7,31,600</td><td>Filed</td></tr>
+<tr><td>27AABCS2345M1Z8</td><td>Sanghavi Electricals</td><td>SGE/26-27/0092</td><td>08-09-2026</td><td>1,86,400</td><td>33,552</td><td>2,19,952</td><td>Filed</td></tr>
+<tr><td>27AABFP4433T1Z1</td><td>Pune Crane &amp; Plant Hirers</td><td>PCP/26-27/0278</td><td>15-09-2026</td><td>3,50,000</td><td>63,000</td><td>4,13,000</td><td>Filed</td></tr>
+<tr><td>27AACCT4567D1Z7</td><td>Tata Steel &amp; Iron LLP</td><td>TSI/2026/0417</td><td>04-09-2026</td><td>28,60,000</td><td>5,14,800</td><td>33,74,800</td><td>Filed</td></tr>
+<tr><td>27AACPM3344L1Z9</td><td>M P Diesels &amp; Lubricants</td><td>MPD/26/0187</td><td>22-09-2026</td><td>4,60,000</td><td>82,800</td><td>5,42,800</td><td>Filed</td></tr>
+<tr><td>27ABCPO7788R1Z6</td><td>Om Prakash &amp; Co (Architects)</td><td>OPC/INV/0954</td><td>28-09-2026</td><td>3,20,000</td><td>57,600</td><td>3,77,600</td><td>Filed</td></tr>
+<tr><td>27AAECK1234B1Z9</td><td>Kesar Cement Ltd</td><td>KCL/26-27/1284</td><td>02-09-2026</td><td>8,42,000</td><td>1,51,560</td><td>9,93,560</td><td>Filed</td></tr>
+<tr><td>27AAECV6543M1Z7</td><td>Vindhya Sand &amp; Grit</td><td>VSG/INV/2687</td><td>17-09-2026</td><td>2,84,000</td><td>28,400</td><td>3,12,400</td><td>Filed</td></tr>
+<tr><td>27AVBPN1122K1Z6</td><td>NKB Bricks Suppliers</td><td>NKB/9992</td><td>14-09-2026</td><td>1,24,800</td><td>7,488</td><td>1,32,288</td><td>Filed</td></tr>
+<tr><td>27AGGPA5678E1Z2</td><td>Aggarwal Pipes &amp; Bends</td><td>APB/1148</td><td>05-09-2026</td><td>4,15,000</td><td>74,700</td><td>4,89,700</td><td>Filed</td></tr>
+<tr><td>27AAACS4477Q8</td><td>Sarvottam Elevators Co.</td><td>SEC/09/26/0913</td><td>25-09-2026</td><td>4,20,000</td><td>75,600</td><td>4,95,600</td><td>Filed</td></tr>
+</table>
+
+Note: as visible in the extract, the following are absent from GSTR-2A
+that are present in Suroj's Purchase Register: KCL/26-27/1341 (Kesar
+Cement, 26-Sep), APB/1189 (Aggarwal Pipes, 26-Sep), DHL/INV/09/0033
+(Deshpande Hardware), NSS/2609/22 (National Safety Services — inter-
+state supplier). Additionally, KCL/26-27/1284 is filed by Kesar
+Cement at ₹9,93,560 total but Suroj's PR shows ₹10,52,500 — a
+mismatch on the taxable value. A stray entry SEC/09/26/0913 in 2A
+does not appear in the PR and its GSTIN is malformed (missing check
+digit) — likely a supplier data-entry error.
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What good looks like.</strong> The Copilot output should categorise: 12 matched, 4 missing_in_2A (Kesar 1341, Aggarwal 1189, Deshpande, National Safety), 1 amount_mismatch (Kesar 1284: PR taxable value 8,42,000 with tax 2,10,500 = total 10,52,500; 2A taxable 8,42,000 with tax 1,51,560 — a rate mismatch, cement is 28% not 18%; either supplier or Suroj booked wrong), 1 missing_in_PR + vendor_mismatch (SEC/09/26/0913 with malformed GSTIN). Good participants notice the Kesar amount mismatch is actually a GST-rate error worth chasing.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 2 · DRAFT A NOTICE RESPONSE</span><span class="lvl">Core · pairs</span></div>
+    <h3>Turn a GST DRC-01A into a defensible response <span class="duration">40 min</span></h3>
+    <p><strong>Setup.</strong> Pairs. Use Pattern 2. Draft the response, print two copies, walk to the next pair and mark it up as if you were the CA reviewing. Redrafts move faster than first drafts.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC GST NOTICE · DRC-01A intimation</summary>
+      <div class="doc">
+FORM GST DRC-01A
+Intimation of tax ascertained as being payable under
+Section 73(5) / 74(5) of the CGST Act, 2017
+
+Ref: DRC-01A/PUN-DIV-VIII/2026-27/00847
+Date: 18 September 2026
+
+To,
+[FIRM]
+[REGISTERED ADDRESS]
+GSTIN: [GSTIN]
+
+Subject : Intimation of tax ascertained as being payable — mismatch
+          between GSTR-3B and GSTR-2A for the period April 2024 to
+          March 2025, and short reversal of Input Tax Credit under
+          Rule 42.
+
+Sir / Madam,
+
+1. On scrutiny of returns filed by [FIRM] for the financial year
+   2024-25, the following discrepancies have been observed:
+
+   1.1  ITC availed in GSTR-3B in excess of ITC reflected in GSTR-2A:
+        ₹ 11,64,780/- (CGST ₹ 5,82,390 + SGST ₹ 5,82,390).
+
+   1.2  ITC apparently availed on inputs used partly for
+        non-business/exempt supplies, without reversal under Rule 42
+        of the CGST Rules, on estimated common credits of
+        ₹ 3,20,000/-.
+
+   1.3  Late filing of GSTR-3B for July 2024 by 14 days, attracting
+        interest under Section 50 of ₹ 42,600/-.
+
+2. The tax and interest ascertained as payable are set out below:
+
+   Component        CGST ₹       SGST ₹       IGST ₹     Interest ₹
+   Para 1.1         5,82,390     5,82,390     —          98,410
+   Para 1.2         1,60,000     1,60,000     —          21,300
+   Para 1.3         —            —            —          42,600
+   Total            7,42,390     7,42,390     —          1,62,310
+
+3. You are hereby intimated of the above and are requested to file
+   the acknowledgement in Form GST DRC-01A Part-B within fifteen
+   (15) days of receipt of this intimation, either accepting the
+   liability with payment particulars, or setting out reasons for
+   disagreement with supporting documents.
+
+4. In the absence of a response within the stipulated period, a
+   show-cause notice under Section 73(1) will be issued.
+
+Yours faithfully,
+
+For and on behalf of the
+Deputy Commissioner, Pune Division VIII
+      </div>
+    </details>
+
+    <details class="synth">
+      <summary>FACTS AS WE UNDERSTAND THEM · The note to give the AI along with the notice</summary>
+      <div class="doc">
+FACTS AS SUROJ UNDERSTANDS THEM — TO BE PROVIDED WITH THE NOTICE
+
+Para 1.1 — GSTR-3B vs GSTR-2A mismatch of ₹ 11,64,780
+
+  Of the flagged amount, ₹ 8,42,000 relates to invoices from four
+  vendors who filed their GSTR-1 in the following month (i.e.
+  a timing difference, not a substantive mismatch). The invoices
+  and vendor filings are annexed at Annexure A. The correctly-
+  claimed ITC is reflected in the subsequent month's GSTR-2A.
+
+  A further ₹ 2,10,000 relates to invoices from two vendors whose
+  registrations were subsequently cancelled retrospectively.
+  [TO BE CONFIRMED with our tax consultant whether reversal is
+  required under Rule 37A and the applicable timeline.]
+
+  The balance ₹ 1,12,780 is under review by our Accounts team;
+  we request thirty (30) days to complete this reconciliation and
+  furnish a supplementary reply.
+
+Para 1.2 — Rule 42 reversal on common credits
+
+  [FIRM] does not have any exempt supplies for the period in
+  question. All supplies are taxable works-contract services under
+  HSN 9954. The presumption of common credits used for exempt
+  supplies is therefore respectfully disputed. Supporting
+  reconciliation showing 100% taxable supplies is annexed at
+  Annexure B.
+
+Para 1.3 — Late filing of GSTR-3B for July 2024
+
+  The delay of 14 days is admitted. Interest of ₹ 42,600 has
+  since been paid vide challan number [CHALLAN] on [DATE].
+  Copy of challan is annexed at Annexure C.
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What good looks like.</strong> The response opens with the notice reference and date, accepts what is genuinely accepted (para 1.3), disputes what is disputed with a clean factual explanation (para 1.2), asks for time on what is under review (para 1.1 balance), and does not concede on the ITC timing difference. Tone is not argumentative — it treats the notice as a request for information, not a fight. The AI produces this draft in five minutes; the CA reviews and signs it in fifteen.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 3 · TDS QUARTERLY REVIEW</span><span class="lvl">Applied · individual</span></div>
+    <h3>Check a quarter's TDS deductions for errors <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> Individual. Use Pattern 3 on the synthetic payment list below. Room compares findings — the interesting cases are where someone caught something no one else did.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC PAYMENT LIST · Q3 FY 2025-26, extract for TDS review</summary>
+      <div class="doc">
+VENDOR PAYMENTS Q3 FY 2025-26 (OCT-DEC 2025) — EXTRACT FOR TDS REVIEW
+
+<table>
+<tr><th>Sr</th><th>Vendor</th><th>PAN</th><th>Nature</th><th>Gross ₹</th><th>Inv. Date</th><th>Pay. Date</th><th>Section</th><th>Rate %</th><th>TDS Deducted ₹</th></tr>
+<tr><td>1</td><td>Vinay Mehta &amp; Assoc. (CAs)</td><td>AAFPM7788K</td><td>Statutory audit</td><td>1,80,000</td><td>05-10-25</td><td>18-10-25</td><td>194J</td><td>10</td><td>18,000</td></tr>
+<tr><td>2</td><td>Kesar Cement Ltd</td><td>AAECK1234B</td><td>Supply of cement (10 invoices, aggregate)</td><td>62,40,000</td><td>Various Oct</td><td>25-11-25</td><td>194Q</td><td>0.1</td><td>6,240</td></tr>
+<tr><td>3</td><td>Mahalaxmi RMC</td><td>AAAAM8888A</td><td>Supply of RMC (aggregate Q3)</td><td>28,50,000</td><td>Various</td><td>28-12-25</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>4</td><td>Pune Crane &amp; Plant Hirers</td><td>AABFP4433T</td><td>Crane hire</td><td>11,20,000</td><td>Various</td><td>15-12-25</td><td>194C</td><td>2</td><td>22,400</td></tr>
+<tr><td>5</td><td>Om Prakash &amp; Co (Architects)</td><td>ABCPO7788R</td><td>Architectural services</td><td>3,40,000</td><td>28-11-25</td><td>08-12-25</td><td>194J</td><td>10</td><td>34,000</td></tr>
+<tr><td>6</td><td>Ramesh Contracting (Individual)</td><td>AKMPS4321L</td><td>Labour supply</td><td>2,90,000</td><td>Various Nov</td><td>10-12-25</td><td>194C</td><td>1</td><td>2,900</td></tr>
+<tr><td>7</td><td>National Safety Services</td><td>[MISSING]</td><td>Safety consultancy</td><td>1,40,000</td><td>27-09-25</td><td>03-11-25</td><td>194J</td><td>20</td><td>28,000</td></tr>
+<tr><td>8</td><td>Bhagwati Shuttering</td><td>AABCB5566P</td><td>Shuttering hire + operator</td><td>7,80,000</td><td>Various</td><td>20-12-25</td><td>194C</td><td>2</td><td>15,600</td></tr>
+<tr><td>9</td><td>M P Diesels &amp; Lubricants</td><td>AACPM3344L</td><td>Diesel purchase</td><td>4,60,000</td><td>22-09-25</td><td>10-11-25</td><td>194Q</td><td>0.1</td><td>460</td></tr>
+<tr><td>10</td><td>Sunil Patil (Individual, WCT)</td><td>ADRPS9911F</td><td>Sub-contract civil</td><td>1,80,000</td><td>Various</td><td>28-11-25</td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>Findings the room should surface.</strong> (1) Row 3 Mahalaxmi RMC — no TDS deducted on ₹28.50 L purchase; 194Q applies once aggregate purchase from single vendor crosses ₹50 L in a FY. Requires check on FY-to-date aggregate. (2) Row 7 National Safety Services — PAN missing; TDS at 20% (higher rate under Section 206AA) applied, which is technically correct; but this should trigger a "no PAN" letter to the vendor. (3) Row 9 M P Diesels — 194Q applied on a single ₹4.60 L purchase, which is below any individual threshold; the section applies only on aggregate above ₹50 L. Either the FY aggregate is above and the row treatment is right, or 194Q was applied by default and needs review. (4) Row 10 Sunil Patil — sub-contract civil work of ₹1.80 L to an individual; below threshold of ₹1 L per invoice / ₹1 L aggregate for individuals under 194C; needs check on FY aggregate. (5) Row 2 Kesar Cement — 194Q at 0.1% on ₹62.40 L is fine <em>if</em> this is the first crossing of ₹50 L threshold; if the earlier ₹50 L was also from Kesar in FY, the calculation should be on the amount above ₹50 L only, not on the full crossing quarter.
+    </div>
+  </div>
+
+  
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 4 · BANK RECONCILIATION</span><span class="lvl">Stretch · pairs · if time permits</span></div>
+    <h3>Reconcile site petty-cash account with head-office ledger <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> Pairs. The site petty-cash account and the head-office ledger have drifted apart over a month. Use Excel Copilot to identify unreconciled entries. This is the last exercise before break; the room that finishes early can also draft a note to the site accountant explaining the findings.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC BANK RECONCILIATION · Sinnar-Ghoti site, Sep 2026</summary>
+      <div class="doc">
+BANK RECONCILIATION — SINNAR-GHOTI SITE PETTY CASH ACCOUNT
+Bank: Bank of Maharashtra, Nashik branch
+Account: SUROJ BUILDCON — SITE OPS — SINNAR (A/c 60128374416)
+Period: 01-Sep-2026 to 30-Sep-2026
+
+OPENING BALANCE (as per HO ledger, 01-Sep):  ₹ 3,42,800
+CLOSING BALANCE (as per HO ledger, 30-Sep):  ₹ 4,18,240
+CLOSING BALANCE (as per bank statement):     ₹ 4,08,140
+DIFFERENCE:                                  ₹    10,100
+
+HO LEDGER ENTRIES (September 2026)
+<table>
+<tr><th>Date</th><th>Voucher</th><th>Description</th><th>Debit ₹</th><th>Credit ₹</th></tr>
+<tr><td>03-Sep</td><td>HO/BR/28</td><td>Site imprest transfer</td><td>2,00,000</td><td></td></tr>
+<tr><td>05-Sep</td><td>SG/PV/4471</td><td>Cement Sarpan Cash purchase — Kesar</td><td></td><td>18,600</td></tr>
+<tr><td>08-Sep</td><td>SG/PV/4472</td><td>Labour wages weekly — group A</td><td></td><td>64,200</td></tr>
+<tr><td>09-Sep</td><td>SG/PV/4473</td><td>Diesel — 400 L for excavator</td><td></td><td>36,800</td></tr>
+<tr><td>12-Sep</td><td>SG/PV/4474</td><td>Bar-bending job work — Ashwin</td><td></td><td>28,400</td></tr>
+<tr><td>15-Sep</td><td>HO/BR/34</td><td>Cyclone-related emergency top-up</td><td>75,000</td><td></td></tr>
+<tr><td>16-Sep</td><td>SG/PV/4475</td><td>Post-cyclone site restoration labour</td><td></td><td>42,000</td></tr>
+<tr><td>18-Sep</td><td>SG/PV/4476</td><td>Formwork rehire deposit</td><td></td><td>18,000</td></tr>
+<tr><td>20-Sep</td><td>SG/PV/4477</td><td>PM-250 spares — excavator</td><td></td><td>12,400</td></tr>
+<tr><td>22-Sep</td><td>SG/PV/4478</td><td>Labour wages weekly — group A</td><td></td><td>62,800</td></tr>
+<tr><td>24-Sep</td><td>SG/PV/4479</td><td>Site canteen provisions monthly</td><td></td><td>14,800</td></tr>
+<tr><td>26-Sep</td><td>HO/BR/41</td><td>Site imprest transfer</td><td>1,50,000</td><td></td></tr>
+<tr><td>28-Sep</td><td>SG/PV/4480</td><td>Labour wages weekly — group A</td><td></td><td>62,000</td></tr>
+<tr><td>29-Sep</td><td>SG/PV/4481</td><td>Statutory returns filing fees</td><td></td><td>2,000</td></tr>
+<tr><td>30-Sep</td><td>SG/PV/4482</td><td>Miscellaneous site admin</td><td></td><td>15,560</td></tr>
+</table>
+
+BANK STATEMENT (September 2026)
+<table>
+<tr><th>Date</th><th>Narration</th><th>Debit ₹</th><th>Credit ₹</th></tr>
+<tr><td>03-Sep</td><td>RTGS from Suroj Buildcon HO</td><td></td><td>2,00,000</td></tr>
+<tr><td>05-Sep</td><td>ATM WDL — SNRR</td><td>18,600</td><td></td></tr>
+<tr><td>08-Sep</td><td>NEFT to Ramesh Waghmare</td><td>18,000</td><td></td></tr>
+<tr><td>08-Sep</td><td>NEFT to Sunil Patil (site labour)</td><td>26,200</td><td></td></tr>
+<tr><td>08-Sep</td><td>NEFT to Ashok Kambli (site labour)</td><td>20,000</td><td></td></tr>
+<tr><td>09-Sep</td><td>Cheque 000487 — HP diesel</td><td>36,800</td><td></td></tr>
+<tr><td>12-Sep</td><td>NEFT to Ashwin Iron Works</td><td>28,400</td><td></td></tr>
+<tr><td>15-Sep</td><td>RTGS from Suroj Buildcon HO</td><td></td><td>75,000</td></tr>
+<tr><td>16-Sep</td><td>Multiple NEFT — labour post cyclone</td><td>42,000</td><td></td></tr>
+<tr><td>17-Sep</td><td>Cheque 000488 — Bhagwati Shuttering</td><td>18,000</td><td></td></tr>
+<tr><td>20-Sep</td><td>ATM WDL — SNRR</td><td>12,400</td><td></td></tr>
+<tr><td>22-Sep</td><td>NEFT to Ramesh Waghmare</td><td>18,000</td><td></td></tr>
+<tr><td>22-Sep</td><td>NEFT to Sunil Patil</td><td>26,400</td><td></td></tr>
+<tr><td>22-Sep</td><td>NEFT to Ashok Kambli</td><td>18,400</td><td></td></tr>
+<tr><td>24-Sep</td><td>Cheque 000489 — Amruta Kirana</td><td>14,800</td><td></td></tr>
+<tr><td>26-Sep</td><td>RTGS from Suroj Buildcon HO</td><td></td><td>1,50,000</td></tr>
+<tr><td>27-Sep</td><td>Bank charges — monthly maintenance</td><td>590</td><td></td></tr>
+<tr><td>27-Sep</td><td>SMS alert charges quarterly</td><td>295</td><td></td></tr>
+<tr><td>28-Sep</td><td>NEFT to Ramesh Waghmare</td><td>17,800</td><td></td></tr>
+<tr><td>28-Sep</td><td>NEFT to Sunil Patil</td><td>25,600</td><td></td></tr>
+<tr><td>28-Sep</td><td>NEFT to Ashok Kambli</td><td>18,600</td><td></td></tr>
+<tr><td>29-Sep</td><td>Cheque 000490 — Statutory fees</td><td>2,000</td><td></td></tr>
+<tr><td>29-Sep</td><td>Cash deposit at branch — site refund</td><td></td><td>8,215</td></tr>
+</table>
+
+Note: the wage voucher SG/PV/4472 (₹64,200 aggregate) was disbursed via three NEFT transfers to individual workmen totalling ₹64,200 in the bank. Same for the two later wage vouchers.
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>Findings the room should surface.</strong> Bank charges (₹590 + ₹295) not booked in HO ledger — accounts for ₹885 of the difference. Cash deposit of ₹8,215 on 29-Sep (a site refund) not booked in HO ledger. Voucher SG/PV/4482 ₹15,560 for "misc site admin" booked in HO ledger but not visible in bank — either a cash-hand disbursement pending banking or an entry made without matching bank payment; needs investigation. Total unreconciled: ₹15,560 - ₹8,215 - ₹885 ≈ ₹6,460, close to the ₹10,100 differential; the residual is likely timing of the last few entries. The lesson is not the specific numbers — it's that a 15-minute Copilot pass surfaces the categories, and the site accountant then investigates only the surfaced items rather than reading the whole month.
+    </div>
+  </div>
+<h3>Common pitfalls in this room</h3>
+  <div class="box warn">
+    <ul>
+      <li><strong>Pasting real GSTINs into a public tool.</strong> The GSTIN is a public identifier but the association of a GSTIN with vendor names and specific amounts on a specific client's purchase register is not public data. Placeholder-swap before pasting; use Copilot inside Excel for real data.</li>
+      <li><strong>Trusting the AI on statutory rates.</strong> Rates change every budget. Always verify the rate against the current section, or use Perplexity with a date filter. AI will confidently give last year's rate if you don't specify.</li>
+      <li><strong>Skipping the manual sanity check.</strong> A 39-person team can move very fast with AI assistance. The temptation to skip the reconciliation walkthrough grows. Do not.</li>
+      <li><strong>Long argumentative threads on a notice.</strong> When the first draft is close but not quite right, tighten the facts note and start again — do not have a five-message back-and-forth arguing with the AI. Fresh chat, tighter prompt, better output.</li>
+    </ul>
+  </div>
+
+  <h3>Closing 20 minutes — Q&A prompts</h3>
+  <ol>
+    <li>"Of the four workflows we showed — reconciliation, notice response, TDS check, formula help — which one is worth building into your monthly routine first?"</li>
+    <li>"What is one thing your team spends four hours a week on that could become forty minutes with a saved prompt template?"</li>
+    <li>"What is the confidentiality boundary you are least sure about after today?"</li>
+  </ol>
+</section>
+<section class="content wide s4" id="s4">
+  <div class="session-head s4">
+    <div class="stripe"></div>
+    <div class="s-tag">SESSION 04 · NUMBERS · DAY 2 AFTERNOON (SUGGESTED)</div>
+    <h2>Cost, Planning &amp; Systems</h2>
+    <p class="participants"><span class="heads">26 heads</span> Cost Control (11) · Planning (9) · EDP (6)</p>
+  </div>
+
+  <h3>The room, honestly</h3>
+  <p>Three sub-teams that all run the same monthly cycle and report to the same people. Cost Control produces budget-versus-actual and forecast-at-completion. Planning produces schedule status, S-curves and the delay/recovery narrative. EDP is the group that builds and maintains the spreadsheets, dashboards and small systems where all of it lives. Suroj's original plan split Cost Control and Planning into different rooms — this session puts them back together because their work is genuinely one workflow, and it puts EDP with them because every example Cost Control and Planning will do today is something EDP will eventually be asked to automate.</p>
+
+  <h3>The real problem, before we get to tools</h3>
+  <ol>
+    <li><strong>The monthly rollup is late.</strong> Site MIS lands on the 5th, review meeting is on the 10th, and the two days in between are people copy-pasting between four spreadsheets and hand-typing narratives.</li>
+    <li><strong>Variance without cause.</strong> The BvA table shows a 12% overrun on a cost head; nobody has time in the review meeting to trace which activities and which weeks drove it.</li>
+    <li><strong>Schedule slippage without a story.</strong> The Gantt shows a red bar; the delay register has "manpower shortage" written on it; the recovery plan is "catch up." The management team asks for a real story and there isn't one.</li>
+    <li><strong>Dashboards that nobody trusts.</strong> EDP built a Power BI dashboard six months ago; site teams don't use it because the numbers don't tie to their own sheets, and nobody has time to reconcile them.</li>
+  </ol>
+
+  
+  <h3>Case study — The variance nobody could explain</h3>
+  <div class="box">
+    
+    <p><strong>A civil contractor executing a ₹98 Cr flyover project in Karnataka.</strong> Month 14 of 24. The monthly cost review showed a 12% overrun on the "steel — reinforcement" line, on a project where reinforcement was 22% of contract value. Nobody in the review meeting could explain it. The Cost Control head took the action to investigate; two weeks later, the investigation was still open.</p>
+
+    <p>The head assigned an EDP resource to build a Power BI dashboard drilling into steel consumption by activity, by month, by site zone. The dashboard took three weeks. When it opened, the 12% overrun disaggregated cleanly:</p>
+
+    <ul>
+      <li>Zone A abutments and piers: overrun 4%. Within tolerance for site-mix.</li>
+      <li>Zone B superstructure: overrun 2%. Effectively on budget.</li>
+      <li>Zone C approach slabs and RCC drains: overrun 38%. The line item was a small share of steel tonnage but a disproportionate share of the variance.</li>
+    </ul>
+
+    <p>Zone C had been executed by a subcontractor on back-to-back terms. Their reported quantities matched the BOQ. Their actual consumption, tracked via the site's own consumption sheet, had run 38% higher. Nobody had reconciled the two — because the subcontractor's billing was on BOQ, not on consumption, so the accounts team saw no variance in payments.</p>
+
+    <p>What Zone C had been doing: over-ordering steel, drawing extra from Suroj's stores against the subcontract, and using the excess on side work outside the subcontract. Not fraud in the strict sense — the extra work was Suroj's other project — but a booking error that concealed the variance for four months.</p>
+
+    <p><strong>What would have changed with a monthly Pattern 1 (BvA narrative) prompt.</strong> The overrun would have surfaced in month 11's review, not month 14's — the Pattern 1 prompt asks for causes attributable to each &gt;5% variance row and forces a "cause not yet identified" tag on unattributable ones. Three consecutive months of "cause not yet identified" on the same head is the trigger to investigate. The dashboard-building work (three weeks) would not have been needed; the finding was structural, not visual.</p>
+
+    <p><strong>Takeaway for the room.</strong> Dashboards are for pattern-seeing. The narrative prompt is for accountability. Both are useful; but if you have to pick, the accountability discipline is what surfaces variances at month 11 instead of month 14.</p>
+
+  </div>
+<h3>Tool stack for this room</h3>
+  <div class="pills">
+    <span class="pill primary">Excel + Copilot (BvA, S-curve, variance)</span>
+    <span class="pill primary">Power BI + Copilot (dashboards)</span>
+    <span class="pill">Claude / ChatGPT (variance narratives, MPR drafting)</span>
+    <span class="pill">Power Automate + Copilot (monthly rollup)</span>
+    <span class="pill">Python via Claude (for EDP — one-off transforms)</span>
+  </div>
+
+  <h3>Theoretical foundation for this session</h3>
+  <h4 class="mono">TWO KINDS OF WORK, TWO KINDS OF TOOL</h4>
+  <p>Cost Control and Planning do arithmetic on large tables — variance, S-curve, forecast — and Excel with Copilot is the right tool for that. But their <em>output</em> is a narrative that goes into the MPR: what happened, why, what next. That narrative is drafting work, and the browser chat is the right tool for it, fed with the numbers Excel produced. This division — <strong>Excel does the maths, chat writes the story</strong> — is the whole session in one line.</p>
+  <h4 class="mono">FORECAST-AT-COMPLETION IS A SENTENCE, NOT A NUMBER</h4>
+  <p>A number without a story ("EAC ₹68.4 Cr, +4.2%") is nearly useless in a review meeting. What management wants: "EAC is up 4.2% because steel escalation absorbed the 3% contingency in the RCC scope by month 8, and reinforcement waste on the OHSR pours ran at 6.8% against a budgeted 4%." AI produces the second version if you feed it the numbers and ask for it.</p>
+  <h4 class="mono">FOR EDP — AUTOMATION AS A LADDER</h4>
+  <p>EDP does not need to build a big system. It needs to build small useful things in sequence: rung 1 is a saved prompt template; rung 2 is a macro; rung 3 is a Power Automate flow; rung 4 is a small script. AI helps at every rung. This session shows one worked example of each.</p>
+
+  <h3>Prompt patterns for this room</h3>
+
+  <h4 class="mono">PATTERN 1 · BUDGET vs ACTUAL VARIANCE NARRATIVE</h4>
+  <div class="prompt">You are a cost-control engineer preparing the monthly review.
+
+CONTEXT
+Below is the budget-vs-actual table for [PROJECT] as of month-end
+[MONTH-YEAR]. Cost heads are grouped by WBS. Physical progress by
+head is also given.
+
+TASK
+For each cost head with variance greater than plus-or-minus 5%,
+write a two-sentence explanation in the format:
+  "Variance of X% is driven by [primary cause] and [secondary
+   cause]; recovery/impact plan is [one line]."
+
+Then produce a summary paragraph for the review meeting, in the
+tone of a monthly report to the Directors — factual, no jargon,
+no hedging, no "we will endeavour to". State what happened, why,
+and what the team is doing about it.
+
+RULES
+- Only cite causes present in the notes column of the table.
+- If the notes column is silent, mark the variance "cause not
+  yet identified — under review".
+- Do not invent numbers or activities not in the table.
+
+BvA TABLE: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 2 · SCHEDULE SLIPPAGE — WRITE THE STORY</h4>
+  <div class="prompt">You are a planning engineer preparing the monthly schedule review.
+
+CONTEXT
+Below is (1) the current schedule status by activity, with baseline
+start, actual start, baseline finish, forecast finish, and status;
+and (2) the delay register with reasons.
+
+TASK
+Produce a "schedule story" of not more than 250 words for the
+monthly report, covering:
+  - What is on track and what is not (activities, not percentages)
+  - The critical path today: which activities are on it, which are
+    off it, whether it has shifted since last month
+  - The two or three delays that actually matter — not the ten small
+    ones — with their root cause and recovery
+  - The end-date impact in weeks, if any
+
+RULES
+- Do not repeat the tables. Write prose.
+- Do not use the phrase "as per plan". Say what is done.
+- Distinguish "delayed" (finish is later) from "slipped" (start is
+  later but finish is protected).
+- If the critical path is unclear from the data, say so.
+
+SCHEDULE: """[…]"""
+DELAY REGISTER: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 3 · FOR EDP — TRANSFORMING SITE MIS TO ROLLUP</h4>
+  <div class="prompt">I need to consolidate ten site MIS Excel files into one
+head-office rollup workbook. Each site file has the same tab
+structure but the data is filled in differently — some have blank
+rows, some have merged cells in the header, some use different
+date formats.
+
+TASK
+Give me the cleanest way to do this. Consider three options:
+  1. Power Query in Excel (preferred if it can handle the messy
+     headers reliably)
+  2. A Python script (if the transformations are too complex for
+     Power Query)
+  3. Power Automate (if this needs to run monthly without a person)
+
+For each option, tell me:
+  - What it can and cannot handle
+  - The specific steps I would take
+  - Where it would break
+
+Do not pick for me. Explain the trade-offs. I will decide.
+
+SITE FILE STRUCTURE: """[…]"""</div>
+
+  <h3>Hands-on exercises</h3>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 1 · BvA VARIANCE NARRATIVE</span><span class="lvl">Warm-up · individual</span></div>
+    <h3>Turn a variance table into a two-page monthly write-up <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Individual. Load the synthetic BvA table below into Excel; run Pattern 1 in a chat; produce both the per-head lines and the Directors' summary paragraph. Compare across three neighbours. Aim for prose that reads like your own senior GM wrote it.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC BvA TABLE · Sinnar-Ghoti WSS Ph-II · month-end Sep 2026</summary>
+      <div class="doc">
+BUDGET vs ACTUAL — Sinnar-Ghoti Water Supply Phase-II
+Project code: SBL/PWD/2025/019 · Contract value ₹ 74.20 Cr
+Reporting period: month-end September 2026 (Project month 8 of 18)
+
+<table>
+<tr><th>WBS</th><th>Cost head</th><th>Budget to-date ₹L</th><th>Actual to-date ₹L</th><th>Var ₹L</th><th>Var %</th><th>Phys. progress %</th><th>Notes</th></tr>
+<tr><td>1.1</td><td>Site establishment</td><td>28.4</td><td>31.2</td><td>-2.8</td><td>-9.9</td><td>100</td><td>Fence extension for MJP demand; 2 add'l labour huts</td></tr>
+<tr><td>2.1</td><td>Earthwork &amp; trenching (pipeline)</td><td>412.6</td><td>468.9</td><td>-56.3</td><td>-13.6</td><td>72</td><td>Hard rock in 4.2 km stretch north of Ghoti; rock breaker deployed additionally</td></tr>
+<tr><td>2.2</td><td>DI pipe supply</td><td>1,124.0</td><td>1,082.4</td><td>+41.6</td><td>+3.7</td><td>68</td><td>Vendor rebate on early payment</td></tr>
+<tr><td>2.3</td><td>Pipe laying &amp; jointing labour</td><td>386.4</td><td>402.7</td><td>-16.3</td><td>-4.2</td><td>68</td><td>—</td></tr>
+<tr><td>2.4</td><td>Hydraulic testing</td><td>18.2</td><td>21.6</td><td>-3.4</td><td>-18.7</td><td>62</td><td>Two sections re-tested after joint failure</td></tr>
+<tr><td>3.1</td><td>OHSR-1 &amp; 2 (300 KL) — civil</td><td>194.8</td><td>218.4</td><td>-23.6</td><td>-12.1</td><td>84</td><td>Reinforcement waste 6.8% vs budget 4%; formwork rehire cost after cyclone Sep 12-15</td></tr>
+<tr><td>3.2</td><td>OHSR-3 &amp; 4 (500 KL) — civil</td><td>212.4</td><td>176.8</td><td>+35.6</td><td>+16.8</td><td>34</td><td>Under-run; work started later than plan; no cost overrun on completed portion</td></tr>
+<tr><td>4.1</td><td>Pumping station civil (3 nos.)</td><td>142.6</td><td>148.2</td><td>-5.6</td><td>-3.9</td><td>58</td><td>—</td></tr>
+<tr><td>5.1</td><td>Pumps &amp; motors supply</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>PO placed; delivery month 12</td></tr>
+<tr><td>5.2</td><td>MCC panels &amp; cabling</td><td>62.4</td><td>48.2</td><td>+14.2</td><td>+22.8</td><td>32</td><td>Vendor early despatch discount; still within budget</td></tr>
+<tr><td>6.1</td><td>Site overheads</td><td>168.2</td><td>184.6</td><td>-16.4</td><td>-9.8</td><td>—</td><td>Diesel escalation, 2 add'l engineers deployed</td></tr>
+<tr><td>7.1</td><td>Contingency drawdown</td><td>62.0</td><td>0.0</td><td>+62.0</td><td>+100</td><td>—</td><td>Contingency ring-fenced; not yet released</td></tr>
+</table>
+
+Physical progress overall: 61% (baseline plan 66%)
+Financial progress overall: 47.6% of contract value
+Forecast-at-completion : ₹ 76.4 Cr (+3.0% vs contract)
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>Good output looks like.</strong> A directors' paragraph that opens with the headline (physical 5% behind, forecast +3% over), names the two heads that actually matter (earthwork and OHSR-1&2 civil), attributes each to a specific cause (rock, waste + cyclone), notes that the 500 KL OHSRs starting late is the emerging risk not the already-visible one, and closes with the recovery — bigger drilling deployment on the rock stretch, waste-control review before the 500 KL pours start. It should <em>not</em> read as "the project is progressing well and we will endeavour to catch up." This is the tell of a template AI has not been steered enough.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 2 · SCHEDULE STORY</span><span class="lvl">Core · pairs</span></div>
+    <h3>Turn a Gantt into 250 words of monthly narrative <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Pairs. Load the synthetic schedule extract and delay register into a chat and run Pattern 2. Two rewrites — one to tighten, one to remove hedging. Read one aloud per table.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC SCHEDULE + DELAY REGISTER · month-end Sep 2026</summary>
+      <div class="doc">
+SCHEDULE STATUS — Sinnar-Ghoti WSS Ph-II — end of Project Month 8
+
+<table>
+<tr><th>ID</th><th>Activity</th><th>Baseline start</th><th>Actual start</th><th>Baseline finish</th><th>Forecast finish</th><th>Status</th><th>Critical?</th></tr>
+<tr><td>A01</td><td>Site mobilisation &amp; layout</td><td>15-Feb-26</td><td>15-Feb-26</td><td>15-Mar-26</td><td>15-Mar-26</td><td>Complete</td><td>No</td></tr>
+<tr><td>A02</td><td>Route survey &amp; utility mapping</td><td>01-Mar-26</td><td>04-Mar-26</td><td>15-Apr-26</td><td>22-Apr-26</td><td>Complete (7d slipped)</td><td>Was</td></tr>
+<tr><td>A03</td><td>Trenching Zone 1 (Sinnar to X-13)</td><td>15-Apr-26</td><td>25-Apr-26</td><td>30-Jun-26</td><td>18-Jul-26</td><td>Complete (18d late)</td><td>Was</td></tr>
+<tr><td>A04</td><td>Trenching Zone 2 (X-13 to Ghoti)</td><td>15-May-26</td><td>02-Jun-26</td><td>15-Aug-26</td><td>28-Sep-26</td><td>85% done</td><td>Yes</td></tr>
+<tr><td>A05</td><td>Trenching Zone 3 (Ghoti-Igatpuri hard rock)</td><td>01-Jul-26</td><td>28-Jul-26</td><td>30-Sep-26</td><td>15-Nov-26</td><td>52% done</td><td>Yes</td></tr>
+<tr><td>A06</td><td>DI pipe laying &amp; jointing Zone 1-2</td><td>15-Jul-26</td><td>05-Aug-26</td><td>30-Sep-26</td><td>25-Oct-26</td><td>68% done</td><td>Yes</td></tr>
+<tr><td>A07</td><td>OHSR-1 raft &amp; staging</td><td>15-Apr-26</td><td>18-Apr-26</td><td>15-Jul-26</td><td>28-Jul-26</td><td>Complete</td><td>No</td></tr>
+<tr><td>A08</td><td>OHSR-1 container walls &amp; dome</td><td>15-Jul-26</td><td>02-Aug-26</td><td>15-Oct-26</td><td>08-Nov-26</td><td>68% done</td><td>Yes</td></tr>
+<tr><td>A09</td><td>OHSR-2 raft &amp; staging</td><td>01-May-26</td><td>08-May-26</td><td>01-Aug-26</td><td>14-Aug-26</td><td>Complete</td><td>No</td></tr>
+<tr><td>A10</td><td>OHSR-2 container walls &amp; dome</td><td>01-Aug-26</td><td>18-Aug-26</td><td>01-Nov-26</td><td>22-Nov-26</td><td>52% done</td><td>Yes</td></tr>
+<tr><td>A11</td><td>OHSR-3 &amp; 4 (500 KL) — raft</td><td>15-Jul-26</td><td>28-Aug-26</td><td>15-Oct-26</td><td>30-Nov-26</td><td>18% done</td><td>Yes</td></tr>
+<tr><td>A12</td><td>Pumping station civil (3 nos.)</td><td>01-Jun-26</td><td>08-Jun-26</td><td>15-Nov-26</td><td>30-Nov-26</td><td>58% done</td><td>No</td></tr>
+<tr><td>A13</td><td>Pumps, motors &amp; MCC — supply</td><td>01-Oct-26</td><td>—</td><td>15-Feb-27</td><td>15-Feb-27</td><td>Not started</td><td>No</td></tr>
+</table>
+
+DELAY REGISTER (extract)
+
+D01 — Utility survey delayed 7 days by absence of MSEDCL clearance
+      for HT line crossing. Recovered.
+D02 — Zone 1 trenching 18 days late: labour mobilisation slower
+      than planned; three sub-contractors were behind schedule on
+      other jobs.
+D03 — Zone 2 trenching 44 days delay to forecast finish: rock
+      encountered from chainage 8.6 km onwards, 2.4 km stretch;
+      rock breaker deployed 15 Jul; second breaker deployed 12 Aug.
+D04 — Zone 3 trenching 46 days delay: known hard rock; rate of
+      advance 62 m/day vs planned 95 m/day.
+D05 — OHSR-1 &amp; 2 walls slower than plan: cyclone-related formwork
+      damage 12–15 Sep; five days lost, plus one week rehiring
+      shuttering material.
+D06 — OHSR-3 &amp; 4 raft late-start of 44 days: waiting on Zone 2
+      staging clearance for shared crane; second crane hired in
+      August, work commenced 28 Aug.
+D07 — Pumping station civil on track after early-June start;
+      forecast finish 15 days late but not on critical path.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 3 · FOR EDP — TRANSFORM PLAN</span><span class="lvl">Applied · EDP participants only</span></div>
+    <h3>Design the site-MIS-to-rollup pipeline <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> The six EDP participants split into two groups of three. Each uses Pattern 3 with the synthetic site file structure below. Compare the two designs. Neither is right yet — the exercise is about the trade-off between Power Query (fast to build, brittle to messy inputs) and Python (slower to build, more forgiving).</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC SITE FILE STRUCTURE · Ten sites, one workbook per site, four tabs</summary>
+      <div class="doc">
+STRUCTURE OF EACH SITE'S MONTHLY MIS FILE (10 files, one per site)
+
+Tab 1 — Cover
+  Rows 1-8: Merged cells with site name, project code, month,
+  reporting engineer name. Some sites use merged headers, some
+  don't. Date format varies (Sep-26, September 2026, 09/2026).
+
+Tab 2 — Physical Progress
+  Row 1: Header row (WBS | Description | Unit | Baseline qty |
+  Cum this month | Cum to date | % complete)
+  Rows 2-N: Data. N varies 30-80 rows per site. Some sites leave
+  blank rows between WBS groups; some leave sub-totals in the data
+  rows (mixed granularity).
+
+Tab 3 — Cost Booked
+  Row 1: Header (Cost head | Budget | Booked this month |
+  Booked to date | Committed but not booked | Notes)
+  Rows 2-M: Data. M varies 20-40 per site.
+  Notes column often contains free text.
+
+Tab 4 — Manpower
+  Row 1: Header (Category | Planned | Actual | Overtime | Absent)
+  Rows 2-15: Data. Category names not standardised across sites
+  (e.g. "Fitter" at one site, "Pipe Fitter" at another,
+  "Fitter (Pipe)" at a third).
+
+Consolidation required: one head-office workbook with three tabs
+(rollup Physical Progress, rollup Cost Booked, rollup Manpower)
+where every row has an added first column "Site" identifying its
+source. Monthly refresh required.
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the room should conclude.</strong> Power Query handles Physical Progress and Cost Booked cleanly if we agree on a canonical header (send back a template to sites). Manpower category standardisation is a lookup table — build it once, maintain it monthly, handled either in Power Query or Python. The cover-tab merged headers are the classic Power Query pain point; simpler to require sites to enter site name in a fixed cell (say C3) than to write logic that finds it. Overall: Power Query is the right rung for now; Python only if categories keep drifting.
+    </div>
+  </div>
+
+  
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 4 · MANPOWER VS PROGRESS</span><span class="lvl">Stretch · Planning + Cost pairs</span></div>
+    <h3>Match manpower to progress and find the mismatch <span class="duration">20 min</span></h3>
+    <p><strong>Setup.</strong> Cost-Planning pairs. Use the table below. Ask the AI to build a manpower-productivity table by trade — planned man-days vs. actual man-days vs. quantity delivered — and to flag any trade where productivity is significantly off plan. Then ask for a two-paragraph note explaining what to raise with the site head.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC MANPOWER + PROGRESS · Sinnar-Ghoti site, Sep 2026</summary>
+      <div class="doc">
+MANPOWER DEPLOYMENT vs QUANTITY DELIVERED — Sinnar-Ghoti WSS Ph-II
+Period: September 2026 · Reporting engineer: R. Kulkarni
+
+<table>
+<tr><th>Trade</th><th>Planned man-days</th><th>Actual man-days</th><th>Planned qty</th><th>Actual qty</th><th>Unit</th></tr>
+<tr><td>Trenching (Zone 2 + 3)</td><td>420</td><td>586</td><td>1,860</td><td>1,712</td><td>metre</td></tr>
+<tr><td>Pipe laying &amp; jointing</td><td>210</td><td>194</td><td>1,240</td><td>1,308</td><td>metre</td></tr>
+<tr><td>OHSR-1 &amp; 2 rebar</td><td>168</td><td>210</td><td>26.4</td><td>28.2</td><td>tonne</td></tr>
+<tr><td>OHSR-1 &amp; 2 shuttering</td><td>190</td><td>216</td><td>1,220</td><td>1,180</td><td>sqm</td></tr>
+<tr><td>OHSR-1 &amp; 2 concreting</td><td>96</td><td>114</td><td>184</td><td>168</td><td>cum</td></tr>
+<tr><td>OHSR-3 &amp; 4 rebar</td><td>72</td><td>32</td><td>10.8</td><td>4.6</td><td>tonne</td></tr>
+<tr><td>OHSR-3 &amp; 4 shuttering</td><td>84</td><td>28</td><td>580</td><td>168</td><td>sqm</td></tr>
+<tr><td>Pumping station civil</td><td>128</td><td>168</td><td>—</td><td>62%</td><td>completion</td></tr>
+<tr><td>Site services (elec., cleaning)</td><td>60</td><td>82</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Supervision (engineers)</td><td>90</td><td>96</td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+
+PLANNED PRODUCTIVITY NORMS (for reference)
+  Trenching (hard rock): 4.4 rm/man-day
+  Trenching (normal soil): 8.5 rm/man-day
+  Pipe laying (DI 450): 5.9 rm/man-day
+  Rebar bending &amp; placing: 155 kg/man-day
+  Shuttering (OHSR): 6.4 sqm/man-day
+  Concreting (RCC): 1.9 cum/man-day
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the room should surface.</strong> Trenching productivity: actual 1,712 m ÷ 586 man-days = 2.9 rm/man-day; against a hard-rock norm of 4.4. Zone 3 rock is genuinely tougher than the norm assumed, or the crew is underperforming. OHSR-3&4 rebar and shuttering are under-deployed by half — activity is behind, and manpower deployment reflects that; the risk is that when the activity accelerates in October, manpower may not scale up. Rebar productivity on OHSR-1&2: 28.2 t ÷ 210 md = 134 kg/man-day, below the 155 norm — check whether unfamiliar bar shapes drove this. Site services and supervision are 30-40% over plan — check whether cyclone-related emergency deployment inflated the number.
+    </div>
+  </div>
+<h3>Common pitfalls in this room</h3>
+  <div class="box warn">
+    <ul>
+      <li><strong>Building the dashboard before agreeing the numbers.</strong> The reason nobody trusts the last dashboard is that the numbers didn't tie to sites' own sheets. A dashboard that pulls from a source of truth everyone agrees on is worth ten dashboards from sources they don't.</li>
+      <li><strong>Using AI for narrative, then over-editing it.</strong> The AI's first draft is usually within 20% of publishable if the numbers you fed it were clean. If it needs heavy rewriting, the numbers weren't clean.</li>
+      <li><strong>Automating too early.</strong> Save the prompt template first. Use it for two months. Then automate. Automation before the process is stable is expensive.</li>
+    </ul>
+  </div>
+
+  <h3>Closing 20 minutes — Q&A prompts</h3>
+  <ol>
+    <li>"Which of the three sub-teams here — Cost, Planning, EDP — does the most preventable manual work today? Where would we start?"</li>
+    <li>"What is the smallest thing we could ship as a saved template by Friday?"</li>
+    <li>"For EDP: which dashboard is most in need of a rebuild, and would a Power BI + Copilot pass make it cheaper to redo it than to fix it?"</li>
+  </ol>
+</section>
+<section class="content wide s5" id="s5">
+  <div class="session-head s5">
+    <div class="stripe"></div>
+    <div class="s-tag">SESSION 05 · NUMBERS · DAY 2 LATE-AFTERNOON (SUGGESTED)</div>
+    <h2>Design, Drawings &amp; Quantities</h2>
+    <p class="participants"><span class="heads">18 heads</span> MEP (12) · Quantity Surveyor (4) · Documentation &amp; Engg. Coordination (2)</p>
+  </div>
+
+  <div class="box">
+    <p><strong>MEP placement — worth revisiting before the workshop.</strong> Twelve of eighteen heads in this room are MEP. If MEP at Suroj is mainly site execution rather than design coordination, this room's balance changes and MEP would fit better in Session 7 (Plant, Execution &amp; Compliance). The plan below assumes design/coordination MEP. If the discovery answer flips, adjust the emphasis to installation drawings, snag lists and site-level MEP inspections in the exercises below.</p>
+  </div>
+
+  <h3>The room, honestly</h3>
+  <p>This room starts from a drawing or a specification and ends with a quantity, a schedule or a released document. MEP designers coordinating civil-electrical-plumbing interfaces. Quantity Surveyors doing take-offs and checking bills. The two-person Documentation &amp; Engineering Coordination team running the drawing revision register and the correspondence trail. Different jobs, one shared craft: <strong>read the drawing and the spec, together, and produce a countable, checkable output.</strong></p>
+
+  <h3>The real problem, before we get to tools</h3>
+  <ol>
+    <li><strong>Take-offs done twice.</strong> Once at bid stage, once at execution stage, and the two don't match. The variance surfaces mid-project.</li>
+    <li><strong>Specifications that read cleanly but mean different things.</strong> "Approved make", "or equivalent", "as directed" — the QS prices one thing, the designer intends another, the site fits a third.</li>
+    <li><strong>Drawing revisions without impact statements.</strong> Rev C arrives; nobody says which rooms/quantities changed; the QS has to compare rev A and rev C, drawing by drawing.</li>
+    <li><strong>BBS errors that reach the bar-bending yard.</strong> A cut length wrong, an overlap missed, a diameter mixed up. Discovered when the bars don't fit.</li>
+  </ol>
+
+  <div class="box warn">
+    <h4>What AI cannot do here, honestly</h4>
+    <p>AI cannot read a CAD drawing the way a QS reads one. It cannot count columns from a plan view or verify a rebar layout from a section. What it can do is: interpret a specification, check a written take-off against a spec, catch arithmetic and coding errors in a BBS, draft revision impact statements from a text-based revision cloud list, and rewrite a technical letter for tone. The drawing itself still needs the human eye. Do not oversell.</p>
+  </div>
+
+  
+  <h3>Case study — The 34-lakh catch</h3>
+  <div class="box">
+    
+    <p><strong>A Suroj-adjacent firm, mid-size civil contractor in Nagpur.</strong> Executing a ₹56 Cr institutional building. On the reinforcement schedule for the third-floor slab, an unusually alert Quantity Surveyor — a diploma engineer with eight years' experience — decided one Saturday to run the whole floor's BBS through Claude with Pattern 2 from this session.</p>
+
+    <p>The exercise took her about 90 minutes for the ~1,800-mark schedule. Most rows came back clean. Seventeen rows were flagged as "ambiguous" — Claude wanted the section detail confirmed. Six rows were flagged as errors: three shape-code mismatches (recorded as L-bends, but the geometry described U-bends), two overlap length errors (48d recorded where the section required 50d), and one cut-length discrepancy on the slab's cantilevered edge bars.</p>
+
+    <p>The QS raised the six items with the RCC designer on Monday. Four turned out to be typos in the BBS that the drafter would have caught in the traditional row-by-row check — but this check would have taken two days, and the schedule was needed in two hours for the bar-bending yard. Two were more consequential: the cantilever cut length was wrong by 340 mm, and the anchorage of the L-bends at the corner columns was inadequate under seismic design.</p>
+
+    <p>Corrective cost if caught at bar-bending yard: rebar re-cut, ₹1.2 lakh. Corrective cost if caught after slab pour: hack-cut and epoxy-splice, minimum ₹34 lakh and a two-week delay to the finishes package on that floor.</p>
+
+    <p>The Saturday-morning exercise saved ₹32.8 lakh of expected cost — but only if you count it that way. If the drafter had caught the errors on the traditional Monday-morning review, the same cost was saved. The AI's contribution was <em>time</em>: catching the errors on Saturday instead of Monday morning meant the bar-bending yard had them right the first time, not the second. On a live project, that time is the money.</p>
+
+    <p><strong>What did not change.</strong> The design decisions stayed with the designer. Every AI-flagged row was reviewed by a human before rebar was cut. The AI's role was to focus the human's attention on the six rows that mattered, out of 1,800.</p>
+
+    <p><strong>Takeaway for the room.</strong> AI in the QS workflow is not a designer, not a checker, not a validator. It is an <em>attention manager</em>. It sorts 1,800 rows into "probably fine" and "worth a look" so the engineer's time goes to the second bucket. That is the entire role. Do not oversell it. Do not undersell it either.</p>
+
+  </div>
+<h3>Tool stack for this room</h3>
+  <div class="pills">
+    <span class="pill primary">Claude / ChatGPT (spec interpretation, letter drafting)</span>
+    <span class="pill primary">Excel + Copilot (take-off, BBS check)</span>
+    <span class="pill">Adobe Acrobat AI (extracting text from PDF specs)</span>
+    <span class="pill">Perplexity (IS code &amp; standard lookup)</span>
+    <span class="pill">Napkin AI (interface / clash diagrams)</span>
+  </div>
+
+  <h3>Theoretical foundation for this session</h3>
+  <h4 class="mono">TEXT IS NOT DRAWING</h4>
+  <p>Every exercise in this room converts a drawing or a drawing-adjacent artefact into text before the AI sees it. A take-off is a table (text). A BBS is a table (text). A spec is a paragraph (text). A revision cloud list is a table (text). This is not a workaround — it is the correct discipline. If the AI is given the underlying text, it can catch a class of errors that the eye slides over on the twentieth read.</p>
+  <h4 class="mono">TWO PASSES ON A TAKE-OFF</h4>
+  <p>Pass 1: the AI checks the arithmetic. Sum of parts equals total. Same-item quantities across floors match the pattern. Pass 2: the AI checks the coding against the spec — is item 4.2 specified at Fe-500D, and is the take-off tagged Fe-500D or plain Fe-500? Both passes are cheap. Both catch different errors.</p>
+  <h4 class="mono">BBS CHECKING — WHAT THE AI CATCHES</h4>
+  <p>Cut lengths that don't sum to the intended member. Wrong shape codes. Overlap lengths less than 50d. Ambiguous bar marks. Diameter/spacing mismatches with the section. It does not catch design errors — if the section says T12 at 200 c/c and the design should have been T16 at 150 c/c, only the engineer will catch that.</p>
+
+  <h3>Prompt patterns for this room</h3>
+
+  <h4 class="mono">PATTERN 1 · SPEC CLAUSE INTERPRETATION</h4>
+  <div class="prompt">You are a design engineer at an EPC firm.
+
+TASK
+Below is a clause from a client's technical specification.
+For this clause, produce:
+  1. A one-line plain-English restatement
+  2. Every ambiguity the clause could give rise to at execution
+  3. What we would need clarified to price it correctly
+  4. Which Indian Standard (IS code / NBC section) is implicated,
+     if any
+  5. A pre-issue clarification question in one sentence
+
+RULES
+- Only comment on what is written. Do not add practice that the
+  clause does not require.
+- If the clause is unambiguous and complete, say so.
+
+CLAUSE: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 2 · BBS CROSS-CHECK</h4>
+  <div class="prompt">You are checking a bar bending schedule against a member section.
+
+CONTEXT
+Below is (1) the section detail in text form (member size, cover,
+main bars, links) and (2) the BBS for that member.
+
+TASK
+For each bar mark in the BBS, verify:
+  - Cut length adds up correctly from the shape and dimensions
+  - Overlap length is at least 50 × diameter unless otherwise stated
+  - Diameter and spacing match the section
+  - Shape code is consistent with the geometry described
+  - Weight per metre and total weight arithmetic is correct
+
+FORMAT
+Table: Bar mark | Check | Result (OK / Error / Ambiguous) | If
+Error, what to correct.
+
+RULES
+- Do not redesign the member. Only check consistency between the
+  section given and the BBS given.
+- If the section is silent on cover, flag it — do not assume 25 mm.
+
+SECTION: """[…]"""
+BBS: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 3 · DRAWING-REVISION IMPACT STATEMENT</h4>
+  <div class="prompt">You are producing the revision-impact note for the QS team.
+
+CONTEXT
+Below is the revision-cloud list for the transition from Rev [A]
+to Rev [C] of the [BUILDING/ZONE] drawing set, and the current
+take-off summary by trade.
+
+TASK
+For each revision cloud, produce:
+  - Sheet number and grid reference
+  - One-line description of what changed
+  - Which trades are affected
+  - Estimated quantity impact (up / down / unchanged) with a
+    magnitude of small / moderate / significant
+  - Whether a re-take-off of the affected room/zone is required
+
+At the end, produce a summary paragraph for the QS lead.
+
+RULES
+- Only work from the revision cloud list given. Do not infer
+  changes not listed.
+- Where impact cannot be estimated without the actual drawing,
+  say "requires drawing review".
+
+REVISION CLOUDS: """[…]"""
+CURRENT TAKE-OFF: """[…]"""</div>
+
+  <h3>Hands-on exercises</h3>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 1 · SPEC INTERPRETATION</span><span class="lvl">Warm-up · individual</span></div>
+    <h3>Turn five ambiguous clauses into five clean pre-bid queries <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> Individual. Below are five clauses from a mixed-use building specification. Run Pattern 1 on each. Compare the queries produced across the room; the interesting differences are which clauses were treated as ambiguous by half and clear by half.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC CLAUSES · Mixed-use G+8 building specification</summary>
+      <div class="doc">
+FIVE CLAUSES FROM A CLIENT SPECIFICATION FOR AN EXERCISE
+
+Clause 5.3.4 (Waterproofing)
+  "All wet areas, terraces and basement raft shall be waterproofed
+   with a system of the following makes or equivalent approved:
+   Fosroc, Sika, BASF, Krystol. The system shall carry a ten-year
+   warranty jointly by the manufacturer and the applicator. All
+   wet areas shall be flood-tested for 48 hours prior to tiling."
+
+Clause 6.7 (Tile finishes)
+  "Vitrified tiles in all common areas shall be of 800 × 800 mm
+   size, glossy finish, water absorption less than 0.08 percent
+   conforming to IS 15622. Approved makes: Kajaria, Somany,
+   Nitco, Orient. Colour and pattern to be selected from
+   the manufacturer's standard chart by the Architect. Skirting
+   to be provided in all rooms."
+
+Clause 7.2 (Aluminium windows)
+  "External glazing shall be double-glazed units of 6-12-6 mm
+   configuration, low-E soft coating on the second surface,
+   argon-filled cavity, U-value not exceeding 1.8 W/m2K.
+   Frames shall be thermally-broken aluminium, powder-coated,
+   colour as directed."
+
+Clause 9.4 (HVAC — chiller plant)
+  "The chilled-water plant shall be sized for the peak block load
+   plus 15 percent redundancy. Two chillers in an N+1 configuration.
+   Chillers to be air-cooled, screw type, from approved make.
+   COP not less than 3.2 at ARI standard conditions."
+
+Clause 11.6 (Electrical — LED fixtures)
+  "LED fixtures in common areas shall be of reputed make with
+   minimum efficacy 100 lm/W, colour temperature 4000 K, CRI
+   greater than 80, minimum rated life 30,000 hours. Fixtures
+   shall carry a 5-year warranty. Site sample of each type shall
+   be approved by the Architect before bulk supply."
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the room should surface.</strong> Clause 5.3.4 — "or equivalent approved" and the 10-year joint warranty need the four approved brands' willingness confirmed at bid stage. Clause 6.7 — pattern selection at execution is a variation risk; ask for a defined selection window. Clause 7.2 — "colour as directed" is the classic hidden cost; frames come in about six standard powder-coat colours, anything else is priced. Clause 9.4 — "approved make" is undefined; ARI COP 3.2 at what ambient? Clause 11.6 — "reputed make" is undefined; suggest defining a list of three brands.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 2 · BBS CROSS-CHECK</span><span class="lvl">Core · pairs</span></div>
+    <h3>Find every error in the BBS <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Pairs. Run Pattern 2 on the BBS below. The BBS has been salted with four deliberate errors. Pairs report their findings; the room compares.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC BBS · Beam B-B4 (400 × 600), typical floor slab</summary>
+      <div class="doc">
+BEAM B-B4 SECTION — TYPICAL FLOOR SLAB
+Size: 400 mm × 600 mm overall
+Clear cover: 30 mm to main bars
+Main bars: bottom 4 no. T20 straight + 2 no. T20 extra at supports
+Top bars: 2 no. T16 straight + 4 no. T20 extra at supports (curtailed L/4)
+Links: T8 at 150 c/c near supports (over L/4 from each support face)
+       T8 at 200 c/c in central portion
+Clear span: 6.20 m between supports; effective span assume 6.40 m
+Column dimensions at supports: 500 mm
+
+BAR BENDING SCHEDULE — B-B4 (deliberately imperfect)
+
+<table>
+<tr><th>Bar mark</th><th>Loc.</th><th>Dia</th><th>Shape code</th><th>Length (mm)</th><th>Nos.</th><th>Total length</th><th>Wt kg/m</th><th>Total kg</th></tr>
+<tr><td>B1</td><td>Bottom straight</td><td>T20</td><td>00 (straight)</td><td>7,100</td><td>4</td><td>28,400</td><td>2.469</td><td>70.12</td></tr>
+<tr><td>B2</td><td>Bottom extra at L support</td><td>T20</td><td>13 (crank)</td><td>2,940</td><td>1</td><td>2,940</td><td>2.469</td><td>7.26</td></tr>
+<tr><td>B3</td><td>Bottom extra at R support</td><td>T20</td><td>13 (crank)</td><td>2,940</td><td>1</td><td>2,940</td><td>2.469</td><td>7.26</td></tr>
+<tr><td>T1</td><td>Top straight</td><td>T16</td><td>00 (straight)</td><td>7,100</td><td>2</td><td>14,200</td><td>1.580</td><td>22.44</td></tr>
+<tr><td>T2</td><td>Top extra L (L/4 curtailed)</td><td>T20</td><td>21 (L-bend)</td><td>2,160</td><td>2</td><td>4,320</td><td>2.469</td><td>10.67</td></tr>
+<tr><td>T3</td><td>Top extra R (L/4 curtailed)</td><td>T20</td><td>21 (L-bend)</td><td>2,160</td><td>2</td><td>4,320</td><td>2.469</td><td>10.67</td></tr>
+<tr><td>S1</td><td>Links, edge zones L &amp; R</td><td>T8</td><td>75 (closed link)</td><td>1,860</td><td>22</td><td>40,920</td><td>0.395</td><td>16.16</td></tr>
+<tr><td>S2</td><td>Links, central zone</td><td>T8</td><td>75 (closed link)</td><td>1,860</td><td>18</td><td>33,480</td><td>0.395</td><td>13.22</td></tr>
+</table>
+
+Total weight of steel per beam: 157.80 kg (as computed above)
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>Errors the room should find.</strong> (1) B1 straight length 7,100 mm — clear span 6,200 + 500 column at each end for anchorage would be 7,200 + hooks; if it's a full straight bar with bearing into columns of 500 mm each, the length should be closer to 7,200-7,300 mm with 180° hooks or L-bends. 7,100 mm is short. (2) B2 and B3 shape "crank" — extra bars at supports are typically L-bends or straight extras, not cranks; crank is used for continuity between top and bottom, not for bottom-extra bars. Shape code likely wrong. (3) Links S1 length 1,860 mm — for a 400 × 600 beam with 30 mm cover, perimeter of a closed link with 90° hooks is about 2 × (400 + 600) − 8 × 30 (cover) + 2 × 10 d hooks ≈ 1,880 + hooks; 1,860 is on the low side but borderline. Worth flagging. (4) The whole schedule doesn't show a link at the L/4 curtailment point of T2/T3, which is a spec-driven requirement in seismic zones. Also, 4 no. T20 extra at supports (per section) but only 2 no. shown in the BBS — off by half. (5) 2 no. T16 straight top is right; but the section also refers to 4 no. T20 extra top — where is the count check?
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 3 · REVISION IMPACT NOTE</span><span class="lvl">Applied · groups of three</span></div>
+    <h3>Turn a revision cloud list into a QS-ready impact note <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> Groups of three (one MEP, one QS, one Doc/Engg Coord where possible). Run Pattern 3 on the synthetic revision list. Compare notes.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC REVISION LIST · Ground &amp; First Floor plans, Rev A → Rev C</summary>
+      <div class="doc">
+DRAWING SET: Ground &amp; First Floor plans — Mixed-use G+8 building
+REVISION HISTORY: Rev A dated 15-Aug-26; Rev B superseded; Rev C dated 22-Sep-26
+
+REVISION CLOUDS RECORDED IN REV C
+
+  RC-01  Sheet A-101, grid B/2 to C/3
+         "Toilet block relocated 1,200 mm south. Door swing reversed."
+
+  RC-02  Sheet A-101, grid F/4
+         "Reception counter increased from 3,000 mm to 4,500 mm.
+          Two additional 15 A sockets added."
+
+  RC-03  Sheet A-102, grid A/1 to A/5
+         "Corridor width increased from 1,800 mm to 2,100 mm.
+          All doors along corridor moved 150 mm to accommodate."
+
+  RC-04  Sheet A-101, grid D/3
+         "Store room converted to small pantry. Sink, drain and
+          water connection added. Tile finish changed from
+          ceramic to vitrified."
+
+  RC-05  Sheet A-102, grid E/2
+         "Meeting room ceiling changed from grid ceiling to
+          plasterboard. Slot LED fixtures added."
+
+  RC-06  Sheet S-201 (structural), grid C/3
+         "Beam BF-4 depth increased from 450 to 550 mm to
+          accommodate revised floor loading in relocated
+          toilet block."
+
+  RC-07  Sheet M-101 (MEP), grid B/2 to C/3
+         "Toilet block plumbing risers relocated. Waste pipe
+          diameter increased from 100 to 150 mm serving revised
+          fixture count."
+
+CURRENT TAKE-OFF SUMMARY (Rev A basis)
+
+  Civil : Blockwork 1,240 sqm; Plaster 2,480 sqm; Vitrified tile
+          860 sqm; Ceramic tile 240 sqm; RCC beams 62 no.
+          (mixed sections)
+  MEP   : 100 mm PVC waste piping 240 rm; 15 A sockets 128 no.;
+          drop ceiling (grid) 480 sqm; plasterboard ceiling 320 sqm;
+          LED slot fixtures 88 no.
+  Doors : 1000 × 2100 flush 46 no.; 900 × 2100 flush 34 no.
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What good looks like.</strong> The note ties each revision to specific take-off lines. RC-01 changes wall lines — small blockwork/plaster impact, and door swing change is trivial. RC-03 is the significant one: 300 mm wider corridor across five bays is 300 × ~15 m = 4.5 sqm floor change but every door on it moves — that's ~15 doors × relocation impact. RC-04 is a scope change (store to pantry) — new fixture, new finish, MEP addition. RC-05 changes ceiling type — grid area shrinks, plasterboard grows. RC-06 structural — QS re-take-off of that beam. RC-07 MEP — full riser rerun in that zone. Trades affected: civil (all except 05, 07), MEP (02, 04, 07), structural (06), interiors (03, 04, 05).
+    </div>
+  </div>
+
+  
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 4 · SPEC vs PROPOSED SPEC</span><span class="lvl">Stretch · QS-led</span></div>
+    <h3>Compare client's specification against Suroj's proposed technical spec <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> On a design-build, Suroj submits its own technical spec to the client for approval. The client sends back a marked-up version. Use Excel Copilot and a chat side-by-side to identify substantive differences and produce a QS-facing impact note. The exercise below is realistic for the mixed-use building of Session 5's earlier exercise.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC COMPARISON · Suroj's proposed spec vs client-returned spec, MEP portion</summary>
+      <div class="doc">
+CLIENT-RETURNED MEP SPEC — REDLINE COMPARISON
+Project: Mixed-use G+8 building
+Suroj submission: 22-Aug-2026
+Client return: 08-Sep-2026 (accompanied by consultant's markup)
+
+<table>
+<tr><th>Clause</th><th>Suroj proposed</th><th>Client returned</th><th>Delta</th></tr>
+<tr><td>MEP-3.1 Chillers</td><td>Air-cooled screw chiller, COP ≥ 3.2 at ARI, from Trane / Carrier / Daikin</td><td>Air-cooled screw chiller, COP ≥ 3.4 at ARI, from Trane / Carrier / Daikin ONLY; no equivalent brand acceptable</td><td>COP tightened 3.2 → 3.4; brand list closed</td></tr>
+<tr><td>MEP-3.4 AHUs</td><td>Ductable AHU, EC fan, from Voltas / Blue Star / Zeco</td><td>Ductable AHU, EC fan, from Voltas / Blue Star / Zeco; VFD on supply fan mandatory (previously optional)</td><td>VFD mandatory; ~₹18,000 per unit added</td></tr>
+<tr><td>MEP-4.2 Pumps</td><td>Chilled water primary and secondary pumps from Kirloskar / Grundfos / KSB</td><td>Same brands; efficiency at duty point ≥ 78% (previously ≥ 72%)</td><td>Efficiency tightened; may drop KSB from acceptable</td></tr>
+<tr><td>MEP-5.1 Cable trays</td><td>Perforated galvanised steel, 1.6 mm thickness</td><td>Perforated galvanised steel, 2.0 mm thickness</td><td>Thickness tightened; ~15% weight/cost impact</td></tr>
+<tr><td>MEP-5.3 MCBs &amp; MCCBs</td><td>Legrand / Schneider / ABB / Havells</td><td>Legrand / Schneider / ABB only (Havells removed)</td><td>Havells removed; may impact preferred vendor</td></tr>
+<tr><td>MEP-5.7 Cables</td><td>FRLS PVC insulated for interior; XLPE for exterior</td><td>FRLS ZH (zero halogen) for all interior; XLPE for exterior</td><td>ZH is ~30-40% cost premium on interior cables</td></tr>
+<tr><td>MEP-6.4 Fire sprinklers</td><td>NFPA 13 ordinary hazard group 2</td><td>Ordinary hazard group 2 for offices; light hazard for basement parking</td><td>Sprinkler density reduced in parking; possibly cost neutral</td></tr>
+<tr><td>MEP-7.2 STP</td><td>MBBR technology, capacity 45 KLD</td><td>MBR (membrane) technology, capacity 45 KLD</td><td>Technology changed; MBR ~40% cost premium and ongoing O&amp;M higher</td></tr>
+<tr><td>MEP-8.1 BMS</td><td>Local BMS controlling HVAC only</td><td>Integrated BMS controlling HVAC, lighting, fire, access control; open protocol (BACnet)</td><td>Scope expansion; new sub-item required</td></tr>
+</table>
+
+Notes from consultant's return:
+  1. The COP 3.4 tightening is at owner's request to meet ECBC compliance
+     for the project's expected green certification.
+  2. Havells removal is due to the client's negative experience with
+     Havells MCB warranty claims on a prior project.
+  3. The MBR change is at owner's insistence for lawn irrigation water
+     quality; not negotiable.
+  4. The BMS scope expansion adds an entirely new sub-BOQ; separate line
+     items required.
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the QS produces.</strong> A row-by-row impact note quantifying each delta where possible and flagging the two that fundamentally alter the bid: the MBR STP change (a technology change, not a spec tightening) and the BMS scope expansion (a new package). These are variation items requiring a formal proposal with revised commercials, not silent absorption. The tighter items (COP, VFD, cable thickness, pump efficiency) get absorbed with a total impact estimate — ₹22-28 lakh across the package, requiring a variation request or a written acceptance of scope.
+    </div>
+  </div>
+<h3>Common pitfalls in this room</h3>
+  <div class="box warn">
+    <ul>
+      <li><strong>Trusting AI on drawing reads.</strong> If you upload a drawing PDF and ask "how many columns are on this floor" — the answer will be a guess. The AI is not a drawing reader. Text/table workflows only.</li>
+      <li><strong>Asking the AI to design.</strong> "What size should this beam be?" is not the question. "Check my BBS against the section I've provided" is.</li>
+      <li><strong>Skipping the section-first read on a BBS.</strong> If the section is ambiguous, the BBS check tells you nothing.</li>
+    </ul>
+  </div>
+
+  <h3>Closing 20 minutes — Q&A prompts</h3>
+  <ol>
+    <li>"What is one specification-book pattern you see on every project that we could turn into a permanent 'clauses to always query' checklist?"</li>
+    <li>"On the last drawing revision you got, where did AI have saved you two hours?"</li>
+    <li>"Which one of the three sub-teams — MEP, QS, DEC — should own the shared 'prompts library' for this room?"</li>
+  </ol>
+</section>
+
+<div class="foot">
+  <div>Suroj Buildcon × Be10x · AI Workforce Transformation · Part 3 of 5 · Trainer's working document v1</div>
+  <div class="rule-row">Every company name, employee name, project name, invoice number, GSTIN, PAN and financial figure in this document is synthetic. Any resemblance to real Suroj vendors, employees or projects is coincidental — the exercises are teaching material only.</div>
+</div>
+
+</main>
+</div>
+</body>
+</html>

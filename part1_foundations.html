@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Suroj × Be10x · Part 1 of 5 — Foundations & Data Safety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ---------- tokens ---------- */
+:root {
+  --paper:        #F6F2E9;
+  --paper-2:      #EFE9DB;
+  --paper-3:      #E7DFCB;
+  --ink:          #14161A;
+  --ink-2:        #3A3D42;
+  --ink-3:        #6A6B6C;
+  --rule:         #C9C0AA;
+  --rule-2:       #A9A08B;
+  --rust:         #B0431E;      /* primary accent */
+  --steel:        #35566B;      /* secondary */
+  --moss:         #5C6A3A;
+  --iron:         #4A4A4A;
+  --brick:        #7A2E1F;
+  --ochre:        #B58022;
+  --indigo:       #2E3F63;
+  --slate:        #445362;
+  --olive:        #6B6D2A;
+  --wash:         #F0DEB0;      /* callout wash */
+  --wash-cool:    #DEE3E6;
+  --danger:       #A03422;
+  --ok:           #4E6B2E;
+  color-scheme: light;
+}
+:root:not([data-theme="light"]) {
+  /* keep same tokens under prefers-color-scheme:dark — this is a working paper document,
+     dark mode changes the feel too much and is not what a trainer wants in a lit room. */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 8px; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.55;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--wash); color: var(--ink); }
+
+/* ---------- layout shell ---------- */
+.shell {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100%;
+}
+aside.nav {
+  border-right: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 22px 20px 40px 22px;
+  font-size: 13.5px;
+}
+main {
+  min-width: 0;
+  padding: 0 0 120px 0;
+}
+.content {
+  max-width: 78ch;
+  padding: 40px 44px;
+  margin: 0;
+}
+.content.wide { max-width: 100ch; }
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  aside.nav {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .content { padding: 28px 20px; }
+}
+
+/* ---------- nav ---------- */
+.brand {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.brand strong { color: var(--ink); letter-spacing: 0.02em; }
+.nav-group { margin: 18px 0 6px 0; }
+.nav-group-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  padding: 0 0 6px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+.nav ol { list-style: none; padding: 0; margin: 0; }
+.nav a {
+  display: block;
+  padding: 6px 8px 6px 12px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+.nav a:hover { color: var(--ink); background: rgba(255,255,255,0.4); }
+.nav a .idx {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-right: 8px;
+}
+.nav a .heads {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  float: right;
+}
+.nav a.s1 { border-left-color: var(--rust); }
+.nav a.s2 { border-left-color: var(--brick); }
+.nav a.s3 { border-left-color: var(--indigo); }
+.nav a.s4 { border-left-color: var(--steel); }
+.nav a.s5 { border-left-color: var(--slate); }
+.nav a.s6 { border-left-color: var(--ochre); }
+.nav a.s7 { border-left-color: var(--iron); }
+.nav a.s8 { border-left-color: var(--moss); }
+
+/* ---------- title block ---------- */
+.title-block {
+  padding: 56px 44px 44px 44px;
+  border-bottom: 1px solid var(--rule-2);
+  background:
+    linear-gradient(180deg, var(--paper) 0, var(--paper) 60%, var(--paper-2) 100%);
+}
+.title-block .stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  margin-bottom: 22px;
+}
+.title-block h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px 0;
+  max-width: 22ch;
+}
+.title-block .subtitle {
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-2);
+  max-width: 50ch;
+  margin: 0 0 28px 0;
+}
+.title-block .meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.title-block .meta .k {
+  color: var(--ink-3);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+.title-block .meta .v { color: var(--ink); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+@media (max-width: 700px) { .title-block .meta { grid-template-columns: repeat(2, 1fr); } .title-block h1 { font-size: 32px; } }
+
+/* ---------- typography ---------- */
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 44px 0 14px 0;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 30px 0 8px 0;
+  color: var(--ink);
+}
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 6px 0;
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.02em;
+}
+p { margin: 0 0 12px 0; }
+p.lede {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+ul, ol { padding-left: 20px; margin: 6px 0 14px 0; }
+li { margin: 4px 0; }
+strong { color: var(--ink); font-weight: 600; }
+em { font-style: italic; }
+a { color: var(--rust); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 32px 0;
+}
+code, .mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.92em;
+  background: var(--paper-3);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* ---------- section header for each session ---------- */
+.session-head {
+  padding: 44px 0 22px 0;
+  border-top: 3px solid var(--ink);
+  margin-top: 20px;
+  position: relative;
+}
+.session-head .stripe {
+  position: absolute;
+  top: -3px; left: -44px; right: 0; height: 3px;
+}
+.session-head .s-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.session-head h2 { margin-top: 0; font-size: 32px; }
+.session-head .participants {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin: 8px 0 0 0;
+}
+.session-head .participants span.heads {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+/* per-session accent — used on session-head stripe and small ornaments */
+.s1 .stripe, .s1 .accent { background: var(--rust); }
+.s2 .stripe, .s2 .accent { background: var(--brick); }
+.s3 .stripe, .s3 .accent { background: var(--indigo); }
+.s4 .stripe, .s4 .accent { background: var(--steel); }
+.s5 .stripe, .s5 .accent { background: var(--slate); }
+.s6 .stripe, .s6 .accent { background: var(--ochre); }
+.s7 .stripe, .s7 .accent { background: var(--iron); }
+.s8 .stripe, .s8 .accent { background: var(--moss); }
+
+/* ---------- callouts / working boxes ---------- */
+.box {
+  border: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  padding: 16px 18px;
+  margin: 18px 0;
+  border-left: 4px solid var(--ink-2);
+}
+.box.warn { background: #F5E4D8; border-left-color: var(--danger); }
+.box.ok   { background: #E6EBDA; border-left-color: var(--ok); }
+.box.data { background: var(--paper-3); border-left-color: var(--iron); }
+.box h4 { margin-top: 0; }
+.box .tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* prompt block — for teachable prompt patterns */
+.prompt {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  background: #1B1E22;
+  color: #E4DCC8;
+  padding: 16px 18px;
+  border-left: 4px solid var(--wash);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 10px 0 16px 0;
+}
+.prompt .p-label {
+  color: #B58022;
+  font-weight: 600;
+}
+
+/* exercise block */
+.exercise {
+  border: 1px solid var(--rule-2);
+  background: #FDFBF5;
+  padding: 18px 20px;
+  margin: 20px 0;
+  position: relative;
+}
+.exercise .ex-header {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.exercise .ex-header .lvl { color: var(--ink-2); }
+.exercise h3 { margin-top: 0; font-size: 18px; }
+.exercise .duration {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--rule-2);
+  border-radius: 2px;
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-left: 8px;
+}
+
+/* synthetic data display */
+details.synth {
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  margin: 12px 0;
+  padding: 0;
+}
+details.synth summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  background: var(--paper-3);
+  list-style: none;
+}
+details.synth summary::-webkit-details-marker { display: none; }
+details.synth summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s;
+  color: var(--ink-3);
+}
+details.synth[open] summary::before { transform: rotate(90deg); }
+details.synth .doc {
+  padding: 16px 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  background: #FDFBF5;
+  border-top: 1px solid var(--rule);
+  max-height: 640px;
+  overflow-y: auto;
+}
+details.synth .doc.narrow { max-width: 88ch; }
+details.synth .doc table {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  border-collapse: collapse;
+  margin: 10px 0;
+  width: 100%;
+}
+details.synth .doc table th, details.synth .doc table td {
+  border: 1px solid var(--rule);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+details.synth .doc table th {
+  background: var(--paper-3);
+  font-weight: 600;
+}
+
+/* generic table */
+table.data {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0;
+  font-size: 13.5px;
+}
+table.data th, table.data td {
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+table.data th {
+  border-bottom: 2px solid var(--ink);
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-transform: none;
+}
+
+/* two-col split */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin: 14px 0;
+}
+@media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+
+/* pill row */
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px 0; }
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--rule-2);
+  border-radius: 999px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+}
+.pill.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* callout for facilitator */
+.facilitator {
+  border: 1px dashed var(--ink-3);
+  padding: 12px 16px;
+  margin: 16px 0;
+  background: transparent;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+}
+.facilitator strong {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* footer note */
+.foot {
+  padding: 40px 44px;
+  border-top: 1px solid var(--rule-2);
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 40px;
+}
+.foot .rule-row {
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* running order card */
+.orderline {
+  display: grid;
+  grid-template-columns: 32px 140px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.orderline .n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.orderline .lbl { font-weight: 600; }
+.orderline:last-child { border-bottom: 0; }
+
+/* print */
+@media print {
+  body { background: white; }
+  aside.nav, .foot { display: none; }
+  .shell { grid-template-columns: 1fr; }
+  main { padding: 0; }
+  .prompt { background: white; color: black; border: 1px solid #888; }
+  .session-head { page-break-before: always; }
+  details.synth { border: 1px solid #888; }
+  details.synth summary { background: #eee; }
+}
+
+
+/* ---------- parts-nav banner (across the top) ---------- */
+.parts-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.pn-item {
+  display: block;
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: background 0.1s;
+}
+.pn-item:last-child { border-right: 0; }
+.pn-item:hover { background: rgba(255,255,255,0.5); }
+.pn-item.current {
+  background: var(--ink);
+  color: var(--paper);
+  cursor: default;
+}
+.pn-item.current .pn-n { color: var(--wash); }
+.pn-item .pn-n {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+.pn-item .pn-t {
+  display: block;
+  font-size: 11.5px;
+  color: inherit;
+  line-height: 1.25;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+@media (max-width: 900px) {
+  .parts-nav { grid-template-columns: repeat(2, 1fr); }
+  .pn-item { border-bottom: 1px solid var(--rule); }
+  .pn-item:nth-last-child(-n+2) { border-bottom: 0; }
+}
+
+</style>
+</head>
+<body>
+<nav class="parts-nav" aria-label="Workshop parts"><a class="pn-item current" href="#"><span class="pn-n">Part 1</span><span class="pn-t">Foundations & Data Safety</span></a><a class="pn-item" href="./part2_winning_work.html"><span class="pn-n">Part 2</span><span class="pn-t">Winning Work · Sessions 1–2</span></a><a class="pn-item" href="./part3_numbers.html"><span class="pn-n">Part 3</span><span class="pn-t">Numbers, Drawings & Systems · Sessions 3–5</span></a><a class="pn-item" href="./part4_site_people.html"><span class="pn-n">Part 4</span><span class="pn-t">Running Site & People · Sessions 6–8</span></a><a class="pn-item" href="./part5_playbook.html"><span class="pn-n">Part 5</span><span class="pn-t">Trainer's Playbook</span></a></nav>
+<div class="shell">
+<aside class="nav"><div class="brand"><strong>SUROJ BUILDCON × BE10x</strong><br>AI Workforce Transformation<br>Part 1 of 5 · v1</div><div class="nav-group"><div class="nav-group-title">In this part</div><ol><li><a href="#howto">How to use these materials</a></li><li><a href="#foundations">The 30-minute foundations block</a></li><li><a href="#safety">Data safety guardrails</a></li></ol></div></aside>
+<main>
+
+<div class="title-block">
+  <div class="stamp">SUROJ BUILDCON × BE10x · PART 1 OF 5 · FOUNDATIONS & DATA SAFETY</div>
+  <h1>The floor — foundations, data safety, and how to use these materials</h1>
+  <p class="subtitle">Read this before every session and keep it open at the front of the trainer's binder. The 30-minute foundations block runs at the start of every session; the data-safety rules apply for the whole three days.</p>
+  <div class="meta">
+    <div><span class="k">PART</span><span class="v">1 of 5</span></div>
+    <div><span class="k">SESSIONS</span><span class="v">—</span></div>
+    <div><span class="k">HEADCOUNT REACHED</span><span class="v">184 (all)</span></div>
+    <div><span class="k">FORMAT</span><span class="v">Trainer's reference</span></div>
+  </div>
+</div>
+
+<section class="content" id="howto">
+  <h2>How to use this document</h2>
+  <p class="lede">This document is written for the trainer, not the participant. Every session block is self-contained — pull it up, teach from it, and the closing 20 minutes of Q&A picks up naturally from the exercise still on screen.</p>
+
+  <h3>The shape of a three-hour session</h3>
+  <table class="data">
+    <thead>
+      <tr><th style="width:130px">Time</th><th>What's happening</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0:00 – 0:30</td><td>Foundations (universal)</td><td>Same for every room. Runs once at the start of each session so a first-time attendee is not lost.</td></tr>
+      <tr><td>0:30 – 1:00</td><td>The room's real problem, told back to them</td><td>You describe what they actually do in a week. Do not skip this — the AI content only lands after they feel understood.</td></tr>
+      <tr><td>1:00 – 1:15</td><td>Break</td><td>Chai/coffee. Use it to walk the room and see three or four screens.</td></tr>
+      <tr><td>1:15 – 2:40</td><td>Two or three hands-on exercises</td><td>Synthetic data first, then swap to a real Suroj document if the department brought one.</td></tr>
+      <tr><td>2:40 – 3:00</td><td>Questions on the still-open example</td><td>Replaces the standalone Q&A room in Suroj's original plan. Questions get answered while the demo is on screen.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Three things to say out loud in every session</h3>
+  <div class="box">
+    <p><strong>One.</strong> The tool drafts, the human decides. Every output is a first draft to be checked — the same way a junior engineer's mark-up is a first draft to be checked.</p>
+    <p><strong>Two.</strong> Data safety is not optional. There is a fixed list of things that never get pasted into a public tool (see <a href="#safety">Data safety guardrails</a>). The list is short; read it before you go faster.</p>
+    <p><strong>Three.</strong> If the answer looks confident but the source is your own head, be suspicious. AI is at its best when you give it the document to work from and at its worst when you ask it to invent a fact.</p>
+  </div>
+
+  <h3>Files and tools we're assuming access to</h3>
+  <p>Not every participant will have every tool. The exercises are written so that anyone with <em>either</em> a browser-based chat tool (ChatGPT / Claude) <em>or</em> Microsoft 365 Copilot in Word/Excel can complete them. Where a specific tool is much better for a task (e.g. NotebookLM for long tender documents), it is called out — but no exercise is blocked on it.</p>
+  <div class="pills">
+    <span class="pill primary">ChatGPT (free/plus)</span>
+    <span class="pill primary">Claude (claude.ai)</span>
+    <span class="pill">Microsoft 365 Copilot</span>
+    <span class="pill">Excel with Copilot</span>
+    <span class="pill">NotebookLM</span>
+    <span class="pill">Perplexity</span>
+    <span class="pill">Adobe Acrobat AI</span>
+    <span class="pill">Otter / Fathom (meetings)</span>
+    <span class="pill">Napkin AI (diagrams)</span>
+  </div>
+</section>
+<section class="content" id="foundations">
+  <h2>The 30-minute foundations block</h2>
+  <p class="lede">Run this at the start of every session. It's the same block, taught the same way, because everyone in the workshop needs the same floor of understanding — but each session applies it to different work in the two-and-a-half hours that follow.</p>
+
+  <h3>1 · What generative AI actually is, in plain terms</h3>
+  <p>A large language model is a very fast pattern-matcher trained on an enormous amount of written text. When you type into it, it predicts, one small chunk at a time, what a helpful, competent person would write next, given what you have said and the entire text it has read. It is not a database, it is not a calculator, and it does not look things up unless you tell it to. That mental model — <em>a very well-read assistant who reads whatever you give it and drafts whatever you ask</em> — carries almost all the way through the day.</p>
+  <p>Two consequences follow immediately:</p>
+  <ul>
+    <li><strong>Give it the document.</strong> If the answer must come from a specific tender, invoice, drawing or policy — paste the document in (or upload it), then ask. Do not ask the AI to remember what "clause 42.3" says in a tender it has never seen.</li>
+    <li><strong>Do not trust unsourced numbers.</strong> If it gives you a number, ask "where did that come from in the document?" — a good tool will point at the paragraph. If it cannot, the number is a guess.</li>
+  </ul>
+
+  <h3>2 · What it is good at, and what it is not</h3>
+  <div class="split">
+    <div>
+      <h4 class="mono">GOOD AT</h4>
+      <ul>
+        <li>Reading long documents and pulling out specific things</li>
+        <li>Rewriting a rough draft in a required tone</li>
+        <li>Producing a first-cut summary</li>
+        <li>Filling a template from raw notes</li>
+        <li>Explaining a clause, a formula, a specification</li>
+        <li>Turning a long meeting transcript into minutes and actions</li>
+        <li>Translating between English and Hindi/Marathi at drafting quality</li>
+        <li>Suggesting Excel formulas and checking a formula you already have</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mono">NOT GOOD AT (WITHOUT HELP)</h4>
+      <ul>
+        <li>Doing arithmetic on more than a few numbers — use Excel for that</li>
+        <li>Reading complex drawings and construction PDFs where layout matters</li>
+        <li>Knowing current prices, rates, GST slabs or statutory dates unless you give them</li>
+        <li>Following a company-specific process it has never seen</li>
+        <li>Remembering what you told it last week — it does not, unless you paste it in again</li>
+        <li>Being right when you are vague — vague prompt, vague answer</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>3 · Anatomy of a good prompt</h3>
+  <p>A useful prompt has five parts. You do not have to list them formally — just make sure they are in there.</p>
+  <table class="data">
+    <thead><tr><th style="width:110px">Part</th><th>What it is</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Role</strong></td><td>Who the AI is playing</td><td><span class="mono">"You are a contracts engineer at an Indian EPC firm."</span></td></tr>
+      <tr><td><strong>Context</strong></td><td>The document or situation, pasted in or uploaded</td><td><span class="mono">"The tender document below is for a state PWD water-supply project…"</span></td></tr>
+      <tr><td><strong>Task</strong></td><td>Exactly what you want done</td><td><span class="mono">"Extract every obligation on the contractor along with the clause number."</span></td></tr>
+      <tr><td><strong>Format</strong></td><td>How the output should look</td><td><span class="mono">"As a table with columns: Clause, Obligation, Trigger, Consequence."</span></td></tr>
+      <tr><td><strong>Constraint</strong></td><td>What it must not do</td><td><span class="mono">"Do not add any obligation that is not present in the text. If unclear, mark 'ambiguous'."</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="prompt"><span class="p-label">// A minimal working example — reusable across most sessions</span>
+You are a [ROLE] at an Indian EPC construction firm.
+The document below is [WHAT IT IS].
+
+TASK
+[Exactly what you want done, in one or two sentences.]
+
+FORMAT
+[Table? Bullet list? Two-column? Word count?]
+
+RULES
+- Only use information present in the document.
+- If something is unclear, mark it "unclear" — do not guess.
+- Cite the section/clause number for every claim.
+
+DOCUMENT
+"""
+[paste document here]
+"""
+</div>
+
+  <h3>4 · The single most useful habit — "cite it back"</h3>
+  <p>Whenever the answer is supposed to come from a document you gave it, add one line to your prompt: <span class="mono">"For every claim, quote the exact sentence and give its clause / section / page reference."</span> This one line separates useful AI from confident nonsense. If the tool cannot point to a source in your document, the answer is not from your document.</p>
+
+  <div class="facilitator">
+    <strong>Facilitator note.</strong> Do this live on stage before you move to the departments. Paste a two-page synthetic document, ask a question without the cite-back rule, then re-ask with it. The room will see the difference. This is the single most sticky demonstration of the day.
+  </div>
+
+  <h3>5 · What to do when the answer is wrong</h3>
+  <ol>
+    <li>First move: tell it exactly what is wrong. Not "this is wrong" — "the amount in row 4 does not match the source, which says ₹4,62,300."</li>
+    <li>Second move: ask it to redo, with the correction applied, and to explain what changed.</li>
+    <li>Third move, if it is still wrong: start over in a new chat with a tighter prompt. Long argumentative threads make the tool worse, not better.</li>
+  </ol>
+
+  <h3>6 · The two-tab habit</h3>
+  <p>Keep the source open in one tab. Keep the AI open in the other. Every time you accept an answer, check it against the source. This is not a productivity loss — it is what makes the productivity real. A trained Suroj professional using AI properly is roughly two to three times faster on document-heavy work than the same person alone. Without the check, they are just faster at being wrong.</p>
+
+  <h3>Prompt quality — see it, do not just hear it</h3>
+  <p>The five-part anatomy sounds obvious. The room usually agrees it makes sense, then goes back to writing prompts like Google searches. This side-by-side is the demonstration that changes that. Run it live on stage with the two prompts below, on the same synthetic tender clause. Read the outputs to the room without comment. Ask which one they would sign.</p>
+
+  <div class="split">
+    <div>
+      <h4 class="mono">PROMPT A · WHAT MOST PEOPLE WRITE FIRST</h4>
+      <div class="prompt">summarize this contract clause and tell me what's important</div>
+      <p><strong>What the AI produces (representative):</strong></p>
+      <div class="box data">
+        <p><em>This clause discusses payment terms and mobilisation advance. It is important because it affects cash flow. The mobilisation advance is 10% of the contract value. It should be secured by a bank guarantee. Recovery happens through deductions from bills. This is a standard clause in construction contracts and should be reviewed carefully.</em></p>
+      </div>
+      <p>Fluent, forgettable, tells you nothing you did not already know. No clause reference. No specific numbers cited. No actionable output.</p>
+    </div>
+    <div>
+      <h4 class="mono">PROMPT B · THE SAME REQUEST, PROPERLY STRUCTURED</h4>
+      <div class="prompt">You are a contracts engineer at an Indian EPC firm.
+
+The clause below is from a tender document.
+
+TASK
+Extract:
+  - Every number stated in the clause
+  - Every obligation on the contractor
+  - Every trigger event and its consequence
+  - Any ambiguity that would need a pre-bid query
+
+FORMAT
+Table with columns: Item | Clause reference | What it says |
+Our exposure
+
+RULES
+- Quote the clause reference verbatim.
+- Do not add practice that the clause does not require.
+
+CLAUSE
+"""
+Clause 6.4  A mobilisation advance not exceeding 10 percent of the
+accepted contract value shall be released against an unconditional
+bank guarantee for an equivalent amount, valid up to the end of the
+recovery period. The advance shall be recovered by proportionate
+deductions from running account bills, commencing from the bill in
+which cumulative work done exceeds 15 percent, and shall be fully
+recovered by the time cumulative work done reaches 80 percent.
+"""</div>
+      <p><strong>What the AI produces (representative):</strong></p>
+      <div class="box data">
+<table class="data" style="font-size:12px;">
+<tr><th>Item</th><th>Clause</th><th>What it says</th><th>Our exposure</th></tr>
+<tr><td>Advance %</td><td>6.4</td><td>Up to 10% of accepted value</td><td>Working capital benefit</td></tr>
+<tr><td>Security</td><td>6.4</td><td>Unconditional BG, matching amount</td><td>BG limit consumed for full period</td></tr>
+<tr><td>Recovery start</td><td>6.4</td><td>Bill where cum. work done &gt; 15%</td><td>Roughly month 3-4</td></tr>
+<tr><td>Recovery end</td><td>6.4</td><td>Bill where cum. work done = 80%</td><td>Roughly month 14</td></tr>
+<tr><td>Ambiguity</td><td>6.4</td><td>"End of recovery period" undefined</td><td>Query: is BG released at 80% cum work done, or later?</td></tr>
+</table>
+      </div>
+      <p>Same clause. Five specific findings. A pre-bid query surfaced. Actionable output the contracts team can use in a review meeting.</p>
+    </div>
+  </div>
+
+  <div class="facilitator">
+    <strong>Facilitator note.</strong> This is the single most sticky demonstration of the day. Do it before you talk about anything else. The room does not need to be convinced that AI is powerful; they need to see that a bad prompt makes it useless. Once they have seen the two outputs side by side, the five-part anatomy sells itself.
+  </div>
+</section>
+<section class="content" id="safety">
+  <h2>Data safety guardrails</h2>
+  <p class="lede">Read this once, remember it forever. This is the same list for everyone in the company. There is no long version.</p>
+
+  <div class="box warn">
+    <h4>Never paste into a public AI tool</h4>
+    <ul>
+      <li>Anyone's Aadhaar, PAN, bank details, salary figure or personal address.</li>
+      <li>A live tender bid price before submission, or any competitor's price.</li>
+      <li>Signed contracts with clients or vendors, in their entirety, unless a redacted version.</li>
+      <li>Legal correspondence — notices sent to or received from lawyers.</li>
+      <li>Anything marked "confidential" in a document header.</li>
+    </ul>
+  </div>
+
+  <div class="box ok">
+    <h4>Fine to paste</h4>
+    <ul>
+      <li>Public tender documents downloaded from a client portal (they are already public).</li>
+      <li>Draft internal documents, once names and figures are placeholder-swapped.</li>
+      <li>Anonymised summaries, redacted samples, synthetic examples.</li>
+      <li>Formulas, code, error messages, technical questions.</li>
+      <li>Anything you would already put in an email to an external consultant.</li>
+    </ul>
+  </div>
+
+  <h3>The redaction rule of thumb</h3>
+  <p>Before pasting, do a five-second search-and-replace: names to <span class="mono">[NAME]</span>, PANs to <span class="mono">[PAN]</span>, project titles to <span class="mono">[PROJECT]</span>, and specific amounts to round-number placeholders. The AI does not need the real figures to check your logic — it needs the shape of the problem.</p>
+
+  <h3>A note on Microsoft 365 Copilot</h3>
+  <p>If the company is on a Microsoft 365 Copilot licence, the data-handling terms are stricter — Copilot inside Word/Excel/Outlook does not use company documents to train the model, and prompts stay inside Microsoft's tenant. That is safer than a public chat tool. For the rest of the tools, treat everything as public.</p>
+</section>
+
+<div class="foot">
+  <div>Suroj Buildcon × Be10x · AI Workforce Transformation · Part 1 of 5 · Trainer's working document v1</div>
+  <div class="rule-row">Every company name, employee name, project name, invoice number, GSTIN, PAN and financial figure in this document is synthetic. Any resemblance to real Suroj vendors, employees or projects is coincidental — the exercises are teaching material only.</div>
+</div>
+
+</main>
+</div>
+</body>
+</html>

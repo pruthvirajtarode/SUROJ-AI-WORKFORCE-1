@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Suroj × Be10x · Part 2 of 5 — Winning Work · Sessions 1–2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ---------- tokens ---------- */
+:root {
+  --paper:        #F6F2E9;
+  --paper-2:      #EFE9DB;
+  --paper-3:      #E7DFCB;
+  --ink:          #14161A;
+  --ink-2:        #3A3D42;
+  --ink-3:        #6A6B6C;
+  --rule:         #C9C0AA;
+  --rule-2:       #A9A08B;
+  --rust:         #B0431E;      /* primary accent */
+  --steel:        #35566B;      /* secondary */
+  --moss:         #5C6A3A;
+  --iron:         #4A4A4A;
+  --brick:        #7A2E1F;
+  --ochre:        #B58022;
+  --indigo:       #2E3F63;
+  --slate:        #445362;
+  --olive:        #6B6D2A;
+  --wash:         #F0DEB0;      /* callout wash */
+  --wash-cool:    #DEE3E6;
+  --danger:       #A03422;
+  --ok:           #4E6B2E;
+  color-scheme: light;
+}
+:root:not([data-theme="light"]) {
+  /* keep same tokens under prefers-color-scheme:dark — this is a working paper document,
+     dark mode changes the feel too much and is not what a trainer wants in a lit room. */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 8px; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.55;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--wash); color: var(--ink); }
+
+/* ---------- layout shell ---------- */
+.shell {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100%;
+}
+aside.nav {
+  border-right: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 22px 20px 40px 22px;
+  font-size: 13.5px;
+}
+main {
+  min-width: 0;
+  padding: 0 0 120px 0;
+}
+.content {
+  max-width: 78ch;
+  padding: 40px 44px;
+  margin: 0;
+}
+.content.wide { max-width: 100ch; }
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  aside.nav {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .content { padding: 28px 20px; }
+}
+
+/* ---------- nav ---------- */
+.brand {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.brand strong { color: var(--ink); letter-spacing: 0.02em; }
+.nav-group { margin: 18px 0 6px 0; }
+.nav-group-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  padding: 0 0 6px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+.nav ol { list-style: none; padding: 0; margin: 0; }
+.nav a {
+  display: block;
+  padding: 6px 8px 6px 12px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+.nav a:hover { color: var(--ink); background: rgba(255,255,255,0.4); }
+.nav a .idx {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-right: 8px;
+}
+.nav a .heads {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  float: right;
+}
+.nav a.s1 { border-left-color: var(--rust); }
+.nav a.s2 { border-left-color: var(--brick); }
+.nav a.s3 { border-left-color: var(--indigo); }
+.nav a.s4 { border-left-color: var(--steel); }
+.nav a.s5 { border-left-color: var(--slate); }
+.nav a.s6 { border-left-color: var(--ochre); }
+.nav a.s7 { border-left-color: var(--iron); }
+.nav a.s8 { border-left-color: var(--moss); }
+
+/* ---------- title block ---------- */
+.title-block {
+  padding: 56px 44px 44px 44px;
+  border-bottom: 1px solid var(--rule-2);
+  background:
+    linear-gradient(180deg, var(--paper) 0, var(--paper) 60%, var(--paper-2) 100%);
+}
+.title-block .stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  margin-bottom: 22px;
+}
+.title-block h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px 0;
+  max-width: 22ch;
+}
+.title-block .subtitle {
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-2);
+  max-width: 50ch;
+  margin: 0 0 28px 0;
+}
+.title-block .meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.title-block .meta .k {
+  color: var(--ink-3);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+.title-block .meta .v { color: var(--ink); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+@media (max-width: 700px) { .title-block .meta { grid-template-columns: repeat(2, 1fr); } .title-block h1 { font-size: 32px; } }
+
+/* ---------- typography ---------- */
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 44px 0 14px 0;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 30px 0 8px 0;
+  color: var(--ink);
+}
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 6px 0;
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.02em;
+}
+p { margin: 0 0 12px 0; }
+p.lede {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+ul, ol { padding-left: 20px; margin: 6px 0 14px 0; }
+li { margin: 4px 0; }
+strong { color: var(--ink); font-weight: 600; }
+em { font-style: italic; }
+a { color: var(--rust); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 32px 0;
+}
+code, .mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.92em;
+  background: var(--paper-3);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* ---------- section header for each session ---------- */
+.session-head {
+  padding: 44px 0 22px 0;
+  border-top: 3px solid var(--ink);
+  margin-top: 20px;
+  position: relative;
+}
+.session-head .stripe {
+  position: absolute;
+  top: -3px; left: -44px; right: 0; height: 3px;
+}
+.session-head .s-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.session-head h2 { margin-top: 0; font-size: 32px; }
+.session-head .participants {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin: 8px 0 0 0;
+}
+.session-head .participants span.heads {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+/* per-session accent — used on session-head stripe and small ornaments */
+.s1 .stripe, .s1 .accent { background: var(--rust); }
+.s2 .stripe, .s2 .accent { background: var(--brick); }
+.s3 .stripe, .s3 .accent { background: var(--indigo); }
+.s4 .stripe, .s4 .accent { background: var(--steel); }
+.s5 .stripe, .s5 .accent { background: var(--slate); }
+.s6 .stripe, .s6 .accent { background: var(--ochre); }
+.s7 .stripe, .s7 .accent { background: var(--iron); }
+.s8 .stripe, .s8 .accent { background: var(--moss); }
+
+/* ---------- callouts / working boxes ---------- */
+.box {
+  border: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  padding: 16px 18px;
+  margin: 18px 0;
+  border-left: 4px solid var(--ink-2);
+}
+.box.warn { background: #F5E4D8; border-left-color: var(--danger); }
+.box.ok   { background: #E6EBDA; border-left-color: var(--ok); }
+.box.data { background: var(--paper-3); border-left-color: var(--iron); }
+.box h4 { margin-top: 0; }
+.box .tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* prompt block — for teachable prompt patterns */
+.prompt {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  background: #1B1E22;
+  color: #E4DCC8;
+  padding: 16px 18px;
+  border-left: 4px solid var(--wash);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 10px 0 16px 0;
+}
+.prompt .p-label {
+  color: #B58022;
+  font-weight: 600;
+}
+
+/* exercise block */
+.exercise {
+  border: 1px solid var(--rule-2);
+  background: #FDFBF5;
+  padding: 18px 20px;
+  margin: 20px 0;
+  position: relative;
+}
+.exercise .ex-header {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.exercise .ex-header .lvl { color: var(--ink-2); }
+.exercise h3 { margin-top: 0; font-size: 18px; }
+.exercise .duration {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--rule-2);
+  border-radius: 2px;
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-left: 8px;
+}
+
+/* synthetic data display */
+details.synth {
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  margin: 12px 0;
+  padding: 0;
+}
+details.synth summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  background: var(--paper-3);
+  list-style: none;
+}
+details.synth summary::-webkit-details-marker { display: none; }
+details.synth summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s;
+  color: var(--ink-3);
+}
+details.synth[open] summary::before { transform: rotate(90deg); }
+details.synth .doc {
+  padding: 16px 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  background: #FDFBF5;
+  border-top: 1px solid var(--rule);
+  max-height: 640px;
+  overflow-y: auto;
+}
+details.synth .doc.narrow { max-width: 88ch; }
+details.synth .doc table {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  border-collapse: collapse;
+  margin: 10px 0;
+  width: 100%;
+}
+details.synth .doc table th, details.synth .doc table td {
+  border: 1px solid var(--rule);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+details.synth .doc table th {
+  background: var(--paper-3);
+  font-weight: 600;
+}
+
+/* generic table */
+table.data {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0;
+  font-size: 13.5px;
+}
+table.data th, table.data td {
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+table.data th {
+  border-bottom: 2px solid var(--ink);
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-transform: none;
+}
+
+/* two-col split */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin: 14px 0;
+}
+@media (max-width: 720px) { .split { grid-template-columns: 1fr; } }
+
+/* pill row */
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px 0; }
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--rule-2);
+  border-radius: 999px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+}
+.pill.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* callout for facilitator */
+.facilitator {
+  border: 1px dashed var(--ink-3);
+  padding: 12px 16px;
+  margin: 16px 0;
+  background: transparent;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+}
+.facilitator strong {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* footer note */
+.foot {
+  padding: 40px 44px;
+  border-top: 1px solid var(--rule-2);
+  color: var(--ink-3);
+  font-size: 12.5px;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 40px;
+}
+.foot .rule-row {
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* running order card */
+.orderline {
+  display: grid;
+  grid-template-columns: 32px 140px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.orderline .n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.orderline .lbl { font-weight: 600; }
+.orderline:last-child { border-bottom: 0; }
+
+/* print */
+@media print {
+  body { background: white; }
+  aside.nav, .foot { display: none; }
+  .shell { grid-template-columns: 1fr; }
+  main { padding: 0; }
+  .prompt { background: white; color: black; border: 1px solid #888; }
+  .session-head { page-break-before: always; }
+  details.synth { border: 1px solid #888; }
+  details.synth summary { background: #eee; }
+}
+
+
+/* ---------- parts-nav banner (across the top) ---------- */
+.parts-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--rule-2);
+  background: var(--paper-2);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.pn-item {
+  display: block;
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: background 0.1s;
+}
+.pn-item:last-child { border-right: 0; }
+.pn-item:hover { background: rgba(255,255,255,0.5); }
+.pn-item.current {
+  background: var(--ink);
+  color: var(--paper);
+  cursor: default;
+}
+.pn-item.current .pn-n { color: var(--wash); }
+.pn-item .pn-n {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+.pn-item .pn-t {
+  display: block;
+  font-size: 11.5px;
+  color: inherit;
+  line-height: 1.25;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+@media (max-width: 900px) {
+  .parts-nav { grid-template-columns: repeat(2, 1fr); }
+  .pn-item { border-bottom: 1px solid var(--rule); }
+  .pn-item:nth-last-child(-n+2) { border-bottom: 0; }
+}
+
+</style>
+</head>
+<body>
+<nav class="parts-nav" aria-label="Workshop parts"><a class="pn-item" href="./part1_foundations.html"><span class="pn-n">Part 1</span><span class="pn-t">Foundations & Data Safety</span></a><a class="pn-item current" href="#"><span class="pn-n">Part 2</span><span class="pn-t">Winning Work · Sessions 1–2</span></a><a class="pn-item" href="./part3_numbers.html"><span class="pn-n">Part 3</span><span class="pn-t">Numbers, Drawings & Systems · Sessions 3–5</span></a><a class="pn-item" href="./part4_site_people.html"><span class="pn-n">Part 4</span><span class="pn-t">Running Site & People · Sessions 6–8</span></a><a class="pn-item" href="./part5_playbook.html"><span class="pn-n">Part 5</span><span class="pn-t">Trainer's Playbook</span></a></nav>
+<div class="shell">
+<aside class="nav"><div class="brand"><strong>SUROJ BUILDCON × BE10x</strong><br>AI Workforce Transformation<br>Part 2 of 5 · v1</div><div class="nav-group"><div class="nav-group-title">In this part</div><ol><li><a class="s1" href="#s1">01 · Tendering & Contracts<span class="heads">23</span></a></li><li><a class="s2" href="#s2">02 · EPC Bids & Design-Build<span class="heads">19</span></a></li></ol></div></aside>
+<main>
+
+<div class="title-block">
+  <div class="stamp">SUROJ BUILDCON × BE10x · PART 2 OF 5 · WINNING WORK · SESSIONS 1–2</div>
+  <h1>Winning work — reading long documents, spotting what is missing, drafting the response</h1>
+  <p class="subtitle">Two sessions on the same skill, applied to different tender types. Session 1 is item-rate work bid off client drawings; Session 2 is design-build where the specification is Suroj's own risk. Suggested for Day 1 morning and afternoon respectively.</p>
+  <div class="meta">
+    <div><span class="k">PART</span><span class="v">2 of 5</span></div>
+    <div><span class="k">SESSIONS</span><span class="v">2</span></div>
+    <div><span class="k">HEADCOUNT REACHED</span><span class="v">42</span></div>
+    <div><span class="k">FORMAT</span><span class="v">Trainer's reference</span></div>
+  </div>
+</div>
+
+<section class="content wide s1" id="s1">
+  <div class="session-head s1">
+    <div class="stripe"></div>
+    <div class="s-tag">SESSION 01 · WINNING WORK · DAY 1 MORNING (SUGGESTED)</div>
+    <h2>Tendering &amp; Contracts</h2>
+    <p class="participants"><span class="heads">23 heads</span> Contract &amp; Tendering (22) · Business Development (1)</p>
+  </div>
+
+  <h3>The room, honestly</h3>
+  <p>This is the room where a document lands on Monday morning that costs Suroj the bid if it is misread. Twenty-two people whose weeks are shaped by tender documents of two, three, sometimes five hundred pages — general conditions, special conditions, technical specifications, drawings, BOQ, six annexures and two addenda that arrived after the first one was already understood. Plus one business-development person at the front of the funnel who needs to decide quickly whether an opportunity is worth pursuing at all. The whole session is about the same skill applied at four points along that funnel: <strong>read fast, find what matters, spot what is missing, and draft the correspondence that gets it clarified.</strong></p>
+
+  <h3>The real problem, before we get to tools</h3>
+  <p>The three failure modes this room has seen:</p>
+  <ol>
+    <li><strong>An obligation missed in the general conditions.</strong> Payment terms, liquidated damages, defect-liability period. Discovered after signing.</li>
+    <li><strong>An eligibility criterion misread.</strong> Turnover requirement across the wrong number of years; similar-work definition tighter than assumed; a JV disallowed where it was assumed permitted.</li>
+    <li><strong>Two similar tenders treated as identical.</strong> Two PWDs, two water-supply projects, superficially the same scope — but the second one has a 10% variation clause and the first one does not.</li>
+  </ol>
+  <p>Every one of these is a reading problem, not a technical problem. The technical people were competent. They ran out of time to read carefully.</p>
+
+  
+  <h3>Case study — The addendum that mattered</h3>
+  <div class="box">
+    
+    <p><strong>Firm K, a mid-size EPC firm in Nashik.</strong> ₹85 Cr turnover, 220 employees, three people in the tendering team. In November 2023, they were pursuing a ₹68 Cr rural water supply project with the Maharashtra Jeevan Pradhikaran. The tender document ran 340 pages including seven annexures. Four working days to submit.</p>
+
+    <p>By Wednesday afternoon they had extracted the obligations and confirmed eligibility against the ₹55 Cr similar-work threshold. They qualified on a single ₹58 Cr contract from 2021, with a caveat: that project's RCC reservoir was 400 KL, and the tender specified ≥ 500 KL. They noted this as a pre-bid query but the query window had closed the previous day. The team decided to bid with a covering letter explaining the near-match.</p>
+
+    <p>At 6:47 PM on Thursday — the last working day before submission — MJP uploaded Addendum No. 2. The bid team saw it at 8:15 PM after returning from a site visit. Six pages of dense modifications. Two hours to cutoff.</p>
+
+    <p>Buried on page four: modification 4.3 relaxed the RCC reservoir criterion to "capacity 300 KL or above." Firm K's 400 KL project qualified without caveat.</p>
+
+    <p>Nobody read the addendum thoroughly enough to see it. The covering letter went in with the original "near-match" caveat — which under the addendum was no caveat at all, but the MJP scrutiny committee treated it as a self-declared non-compliance. Bid rejected at technical stage. The winning bid was ₹4.2 Cr higher.</p>
+
+    <p><strong>What would have changed with 15 minutes and Claude.</strong> Paste the addendum. Paste the original clause 3.3. Ask: <span class="mono">"for each modification, quote the original wording and the modified wording, and state in one line what the modification does."</span> Modification 4.3 comes back as the third row of the table. The covering letter gets rewritten in 20 minutes. Firm K's ₹58 Cr project qualifies cleanly. The rest is on the price bid.</p>
+
+    <p><strong>Takeaway for the room.</strong> Read every addendum with structured extraction — not because the bid team is careless, but because a 6:47 PM addendum on the last working day is exactly when a fatigued team misses a two-line modification. Build the addendum-read into the workflow as a standing prompt. Every bid, every addendum, no exceptions.</p>
+
+  </div>
+<h3>Tool stack for this room</h3>
+  <div class="pills">
+    <span class="pill primary">Claude (long-document reader)</span>
+    <span class="pill primary">ChatGPT (file upload)</span>
+    <span class="pill">NotebookLM (for multi-annexure tenders)</span>
+    <span class="pill">Microsoft Word + Copilot (drafting)</span>
+    <span class="pill">Perplexity (client &amp; consultant research)</span>
+  </div>
+  <p><strong>Why Claude first for tenders:</strong> the longest context window of the mainstream tools (a full 300-page tender fits comfortably), and it is unusually good at citing back to specific clause numbers when asked. ChatGPT is close and fine for shorter tenders. NotebookLM is the tool of choice when there are ten separate PDFs — annexures, addenda, consultant brief — that need to be treated as one document.</p>
+
+  <h3>Theoretical foundation for this session</h3>
+  <h4 class="mono">CONTEXT WINDOWS — WHY IT MATTERS</h4>
+  <p>Every AI tool has a limit on how much text it can hold in mind at once — its "context window." A 300-page tender document is about 130,000–180,000 words, which fits comfortably in Claude (200,000+ tokens) but not always in older ChatGPT models. If the tool starts giving you generic answers halfway through a long document, it may have quietly stopped remembering the beginning. The habit: <em>ask it to cite the clause number</em>. If the citations dry up, split the document.</p>
+  <h4 class="mono">UPLOAD vs PASTE — WHEN TO USE EACH</h4>
+  <ul>
+    <li><strong>Upload the PDF</strong> when it is more than a few pages, or when the layout matters (tables, forms).</li>
+    <li><strong>Paste text</strong> when it is a short clause or an excerpt, or when the PDF has copy-protection that garbles the upload.</li>
+    <li><strong>Always keep the original open</strong> in another window. When the AI cites clause 4.3.7, look at 4.3.7 yourself.</li>
+  </ul>
+  <h4 class="mono">STRUCTURED EXTRACTION BEATS SUMMARY</h4>
+  <p>Do not ask "summarise this tender." Ask for a <em>table</em>: obligation, clause, trigger, consequence. A summary is prose that reads well and forgets things. A table forces the AI to be complete or to leave a cell blank — and blank cells are what you go looking for.</p>
+
+  <h3>Prompt patterns for this room</h3>
+
+  <h4 class="mono">PATTERN 1 · OBLIGATION EXTRACTION</h4>
+  <div class="prompt">You are a contracts engineer at an Indian construction firm.
+The document below is a tender document from [CLIENT].
+
+TASK
+Read the entire document and produce a table of every obligation
+the contractor takes on. Include obligations from the general
+conditions, special conditions, and technical specifications.
+
+FORMAT
+A table with columns:
+  Clause | Obligation (in plain words) | Trigger | Consequence of breach
+
+RULES
+- Only include obligations actually stated. Do not add anything
+  that is customary but not written.
+- Quote the exact clause number.
+- If wording is ambiguous, mark the row "ambiguous" and quote
+  the ambiguous phrase.
+
+DOCUMENT
+"""
+[paste or upload]
+"""</div>
+
+  <h4 class="mono">PATTERN 2 · ELIGIBILITY CHECK</h4>
+  <div class="prompt">Below is (1) the eligibility section of a tender and
+(2) Suroj Buildcon's credentials.
+
+TASK
+For each eligibility criterion, tell me:
+  - Do we qualify? Yes / No / Need clarification
+  - Which of our credentials satisfies it (quote from our sheet)
+  - If "no", what is the shortfall in one sentence
+  - If "clarification", what pre-bid query would resolve it
+
+Be strict. Do not assume equivalence — if the tender says
+"similar works of value not less than ₹50 Cr", a ₹47 Cr project
+does not qualify.
+
+TENDER ELIGIBILITY
+"""[…]"""
+
+OUR CREDENTIALS
+"""[…]"""</div>
+
+  <h4 class="mono">PATTERN 3 · AMBIGUITY FINDER (PRE-BID QUERY GENERATOR)</h4>
+  <div class="prompt">You are helping prepare pre-bid queries.
+
+TASK
+Read the document and list every place where a competent bidder
+would want written clarification before pricing. For each one:
+  - Quote the exact sentence(s) that are unclear
+  - Give the clause reference
+  - State in one line why it is unclear
+  - Draft the pre-bid query as a polite one-sentence question
+
+Focus on: scope boundaries, quantities not tied to a drawing,
+"as directed by the engineer" wording, time-limit ambiguities,
+and payment triggers.
+
+DOCUMENT
+"""[…]"""</div>
+
+  <h4 class="mono">PATTERN 4 · TWO-TENDER COMPARISON</h4>
+  <div class="prompt">Below are two tender documents (A and B) for similar work.
+
+TASK
+Produce a comparison table with these rows and one column for A,
+one column for B:
+  Client | Scope in one line | Contract value ceiling | Time for
+  completion | Defect-liability period | Liquidated damages cap |
+  Price-variation clause | Advance payment | Retention percentage |
+  Materials supplied by client | Design responsibility | JV allowed
+  | Similar-work criterion | Turnover requirement
+
+At the end, list the five most important differences a bidder
+should notice.
+
+TENDER A: """[…]"""
+TENDER B: """[…]"""</div>
+
+  <h3>Hands-on exercises</h3>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 1 · OBLIGATION MAP</span><span class="lvl">Warm-up · pairs</span></div>
+    <h3>Read a full tender and produce a clean obligation table <span class="duration">40 min</span></h3>
+    <p><strong>Setup.</strong> Pairs. Each pair takes the synthetic tender below (a compressed but realistic PWD-style document) and produces the obligation table using Pattern 1. First cut in ten minutes. Then re-run with the cite-back rule added: <em>"for every row, quote the clause verbatim in an extra column."</em></p>
+    <p><strong>What you are teaching.</strong> That structured extraction is the tender-reader's default move. That the "quote it back" column catches hallucinations. That the AI will produce a defensible working document in ten minutes that would take a competent engineer half a day.</p>
+    <p><strong>Debrief prompt for the room.</strong> "Look at your table. How many rows would you have missed on a first read at your desk?"</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC TENDER · Excerpt — Notice, eligibility, key GCC/SCC clauses, technical spec sample, key dates</summary>
+      <div class="doc">
+GOVERNMENT OF MAHARASHTRA
+PUBLIC WORKS DEPARTMENT — REGIONAL OFFICE, NASHIK
+TENDER NOTICE NO. PWD/NSK/WS/2026-27/047
+DATED: 12 OCTOBER 2026
+
+INVITATION TO TENDER
+
+Online percentage-rate tenders are invited on behalf of the Governor
+of Maharashtra by the Superintending Engineer, PWD Nashik Circle,
+from bidders registered in the appropriate class of the Maharashtra
+Public Works Department (Class I-A and above) for the following work:
+
+  Name of work : Augmentation of rural water-supply distribution
+                 network in Sinnar & Igatpuri talukas — Phase II,
+                 including construction of 4 nos. RCC overhead
+                 storage reservoirs (capacities 2 × 300 KL,
+                 2 × 500 KL), laying of DI K-9 rising and gravity
+                 mains (total approx. 62 km), and associated
+                 pumping-station civil works at 3 nos. locations.
+
+  Estimated cost put to tender  : ₹ 74.20 Crore (inclusive of GST)
+  Earnest money deposit         : ₹ 74,20,000/- (One percent)
+  Bid security declaration      : Permitted in lieu of EMD as per
+                                  GoM circular dated 22.03.2024
+  Cost of tender documents      : ₹ 15,000/- (non-refundable)
+  Time for completion           : 18 (Eighteen) calendar months
+                                  from the 10th day after receipt
+                                  of the letter of acceptance
+  Defect liability period       : 24 months from the date of
+                                  virtual completion certificate
+  Period of validity of offer   : 120 days from the date of opening
+                                  of the price bid
+  Liquidated damages            : 0.5% of the accepted contract
+                                  value per week of delay, subject
+                                  to a maximum of 10% of the
+                                  accepted contract value
+  Retention money               : 5% of each running account bill,
+                                  released as per clause 41(SCC)
+  Price variation               : Star Rate formula as per Ministry
+                                  of Road Transport & Highways
+                                  circular RW/NH-34066/2/2008,
+                                  applicable to the extent of 85%
+                                  of the balance value of work as
+                                  on the date of the price index
+
+KEY DATES
+
+  Date of publication of tender    : 12.10.2026
+  Pre-bid meeting                  : 24.10.2026 at 11:30 hrs at
+                                     office of the Superintending
+                                     Engineer, PWD Nashik Circle
+  Last date for pre-bid queries    : 22.10.2026 up to 17:00 hrs
+                                     by email to
+                                     se.pwd.nashik@maharashtra.gov.in
+  Last date for online submission  : 09.11.2026 up to 15:00 hrs
+  Opening of technical bid         : 11.11.2026 at 11:00 hrs
+  Opening of price bid             : Will be intimated separately
+                                     to technically qualified
+                                     bidders only
+
+SECTION 3 — ELIGIBILITY CRITERIA
+
+3.1  Registration
+     The bidder shall be registered with the Maharashtra Public
+     Works Department in Class I-A or above, valid on the date of
+     submission of the tender.
+
+3.2  Financial capacity
+     3.2.1  Average annual financial turnover during the last three
+            (3) financial years, ending 31st March 2026, shall be
+            at least ₹ 30 Crore. Audited balance sheets and profit-
+            and-loss statements duly signed by a Chartered
+            Accountant shall be submitted.
+     3.2.2  Positive net worth as on 31st March 2026, certified by
+            a Chartered Accountant.
+     3.2.3  Working capital of not less than ₹ 8 Crore, either as
+            available bank balance, fund-based limits, or bank
+            solvency certificate not older than 3 months.
+
+3.3  Similar-work experience
+     The bidder shall have satisfactorily completed, in the last
+     seven (7) financial years ending 31st March 2026, similar works
+     of value not less than as detailed below:
+        - one similar work of value ₹ 59.36 Crore; OR
+        - two similar works each of value ₹ 44.52 Crore; OR
+        - three similar works each of value ₹ 29.68 Crore.
+     "Similar work" for the purposes of this tender means
+     construction of water-supply distribution infrastructure
+     including laying of pipelines of diameter 300 mm or above
+     AND construction of at least one reinforced-cement-concrete
+     overhead reservoir of capacity 300 KL or above, executed as
+     a single contract for a Central/State Government department,
+     a public-sector undertaking, or a Municipal Corporation.
+
+3.4  Joint ventures
+     Joint ventures are permitted with a maximum of two members,
+     subject to the lead partner holding not less than 51 percent
+     share. Both partners shall be Class I-A registered with the
+     Maharashtra PWD. Consortium bidding shall not be permitted.
+
+3.5  Blacklisting
+     The bidder shall not be blacklisted, debarred or under
+     suspension by any Government department, PSU, or Municipal
+     Corporation on the date of submission. A self-declaration on
+     the bidder's letterhead is required.
+
+SECTION 5 — GENERAL CONDITIONS OF CONTRACT (extracts)
+
+Clause 5.1  Site information
+The information contained in the drawings and specifications is for
+the general guidance of the contractor. The contractor shall, before
+tendering, inspect and examine the site and its surroundings and
+shall satisfy himself as to the nature of the ground, sub-soil,
+form and nature of the site, the extent and nature of work and
+materials necessary for the completion of the work. No claim shall
+be entertained on account of any information supplied being found
+subsequently to be inaccurate or incomplete.
+
+Clause 5.7  Setting out
+The contractor shall be responsible for the true and proper setting
+out of the work in relation to the reference points and lines
+supplied by the Engineer-in-charge. If, at any time during the
+progress of the works, any error appears in the position, levels,
+dimensions or alignment of any part of the work, the contractor
+shall, at his own expense, rectify such error to the satisfaction of
+the Engineer-in-charge.
+
+Clause 5.14  Materials
+All materials to be used on the works shall be new, of the best
+quality, and shall conform to the relevant Indian Standard
+Specifications. Cement, structural steel and reinforcement steel
+shall be supplied by the contractor. TMT bars shall be Fe-500D
+grade or above from primary producers only. Cement shall be OPC-53
+grade conforming to IS 269:2015 from manufacturers approved by the
+Engineer-in-charge. The contractor shall submit test certificates
+from an approved laboratory for every consignment. The Engineer-in-
+charge shall have the right to reject any material not conforming
+to specification.
+
+Clause 5.28  Extra items and substituted items
+The rates for extra items shall be derived as follows: (a) if the
+extra item is similar in character to any item in the accepted
+schedule of quantities, the rate shall be derived from the tender
+rate of that item; (b) if the extra item is not similar to any
+tendered item, the rate shall be derived from the current DSR of
+the Public Works Department, less the tender percentage; (c) where
+neither (a) nor (b) applies, the rate shall be based on prevailing
+market rates supported by three quotations, plus 10 percent
+contractor's overheads and profit. The decision of the Executive
+Engineer regarding the applicability of any of the three methods
+shall be final and binding.
+
+Clause 5.34  Suspension of works
+The Engineer-in-charge may, at any time, by written notice suspend
+the whole or any part of the works for such period as he may consider
+necessary. During such suspension, the contractor shall protect and
+secure the work already executed. No claim for compensation shall
+be entertained for any suspension of works for a period not
+exceeding ninety (90) days in aggregate.
+
+SECTION 6 — SPECIAL CONDITIONS OF CONTRACT (extracts)
+
+Clause 6.4  Advance payment
+A mobilisation advance not exceeding 10 percent of the accepted
+contract value shall be released to the contractor against an
+unconditional bank guarantee for an equivalent amount, valid up to
+the end of the recovery period. The advance shall be recovered by
+proportionate deductions from running account bills, commencing
+from the bill in which cumulative work done exceeds 15 percent of
+the accepted contract value, and shall be fully recovered by the
+time cumulative work done reaches 80 percent.
+
+Clause 6.11  Client-supplied items
+The client shall supply, free of cost at the site store: (a) high-
+density polyethylene (HDPE) sluice-valve chambers, quantities as per
+BOQ item 7.14; (b) SCADA panels for the pumping stations, quantities
+as per BOQ item 12.03. The contractor shall be responsible for safe
+custody, installation, testing and commissioning of these items. Any
+loss or damage after receipt shall be to the contractor's account
+at the rates notified by the client from time to time. Delays in
+supply of client-supplied items beyond the notified date shall be
+grounds for an extension of time but not for financial compensation.
+
+Clause 6.18  Testing and commissioning
+On completion of laying of any section of the rising or gravity main,
+the contractor shall carry out hydraulic testing at a test pressure
+of 1.5 times the working pressure, for a duration not less than
+2 hours, at his own cost. Any leaks shall be rectified by the
+contractor and the section re-tested until it holds pressure
+satisfactorily. The Engineer's certification of successful hydraulic
+testing is a pre-condition for release of payment for that section.
+
+Clause 6.24  Environmental compliance
+The contractor shall obtain, at his own cost, all consents required
+under the Water (Prevention and Control of Pollution) Act 1974, the
+Air (Prevention and Control of Pollution) Act 1981, and the
+Environment (Protection) Act 1986 for any batching plants, quarries,
+crushers or fuel-storage installations set up in connection with
+the works. Copies of consents shall be lodged with the Engineer-in-
+charge before commencement of the relevant operation.
+
+SECTION 8 — TECHNICAL SPECIFICATIONS (extract, RCC overhead reservoir)
+
+8.3.2  Concrete for the reservoir container walls, dome, and
+       staging shall be M-30 grade, with a minimum cement content
+       of 350 kg per cubic metre and a maximum water-cement ratio
+       of 0.45. Concrete shall be produced only at a computerised
+       batching plant. Site-mixed concrete shall not be permitted.
+
+8.3.7  All construction joints in the container shall be treated
+       with a proprietary crystalline waterproofing admixture,
+       applied strictly as per the manufacturer's instructions.
+       The contractor shall submit the manufacturer's product data
+       sheet and installation methodology to the Engineer-in-charge
+       for approval prior to use. The list of approved brands is at
+       Annexure III.
+
+8.3.11 On completion, the reservoir shall be subjected to a water-
+       retention test for seven (7) days. The permissible drop in
+       water level shall not exceed 40 mm in seven days, after
+       accounting for evaporation. Any structure failing this test
+       shall be rectified and re-tested at the contractor's cost,
+       and the guarantee period of 24 months shall be reckoned from
+       the date of successful re-test.
+
+ADDENDUM No. 1 — DATED 25.10.2026 (ISSUED AFTER PRE-BID MEETING)
+
+1. In Section 3, clause 3.3, the definition of "similar work" is
+   modified to allow completion of the RCC reservoir component
+   under a separate contract, provided the pipeline component of
+   value not less than ₹40 Crore was executed under a single contract.
+
+2. In Section 6, clause 6.11, item (b) is deleted. SCADA panels
+   shall now be supplied and installed by the contractor as part
+   of BOQ item 12.03. Rates shall be adjusted accordingly.
+
+3. The last date for online submission is extended to 16.11.2026
+   up to 15:00 hrs.
+
+— End of excerpt for the workshop —
+      </div>
+    </details>
+
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 2 · ELIGIBILITY CHECK</span><span class="lvl">Core · individual</span></div>
+    <h3>Check the tender's eligibility against Suroj's own credentials <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Individual. Each participant runs Pattern 2 with the eligibility section above and Suroj's credentials sheet (below). Produces: qualify / do not qualify / need clarification, with the specific credential that satisfies each row.</p>
+    <p><strong>Twist to run in the last five minutes.</strong> "Now do it again with Addendum No. 1 loaded. Which row changes, and why?" This is the moment where the room sees that reading addenda properly is a make-or-break habit — the addendum quietly relaxes the similar-work definition, which changes whether the bid is worth pursuing.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC CREDENTIALS · Suroj Buildcon Pvt. Ltd. — bidding credentials sheet</summary>
+      <div class="doc">
+SUROJ BUILDCON PRIVATE LIMITED — BIDDING CREDENTIALS
+(Extract for tender qualification, updated as on 31.03.2026)
+
+1. REGISTRATION
+
+   Maharashtra PWD — Class I-A            Valid up to 31.03.2028
+   Maharashtra Jeevan Pradhikaran         Valid up to 30.06.2027
+   MSRDC (Class I)                        Valid up to 31.12.2027
+   Central PWD                             Class I applied for; under process
+
+2. FINANCIAL — AUDITED FIGURES (₹ Crore)
+
+     FY           Turnover       Net Worth     Profit After Tax
+     2025-26      42.87          21.64          2.31
+     2024-25      36.10          19.33          1.82
+     2023-24      29.44          17.51          1.41
+     Average turnover last 3 FY : ₹ 36.14 Cr
+     Net worth as on 31.03.2026 : Positive (₹ 21.64 Cr)
+
+3. WORKING CAPITAL
+
+   Fund-based limits sanctioned by Bank of Maharashtra, Nashik:
+   Cash credit limit ₹ 6.50 Cr; Bank guarantee limit ₹ 12.00 Cr.
+   Bank solvency certificate dated 11.09.2026 for ₹ 9.00 Cr held.
+
+4. SIMILAR WORKS COMPLETED (LAST 7 FY)
+
+   S.No | Project                                  | Client      | Contract  | Completion   | Scope highlights
+        |                                          |             | value ₹Cr |              |
+   -----|------------------------------------------|-------------|-----------|--------------|-----------------------------------
+   4.1  | Rural water-supply Phase-I,              | PWD Nashik  | 47.20     | Dec 2024     | 41 km DI pipeline + 2 nos 500 KL
+        | Sinnar-Ghoti                             |             |           |              | RCC OHSR + 2 pumping stations
+   4.2  | Bulk water-supply, MIDC                  | MIDC        | 62.80     | Aug 2024     | 28 km DI pipeline + 1 no 1000 KL
+        | Sinnar Additional Area                   |             |           |              | RCC ground-level reservoir
+        |                                          |             |           |              | (NOT overhead)
+   4.3  | RCC OHSR & distribution network,         | Igatpuri NP | 12.60     | Mar 2023     | 8 km MS pipeline + 1 no 300 KL OHSR
+        | Igatpuri town Phase-I                    |             |           |              |
+   4.4  | Reticulation network, Shirdi Municipal   | Shirdi MC   | 34.50     | Feb 2024     | 46 km DI + PVC pipeline
+        | Council Phase-II                         |             |           |              | (NO reservoir component)
+   4.5  | Trunk main + OHSR, Kopargaon             | MJP         | 45.90     | Nov 2022     | 22 km DI pipeline + 1 no 600 KL OHSR
+        | Municipal Council                        |             |           |              | + 1 no pumping station
+
+5. BLACKLISTING
+
+   None. Self-declaration on letterhead available.
+
+6. TECHNICAL PERSONNEL ON ROLL
+
+   Chartered Civil Engineers        4
+   Graduate Civil Engineers        22
+   Diploma Civil Engineers         31
+   Mechanical / Electrical Engrs.  11
+   Quality personnel                6
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the room should discover.</strong> Under the original clause 3.3 (single similar contract of ≥ ₹59.36 Cr with a pipeline <em>and</em> OHSR component), Suroj does not qualify on a single contract — the ₹62.80 Cr MIDC job had a ground-level reservoir, not overhead; the ₹47.20 Cr Sinnar job had OHSRs but is under the threshold. Under Addendum No. 1 (pipeline component ≥ ₹40 Cr in a single contract), the Shirdi ₹34.50 Cr does not qualify but the ₹47.20 Cr Sinnar contract does. The addendum is the difference between a bid worth pursuing and one that is not.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 3 · PRE-BID QUERIES</span><span class="lvl">Applied · pairs</span></div>
+    <h3>Find every ambiguity and draft the query <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Pairs. Use Pattern 3 against the synthetic tender. Aim to produce at least eight pre-bid queries with clean drafting. The trainer walks the room and picks three to project for group critique.</p>
+    <p><strong>What the room should find (do not tell them; let the tool find them).</strong></p>
+    <ul>
+      <li><strong>Clause 5.14.</strong> "OPC-53 grade from manufacturers approved by the Engineer-in-charge" — no approved list is annexed. Query: request the list before bid submission, or confirmation it will be issued at the LoA stage.</li>
+      <li><strong>Clause 5.28(c).</strong> "Three quotations plus 10 percent" — is the 10 percent on the market rate or on the average of the three?</li>
+      <li><strong>Clause 6.11 (before Addendum 1).</strong> Client-supplied SCADA panels — what is the notified delivery date? What is the compensation formula for delays beyond 90 days? Addendum 1 partly resolves this — a good query would have surfaced it earlier.</li>
+      <li><strong>Clause 6.18.</strong> Test pressure "1.5 times the working pressure" — the working pressure of the rising main is not stated. Query: confirm the design working pressure for hydraulic testing.</li>
+      <li><strong>Section 8.3.7.</strong> "Approved brands at Annexure III" — is Annexure III attached? If not, request it.</li>
+      <li><strong>Price variation.</strong> The MoRTH Star Rate formula applies to 85 percent of balance value — what is the price-index base date, and which indices apply for DI pipes specifically?</li>
+    </ul>
+    <p><strong>Debrief.</strong> Read one full query draft aloud. Do not accept a query that reads accusatory or as a comment on the tender's quality. The tone is professional and specific: <em>"Clause 5.14 refers to a list of approved cement manufacturers by the Engineer-in-charge. We could not locate this list in the tender documents. Kindly confirm whether the list will be issued as an addendum, or clarify the process for approval at the LoA stage."</em></p>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 4 · TWO-TENDER SCAN</span><span class="lvl">Stretch · groups of four</span></div>
+    <h3>Bring your own — comparison of two live opportunities <span class="duration">Optional 25 min if time permits</span></h3>
+    <p><strong>Setup.</strong> If BD/tendering have brought two live tenders to the workshop, groups of four run Pattern 4 on them. If they have not, the trainer supplies a second tender document (a second synthetic PWD tender differing only in retention, LD cap and price-variation formula) and runs the comparison against the first.</p>
+    <p><strong>Point of the exercise.</strong> That the AI produces a defensible differences-table in ten minutes for the go/no-go meeting — and that the person reading it needs less than an hour to sanity-check it against the source documents.</p>
+  </div>
+
+  <h3>Common pitfalls in this room</h3>
+  <div class="box warn">
+    <ul>
+      <li><strong>Confusing the tool for a lawyer.</strong> The AI helps you find ambiguity; a lawyer resolves it. The output of any of these exercises is a shortlist for the contract manager to review — not a final position.</li>
+      <li><strong>Ignoring the addenda.</strong> Nearly every real tender has two or three. Load every one of them; do the extraction again after each; note what changed.</li>
+      <li><strong>Prompt drift.</strong> If the tool starts giving you obligations it invented, your prompt was probably too open. Add: "Only include obligations you can quote verbatim from the document below."</li>
+      <li><strong>Trusting a summary over a table.</strong> Summaries hide things. Tables force completeness.</li>
+    </ul>
+  </div>
+
+  <h3>Closing 20 minutes — Q&A prompts</h3>
+  <ol>
+    <li>"What is the most annoying part of your current tender-reading week that we did <em>not</em> touch today?" (This is your discovery data for a follow-up.)</li>
+    <li>"How would you use this on a live tender arriving next week — what is your first step?"</li>
+    <li>"What is one clause type that always trips this firm up, that we should build a permanent prompt template for?"</li>
+  </ol>
+</section>
+<section class="content wide s2" id="s2">
+  <div class="session-head s2">
+    <div class="stripe"></div>
+    <div class="s-tag">SESSION 02 · WINNING WORK · DAY 1 AFTERNOON (SUGGESTED)</div>
+    <h2>EPC Bids &amp; Design-Build</h2>
+    <p class="participants"><span class="heads">19 heads</span> EPC department, whole team</p>
+  </div>
+
+  <h3>The room, honestly</h3>
+  <p>Nineteen people who do the same reading Session 1 does — but on tenders where the design is Suroj's problem, not the client's consultant's problem. On an item-rate PWD job, the drawing is given and the risk is executing it. On an EPC job, the client hands over a Preliminary Information Brief or a Design Basis Report and Suroj writes the specification, sizes the structure, picks the make of every major component, and carries the design risk from foundation to defect-liability. That single difference — <strong>who wrote the spec</strong> — is what the whole three hours is about.</p>
+
+  <h3>The real problem, before we get to tools</h3>
+  <p>The three failure modes this room has seen:</p>
+  <ol>
+    <li><strong>Interface holes.</strong> Civil finished on schedule; MEP shafts were 100 mm short of what the vendor's chiller needed; three weeks lost cutting a wall that had a beam in it.</li>
+    <li><strong>A spec written more generously than costed.</strong> The bid was priced at a Fe-500 default; the spec, drafted separately in a different week by a different engineer, said Fe-500D from primary producers only. Six percent margin gone.</li>
+    <li><strong>Design-stage risks not surfaced until execution.</strong> Ground conditions worse than assumed; utility relocations not scoped; approvals not sequenced. Every one of these was findable at design stage, if someone had made the list.</li>
+  </ol>
+  <p>All three are pattern-finding problems on documents written by different people in different weeks. The AI's core strength.</p>
+
+  
+  <h3>Case study — The chiller room that was 100 mm short</h3>
+  <div class="box">
+    
+    <p><strong>An EPC firm in Ahmedabad, name withheld.</strong> A ₹42 Cr commercial office design-build. On track through month 8. The office block's chiller room, in the basement, had been sized and cast by the civil team based on a preliminary MEP layout provided at month 3. The MEP vendor's detailed shop drawings arrived at month 9, based on the final chiller model selected: a Trane air-cooled screw chiller with a 3,850 mm width dimension.</p>
+
+    <p>The cast chiller room's internal clear width, after finishes: 3,750 mm. One hundred millimetres short.</p>
+
+    <p>The vendor's earlier preliminary submission had cited a 3,650 mm width for a smaller chiller in the same family. The selected chiller had been changed at month 5 during value engineering to a larger unit with better COP. Nobody re-checked the room dimensions against the revised chiller. The two facts sat in two different people's inboxes for four months.</p>
+
+    <p>Remediation options: (a) cut and re-cast one wall of the chiller room — ₹6.2 lakh direct cost plus three weeks of delay to the HVAC start; (b) select a different chiller from a different manufacturer that fit in 3,750 mm — ₹4 lakh premium and a re-approval cycle with the consultant. They went with (b) and lost two weeks.</p>
+
+    <p><strong>What would have changed with an interface matrix and a monthly re-run.</strong> The Pattern 2 prompt from this session produces an interface matrix from the DBR. In its "Civil to MEP" row, one cell reads: "chiller room dimensions handed over to MEP at month 3, based on preliminary chiller model." A discipline of re-running the matrix every time an item within it changes — the value-engineering change at month 5 — would have caused the AI to ask: <em>"chiller model changed; has the chiller room dimension been re-verified?"</em> A five-minute question. Two weeks saved.</p>
+
+    <p><strong>Takeaway for the room.</strong> The interface matrix is not a document you produce once at the bid stage. It is a living checklist. Run it on the DBR at bid. Run it again at design freeze. Run it again whenever a major item within it changes. Each run takes ten minutes. Each run catches a different miss.</p>
+
+  </div>
+<h3>Tool stack for this room</h3>
+  <div class="pills">
+    <span class="pill primary">Claude / ChatGPT (spec drafting &amp; checking)</span>
+    <span class="pill primary">NotebookLM (multi-document design basis)</span>
+    <span class="pill">Excel + Copilot (interface matrix, risk register)</span>
+    <span class="pill">Perplexity (standards &amp; codes lookup)</span>
+    <span class="pill">Napkin AI (interface / dependency diagrams)</span>
+  </div>
+
+  <h3>Theoretical foundation for this session</h3>
+  <h4 class="mono">INTERFACE MATRICES — WHY THEY EXIST</h4>
+  <p>Every EPC failure post-mortem discovers that someone knew about the problem in week 4 and someone else needed to know about it in week 20. An interface matrix is the deliberate crossing of everyone-who-produces-something against everyone-who-needs-it, in a table, so that the gap surfaces before it becomes a wall being demolished. AI is exceptionally good at generating a first-cut matrix from a design brief — the discipline is asking it the right way.</p>
+  <h4 class="mono">DESIGN-STAGE RISK REGISTERS — WHY THEY EXIST</h4>
+  <p>Not the same as a project-execution risk register. A design-stage register is a list of "we do not yet know the answer to this, and here is what could go wrong if the answer is bad." Ground conditions, utility relocation, approvals, spec-versus-price gaps, vendor lead times for long-lead items, interface boundaries. AI helps by reading a Design Basis Report and asking questions a competent engineer would ask.</p>
+  <h4 class="mono">THE "TWO-SPEC" PROBLEM</h4>
+  <p>An EPC bid contains two specifications: the technical specification (what will be built) and the priced BOQ (what has been costed). If they disagree, the technical specification wins — you build what you said. AI can be pointed at both and asked to find every line where the technical spec is stricter than what the BOQ line implies. This is the single highest-value use of AI in this room.</p>
+
+  <h3>Prompt patterns for this room</h3>
+
+  <h4 class="mono">PATTERN 1 · SPEC-VERSUS-BOQ MISMATCH</h4>
+  <div class="prompt">You are a senior estimation engineer at an EPC firm.
+
+TASK
+Below is (1) the technical specification section of our own bid,
+and (2) the priced BOQ. For each BOQ line, find any place where
+the technical specification is stricter, more branded, or more
+onerous than a normal reading of the BOQ line would imply. Focus on:
+  - Grade of material (steel, concrete, aggregate)
+  - Brand or "approved makes" lists
+  - Testing frequency and location
+  - Warranty period
+  - Client witness requirements
+
+FORMAT
+Table: BOQ line no. | BOQ description | Spec clause | What the
+spec adds that the BOQ line does not price for | Cost impact
+(High / Medium / Low)
+
+RULES
+- Only flag mismatches you can quote from both documents.
+- Do not invent BOQ items or spec clauses.
+
+TECHNICAL SPECIFICATION: """[…]"""
+PRICED BOQ: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 2 · INTERFACE MATRIX FROM DESIGN BRIEF</h4>
+  <div class="prompt">You are a design coordinator on an EPC project.
+
+TASK
+Read the Design Basis Report below and produce an interface matrix
+covering:
+  - Civil to MEP (electrical, HVAC, plumbing, fire)
+  - Civil to façade
+  - Civil to precast (if any)
+  - MEP to façade
+  - Any client-supplied items or scope carve-outs
+
+FORMAT
+Table with rows = producing discipline, columns = receiving
+discipline. Each cell lists (a) what is handed over, (b) when in
+the schedule, (c) what must be true at handover for the receiving
+discipline to succeed.
+
+RULES
+- Only include interfaces implied by the scope described.
+- Where the brief is silent, mark "brief silent — flag for
+  clarification".
+
+DESIGN BASIS REPORT: """[…]"""</div>
+
+  <h4 class="mono">PATTERN 3 · DESIGN-STAGE RISK REGISTER</h4>
+  <div class="prompt">You are helping an EPC bid team prepare a design-stage risk
+register before submission.
+
+TASK
+Read the Design Basis Report and list every risk that could
+materialise between contract award and construction start. For each:
+  - Risk in one line
+  - Which of the following categories: geotechnical, utilities,
+    approvals, long-lead procurement, interface, price variation
+  - Trigger (what event turns risk into cost)
+  - Probability (H/M/L) and cost impact (H/M/L)
+  - Mitigation you would build into the bid
+
+RULES
+- Only include risks supported by evidence in the brief. Do not
+  add generic construction risks.
+- If a risk depends on missing information, mark it "pending
+  clarification" and state what you would ask.
+
+DESIGN BASIS REPORT: """[…]"""</div>
+
+  <h3>Hands-on exercises</h3>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 1 · INTERFACE MATRIX</span><span class="lvl">Warm-up · pairs</span></div>
+    <h3>Build the interface matrix for a warehouse DBR <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Pairs work through the synthetic Design Basis Report below and use Pattern 2 to produce the interface matrix. Compare across pairs — the interesting bits will be the cells that some pairs left blank and others populated.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC DESIGN BASIS REPORT · 65,000 sq ft grade-A warehouse, Chakan MIDC</summary>
+      <div class="doc">
+DESIGN BASIS REPORT
+Grade-A Distribution Warehouse — Suroj EPC Bid Reference SBL/EPC/2026/33
+Client : Ashwath Industrial Parks LLP
+Site   : Plot A-14, Chakan MIDC Phase-III, Pune district
+Issue  : Rev 02, 08 October 2026
+
+1  PROJECT DESCRIPTION
+
+   1.1  The project is the design, engineering, supply, construction
+        and commissioning of a single-warehouse block with attached
+        two-storey office and driver-rest facility, on a total plot
+        of 3.20 acres, of which 1.85 acres is available for the
+        warehouse envelope after setbacks.
+   1.2  Warehouse gross covered area: approximately 65,000 sq ft
+        (clear-span PEB, 34 m internal clear span, 12 m eave height,
+        1:15 slope, 220 m total length).
+   1.3  Office block: two floors, 4,800 sq ft each, RCC framed.
+   1.4  Time from LoA to virtual completion: 11 calendar months.
+   1.5  Contract type: lump-sum design-build. Rate variation
+        applicable to structural steel and cement per Schedule-C.
+
+2  DESIGN INPUTS
+
+   2.1  Soil investigation report: attached at Annexure I. Summary
+        SBC = 18 T/sqm at 2.0 m depth, water table at 6.4 m below
+        NGL in October. Contractor to satisfy himself and undertake
+        additional bores if required.
+   2.2  Topography and boundary survey: attached at Annexure II.
+        The site slopes 1.2 m from north-east to south-west.
+   2.3  MIDC water supply available at plot boundary, 100 mm dia,
+        pressure 1.2 bar. STP shall be provided by the contractor.
+        MSEDCL power availability: 500 kVA HT at plot boundary,
+        contractor to design and install substation and DG backup.
+   2.4  Storm-water drainage: connect to existing MIDC drain at the
+        south-west boundary. No detention required. Rainwater
+        harvesting shall be provided per MIDC norms.
+
+3  FUNCTIONAL REQUIREMENTS
+
+   3.1  The warehouse shall be designed to receive and dispatch
+        FMCG palletised loads, with the following:
+        - Floor loading capacity: 6 T/sqm uniformly distributed
+          across the warehouse floor
+        - Point load: 3.0 T per stack leg for very-narrow-aisle
+          racking to a 12 m height (racking by others)
+        - Docks: 8 nos. dock levellers at 1.2 m loading height,
+          spaced 3.6 m centre-to-centre on the west face
+        - Man doors: 4 nos., emergency exits per NBC 2016 Part 4
+   3.2  Office block shall have full HVAC (VRF), a ground-floor
+        reception, a first-floor open-plan office for 40 seats, and
+        a driver rest area with 8 beds and toilets on the ground floor.
+   3.3  Fire safety: sprinkler system as per NFPA 13 (ordinary
+        hazard group 2), hydrant system to IS 3844, fire pumps and
+        underground static tank of 275 KL capacity.
+
+4  KEY DESIGN CRITERIA
+
+   4.1  Structural steel: primary steel Fe-350 conforming to IS 2062,
+        secondary Fe-345, all from primary producers. Purlins and
+        girts cold-formed sections from IS 811 quality steel.
+        Corrosion protection: hot-dip galvanised for exterior
+        secondary members and all fasteners.
+   4.2  Concrete: M-30 grade for isolated and combined footings,
+        M-35 for warehouse ground floor (VDF trowelled to FM2
+        floor-flatness classification per TR34), M-30 for office
+        block RCC frame.
+   4.3  Sheeting: 0.5 mm bare metal thickness pre-painted
+        galvalume roofing, colour to client selection from
+        manufacturer's standard chart. 0.6 mm bare metal wall
+        sheeting. Ridge ventilators over full length. 10 percent
+        polycarbonate skylight sheets integrated in roofing.
+   4.4  HVAC (office only): VRF outdoor units on roof; ductable
+        indoor units concealed above false ceiling; fresh-air
+        treatment through a heat-recovery ventilator. Warehouse
+        block: ridge ventilation only, no active HVAC.
+   4.5  Electrical: substation with one 500 kVA transformer, main
+        LT panel with digital energy meters, DG backup 250 kVA
+        (25 percent connected load), LED high-bay fixtures at 250 lux
+        working plane in the warehouse, 300 lux in the office.
+
+5  CLIENT SCOPE (SUPPLIED BY OWNER)
+
+   5.1  Racking system, forklifts and warehouse-management system.
+   5.2  IT cabling and CCTV infrastructure beyond the empty conduits
+        supplied by the contractor.
+   5.3  Interior furniture, fit-out and fixtures for the office block.
+   5.4  Landscape planting beyond the boundary treatment.
+
+6  APPROVALS AND STATUTORY
+
+   6.1  MIDC plan approval and occupancy certificate: contractor
+        to prepare the application; client will sign.
+   6.2  Fire NoC (State Fire Service): contractor's responsibility
+        to obtain, including any modifications required by the
+        authority up to grant of NoC.
+   6.3  MSEDCL HT connection: client's account with MSEDCL;
+        contractor to prepare the technical scheme and supervise
+        HT commissioning.
+   6.4  Consent to establish and consent to operate from MPCB:
+        assumed not applicable for FMCG dry-goods storage; to be
+        confirmed by contractor at design stage.
+   6.5  Building plan approval fees, scrutiny fees and infrastructure
+        charges: to client's account. Contractor to submit
+        applications.
+
+7  KEY DATES
+
+   7.1  Design freeze                          Week 6 from LoA
+   7.2  MIDC plan approval received            Week 10 from LoA
+   7.3  Substation live and DG commissioned    Week 24 from LoA
+   7.4  Roof sheeting complete                 Week 36 from LoA
+   7.5  Virtual completion                     Week 44 from LoA
+   7.6  Handover                               Week 46 from LoA
+
+— End of DBR excerpt for the workshop —
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the room should discover.</strong> The MSEDCL substation lands at Week 24 but the racking (client-supplied) needs power for pre-commissioning — where in the interface matrix is that dependency captured? The 12 m rack point load defines the ground-floor design, but the racking specification is a client-supplied item; if the racking supplier changes leg-load requirements after the concrete is poured, who eats the cost? These are the gaps a good matrix surfaces.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 2 · SPEC-VS-BOQ</span><span class="lvl">Core · individual</span></div>
+    <h3>Find the hidden margin killers <span class="duration">30 min</span></h3>
+    <p><strong>Setup.</strong> Individual. Use Pattern 1 on the synthetic spec/BOQ pair below. The exercise is deliberately loaded — the spec is stricter than the BOQ in five distinct places. Debrief by asking the room to rank them by cost impact and time impact.</p>
+
+    <details class="synth">
+      <summary>SYNTHETIC SPEC vs BOQ · Five deliberate mismatches for the room to find</summary>
+      <div class="doc">
+EXTRACT — TECHNICAL SPECIFICATION (as tendered by Suroj)
+
+TS-4.2  Reinforcement steel shall be Fe-500D grade thermo-mechanically
+        treated bars conforming to IS 1786:2008, from primary producers
+        only (SAIL, TATA, JSW, RINL, JSPL). Test certificates for
+        every heat number required. Third-party testing by NABL-
+        accredited laboratory shall be additional to manufacturer's
+        certification, on every 25 tonnes or part thereof, at
+        contractor's cost.
+
+TS-4.7  Structural steel for primary members shall be Fe-350
+        conforming to IS 2062, from primary producers only. Third-
+        party ultrasonic testing of all welded joints of primary
+        rafters and columns shall be provided by the contractor.
+
+TS-4.11 VDF flooring in the warehouse shall be M-35 grade concrete,
+        finished to FM2 floor-flatness classification per TR34.
+        Vacuum dewatering shall be by IMER or equivalent approved
+        equipment only. Dry-shake metallic hardener at 5 kg/sqm
+        (Sika Chapdur Metallic or approved equivalent). Joints on
+        armoured joint system (Permaban Signature or approved
+        equivalent).
+
+TS-6.4  All PEB sheeting shall carry a 15-year manufacturer's
+        warranty against colour fade and corrosion perforation,
+        underwritten by the sheeting mill. Warranty document to be
+        transferred to client at handover.
+
+TS-7.9  Fire pumps shall be UL-listed and FM-approved,
+        conforming to NFPA 20, from Kirloskar, Grundfos or Xylem
+        make only. Diesel-engine fire pump additional to jockey
+        and electric duty pump.
+
+EXTRACT — PRICED BOQ (as tendered by Suroj)
+
+Item 4.2  Providing, cutting, bending and placing in position of
+          TMT reinforcement bars of Fe-500 grade, conforming to
+          IS 1786, including binding wire, overlap, chairs, spacers.
+          As per structural drawings.
+          Qty 285 MT | Rate ₹ 68,400 / MT | Amount ₹ 1,94,94,000
+
+Item 4.7  Fabrication, supply and erection of structural steel
+          for primary and secondary members of PEB, conforming
+          to IS 2062 Fe-350 for primary and IS 811 for cold-
+          formed. Including shop primer, one coat epoxy at site,
+          hot-dip galvanising of exterior secondary members.
+          Qty 245 MT | Rate ₹ 1,42,000 / MT | Amount ₹ 3,47,90,000
+
+Item 4.11 VDF flooring in warehouse, 200 mm thick, M-30 grade
+          RMC, vacuum dewatered, power trowelled, cured 28 days.
+          Metallic hardener 3 kg/sqm.
+          Qty 6,050 sqm | Rate ₹ 1,890 / sqm | Amount ₹ 1,14,34,500
+
+Item 6.4  Roofing sheets 0.5 mm bare metal galvalume, pre-painted,
+          fixed with self-drilling fasteners, EPDM washers, including
+          ridge, valley, gable trims.
+          Qty 7,480 sqm | Rate ₹ 890 / sqm | Amount ₹ 66,57,200
+
+Item 7.9  Fire pumps package — electric duty pump 171 m3/hr @
+          70 m head, jockey pump 10 m3/hr @ 75 m head, associated
+          panels and interconnecting piping to header. As per NBC
+          2016 and IS 3844.
+          Lump sum | Amount ₹ 42,00,000
+      </div>
+    </details>
+
+    <div class="facilitator">
+      <strong>What the room should find.</strong> (1) Item 4.2 BOQ says Fe-500; spec says Fe-500D from primary producers only — Fe-500D is a premium of ~4% and primary producers only rules out the cheaper secondary mills. (2) Item 4.7 BOQ does not price for third-party UT of welded joints. (3) Item 4.11 BOQ says M-30 concrete and 3 kg/sqm hardener; spec says M-35 and 5 kg/sqm plus armoured joints and specific-make dewatering — probably ₹250-300/sqm impact across 6,050 sqm. (4) Item 6.4 does not carry a warranty premium; a 15-year mill-backed warranty is priced by manufacturers. (5) Item 7.9 does not price for UL/FM-listed pumps or a diesel-engine pump — this is a significant scope hole.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="ex-header"><span>EXERCISE 3 · DESIGN-STAGE RISK REGISTER</span><span class="lvl">Applied · groups of four</span></div>
+    <h3>Build the risk register from the DBR <span class="duration">25 min</span></h3>
+    <p><strong>Setup.</strong> Groups of four. Use Pattern 3 on the warehouse DBR. Each group nominates its top three risks and reads them out. The room votes on the single risk they think is most likely to be under-priced by an inexperienced bidder.</p>
+    <p><strong>What good looks like.</strong> Groups should surface: (1) the substation-in-week-24 dependency, (2) fire NoC risk (State Fire Service delays are common and open-ended), (3) MPCB CTE/CTO — the DBR says "assumed not applicable" but the contractor confirms; that assumption should be a bid clarification, not a risk. (4) The floor is M-35 to FM2 flatness — expensive to fix if wrong; a good register puts a mitigation "engage flooring specialist at design stage" line item.</p>
+  </div>
+
+  <h3>Common pitfalls in this room</h3>
+  <div class="box warn">
+    <ul>
+      <li><strong>Treating the DBR as complete.</strong> A DBR is a starting point, not a design. If the room asks the AI "what is the design?" it will invent one. The AI's job is to help identify what is missing, not to fill it in.</li>
+      <li><strong>Blaming the AI for a missed interface.</strong> The AI produces a matrix from what is written. If the DBR is silent on rainwater harvesting size, the matrix will be silent on it too. The prompt should include: "mark 'brief silent — flag for clarification' where the DBR is silent."</li>
+      <li><strong>Skipping the spec-BOQ check because it feels obvious.</strong> Every EPC firm has a spec-BOQ mismatch story. Running Pattern 1 as the last step before submission is the highest-ROI use of AI in this room.</li>
+    </ul>
+  </div>
+
+  <h3>Closing 20 minutes — Q&A prompts</h3>
+  <ol>
+    <li>"On your most recent EPC bid, if we had run these three prompts, what would we have caught?"</li>
+    <li>"Where does the design-stage risk register go after the bid is won — who owns it, and how does it change into the execution risk register?"</li>
+    <li>"What is one repeatable pattern this firm loses margin on that we should build a permanent prompt for?"</li>
+  </ol>
+</section>
+
+<div class="foot">
+  <div>Suroj Buildcon × Be10x · AI Workforce Transformation · Part 2 of 5 · Trainer's working document v1</div>
+  <div class="rule-row">Every company name, employee name, project name, invoice number, GSTIN, PAN and financial figure in this document is synthetic. Any resemblance to real Suroj vendors, employees or projects is coincidental — the exercises are teaching material only.</div>
+</div>
+
+</main>
+</div>
+</body>
+</html>
