@@ -19,10 +19,12 @@ const Dashboard = () => {
   };
 
   const familyData = [
-    { name: "Winning Work", count: 42, color: "var(--color-rust)" },
-    { name: "Numbers, Drawings & Systems", count: 83, color: "var(--color-indigo)" },
-    { name: "Running Site & Materials", count: 34, color: "var(--color-ochre)" },
-    { name: "People & Communication", count: 25, color: "var(--color-moss)" },
+    { name: "Tendering & Contracts", count: 42, color: "var(--color-rust)" },
+    { name: "Accounts & Finance", count: 39, color: "var(--color-indigo)" },
+    { name: "People, Admin & Comm", count: 29, color: "var(--color-ochre)" },
+    { name: "Cost, Planning & Systems", count: 26, color: "var(--color-moss)" },
+    { name: "Procurement & Stores", count: 23, color: "var(--color-steel)" },
+    { name: "Design & Quantities", count: 18, color: "var(--color-brick)" },
   ];
 
   return (
@@ -102,7 +104,7 @@ const Dashboard = () => {
             </div>
           </motion.div>
           <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-6 font-serif italic text-white drop-shadow-md">
-            Eight sessions.<br/>One transformation system.
+            Six sessions.<br/>One transformation system.
           </h1>
           <p className="text-paper-3 text-lg max-w-xl text-opacity-90">
             From workshop learning to repeatable AI-enabled workflows. Building the intelligent foundation for enterprise construction.
@@ -132,7 +134,7 @@ const Dashboard = () => {
         {[
           { label: 'Participants', value: globalStats.totalParticipants, icon: Users, color: 'text-rust', bg: 'bg-rust/10', border: 'border-rust/20' },
           { label: 'Sessions', value: globalStats.totalSessions, icon: BookOpen, color: 'text-indigo', bg: 'bg-indigo/10', border: 'border-indigo/20' },
-          { label: 'Learning Families', value: globalStats.learningFamilies, icon: Layers, color: 'text-steel', bg: 'bg-steel/10', border: 'border-steel/20' },
+          { label: 'Departments', value: 16, icon: Layers, color: 'text-steel', bg: 'bg-steel/10', border: 'border-steel/20' },
           { label: 'Workshop Days', value: globalStats.workshopDays, icon: CalendarDays, color: 'text-ochre', bg: 'bg-ochre/10', border: 'border-ochre/20' },
         ].map((kpi, i) => (
           <motion.div 
@@ -193,7 +195,7 @@ const Dashboard = () => {
         <div className="bg-paper border border-rule-2 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col">
           <h3 className="text-lg font-semibold mb-2 flex items-center">
             <span className="w-1.5 h-6 bg-ink rounded-full mr-3"></span>
-            Distribution by Family
+            Distribution by Session Category
           </h3>
           <div className="flex-1 flex flex-col md:flex-row items-center justify-between">
              <div className="h-[220px] w-full md:w-1/2">

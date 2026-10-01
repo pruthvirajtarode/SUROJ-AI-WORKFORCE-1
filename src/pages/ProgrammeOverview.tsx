@@ -14,36 +14,52 @@ const ProgrammeOverview = () => {
 
   const steps = [
     {
-      title: "A — Winning Work",
-      sessions: "Sessions 1–2",
-      desc: "Documents in → priced response out",
+      title: "Session 1 — EPC Bids & Design-Build",
+      sessions: "Morning, Day 1",
+      desc: "Contract & Tendering | EPC",
       color: "border-rust text-rust shadow-rust/10",
       bg: "bg-rust/5",
+      delay: 0.1
+    },
+    {
+      title: "Session 2 — Accounts & Finance",
+      sessions: "Afternoon, Day 1",
+      desc: "Accounts",
+      color: "border-indigo text-indigo shadow-indigo/10",
+      bg: "bg-indigo/5",
       delay: 0.2
     },
     {
-      title: "B — Numbers, Drawings & Systems",
-      sessions: "Sessions 3–5",
-      desc: "Check → analyse → report",
-      color: "border-indigo text-indigo shadow-indigo/10",
-      bg: "bg-indigo/5",
+      title: "Session 3 — People, Admin & Communication",
+      sessions: "Morning, Day 2",
+      desc: "HR & Admin | EHS",
+      color: "border-ochre text-ochre shadow-ochre/10",
+      bg: "bg-ochre/5",
+      delay: 0.3
+    },
+    {
+      title: "Session 4 — Cost, Planning & Systems",
+      sessions: "Afternoon, Day 2",
+      desc: "Cost Control | Planning",
+      color: "border-moss text-moss shadow-moss/10",
+      bg: "bg-moss/5",
       delay: 0.4
     },
     {
-      title: "C — Running Site & Materials",
-      sessions: "Sessions 6–7",
-      desc: "Capture → reconcile → report",
-      color: "border-ochre text-ochre shadow-ochre/10",
-      bg: "bg-ochre/5",
-      delay: 0.6
+      title: "Session 5 — Procurement & Stores",
+      sessions: "Morning, Day 3",
+      desc: "Purchase | Store | V&M",
+      color: "border-steel text-steel shadow-steel/10",
+      bg: "bg-steel/5",
+      delay: 0.5
     },
     {
-      title: "D — People & Communication",
-      sessions: "Session 8",
-      desc: "Draft → communicate → document",
-      color: "border-moss text-moss shadow-moss/10",
-      bg: "bg-moss/5",
-      delay: 0.8
+      title: "Session 6 — Design, Drawings & Quantities",
+      sessions: "Afternoon, Day 3",
+      desc: "MEP | Quantity Surveyor",
+      color: "border-brick text-brick shadow-brick/10",
+      bg: "bg-brick/5",
+      delay: 0.6
     }
   ];
 
