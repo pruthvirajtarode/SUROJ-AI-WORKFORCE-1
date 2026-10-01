@@ -45,9 +45,9 @@ const SessionsIndex = () => {
           const className = "group flex flex-col bg-paper border border-rule-2 hover:border-ink transition-colors rounded-md overflow-hidden shadow-sm";
 
           return session.htmlUrl ? (
-            <a key={session.id} href={session.htmlUrl} className={className}>
+            <Link key={session.id} to={`/session-html/${session.id}`} className={className}>
               {content}
-            </a>
+            </Link>
           ) : (
             <Link key={session.id} to={`/sessions/${session.id}`} className={className}>
               {content}

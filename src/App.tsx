@@ -12,6 +12,7 @@ import ProgressImpact from './pages/ProgressImpact';
 import ResourceCentre from './pages/ResourceCentre';
 
 import Leaderboard from './pages/Leaderboard';
+import SessionHtmlWrapper from './pages/SessionHtmlWrapper';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="progress" element={<ProgressImpact />} />
         <Route path="resources" element={<ResourceCentre />} />
         <Route path="leaderboard" element={<Leaderboard />} />
+        <Route path="session-html/:id" element={<SessionHtmlWrapper />} />
       </Route>
     </Routes>
   );
