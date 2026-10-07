@@ -19,9 +19,6 @@ const ProgressImpact = () => {
             30-day workflow adoption tracking and metrics.
           </p>
         </div>
-        <span className="font-mono text-xs font-bold text-danger px-2 py-1 bg-[#F5E4D8] border border-danger/20 rounded">
-          DEMO METRICS ONLY
-        </span>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
