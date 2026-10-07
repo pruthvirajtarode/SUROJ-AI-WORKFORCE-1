@@ -47,24 +47,24 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 
 /* Alerts */
 .tip{background:rgba(255,214,0,0.08);border-left:3px solid var(--accent);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
-.warning{background:rgba(255,82,82,0.08);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
-.success{background:rgba(76,175,80,0.08);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
+.warning{background:rgba(160, 52, 34, 0.15);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
+.success{background:rgba(78, 107, 46, 0.15);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
 .info-box{background:rgba(33,150,243,0.08);border-left:3px solid var(--blue);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
 
 /* Prompts */
-.prompt{background:#1e1e2e;border:2px solid #69F0AE;border-radius:8px;padding:16px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;color:#a6e3a1;line-height:1.5;white-space:pre-wrap;position:relative}
-.prompt-label{display:inline-block;background:#69F0AE;color:#1e1e2e;padding:3px 12px;border-radius:15px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
-.copy-btn{position:absolute;top:10px;right:10px;background:rgba(0, 0, 0, 0.05);border:1px solid rgba(255,255,255,0.2);color:#69F0AE;padding:4px 12px;border-radius:5px;cursor:pointer;font-size:11px;font-family:'Segoe UI',sans-serif}
+.prompt{background:var(--card2);border:2px solid var(--green);border-radius:8px;padding:16px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;color:var(--green);line-height:1.5;white-space:pre-wrap;position:relative}
+.prompt-label{display:inline-block;background:var(--green);color:var(--card2);padding:3px 12px;border-radius:15px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.copy-btn{position:absolute;top:10px;right:10px;background:rgba(0, 0, 0, 0.05);border:1px solid rgba(255,255,255,0.2);color:var(--green);padding:4px 12px;border-radius:5px;cursor:pointer;font-size:11px;font-family:'Segoe UI',sans-serif}
 
 /* Exercise */
 .exercise{background:rgba(156,39,176,0.08);border:2px solid rgba(156,39,176,0.2);border-radius:8px;padding:18px;margin:12px 0}
-.exercise h3{color:#CE93D8;font-size:16px;margin-bottom:8px}
+.exercise h3{color:var(--indigo);font-size:16px;margin-bottom:8px}
 
 /* Badges */
 .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
-.badge-safe{background:rgba(76,175,80,0.15);color:var(--green);border:1px solid rgba(76,175,80,0.3)}
-.badge-risky{background:rgba(255,82,82,0.15);color:var(--red);border:1px solid rgba(255,82,82,0.3)}
-.badge-warn{background:rgba(255,152,0,0.15);color:var(--orange);border:1px solid rgba(255,152,0,0.3)}
+.badge-safe{background:rgba(78, 107, 46, 0.15);color:var(--green);border:1px solid rgba(78, 107, 46, 0.15)}
+.badge-risky{background:rgba(160, 52, 34, 0.15);color:var(--red);border:1px solid rgba(160, 52, 34, 0.15)}
+.badge-warn{background:rgba(181, 128, 34, 0.15);color:var(--orange);border:1px solid rgba(181, 128, 34, 0.15)}
 
 /* Case Study */
 .case-study{background:var(--card2);border:1px solid var(--border);border-radius:10px;margin:16px 0;overflow:hidden}
@@ -76,24 +76,24 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .case-study.cs-open .case-study-body{display:block}
 .case-study.cs-open .cs-arrow{transform:rotate(180deg)}
 .cs-tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
-.cs-tag-leak{background:rgba(255,82,82,0.15);color:#FF5252}
-.cs-tag-halluc{background:rgba(255,152,0,0.15);color:#FF9800}
-.cs-tag-good{background:rgba(76,175,80,0.15);color:#4CAF50}
-.cs-tag-policy{background:rgba(33,150,243,0.15);color:#2196F3}
-.cs-tag-global{background:rgba(156,39,176,0.15);color:#CE93D8}
+.cs-tag-leak{background:rgba(160, 52, 34, 0.15);color:var(--red)}
+.cs-tag-halluc{background:rgba(181, 128, 34, 0.15);color:var(--orange)}
+.cs-tag-good{background:rgba(78, 107, 46, 0.15);color:var(--green)}
+.cs-tag-policy{background:rgba(33,150,243,0.15);color:var(--blue)}
+.cs-tag-global{background:rgba(156,39,176,0.15);color:var(--indigo)}
 .cs-block{background:rgba(0,0,0,0.2);border-radius:6px;padding:14px;margin:10px 0;font-size:14px}
 .cs-block h4{font-size:14px;margin-bottom:6px}
-.cs-block.what-happened{border-left:3px solid #FF5252}
-.cs-block.impact{border-left:3px solid #FF9800}
-.cs-block.lesson{border-left:3px solid #4CAF50}
-.cs-block.action{border-left:3px solid #2196F3}
+.cs-block.what-happened{border-left:3px solid var(--red)}
+.cs-block.impact{border-left:3px solid var(--orange)}
+.cs-block.lesson{border-left:3px solid var(--green)}
+.cs-block.action{border-left:3px solid var(--blue)}
 
 /* Theory diagram */
-.diagram{background:rgba(0,0,0,0.3);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
+.diagram{background:var(--card2);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
 .diagram .flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:10px 0}
 .diagram .node{background:rgba(0, 0, 0, 0.04);border:1px solid rgba(0, 0, 0, 0.08);border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600}
-.diagram .node-danger{border-color:rgba(255,82,82,0.4);color:#FF5252}
-.diagram .node-safe{border-color:rgba(76,175,80,0.4);color:#4CAF50}
+.diagram .node-danger{border-color:rgba(160, 52, 34, 0.15);color:var(--red)}
+.diagram .node-safe{border-color:rgba(78, 107, 46, 0.15);color:var(--green)}
 .diagram .arr{color:var(--accent);font-size:20px;font-weight:bold}
 
 
@@ -101,7 +101,7 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .prompt{padding-top:40px}
 .agenda td:first-child{white-space:nowrap;color:var(--accent);font-weight:700}
 .phone{background:rgba(0,188,212,0.07);border:2px solid rgba(0,188,212,0.25);border-radius:10px;padding:18px;margin:14px 0}
-.phone h3{color:#4DD0E1;font-size:17px;margin-bottom:6px}
+.phone h3{color:var(--steel);font-size:17px;margin-bottom:6px}
 .phone .meta{font-size:12px;opacity:0.75;margin-bottom:10px}
 .phone ol{margin:8px 0 8px 22px;font-size:14px}
 .phone ol li{padding:3px 0}
@@ -113,7 +113,7 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .paper tr:hover{background:transparent}
 .paper .stamp{position:absolute;top:10px;right:14px;border:2px solid #c62828;color:#c62828;font-weight:800;font-size:11px;padding:2px 8px;border-radius:4px;transform:rotate(4deg)}
 .paper .copy-btn{top:auto;bottom:10px;color:#1b1b1b;background:#e9e6dc;border-color:#bbb}
-.answer{background:rgba(76,175,80,0.06);border:1px dashed rgba(76,175,80,0.4);border-radius:8px;margin:10px 0}
+.answer{background:rgba(78, 107, 46, 0.15);border:1px dashed rgba(78, 107, 46, 0.15);border-radius:8px;margin:10px 0}
 .answer summary{cursor:pointer;padding:10px 14px;font-size:13px;font-weight:600;color:#81C784}
 .answer div{padding:0 14px 12px;font-size:14px}
 .reveal{cursor:pointer}
@@ -136,23 +136,23 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .opt:hover{background:rgba(0, 0, 0, 0.04)}
 .opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .q.done .opt{cursor:default}
-.opt.right{background:rgba(76,175,80,0.18);border-color:#4CAF50;color:#A5D6A7;font-weight:600}
-.opt.wrong{background:rgba(255,82,82,0.15);border-color:#FF5252;color:#FF8A80}
-.exp{display:none;margin-top:10px;font-size:13.5px;padding:10px 12px;background:rgba(0,0,0,0.25);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
+.opt.right{background:rgba(78, 107, 46, 0.15);border-color:var(--green);color:var(--green);font-weight:600}
+.opt.wrong{background:rgba(160, 52, 34, 0.15);border-color:var(--red);color:var(--red)}
+.exp{display:none;margin-top:10px;font-size:13.5px;padding:10px 12px;background:rgba(0,0,0,0.05);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
 .q.done .exp{display:block}
 .bb-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:14px}
 .bb-score b{color:var(--accent);font-size:18px}
 .bb-reset{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--text);padding:5px 12px;border-radius:6px;cursor:pointer;font-family:inherit}
 .csround{border:2px solid rgba(156,39,176,0.35)}
-.csround .section-head h2{color:#CE93D8}
-.cs-block.discuss{border-left:3px solid #CE93D8}
+.csround .section-head h2{color:var(--indigo)}
+.cs-block.discuss{border-left:3px solid var(--indigo)}
 .labsec{border:2px solid rgba(0,188,212,0.35)}
-.labsec .section-head h2{color:#4DD0E1}
+.labsec .section-head h2{color:var(--steel)}
 .labmeta{font-size:13px;opacity:0.8;margin-bottom:10px}
 .dlrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .dlbtn{display:inline-block;background:rgba(0,188,212,0.12);border:1px solid rgba(0,188,212,0.45);color:#80DEEA;padding:7px 12px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600}
 .dlbtn:hover{background:rgba(0,188,212,0.22)}
-code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.5px;color:#a6e3a1;word-break:break-all}
+code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--green);word-break:break-all}
 .reserve-divider{margin:40px 0 10px;padding:20px 24px;border:2px dashed rgba(255,255,255,0.25);border-radius:12px}
 .reserve-divider h2{font-size:20px;margin-bottom:6px}
 .reserve-divider p{font-size:14px;opacity:0.8}
@@ -162,15 +162,15 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 @media print{body{background:#fff;color:#000}.section-body{display:block!important}.copy-btn{display:none}}
 
 .sm{font-size:11px;opacity:.7}.mini{margin-top:10px;font-family:monospace;font-size:13px;background:rgba(255,255,255,.05);padding:8px 10px;border-radius:6px}
-.tnote{background:rgba(255,214,0,.07);border-left:3px solid #FFD600;padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
+.tnote{background:rgba(255,214,0,.07);border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
 .sorter,.sorter3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:10px}
 .sc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:14px}.sc .bt{display:flex;gap:6px;margin:8px 0}.sc .bt button{flex:1;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--text);border-radius:6px;padding:6px;cursor:pointer;font-size:13px}
-.sc em{display:none;font-style:normal;font-size:13px;opacity:.85}.sc.done em{display:block}.sc .bt button.right{background:#2E7D32;border-color:#2E7D32;color:#fff}.sc.ok{border-color:#4CAF50}.sc.no{border-color:#FF5252}
+.sc em{display:none;font-style:normal;font-size:13px;opacity:.85}.sc.done em{display:block}.sc .bt button.right{background:#2E7D32;border-color:#2E7D32;color:#fff}.sc.ok{border-color:var(--green)}.sc.no{border-color:var(--red)}
 .demo{background:#12122a;border:1px solid #3949AB;border-radius:12px;padding:16px;margin:14px 0}.demo h3{margin-bottom:8px}.demo .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .dsw,.cbtn{background:transparent;border:1px solid #5C6BC0;color:#C5CAE9;border-radius:16px;padding:6px 12px;cursor:pointer;font-size:13px}.dsw.on,.cbtn{background:#3949AB;color:#fff}
-.sent{font-size:18px;margin:12px 0}.blank{background:#FFD600;color:#000;padding:0 6px;border-radius:4px}
+.sent{font-size:18px;margin:12px 0}.blank{background:var(--accent);color:#000;padding:0 6px;border-radius:4px}
 .nb{display:grid;grid-template-columns:100px 1fr 46px;gap:8px;align-items:center;margin:4px 0;font-size:14px}.nb .t{height:14px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}.nb .t i{display:block;height:100%;background:#7986CB}
-.nxo{margin-top:10px;font-size:14px;line-height:1.8}.demo input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #5C6BC0;background:#0f0f1a;color:#fff;font-size:15px}
+.nxo{margin-top:10px;font-size:14px;line-height:1.8}.demo input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #5C6BC0;background:var(--bg);color:#fff;font-size:15px}
 .tko{margin-top:10px;display:flex;flex-wrap:wrap;gap:3px}.tko span{padding:3px 6px;border-radius:4px;color:#fff;font-family:monospace;font-size:14px}
 .note{font-size:12.5px;opacity:.75;margin-top:6px}
 html{scroll-behavior:smooth}
@@ -178,7 +178,7 @@ html{scroll-behavior:smooth}
 .rn{position:sticky;top:0;height:100vh;overflow-y:auto;background:#11112a;border-left:1px solid var(--border);padding:14px 12px 40px;font-size:13px}
 .rn-h{font-size:11px;letter-spacing:2px;opacity:.6;margin-bottom:8px}
 .rn a{display:block;color:#cfd3e6;text-decoration:none;padding:5px 8px;border-radius:6px;line-height:1.35}
-.rn a:hover{background:rgba(255,255,255,.06)}.rn a.act{background:rgba(255,214,0,.12);color:#FFD600}
+.rn a:hover{background:rgba(255,255,255,.06)}.rn a.act{background:rgba(255,214,0,.12);color:var(--accent)}
 .rn-top{font-weight:700;margin-bottom:6px}
 .rn-g{margin:8px 0;border-top:1px solid var(--border);padding-top:8px}
 .rn-gt{position:relative;padding-right:22px!important;width:100%;text-align:left;background:none;border:0;color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;padding:6px 8px}
@@ -188,18 +188,18 @@ html{scroll-behavior:smooth}
 .rn-hint{font-size:12px;opacity:.7;font-style:italic}
 .rn-items a{font-size:12.5px}
 .rn-btn{display:none}
-.session-sep{height:6px;background:repeating-linear-gradient(90deg,#FFD600 0 20px,transparent 20px 40px);opacity:.4;margin:40px 0 0}
+.session-sep{height:6px;background:repeating-linear-gradient(90deg,var(--accent) 0 20px,transparent 20px 40px);opacity:.4;margin:40px 0 0}
 @media (max-width:1100px){.layout{grid-template-columns:1fr}.rn{position:fixed;right:0;top:0;width:min(320px,88vw);z-index:50;transform:translateX(105%);transition:transform .2s;box-shadow:-10px 0 30px rgba(0,0,0,.5)}
-.rn.on{transform:none}.rn-btn{display:block;position:fixed;right:14px;bottom:14px;z-index:60;background:#FFD600;color:#000;border:0;border-radius:22px;padding:10px 16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
+.rn.on{transform:none}.rn-btn{display:block;position:fixed;right:14px;bottom:14px;z-index:60;background:var(--accent);color:#000;border:0;border-radius:22px;padding:10px 16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rn{transition:none}}
 .fbar{background:rgba(33,150,243,.07);border:1px solid rgba(33,150,243,.35);border-radius:10px;padding:12px 14px;margin:12px 0}
 .fbar-h{font-weight:700;font-size:13.5px;margin-bottom:8px;color:#90CAF9}.fbar-n{font-size:12.5px;opacity:.75;margin-top:6px}
 .fgrp{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:6px 8px;margin:4px 6px 4px 0}
 .fname{font-family:monospace;font-size:12.5px}.fname i{font-style:normal;font-size:10.5px;opacity:.65;border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:0 4px;margin-left:4px;font-family:Segoe UI,sans-serif}
 .fb{background:#1976D2;color:#fff;border:0;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:600;cursor:pointer}.fb.ghost{background:transparent;border:1px solid #64B5F6;color:#90CAF9}.fb:hover{filter:brightness(1.15)}
-.fb:focus-visible{outline:2px solid #FFD600;outline-offset:2px}
+.fb:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .goal{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.4);border-radius:10px;padding:14px;margin:12px 0}
-.goal b{color:#A5D6A7;font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
+.goal b{color:var(--green);font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
 .fb.fpv{background:#00897B}
 .pv{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;display:flex;align-items:center;justify-content:center;padding:2vh 2vw}.pv[hidden]{display:none}
 .pv-box{background:#fff;color:#111;width:min(1100px,96vw);height:94vh;border-radius:12px;display:flex;flex-direction:column;overflow:hidden}
@@ -243,8 +243,8 @@ html{scroll-behavior:smooth}
 .mini { background: rgba(0,0,0,0.06) !important; color: #14161A !important; font-weight: 500 !important; }
 .diagram { background: rgba(0,0,0,0.05) !important; }
 .diagram .node { background: #ffffff !important; color: #14161A !important; }
-.diagram .node-danger { border-color: #FF5252 !important; color: #D32F2F !important; }
-.diagram .node-safe { border-color: #4CAF50 !important; color: #2E7D32 !important; }
+.diagram .node-danger { border-color: var(--red) !important; color: #D32F2F !important; }
+.diagram .node-safe { border-color: var(--green) !important; color: #2E7D32 !important; }
 .diagram .sm { color: #555 !important; }
 .diagram .arr { color: #B0431E !important; }
 
@@ -557,7 +557,7 @@ oddly between Jul, Aug and Sep — is something booked to the wrong head?</div><
 versus the site EAC, and three actions (e.g. hold new POs on X). Facts only; no blame.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One hidden-overrun code: add actual + open POs yourself.</li><li>▸ Sum two columns with a filter total in your phone's sheet app and compare with the AI's.</li><li>▸ Read the approved-variation column before calling anything an overrun.</li></ul></div>
 <div class="tip"><strong>💡 For the room:</strong> nobody falsified anything. The site EAC simply assumes the rest of the work goes to budget. EVM assumes the next 32% goes like the first 68%. Showing both is the cost controller's job.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Spend running ahead of progress (&gt;15 pts)</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>C01</strong> — Material — Cement: 86% of budget spent for 64% progress<br/><strong>C05</strong> — Material — Masonry blocks: 84% of budget spent for 62% progress<br/><strong>C12</strong> — Subcontract — Bar bending: 81% of budget spent for 61% progress<br/><strong>C16</strong> — Plant hire: 92% of budget spent for 74% progress</td></tr><tr><td>Already over budget</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>C02</strong> — Material — Reinforcement steel: actual ₹487.6 L vs budget ₹460.0 L<br/><strong>C11</strong> — Subcontract — Shuttering: actual ₹228.9 L vs budget ₹210.0 L<br/><strong>C17</strong> — Diesel &amp; fuel: actual ₹69.4 L vs budget ₹62.0 L</td></tr><tr><td>Hidden overrun — actual + open POs exceed budget</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>C03</strong> — Material — RMC: actual + committed ₹348.8 L vs budget ₹320.0 L — not visible in actuals yet<br/><strong>C10</strong> — Subcontract — Civil labour: actual + committed ₹457.8 L vs budget ₹420.0 L — not visible in actuals yet<br/><strong>C13</strong> — Subcontract — Finishes: actual + committed ₹197.9 L vs budget ₹185.0 L — not visible in actuals yet<br/><strong>C20</strong> — Temporary works &amp; enabling: actual + committed ₹86.4 L vs budget ₹80.0 L — not visible in actuals yet</td></tr><tr><td>Site EAC lower than actual + committed (impossible)</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>C03</strong> — EAC ₹316.8 L &lt; actual + committed ₹348.8 L<br/><strong>C10</strong> — EAC ₹415.8 L &lt; actual + committed ₹457.8 L<br/><strong>C13</strong> — EAC ₹183.2 L &lt; actual + committed ₹197.9 L<br/><strong>C20</strong> — EAC ₹79.2 L &lt; actual + committed ₹86.4 L</td></tr><tr><td>Variance ≠ Total budget − EAC</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>C04</strong> — Typed ₹26.0 L vs ₹1.0 L<br/><strong>C18</strong> — Typed ₹27.3 L vs ₹2.3 L<br/><strong>C23</strong> — Typed ₹-17.0 L vs ₹1.0 L</td></tr><tr><td>Pattern: cost booked to the wrong head</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>C01 / C17</strong> — September: cement (C01) jumps by ~₹19 L while diesel (C17) shows zero — a likely mis-booking</td></tr><tr><td>Over budget but covered by approved variation (trap)</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>C09</strong> — PEB: actual above original budget, within budget + approved variation</td></tr></table></div><p style='margin-top:10px'><strong>EVM:</strong> BAC INR 40.17 cr · AC 29.79 cr · CPI 0.92 · SPI 0.85 · EAC (BAC/CPI) INR 43.81 cr vs site EAC INR 40.70 cr. Margin: 7.8 cr on the site's number, about 4.7 cr on current performance — before LD. That gap is the headline.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Spend running ahead of progress (&gt;15 pts)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>C01</strong> — Material — Cement: 86% of budget spent for 64% progress<br/><strong>C05</strong> — Material — Masonry blocks: 84% of budget spent for 62% progress<br/><strong>C12</strong> — Subcontract — Bar bending: 81% of budget spent for 61% progress<br/><strong>C16</strong> — Plant hire: 92% of budget spent for 74% progress</td></tr><tr><td>Already over budget</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>C02</strong> — Material — Reinforcement steel: actual ₹487.6 L vs budget ₹460.0 L<br/><strong>C11</strong> — Subcontract — Shuttering: actual ₹228.9 L vs budget ₹210.0 L<br/><strong>C17</strong> — Diesel &amp; fuel: actual ₹69.4 L vs budget ₹62.0 L</td></tr><tr><td>Hidden overrun — actual + open POs exceed budget</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>C03</strong> — Material — RMC: actual + committed ₹348.8 L vs budget ₹320.0 L — not visible in actuals yet<br/><strong>C10</strong> — Subcontract — Civil labour: actual + committed ₹457.8 L vs budget ₹420.0 L — not visible in actuals yet<br/><strong>C13</strong> — Subcontract — Finishes: actual + committed ₹197.9 L vs budget ₹185.0 L — not visible in actuals yet<br/><strong>C20</strong> — Temporary works &amp; enabling: actual + committed ₹86.4 L vs budget ₹80.0 L — not visible in actuals yet</td></tr><tr><td>Site EAC lower than actual + committed (impossible)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>C03</strong> — EAC ₹316.8 L &lt; actual + committed ₹348.8 L<br/><strong>C10</strong> — EAC ₹415.8 L &lt; actual + committed ₹457.8 L<br/><strong>C13</strong> — EAC ₹183.2 L &lt; actual + committed ₹197.9 L<br/><strong>C20</strong> — EAC ₹79.2 L &lt; actual + committed ₹86.4 L</td></tr><tr><td>Variance ≠ Total budget − EAC</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>C04</strong> — Typed ₹26.0 L vs ₹1.0 L<br/><strong>C18</strong> — Typed ₹27.3 L vs ₹2.3 L<br/><strong>C23</strong> — Typed ₹-17.0 L vs ₹1.0 L</td></tr><tr><td>Pattern: cost booked to the wrong head</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>C01 / C17</strong> — September: cement (C01) jumps by ~₹19 L while diesel (C17) shows zero — a likely mis-booking</td></tr><tr><td>Over budget but covered by approved variation (trap)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>C09</strong> — PEB: actual above original budget, within budget + approved variation</td></tr></table></div><p style='margin-top:10px'><strong>EVM:</strong> BAC INR 40.17 cr · AC 29.79 cr · CPI 0.92 · SPI 0.85 · EAC (BAC/CPI) INR 43.81 cr vs site EAC INR 40.70 cr. Margin: 7.8 cr on the site's number, about 4.7 cr on current performance — before LD. That gap is the headline.</p></div></details>
 </div>
 </div>
 
@@ -580,7 +580,7 @@ How many days must be recovered to halve it?</div><span class="prompt-label">PRO
 and three recovery options to evaluate (no promises, no invented durations).</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ M900: baseline vs forecast — count the days yourself.</li><li>▸ Days ÷ 7 × 0.5% × 48.5 cr on the calculator.</li><li>▸ Pick one open end and read its predecessor and successor cells.</li></ul></div>
 <div class="tip"><strong>💡 For Planning:</strong> the AI doesn't replace P6's CPM — it reviews the export a human would otherwise eyeball, and writes the note. The integration Prashant asked for is Phase 2.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Progress recorded but no actual start</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>A1300</strong> — Doors &amp; windows: 25% complete, Start_Flag blank<br/><strong>A1400</strong> — Documentation &amp; as-builts: 25% complete, Start_Flag blank<br/><strong>A1380</strong> — Snag &amp; rectification: 40% complete, Start_Flag blank</td></tr><tr><td>Finish date in the past but not complete (stale forecast)</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>A1310</strong> — Embedded plates &amp; sleeves: finish 12-Sep &lt; data date, 87%<br/><strong>A1360</strong> — Boundary wall: finish 18-Sep &lt; data date, 92%<br/><strong>A1260</strong> — External plaster: finish 17-Sep &lt; data date, 93%</td></tr><tr><td>Actual finish before actual start</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>A1020</strong> — Temporary power &amp; water: start 14-Nov, finish 11-Nov<br/><strong>A1060</strong> — PCC &amp; footings Grid A–D: start 01-Jan, finish 27-Dec</td></tr><tr><td>Mandatory constraint overriding logic</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>A1320</strong> — Shafts &amp; risers handover: Mandatory Finish hides the real float</td></tr><tr><td>Open end — no successor</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>A1080</strong> — Plinth beams<br/><strong>A1210</strong> — Side cladding<br/><strong>A1250</strong> — Internal plaster<br/><strong>A1340</strong> — Storm water drains</td></tr><tr><td>Open end — no predecessor</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>A1090</strong> — Backfilling &amp; compaction<br/><strong>A1260</strong> — External plaster<br/><strong>A1350</strong> — Roads</td></tr><tr><td>Milestone slipped vs baseline</td><td style='text-align:center;font-weight:700;color:#FFD600'>5</td><td style='font-size:12.5px'><strong>M200</strong> — Foundations complete: 6 days late (baseline 06-Mar-2026, forecast 12-Mar-2026)<br/><strong>M300</strong> — Superstructure complete: 24 days late (baseline 17-Jun-2026, forecast 11-Jul-2026)<br/><strong>M400</strong> — Building watertight: 28 days late (baseline 10-Nov-2026, forecast 08-Dec-2026)<br/><strong>M500</strong> — Cleanroom areas handed to MEPF: 30 days late (baseline 22-Sep-2026, forecast 22-Oct-2026)<br/><strong>M900</strong> — Contract completion: 26 days late (baseline 31-Dec-2026, forecast 26-Jan-2027)</td></tr></table></div><p style='margin-top:10px'><strong>LD:</strong> 26 days late → about INR 90.1 lakh. Recovering 13 days halves it.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Progress recorded but no actual start</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>A1300</strong> — Doors &amp; windows: 25% complete, Start_Flag blank<br/><strong>A1400</strong> — Documentation &amp; as-builts: 25% complete, Start_Flag blank<br/><strong>A1380</strong> — Snag &amp; rectification: 40% complete, Start_Flag blank</td></tr><tr><td>Finish date in the past but not complete (stale forecast)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>A1310</strong> — Embedded plates &amp; sleeves: finish 12-Sep &lt; data date, 87%<br/><strong>A1360</strong> — Boundary wall: finish 18-Sep &lt; data date, 92%<br/><strong>A1260</strong> — External plaster: finish 17-Sep &lt; data date, 93%</td></tr><tr><td>Actual finish before actual start</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>A1020</strong> — Temporary power &amp; water: start 14-Nov, finish 11-Nov<br/><strong>A1060</strong> — PCC &amp; footings Grid A–D: start 01-Jan, finish 27-Dec</td></tr><tr><td>Mandatory constraint overriding logic</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>A1320</strong> — Shafts &amp; risers handover: Mandatory Finish hides the real float</td></tr><tr><td>Open end — no successor</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>A1080</strong> — Plinth beams<br/><strong>A1210</strong> — Side cladding<br/><strong>A1250</strong> — Internal plaster<br/><strong>A1340</strong> — Storm water drains</td></tr><tr><td>Open end — no predecessor</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>A1090</strong> — Backfilling &amp; compaction<br/><strong>A1260</strong> — External plaster<br/><strong>A1350</strong> — Roads</td></tr><tr><td>Milestone slipped vs baseline</td><td style='text-align:center;font-weight:700;color:var(--accent)'>5</td><td style='font-size:12.5px'><strong>M200</strong> — Foundations complete: 6 days late (baseline 06-Mar-2026, forecast 12-Mar-2026)<br/><strong>M300</strong> — Superstructure complete: 24 days late (baseline 17-Jun-2026, forecast 11-Jul-2026)<br/><strong>M400</strong> — Building watertight: 28 days late (baseline 10-Nov-2026, forecast 08-Dec-2026)<br/><strong>M500</strong> — Cleanroom areas handed to MEPF: 30 days late (baseline 22-Sep-2026, forecast 22-Oct-2026)<br/><strong>M900</strong> — Contract completion: 26 days late (baseline 31-Dec-2026, forecast 26-Jan-2027)</td></tr></table></div><p style='margin-top:10px'><strong>LD:</strong> 26 days late → about INR 90.1 lakh. Recovering 13 days halves it.</p></div></details>
 </div>
 </div>
 
@@ -600,7 +600,7 @@ below 70% of it. Separately, list subcontractors with three or more consecutive 
 and a request for their attendance records before the bill is certified. Neutral tone.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One flagged week: billed ÷ gate on the calculator.</li><li>▸ Filter the under-deployed subcontractor: count the weeks below 70%.</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Billed / output with zero gate attendance</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>LB002</strong> — SC-02 wk 04-Jul: gate 0, billed 469<br/><strong>LB087</strong> — SC-07 wk 12-Sep: gate 0, billed 105</td></tr><tr><td>Billed mandays &gt; gate mandays by &gt;5%</td><td style='text-align:center;font-weight:700;color:#FFD600'>5</td><td style='font-size:12.5px'><strong>LB009</strong> — SC-01 wk 11-Jul: billed 301 vs gate 256 (+18%)<br/><strong>LB031</strong> — SC-07 wk 25-Jul: billed 129 vs gate 105 (+23%)<br/><strong>LB039</strong> — SC-07 wk 01-Aug: billed 119 vs gate 104 (+14%)<br/><strong>LB070</strong> — SC-06 wk 29-Aug: billed 472 vs gate 401 (+18%)<br/><strong>LB095</strong> — SC-07 wk 19-Sep: billed 126 vs gate 103 (+22%)</td></tr><tr><td>Productivity drop &gt;30% vs own median</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>LB021</strong> — SC-05 wk 18-Jul: 0.29 MT steel/manday vs median 0.56<br/><strong>LB041</strong> — SC-01 wk 08-Aug: 4.92 sqm formwork/manday vs median 8.65<br/><strong>LB053</strong> — SC-05 wk 15-Aug: 0.27 MT steel/manday vs median 0.56<br/><strong>LB088</strong> — SC-08 wk 12-Sep: 1.15 cum concrete/manday vs median 2.41</td></tr><tr><td>Pattern: critical trade under-deployed for weeks</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>SC-03</strong> — Bar benders at 5 weeks below 70% of plan (Aug–Sep) — a critical trade short while the finish date slips</td></tr></table></div></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Billed / output with zero gate attendance</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>LB002</strong> — SC-02 wk 04-Jul: gate 0, billed 469<br/><strong>LB087</strong> — SC-07 wk 12-Sep: gate 0, billed 105</td></tr><tr><td>Billed mandays &gt; gate mandays by &gt;5%</td><td style='text-align:center;font-weight:700;color:var(--accent)'>5</td><td style='font-size:12.5px'><strong>LB009</strong> — SC-01 wk 11-Jul: billed 301 vs gate 256 (+18%)<br/><strong>LB031</strong> — SC-07 wk 25-Jul: billed 129 vs gate 105 (+23%)<br/><strong>LB039</strong> — SC-07 wk 01-Aug: billed 119 vs gate 104 (+14%)<br/><strong>LB070</strong> — SC-06 wk 29-Aug: billed 472 vs gate 401 (+18%)<br/><strong>LB095</strong> — SC-07 wk 19-Sep: billed 126 vs gate 103 (+22%)</td></tr><tr><td>Productivity drop &gt;30% vs own median</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>LB021</strong> — SC-05 wk 18-Jul: 0.29 MT steel/manday vs median 0.56<br/><strong>LB041</strong> — SC-01 wk 08-Aug: 4.92 sqm formwork/manday vs median 8.65<br/><strong>LB053</strong> — SC-05 wk 15-Aug: 0.27 MT steel/manday vs median 0.56<br/><strong>LB088</strong> — SC-08 wk 12-Sep: 1.15 cum concrete/manday vs median 2.41</td></tr><tr><td>Pattern: critical trade under-deployed for weeks</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>SC-03</strong> — Bar benders at 5 weeks below 70% of plan (Aug–Sep) — a critical trade short while the finish date slips</td></tr></table></div></div></details>
 </div>
 </div>
 
@@ -633,7 +633,7 @@ What three patterns should the IT head act on first?</div><span class="prompt-la
 Mark anything needing management decision as [decision].</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One SLA breach: hours between raised and resolved.</li><li>▸ Count one engineer's tickets with a filter.</li></ul></div>
 <div class="tip"><strong>💡 Phase 2 link:</strong> the WhatsApp → ticket → SLA flow from Part 3 is exactly this file, built automatically.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Open more than 7 days</td><td style='text-align:center;font-weight:700;color:#FFD600'>5</td><td style='font-size:12.5px'><strong>IT5004</strong> — P3 Network at P01, raised 14-Jul<br/><strong>IT5158</strong> — P3 Email at P03, raised 15-Jul<br/><strong>IT5113</strong> — P3 Software at P05, raised 21-Jul<br/><strong>IT5166</strong> — P2 Hardware at HO, raised 19-Aug<br/><strong>IT5092</strong> — P2 Access / password at HO, raised 10-Sep</td></tr><tr><td>Closed with no resolution time</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>IT5263</strong> — Email, HO<br/><strong>IT5190</strong> — Software, HO<br/><strong>IT5028</strong> — Printer, P01</td></tr><tr><td>Resolved before it was raised</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>IT5232</strong> — Raised 01-Aug 00:00, resolved 31-Jul 10:00<br/><strong>IT5157</strong> — Raised 30-Aug 20:00, resolved 29-Aug 15:00</td></tr><tr><td>Pattern: one engineer carries most tickets</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>IT1</strong> — IT1 handled 57% of tickets — a single point of failure</td></tr><tr><td>Pattern: ERP bugs spike after the 08-Sep release</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>ERP bug</strong> — 26 of 49 ERP-bug tickets in the 10 days after 08-Sep</td></tr><tr><td>Pattern: repeating network outage at one site</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>P05</strong> — 11 network tickets at P05 since August — fix the cause, not the ticket</td></tr></table></div><p style='margin-top:10px'><strong>SLA breaches:</strong> 31 tickets (full list in the answer-key workbook).</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Open more than 7 days</td><td style='text-align:center;font-weight:700;color:var(--accent)'>5</td><td style='font-size:12.5px'><strong>IT5004</strong> — P3 Network at P01, raised 14-Jul<br/><strong>IT5158</strong> — P3 Email at P03, raised 15-Jul<br/><strong>IT5113</strong> — P3 Software at P05, raised 21-Jul<br/><strong>IT5166</strong> — P2 Hardware at HO, raised 19-Aug<br/><strong>IT5092</strong> — P2 Access / password at HO, raised 10-Sep</td></tr><tr><td>Closed with no resolution time</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>IT5263</strong> — Email, HO<br/><strong>IT5190</strong> — Software, HO<br/><strong>IT5028</strong> — Printer, P01</td></tr><tr><td>Resolved before it was raised</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>IT5232</strong> — Raised 01-Aug 00:00, resolved 31-Jul 10:00<br/><strong>IT5157</strong> — Raised 30-Aug 20:00, resolved 29-Aug 15:00</td></tr><tr><td>Pattern: one engineer carries most tickets</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>IT1</strong> — IT1 handled 57% of tickets — a single point of failure</td></tr><tr><td>Pattern: ERP bugs spike after the 08-Sep release</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>ERP bug</strong> — 26 of 49 ERP-bug tickets in the 10 days after 08-Sep</td></tr><tr><td>Pattern: repeating network outage at one site</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>P05</strong> — 11 network tickets at P05 since August — fix the cause, not the ticket</td></tr></table></div><p style='margin-top:10px'><strong>SLA breaches:</strong> 31 tickets (full list in the answer-key workbook).</p></div></details>
 </div>
 </div>
 
@@ -654,7 +654,7 @@ From the register: XDR coverage on laptops and desktops at HO vs sites.</div><sp
 and asking them to confirm location and user by Friday. Under 70 words per site.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One unseen device: Last_Seen vs 30-Sep.</li><li>▸ Search one duplicate serial.</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Not seen on the network for 30+ days</td><td style='text-align:center;font-weight:700;color:#FFD600'>7</td><td style='font-size:12.5px'><strong>AS3023</strong> — Laptop at P05, last seen 20-Jun<br/><strong>AS3051</strong> — Laptop at P05, last seen 26-Jun<br/><strong>AS3060</strong> — Laptop at P03, last seen 07-Aug<br/><strong>AS3086</strong> — Laptop at P06, last seen 30-Jun<br/><strong>AS3123</strong> — Laptop at P03, last seen 30-Jul<br/><strong>AS3130</strong> — Laptop at P03, last seen 02-Aug<br/><strong>AS3241</strong> — Tablet at P06, last seen 08-Aug</td></tr><tr><td>Assigned to an employee who has left</td><td style='text-align:center;font-weight:700;color:#FFD600'>6</td><td style='font-size:12.5px'><strong>AS3045</strong> — Laptop at P05 with U201<br/><strong>AS3097</strong> — Laptop at P03 with U208<br/><strong>AS3105</strong> — Laptop at P01 with U188<br/><strong>AS3147</strong> — Laptop at P05 with U398<br/><strong>AS3168</strong> — Desktop at HO with U403<br/><strong>AS3195</strong> — Desktop at HO with U226</td></tr><tr><td>Critical device with no warranty or AMC</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>AS3283</strong> — Firewall at P02<br/><strong>AS3284</strong> — Firewall at HO<br/><strong>AS3291</strong> — CCTV NVR at P05<br/><strong>AS3299</strong> — Server at HO</td></tr><tr><td>Duplicate serial number</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>AS3300</strong> — Serial SN83311613 already registered<br/><strong>AS3301</strong> — Serial SN36428663 already registered</td></tr><tr><td>Pattern: endpoint protection only at HO</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>XDR</strong> — XDR on 50 of 232 laptops/desktops — all at HO; 130 site endpoints have none</td></tr><tr><td>Installed more than licensed</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>Microsoft 365 Business</strong> — 338 installed vs 320 licences<br/><strong>Primavera P6</strong> — 15 installed vs 12 licences<br/><strong>Antivirus (legacy)</strong> — 262 installed vs 250 licences</td></tr><tr><td>Licence renewal due within 30 days</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>AutoCAD</strong> — Renews 20-Oct-2026<br/><strong>Tally Prime</strong> — Renews 12-Oct-2026</td></tr></table></div></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Not seen on the network for 30+ days</td><td style='text-align:center;font-weight:700;color:var(--accent)'>7</td><td style='font-size:12.5px'><strong>AS3023</strong> — Laptop at P05, last seen 20-Jun<br/><strong>AS3051</strong> — Laptop at P05, last seen 26-Jun<br/><strong>AS3060</strong> — Laptop at P03, last seen 07-Aug<br/><strong>AS3086</strong> — Laptop at P06, last seen 30-Jun<br/><strong>AS3123</strong> — Laptop at P03, last seen 30-Jul<br/><strong>AS3130</strong> — Laptop at P03, last seen 02-Aug<br/><strong>AS3241</strong> — Tablet at P06, last seen 08-Aug</td></tr><tr><td>Assigned to an employee who has left</td><td style='text-align:center;font-weight:700;color:var(--accent)'>6</td><td style='font-size:12.5px'><strong>AS3045</strong> — Laptop at P05 with U201<br/><strong>AS3097</strong> — Laptop at P03 with U208<br/><strong>AS3105</strong> — Laptop at P01 with U188<br/><strong>AS3147</strong> — Laptop at P05 with U398<br/><strong>AS3168</strong> — Desktop at HO with U403<br/><strong>AS3195</strong> — Desktop at HO with U226</td></tr><tr><td>Critical device with no warranty or AMC</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>AS3283</strong> — Firewall at P02<br/><strong>AS3284</strong> — Firewall at HO<br/><strong>AS3291</strong> — CCTV NVR at P05<br/><strong>AS3299</strong> — Server at HO</td></tr><tr><td>Duplicate serial number</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>AS3300</strong> — Serial SN83311613 already registered<br/><strong>AS3301</strong> — Serial SN36428663 already registered</td></tr><tr><td>Pattern: endpoint protection only at HO</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>XDR</strong> — XDR on 50 of 232 laptops/desktops — all at HO; 130 site endpoints have none</td></tr><tr><td>Installed more than licensed</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>Microsoft 365 Business</strong> — 338 installed vs 320 licences<br/><strong>Primavera P6</strong> — 15 installed vs 12 licences<br/><strong>Antivirus (legacy)</strong> — 262 installed vs 250 licences</td></tr><tr><td>Licence renewal due within 30 days</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>AutoCAD</strong> — Renews 20-Oct-2026<br/><strong>Tally Prime</strong> — Renews 12-Oct-2026</td></tr></table></div></div></details>
 </div>
 </div>
 
@@ -681,11 +681,11 @@ and asking them to confirm location and user by Friday. Under 70 words per site.
 <div class="section-head" onclick="toggle(this)"><h2>🎯 Key Takeaways &amp; Questions</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card"><table><tr><th>#</th><th>Rule</th><th>On the numbers desk</th></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">1</td><td><strong>It predicts digits — make it compute</strong></td><td>Code, formula or method; then two hand checks</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">2</td><td><strong>Profile first</strong></td><td>Rows, columns, totals before any question</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">3</td><td><strong>Formula over answer</strong></td><td>Monthly checks become tested formulas and measures</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">4</td><td><strong>Open POs are the early warning</strong></td><td>Actual + committed vs budget, every month</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">5</td><td><strong>Never paste secrets</strong></td><td>Budgets in approved tools; credentials and configs nowhere</td></tr></table></div>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">1</td><td><strong>It predicts digits — make it compute</strong></td><td>Code, formula or method; then two hand checks</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">2</td><td><strong>Profile first</strong></td><td>Rows, columns, totals before any question</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">3</td><td><strong>Formula over answer</strong></td><td>Monthly checks become tested formulas and measures</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">4</td><td><strong>Open POs are the early warning</strong></td><td>Actual + committed vs budget, every month</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">5</td><td><strong>Never paste secrets</strong></td><td>Budgets in approved tools; credentials and configs nowhere</td></tr></table></div>
 
 <div class="info-box"><strong>Last 20 minutes — department questions.</strong> Integration asks (P6/MSP → ERP → Power BI, ERP agents, ticketing) are logged for Phase 2 scoping with EDP.</div></div>
 </div>

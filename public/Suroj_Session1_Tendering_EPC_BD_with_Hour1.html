@@ -47,24 +47,24 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 
 /* Alerts */
 .tip{background:rgba(255,214,0,0.08);border-left:3px solid var(--accent);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
-.warning{background:rgba(255,82,82,0.08);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
-.success{background:rgba(76,175,80,0.08);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
+.warning{background:rgba(160, 52, 34, 0.15);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
+.success{background:rgba(78, 107, 46, 0.15);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
 .info-box{background:rgba(33,150,243,0.08);border-left:3px solid var(--blue);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
 
 /* Prompts */
-.prompt{background:#1e1e2e;border:2px solid #69F0AE;border-radius:8px;padding:16px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;color:#a6e3a1;line-height:1.5;white-space:pre-wrap;position:relative}
-.prompt-label{display:inline-block;background:#69F0AE;color:#1e1e2e;padding:3px 12px;border-radius:15px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
-.copy-btn{position:absolute;top:10px;right:10px;background:rgba(0, 0, 0, 0.05);border:1px solid rgba(255,255,255,0.2);color:#69F0AE;padding:4px 12px;border-radius:5px;cursor:pointer;font-size:11px;font-family:'Segoe UI',sans-serif}
+.prompt{background:var(--card2);border:2px solid var(--green);border-radius:8px;padding:16px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;color:var(--green);line-height:1.5;white-space:pre-wrap;position:relative}
+.prompt-label{display:inline-block;background:var(--green);color:var(--card2);padding:3px 12px;border-radius:15px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.copy-btn{position:absolute;top:10px;right:10px;background:rgba(0, 0, 0, 0.05);border:1px solid rgba(255,255,255,0.2);color:var(--green);padding:4px 12px;border-radius:5px;cursor:pointer;font-size:11px;font-family:'Segoe UI',sans-serif}
 
 /* Exercise */
 .exercise{background:rgba(156,39,176,0.08);border:2px solid rgba(156,39,176,0.2);border-radius:8px;padding:18px;margin:12px 0}
-.exercise h3{color:#CE93D8;font-size:16px;margin-bottom:8px}
+.exercise h3{color:var(--indigo);font-size:16px;margin-bottom:8px}
 
 /* Badges */
 .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
-.badge-safe{background:rgba(76,175,80,0.15);color:var(--green);border:1px solid rgba(76,175,80,0.3)}
-.badge-risky{background:rgba(255,82,82,0.15);color:var(--red);border:1px solid rgba(255,82,82,0.3)}
-.badge-warn{background:rgba(255,152,0,0.15);color:var(--orange);border:1px solid rgba(255,152,0,0.3)}
+.badge-safe{background:rgba(78, 107, 46, 0.15);color:var(--green);border:1px solid rgba(78, 107, 46, 0.15)}
+.badge-risky{background:rgba(160, 52, 34, 0.15);color:var(--red);border:1px solid rgba(160, 52, 34, 0.15)}
+.badge-warn{background:rgba(181, 128, 34, 0.15);color:var(--orange);border:1px solid rgba(181, 128, 34, 0.15)}
 
 /* Case Study */
 .case-study{background:var(--card2);border:1px solid var(--border);border-radius:10px;margin:16px 0;overflow:hidden}
@@ -76,24 +76,24 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .case-study.cs-open .case-study-body{display:block}
 .case-study.cs-open .cs-arrow{transform:rotate(180deg)}
 .cs-tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
-.cs-tag-leak{background:rgba(255,82,82,0.15);color:#FF5252}
-.cs-tag-halluc{background:rgba(255,152,0,0.15);color:#FF9800}
-.cs-tag-good{background:rgba(76,175,80,0.15);color:#4CAF50}
-.cs-tag-policy{background:rgba(33,150,243,0.15);color:#2196F3}
-.cs-tag-global{background:rgba(156,39,176,0.15);color:#CE93D8}
+.cs-tag-leak{background:rgba(160, 52, 34, 0.15);color:var(--red)}
+.cs-tag-halluc{background:rgba(181, 128, 34, 0.15);color:var(--orange)}
+.cs-tag-good{background:rgba(78, 107, 46, 0.15);color:var(--green)}
+.cs-tag-policy{background:rgba(33,150,243,0.15);color:var(--blue)}
+.cs-tag-global{background:rgba(156,39,176,0.15);color:var(--indigo)}
 .cs-block{background:rgba(0,0,0,0.2);border-radius:6px;padding:14px;margin:10px 0;font-size:14px}
 .cs-block h4{font-size:14px;margin-bottom:6px}
-.cs-block.what-happened{border-left:3px solid #FF5252}
-.cs-block.impact{border-left:3px solid #FF9800}
-.cs-block.lesson{border-left:3px solid #4CAF50}
-.cs-block.action{border-left:3px solid #2196F3}
+.cs-block.what-happened{border-left:3px solid var(--red)}
+.cs-block.impact{border-left:3px solid var(--orange)}
+.cs-block.lesson{border-left:3px solid var(--green)}
+.cs-block.action{border-left:3px solid var(--blue)}
 
 /* Theory diagram */
-.diagram{background:rgba(0,0,0,0.3);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
+.diagram{background:var(--card2);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
 .diagram .flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:10px 0}
 .diagram .node{background:rgba(0, 0, 0, 0.04);border:1px solid rgba(0, 0, 0, 0.08);border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600}
-.diagram .node-danger{border-color:rgba(255,82,82,0.4);color:#FF5252}
-.diagram .node-safe{border-color:rgba(76,175,80,0.4);color:#4CAF50}
+.diagram .node-danger{border-color:rgba(160, 52, 34, 0.15);color:var(--red)}
+.diagram .node-safe{border-color:rgba(78, 107, 46, 0.15);color:var(--green)}
 .diagram .arr{color:var(--accent);font-size:20px;font-weight:bold}
 
 
@@ -101,7 +101,7 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .prompt{padding-top:40px}
 .agenda td:first-child{white-space:nowrap;color:var(--accent);font-weight:700}
 .phone{background:rgba(0,188,212,0.07);border:2px solid rgba(0,188,212,0.25);border-radius:10px;padding:18px;margin:14px 0}
-.phone h3{color:#4DD0E1;font-size:17px;margin-bottom:6px}
+.phone h3{color:var(--steel);font-size:17px;margin-bottom:6px}
 .phone .meta{font-size:12px;opacity:0.75;margin-bottom:10px}
 .phone ol{margin:8px 0 8px 22px;font-size:14px}
 .phone ol li{padding:3px 0}
@@ -113,7 +113,7 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .paper tr:hover{background:transparent}
 .paper .stamp{position:absolute;top:10px;right:14px;border:2px solid #c62828;color:#c62828;font-weight:800;font-size:11px;padding:2px 8px;border-radius:4px;transform:rotate(4deg)}
 .paper .copy-btn{top:auto;bottom:10px;color:#1b1b1b;background:#e9e6dc;border-color:#bbb}
-.answer{background:rgba(76,175,80,0.06);border:1px dashed rgba(76,175,80,0.4);border-radius:8px;margin:10px 0}
+.answer{background:rgba(78, 107, 46, 0.15);border:1px dashed rgba(78, 107, 46, 0.15);border-radius:8px;margin:10px 0}
 .answer summary{cursor:pointer;padding:10px 14px;font-size:13px;font-weight:600;color:#81C784}
 .answer div{padding:0 14px 12px;font-size:14px}
 .reveal{cursor:pointer}
@@ -136,23 +136,23 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .opt:hover{background:rgba(0, 0, 0, 0.04)}
 .opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .q.done .opt{cursor:default}
-.opt.right{background:rgba(76,175,80,0.18);border-color:#4CAF50;color:#A5D6A7;font-weight:600}
-.opt.wrong{background:rgba(255,82,82,0.15);border-color:#FF5252;color:#FF8A80}
-.exp{display:none;margin-top:10px;font-size:13.5px;padding:10px 12px;background:rgba(0,0,0,0.25);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
+.opt.right{background:rgba(78, 107, 46, 0.15);border-color:var(--green);color:var(--green);font-weight:600}
+.opt.wrong{background:rgba(160, 52, 34, 0.15);border-color:var(--red);color:var(--red)}
+.exp{display:none;margin-top:10px;font-size:13.5px;padding:10px 12px;background:rgba(0,0,0,0.05);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
 .q.done .exp{display:block}
 .bb-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:14px}
 .bb-score b{color:var(--accent);font-size:18px}
 .bb-reset{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--text);padding:5px 12px;border-radius:6px;cursor:pointer;font-family:inherit}
 .csround{border:2px solid rgba(156,39,176,0.35)}
-.csround .section-head h2{color:#CE93D8}
-.cs-block.discuss{border-left:3px solid #CE93D8}
+.csround .section-head h2{color:var(--indigo)}
+.cs-block.discuss{border-left:3px solid var(--indigo)}
 .labsec{border:2px solid rgba(0,188,212,0.35)}
-.labsec .section-head h2{color:#4DD0E1}
+.labsec .section-head h2{color:var(--steel)}
 .labmeta{font-size:13px;opacity:0.8;margin-bottom:10px}
 .dlrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .dlbtn{display:inline-block;background:rgba(0,188,212,0.12);border:1px solid rgba(0,188,212,0.45);color:#80DEEA;padding:7px 12px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600}
 .dlbtn:hover{background:rgba(0,188,212,0.22)}
-code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.5px;color:#a6e3a1;word-break:break-all}
+code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--green);word-break:break-all}
 .reserve-divider{margin:40px 0 10px;padding:20px 24px;border:2px dashed rgba(255,255,255,0.25);border-radius:12px}
 .reserve-divider h2{font-size:20px;margin-bottom:6px}
 .reserve-divider p{font-size:14px;opacity:0.8}
@@ -162,15 +162,15 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 @media print{body{background:#fff;color:#000}.section-body{display:block!important}.copy-btn{display:none}}
 
 .sm{font-size:11px;opacity:.7}.mini{margin-top:10px;font-family:monospace;font-size:13px;background:rgba(255,255,255,.05);padding:8px 10px;border-radius:6px}
-.tnote{background:rgba(255,214,0,.07);border-left:3px solid #FFD600;padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
+.tnote{background:rgba(255,214,0,.07);border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
 .sorter,.sorter3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:10px}
 .sc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:14px}.sc .bt{display:flex;gap:6px;margin:8px 0}.sc .bt button{flex:1;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--text);border-radius:6px;padding:6px;cursor:pointer;font-size:13px}
-.sc em{display:none;font-style:normal;font-size:13px;opacity:.85}.sc.done em{display:block}.sc .bt button.right{background:#2E7D32;border-color:#2E7D32;color:#fff}.sc.ok{border-color:#4CAF50}.sc.no{border-color:#FF5252}
+.sc em{display:none;font-style:normal;font-size:13px;opacity:.85}.sc.done em{display:block}.sc .bt button.right{background:#2E7D32;border-color:#2E7D32;color:#fff}.sc.ok{border-color:var(--green)}.sc.no{border-color:var(--red)}
 .demo{background:#12122a;border:1px solid #3949AB;border-radius:12px;padding:16px;margin:14px 0}.demo h3{margin-bottom:8px}.demo .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .dsw,.cbtn{background:transparent;border:1px solid #5C6BC0;color:#C5CAE9;border-radius:16px;padding:6px 12px;cursor:pointer;font-size:13px}.dsw.on,.cbtn{background:#3949AB;color:#fff}
-.sent{font-size:18px;margin:12px 0}.blank{background:#FFD600;color:#000;padding:0 6px;border-radius:4px}
+.sent{font-size:18px;margin:12px 0}.blank{background:var(--accent);color:#000;padding:0 6px;border-radius:4px}
 .nb{display:grid;grid-template-columns:100px 1fr 46px;gap:8px;align-items:center;margin:4px 0;font-size:14px}.nb .t{height:14px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}.nb .t i{display:block;height:100%;background:#7986CB}
-.nxo{margin-top:10px;font-size:14px;line-height:1.8}.demo input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #5C6BC0;background:#0f0f1a;color:#fff;font-size:15px}
+.nxo{margin-top:10px;font-size:14px;line-height:1.8}.demo input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #5C6BC0;background:var(--bg);color:#fff;font-size:15px}
 .tko{margin-top:10px;display:flex;flex-wrap:wrap;gap:3px}.tko span{padding:3px 6px;border-radius:4px;color:#fff;font-family:monospace;font-size:14px}
 .note{font-size:12.5px;opacity:.75;margin-top:6px}
 html{scroll-behavior:smooth}
@@ -178,7 +178,7 @@ html{scroll-behavior:smooth}
 .rn{position:sticky;top:0;height:100vh;overflow-y:auto;background:#11112a;border-left:1px solid var(--border);padding:14px 12px 40px;font-size:13px}
 .rn-h{font-size:11px;letter-spacing:2px;opacity:.6;margin-bottom:8px}
 .rn a{display:block;color:#cfd3e6;text-decoration:none;padding:5px 8px;border-radius:6px;line-height:1.35}
-.rn a:hover{background:rgba(255,255,255,.06)}.rn a.act{background:rgba(255,214,0,.12);color:#FFD600}
+.rn a:hover{background:rgba(255,255,255,.06)}.rn a.act{background:rgba(255,214,0,.12);color:var(--accent)}
 .rn-top{font-weight:700;margin-bottom:6px}
 .rn-g{margin:8px 0;border-top:1px solid var(--border);padding-top:8px}
 .rn-gt{position:relative;padding-right:22px!important;width:100%;text-align:left;background:none;border:0;color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;padding:6px 8px}
@@ -188,18 +188,18 @@ html{scroll-behavior:smooth}
 .rn-hint{font-size:12px;opacity:.7;font-style:italic}
 .rn-items a{font-size:12.5px}
 .rn-btn{display:none}
-.session-sep{height:6px;background:repeating-linear-gradient(90deg,#FFD600 0 20px,transparent 20px 40px);opacity:.4;margin:40px 0 0}
+.session-sep{height:6px;background:repeating-linear-gradient(90deg,var(--accent) 0 20px,transparent 20px 40px);opacity:.4;margin:40px 0 0}
 @media (max-width:1100px){.layout{grid-template-columns:1fr}.rn{position:fixed;right:0;top:0;width:min(320px,88vw);z-index:50;transform:translateX(105%);transition:transform .2s;box-shadow:-10px 0 30px rgba(0,0,0,.5)}
-.rn.on{transform:none}.rn-btn{display:block;position:fixed;right:14px;bottom:14px;z-index:60;background:#FFD600;color:#000;border:0;border-radius:22px;padding:10px 16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
+.rn.on{transform:none}.rn-btn{display:block;position:fixed;right:14px;bottom:14px;z-index:60;background:var(--accent);color:#000;border:0;border-radius:22px;padding:10px 16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rn{transition:none}}
 .fbar{background:rgba(33,150,243,.07);border:1px solid rgba(33,150,243,.35);border-radius:10px;padding:12px 14px;margin:12px 0}
 .fbar-h{font-weight:700;font-size:13.5px;margin-bottom:8px;color:#90CAF9}.fbar-n{font-size:12.5px;opacity:.75;margin-top:6px}
 .fgrp{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:6px 8px;margin:4px 6px 4px 0}
 .fname{font-family:monospace;font-size:12.5px}.fname i{font-style:normal;font-size:10.5px;opacity:.65;border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:0 4px;margin-left:4px;font-family:Segoe UI,sans-serif}
 .fb{background:#1976D2;color:#fff;border:0;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:600;cursor:pointer}.fb.ghost{background:transparent;border:1px solid #64B5F6;color:#90CAF9}.fb:hover{filter:brightness(1.15)}
-.fb:focus-visible{outline:2px solid #FFD600;outline-offset:2px}
+.fb:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .goal{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.4);border-radius:10px;padding:14px;margin:12px 0}
-.goal b{color:#A5D6A7;font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
+.goal b{color:var(--green);font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
 .fb.fpv{background:#00897B}
 .pv{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;display:flex;align-items:center;justify-content:center;padding:2vh 2vw}.pv[hidden]{display:none}
 .pv-box{background:#fff;color:#111;width:min(1100px,96vw);height:94vh;border-radius:12px;display:flex;flex-direction:column;overflow:hidden}
@@ -243,8 +243,8 @@ html{scroll-behavior:smooth}
 .mini { background: rgba(0,0,0,0.06) !important; color: #14161A !important; font-weight: 500 !important; }
 .diagram { background: rgba(0,0,0,0.05) !important; }
 .diagram .node { background: #ffffff !important; color: #14161A !important; }
-.diagram .node-danger { border-color: #FF5252 !important; color: #D32F2F !important; }
-.diagram .node-safe { border-color: #4CAF50 !important; color: #2E7D32 !important; }
+.diagram .node-danger { border-color: var(--red) !important; color: #D32F2F !important; }
+.diagram .node-safe { border-color: var(--green) !important; color: #2E7D32 !important; }
 .diagram .sm { color: #555 !important; }
 .diagram .arr { color: #B0431E !important; }
 
@@ -573,7 +573,7 @@ Then one line: GO, NO-GO or GO WITH ACTIONS.</div><span class="prompt-label">PRO
 (date, sector, value or status). Then check: will every certificate in clauses 3.5 and 3.6 still be valid on the bid date?</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ Open both clauses of one conflict the AI reported. Do they really disagree?</li><li>▸ Take the largest pharma project on the list. When was it completed — inside the window?</li><li>▸ Each certificate's expiry or issue date vs the bid date.</li></ul></div>
 <div class="tip"><strong>💡 Say this:</strong> pre-bid queries close at 17:00 today. Every conflict you found in this lab becomes a query in Lab 3.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Qualifying route under 3.2</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>PR-11</strong> — Pharma OSD, INR 27.6 cr ≥ 24.0 cr, completed 15-Mar-2022, 1,800 sqm Grade C/D cleanroom (also satisfies 3.3)<br/><strong>PR-15</strong> — Biotech plant, INR 25.1 cr ≥ 24.0 cr, completed 30-Nov-2023 — with PR-11 meets route (b): two works ≥ 50%</td></tr><tr><td>Looks qualifying but is not (trap)</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>PR-07</strong> — INR 41.2 cr would meet route (a) — but completed 18-Aug-2019, before the 01-Oct-2019 window<br/><strong>PR-20</strong> — INR 52 cr, but food processing is not &#x27;similar work&#x27;<br/><strong>PR-18</strong> — Pharma name, but a warehouse — excluded; also INR 23.9 cr &lt; 24.0 cr<br/><strong>PR-21</strong> — Pharma with cleanroom, but ongoing — not completed</td></tr><tr><td>Document action before bid submission</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>ISO 45001</strong> — Valid till 15-Oct-2026 — expires before the 28-Oct bid deadline (3.5 needs validity on the submission date)<br/><strong>Solvency</strong> — Issued 12-Mar-2026 — more than six months before 28-Oct-2026 (cut-off 28-Apr-2026); fresh certificate needed (3.6)</td></tr></table></div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Internal conflict in key terms</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>1.4 vs 2.3</strong> — Bid due date: 28-Oct-2026 15:00 (NIT 1.4) vs 30-Oct-2026 15:00 (ITB 2.3)<br/><strong>1.6 vs 2.5</strong> — EMD: INR 48 lakh (NIT 1.6) vs 2% of INR 48 cr = INR 96 lakh (ITB 2.5)<br/><strong>1.7 vs 2.6</strong> — Bid validity: 120 days from submission (NIT 1.7) vs 180 days from opening (ITB 2.6)<br/><strong>6.25 vs 10.2</strong> — GST: GCC 6.25 price exclusive of GST vs BOQ preamble 10.2 rates inclusive of GST</td></tr></table></div><p style='margin-top:10px'><strong>Tender conflicts:</strong> bid due 28-Oct (1.4) vs 30-Oct (2.3); EMD INR 48 lakh (1.6) vs 2% = INR 96 lakh (2.5); validity 120 days from submission (1.7) vs 180 days from opening (2.6). <strong>Verdict:</strong> GO via route (b) — PR-11 + PR-15 — subject to renewing ISO 45001 and a fresh solvency certificate. The most common AI mistake: route (a) with PR-07.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Qualifying route under 3.2</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>PR-11</strong> — Pharma OSD, INR 27.6 cr ≥ 24.0 cr, completed 15-Mar-2022, 1,800 sqm Grade C/D cleanroom (also satisfies 3.3)<br/><strong>PR-15</strong> — Biotech plant, INR 25.1 cr ≥ 24.0 cr, completed 30-Nov-2023 — with PR-11 meets route (b): two works ≥ 50%</td></tr><tr><td>Looks qualifying but is not (trap)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>PR-07</strong> — INR 41.2 cr would meet route (a) — but completed 18-Aug-2019, before the 01-Oct-2019 window<br/><strong>PR-20</strong> — INR 52 cr, but food processing is not &#x27;similar work&#x27;<br/><strong>PR-18</strong> — Pharma name, but a warehouse — excluded; also INR 23.9 cr &lt; 24.0 cr<br/><strong>PR-21</strong> — Pharma with cleanroom, but ongoing — not completed</td></tr><tr><td>Document action before bid submission</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>ISO 45001</strong> — Valid till 15-Oct-2026 — expires before the 28-Oct bid deadline (3.5 needs validity on the submission date)<br/><strong>Solvency</strong> — Issued 12-Mar-2026 — more than six months before 28-Oct-2026 (cut-off 28-Apr-2026); fresh certificate needed (3.6)</td></tr></table></div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Internal conflict in key terms</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>1.4 vs 2.3</strong> — Bid due date: 28-Oct-2026 15:00 (NIT 1.4) vs 30-Oct-2026 15:00 (ITB 2.3)<br/><strong>1.6 vs 2.5</strong> — EMD: INR 48 lakh (NIT 1.6) vs 2% of INR 48 cr = INR 96 lakh (ITB 2.5)<br/><strong>1.7 vs 2.6</strong> — Bid validity: 120 days from submission (NIT 1.7) vs 180 days from opening (ITB 2.6)<br/><strong>6.25 vs 10.2</strong> — GST: GCC 6.25 price exclusive of GST vs BOQ preamble 10.2 rates inclusive of GST</td></tr></table></div><p style='margin-top:10px'><strong>Tender conflicts:</strong> bid due 28-Oct (1.4) vs 30-Oct (2.3); EMD INR 48 lakh (1.6) vs 2% = INR 96 lakh (2.5); validity 120 days from submission (1.7) vs 180 days from opening (2.6). <strong>Verdict:</strong> GO via route (b) — PR-11 + PR-15 — subject to renewing ISO 45001 and a fresh solvency certificate. The most common AI mistake: route (a) with PR-07.</p></div></details>
 </div>
 </div>
 
@@ -596,7 +596,7 @@ mobilisation advance lost. Show the working for each.</div><span class="prompt-l
 or time attached to each, and what we should seek in pre-bid queries. Cite clause numbers. No legal conclusions — flag for legal review.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ Pick one SCC clause the AI rated High. Read it and its GCC twin.</li><li>▸ Recompute one money figure on the calculator.</li><li>▸ Did the AI flag any SCC clause that doesn't actually change anything?</li></ul></div>
 <div class="warning"><strong>⚠️ Watch for:</strong> AI reading Section 6 first and reporting a GCC term as applicable when the SCC has replaced it. Ask it every time: “does any SCC clause modify this?”</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Internal conflict in key terms</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>1.4 vs 2.3</strong> — Bid due date: 28-Oct-2026 15:00 (NIT 1.4) vs 30-Oct-2026 15:00 (ITB 2.3)<br/><strong>1.6 vs 2.5</strong> — EMD: INR 48 lakh (NIT 1.6) vs 2% of INR 48 cr = INR 96 lakh (ITB 2.5)<br/><strong>1.7 vs 2.6</strong> — Bid validity: 120 days from submission (NIT 1.7) vs 180 days from opening (ITB 2.6)<br/><strong>6.25 vs 10.2</strong> — GST: GCC 6.25 price exclusive of GST vs BOQ preamble 10.2 rates inclusive of GST</td></tr><tr><td>SCC overrides GCC against the contractor</td><td style='text-align:center;font-weight:700;color:#FFD600'>8</td><td style='font-size:12.5px'><strong>7.4</strong> — LD 0.5%/week cap 5% → 1%/week cap 10% (max INR 4.80 cr)<br/><strong>7.5</strong> — Payment 30 days → certification 21 days + payment 45 days<br/><strong>7.6</strong> — Price variation on steel &amp; cement (6.18) → firm price, no PV<br/><strong>7.7</strong> — DLP 12 → 24 months<br/><strong>7.8</strong> — Retention 5% (half released at completion) → 10%, all held to end of DLP (INR 4.80 cr)<br/><strong>7.9</strong> — Mobilisation advance 10% → none<br/><strong>7.11</strong> — Liability capped at contract price → unlimited<br/><strong>7.12</strong> — Termination for convenience: compensation &amp; demob (6.24) → work done only, 15 days notice</td></tr><tr><td>New risk clause in SCC (no GCC equivalent)</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>7.13</strong> — Coordination with nominated MEPF contractor; their delays give no EOT (contradicts GCC 6.14)<br/><strong>7.14</strong> — Contractor obtains &amp; pays for MIDC plan, Factory Inspectorate, Fire NOC, OC<br/><strong>7.15</strong> — Full design responsibility; Employer&#x27;s architecture &#x27;indicative&#x27;; GMP/regulatory changes at contractor&#x27;s cost, not a variation<br/><strong>7.16</strong> — Temporary power &amp; water for whole site incl. MEPF contractor</td></tr><tr><td>SCC clause that changes nothing (NOT a finding, trap)</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>7.10</strong> — PBG stays 10% as in GCC 6.10</td></tr></table></div><p style='margin-top:10px'><strong>Money:</strong> LD max INR 4.80 cr (was 2.40); retention INR 4.80 cr held to end of a 24-month DLP; up to 66 days from RA bill to cash; INR 4.80 cr mobilisation advance gone. The single most expensive miss: AI reporting GCC 6.18 price variation as applicable — SCC 7.6 makes the price firm.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Internal conflict in key terms</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>1.4 vs 2.3</strong> — Bid due date: 28-Oct-2026 15:00 (NIT 1.4) vs 30-Oct-2026 15:00 (ITB 2.3)<br/><strong>1.6 vs 2.5</strong> — EMD: INR 48 lakh (NIT 1.6) vs 2% of INR 48 cr = INR 96 lakh (ITB 2.5)<br/><strong>1.7 vs 2.6</strong> — Bid validity: 120 days from submission (NIT 1.7) vs 180 days from opening (ITB 2.6)<br/><strong>6.25 vs 10.2</strong> — GST: GCC 6.25 price exclusive of GST vs BOQ preamble 10.2 rates inclusive of GST</td></tr><tr><td>SCC overrides GCC against the contractor</td><td style='text-align:center;font-weight:700;color:var(--accent)'>8</td><td style='font-size:12.5px'><strong>7.4</strong> — LD 0.5%/week cap 5% → 1%/week cap 10% (max INR 4.80 cr)<br/><strong>7.5</strong> — Payment 30 days → certification 21 days + payment 45 days<br/><strong>7.6</strong> — Price variation on steel &amp; cement (6.18) → firm price, no PV<br/><strong>7.7</strong> — DLP 12 → 24 months<br/><strong>7.8</strong> — Retention 5% (half released at completion) → 10%, all held to end of DLP (INR 4.80 cr)<br/><strong>7.9</strong> — Mobilisation advance 10% → none<br/><strong>7.11</strong> — Liability capped at contract price → unlimited<br/><strong>7.12</strong> — Termination for convenience: compensation &amp; demob (6.24) → work done only, 15 days notice</td></tr><tr><td>New risk clause in SCC (no GCC equivalent)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>7.13</strong> — Coordination with nominated MEPF contractor; their delays give no EOT (contradicts GCC 6.14)<br/><strong>7.14</strong> — Contractor obtains &amp; pays for MIDC plan, Factory Inspectorate, Fire NOC, OC<br/><strong>7.15</strong> — Full design responsibility; Employer&#x27;s architecture &#x27;indicative&#x27;; GMP/regulatory changes at contractor&#x27;s cost, not a variation<br/><strong>7.16</strong> — Temporary power &amp; water for whole site incl. MEPF contractor</td></tr><tr><td>SCC clause that changes nothing (NOT a finding, trap)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>7.10</strong> — PBG stays 10% as in GCC 6.10</td></tr></table></div><p style='margin-top:10px'><strong>Money:</strong> LD max INR 4.80 cr (was 2.40); retention INR 4.80 cr held to end of a 24-month DLP; up to 66 days from RA bill to cash; INR 4.80 cr mobilisation advance gone. The single most expensive miss: AI reporting GCC 6.18 price variation as applicable — SCC 7.6 makes the price firm.</p></div></details>
 </div>
 </div>
 
@@ -618,7 +618,7 @@ Query / Clarification Sought | Bidder&#x27;s Proposed Change) covering: the conf
 hurt us most; the scope gaps; the spec-vs-BOQ mismatches. Polite, specific, one issue per row. Maximum 12 rows.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ Pick one interface gap the AI flagged and read the clause — is the quantity or owner really missing?</li><li>▸ Pick one spec mismatch: read the spec clause and the BOQ line.</li><li>▸ Would your Annexure-Q survive the client's engineer?</li></ul></div>
 <div class="tip"><strong>💡 EPC angle:</strong> find the clause that decides who pays when the client's concept has to change for GMP or regulatory reasons. In an EPC bid that is the clause to price — or to query.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>New risk clause in SCC (no GCC equivalent)</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>7.13</strong> — Coordination with nominated MEPF contractor; their delays give no EOT (contradicts GCC 6.14)<br/><strong>7.14</strong> — Contractor obtains &amp; pays for MIDC plan, Factory Inspectorate, Fire NOC, OC<br/><strong>7.15</strong> — Full design responsibility; Employer&#x27;s architecture &#x27;indicative&#x27;; GMP/regulatory changes at contractor&#x27;s cost, not a variation<br/><strong>7.16</strong> — Temporary power &amp; water for whole site incl. MEPF contractor</td></tr><tr><td>Scope / interface gap for a pre-bid query</td><td style='text-align:center;font-weight:700;color:#FFD600'>5</td><td style='font-size:12.5px'><strong>8.6</strong> — Embedded plates/sleeves/pedestals per MEPF drawings &#x27;issued from time to time&#x27; within quoted price — unquantified<br/><strong>8.7</strong> — All shafts/risers/openings &#x27;as required&#x27; — unquantified<br/><strong>8.8</strong> — Panel-to-civil joint sealing — responsibility not stated<br/><strong>8.9</strong> — Interface matrix only after award<br/><strong>10.3</strong> — Embedded items as a lump-sum provisional item</td></tr></table></div><p style='margin-top:10px'><strong>Spec vs BOQ:</strong> 7.2 — BOQ says 100 mm rockwool; spec 9.4 says 50 mm · 2.3 — BOQ says M25 superstructure; spec 9.1 says M30 · 8.1 — BOQ says 2 mm epoxy; spec 9.5 says 3 mm. Under 2.7 the specification ranks above the BOQ.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>New risk clause in SCC (no GCC equivalent)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>7.13</strong> — Coordination with nominated MEPF contractor; their delays give no EOT (contradicts GCC 6.14)<br/><strong>7.14</strong> — Contractor obtains &amp; pays for MIDC plan, Factory Inspectorate, Fire NOC, OC<br/><strong>7.15</strong> — Full design responsibility; Employer&#x27;s architecture &#x27;indicative&#x27;; GMP/regulatory changes at contractor&#x27;s cost, not a variation<br/><strong>7.16</strong> — Temporary power &amp; water for whole site incl. MEPF contractor</td></tr><tr><td>Scope / interface gap for a pre-bid query</td><td style='text-align:center;font-weight:700;color:var(--accent)'>5</td><td style='font-size:12.5px'><strong>8.6</strong> — Embedded plates/sleeves/pedestals per MEPF drawings &#x27;issued from time to time&#x27; within quoted price — unquantified<br/><strong>8.7</strong> — All shafts/risers/openings &#x27;as required&#x27; — unquantified<br/><strong>8.8</strong> — Panel-to-civil joint sealing — responsibility not stated<br/><strong>8.9</strong> — Interface matrix only after award<br/><strong>10.3</strong> — Embedded items as a lump-sum provisional item</td></tr></table></div><p style='margin-top:10px'><strong>Spec vs BOQ:</strong> 7.2 — BOQ says 100 mm rockwool; spec 9.4 says 50 mm · 2.3 — BOQ says M25 superstructure; spec 9.1 says M30 · 8.1 — BOQ says 2 mm epoxy; spec 9.5 says 3 mm. Under 2.7 the specification ranks above the BOQ.</p></div></details>
 </div>
 </div>
 
@@ -651,7 +651,7 @@ For each flag, give one possible reason a reviewer should check (spec change, si
 in order of INR impact. No blame; assume typos until shown otherwise.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ Pick the flagged item with the biggest INR impact. Is it over- or under-priced?</li><li>▸ Find one code's 2024–26 rates and take the median yourself.</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>BOQ description contradicts the specification</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>7.2</strong> — BOQ says 100 mm rockwool; spec 9.4 says 50 mm<br/><strong>2.3</strong> — BOQ says M25 superstructure; spec 9.1 says M30<br/><strong>8.1</strong> — BOQ says 2 mm epoxy; spec 9.5 says 3 mm</td></tr><tr><td>Wrong unit of measurement</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>6.1</strong> — Plaster measured in cum — should be sqm<br/><strong>3.1</strong> — Reinforcement in cum — should be MT<br/><strong>8.2</strong> — Flooring in rmt — should be sqm</td></tr><tr><td>Qty × Rate ≠ Amount</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>10.2</strong> — 8,600 × 1,442 ≠ 12,491,200<br/><strong>4.2</strong> — 6,200 × 639 ≠ 4,061,800<br/><strong>5.2</strong> — 3,800 × 757 ≠ 2,976,600</td></tr><tr><td>Draft rate more than 20% away from historical median</td><td style='text-align:center;font-weight:700;color:#FFD600'>5</td><td style='font-size:12.5px'><strong>4.1</strong> — FW-SHUT-SLAB: draft INR 724 vs median INR 570 (2024–26) — +27%<br/><strong>5.1</strong> — MAS-AAC-200: draft INR 8,492 vs median INR 6,433 (2024–26) — +32%<br/><strong>6.2</strong> — PLS-EXT-18: draft INR 315 vs median INR 414 (2024–26) — -24%<br/><strong>6.5</strong> — PNT-EXT-ACR: draft INR 289 vs median INR 205 (2024–26) — +41%<br/><strong>7.1</strong> — PEB-STR: draft INR 92,999 vs median INR 130,984 (2024–26) — -29%</td></tr><tr><td>Open-ended provisional lump sum</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>11.1</strong> — Embedded items LS INR 15 lakh against an unquantified scope (8.6) — price risk</td></tr></table></div></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>BOQ description contradicts the specification</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>7.2</strong> — BOQ says 100 mm rockwool; spec 9.4 says 50 mm<br/><strong>2.3</strong> — BOQ says M25 superstructure; spec 9.1 says M30<br/><strong>8.1</strong> — BOQ says 2 mm epoxy; spec 9.5 says 3 mm</td></tr><tr><td>Wrong unit of measurement</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>6.1</strong> — Plaster measured in cum — should be sqm<br/><strong>3.1</strong> — Reinforcement in cum — should be MT<br/><strong>8.2</strong> — Flooring in rmt — should be sqm</td></tr><tr><td>Qty × Rate ≠ Amount</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>10.2</strong> — 8,600 × 1,442 ≠ 12,491,200<br/><strong>4.2</strong> — 6,200 × 639 ≠ 4,061,800<br/><strong>5.2</strong> — 3,800 × 757 ≠ 2,976,600</td></tr><tr><td>Draft rate more than 20% away from historical median</td><td style='text-align:center;font-weight:700;color:var(--accent)'>5</td><td style='font-size:12.5px'><strong>4.1</strong> — FW-SHUT-SLAB: draft INR 724 vs median INR 570 (2024–26) — +27%<br/><strong>5.1</strong> — MAS-AAC-200: draft INR 8,492 vs median INR 6,433 (2024–26) — +32%<br/><strong>6.2</strong> — PLS-EXT-18: draft INR 315 vs median INR 414 (2024–26) — -24%<br/><strong>6.5</strong> — PNT-EXT-ACR: draft INR 289 vs median INR 205 (2024–26) — +41%<br/><strong>7.1</strong> — PEB-STR: draft INR 92,999 vs median INR 130,984 (2024–26) — -29%</td></tr><tr><td>Open-ended provisional lump sum</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>11.1</strong> — Embedded items LS INR 15 lakh against an unquantified scope (8.6) — price risk</td></tr></table></div></div></details>
 </div>
 </div>
 
@@ -672,7 +672,7 @@ in order of INR impact. No blame; assume typos until shown otherwise.</div>
 Which sector stands out, and what question should the bid committee ask before the next one?</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ Pick one EMD: Result_Date to today, more than 45 days?</li><li>▸ Filter the estimator the AI flagged: how many bids due in one week?</li></ul></div>
 <div class="tip"><strong>💡 For the BD lead:</strong> this is the register that becomes a live dashboard in Phase 2 — the Command Centre's Pipeline tab.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>EMD not refunded more than 45 days after result</td><td style='text-align:center;font-weight:700;color:#FFD600'>5</td><td style='font-size:12.5px'><strong>TN215</strong> — Withdrawn 08-May; INR 24.8 lakh locked for 153 days<br/><strong>TN256</strong> — Lost 05-Jul; INR 45.6 lakh locked for 95 days<br/><strong>TN259</strong> — Lost 11-Jul; INR 50.0 lakh locked for 89 days<br/><strong>TN251</strong> — Withdrawn 18-Jul; INR 87.7 lakh locked for 82 days<br/><strong>TN227</strong> — Lost 11-Aug; INR 58.6 lakh locked for 58 days</td></tr><tr><td>Bid validity expires within 30 days, no result</td><td style='text-align:center;font-weight:700;color:#FFD600'>6</td><td style='font-size:12.5px'><strong>TN243</strong> — Validity ends 16-Oct-2026 (8 days) — decide on extension request<br/><strong>TN253</strong> — Validity ends 09-Oct-2026 (1 days) — decide on extension request<br/><strong>TN244</strong> — Validity ends 16-Oct-2026 (8 days) — decide on extension request<br/><strong>TN209</strong> — Validity ends 04-Nov-2026 (27 days) — decide on extension request<br/><strong>TN213</strong> — Validity ends 28-Oct-2026 (20 days) — decide on extension request<br/><strong>TN216</strong> — Validity ends 26-Oct-2026 (18 days) — decide on extension request</td></tr><tr><td>Duplicate row</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>TN220</strong> — Same tender entered twice<br/><strong>TN226</strong> — Same tender entered twice</td></tr><tr><td>Pattern: one estimator overloaded in bid week</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>E4</strong> — E4 has 4 bids due 26–29 Oct, including this KLS tender</td></tr><tr><td>Pattern: sector with zero wins and wide L1 gap</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>Data centre</strong> — 5 decided bids, 0 won; average gap to L1 14% (others 4%)</td></tr></table></div></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>EMD not refunded more than 45 days after result</td><td style='text-align:center;font-weight:700;color:var(--accent)'>5</td><td style='font-size:12.5px'><strong>TN215</strong> — Withdrawn 08-May; INR 24.8 lakh locked for 153 days<br/><strong>TN256</strong> — Lost 05-Jul; INR 45.6 lakh locked for 95 days<br/><strong>TN259</strong> — Lost 11-Jul; INR 50.0 lakh locked for 89 days<br/><strong>TN251</strong> — Withdrawn 18-Jul; INR 87.7 lakh locked for 82 days<br/><strong>TN227</strong> — Lost 11-Aug; INR 58.6 lakh locked for 58 days</td></tr><tr><td>Bid validity expires within 30 days, no result</td><td style='text-align:center;font-weight:700;color:var(--accent)'>6</td><td style='font-size:12.5px'><strong>TN243</strong> — Validity ends 16-Oct-2026 (8 days) — decide on extension request<br/><strong>TN253</strong> — Validity ends 09-Oct-2026 (1 days) — decide on extension request<br/><strong>TN244</strong> — Validity ends 16-Oct-2026 (8 days) — decide on extension request<br/><strong>TN209</strong> — Validity ends 04-Nov-2026 (27 days) — decide on extension request<br/><strong>TN213</strong> — Validity ends 28-Oct-2026 (20 days) — decide on extension request<br/><strong>TN216</strong> — Validity ends 26-Oct-2026 (18 days) — decide on extension request</td></tr><tr><td>Duplicate row</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>TN220</strong> — Same tender entered twice<br/><strong>TN226</strong> — Same tender entered twice</td></tr><tr><td>Pattern: one estimator overloaded in bid week</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>E4</strong> — E4 has 4 bids due 26–29 Oct, including this KLS tender</td></tr><tr><td>Pattern: sector with zero wins and wide L1 gap</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>Data centre</strong> — 5 decided bids, 0 won; average gap to L1 14% (others 4%)</td></tr></table></div></div></details>
 </div>
 </div>
 
@@ -700,11 +700,11 @@ Which sector stands out, and what question should the bid committee ask before t
 <div class="section-head" onclick="toggle(this)"><h2>🎯 Key Takeaways &amp; Questions</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card"><table><tr><th>#</th><th>Rule</th><th>On the tender desk</th></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">1</td><td><strong>It predicts; you verify</strong></td><td>Fluent is not correct — open the clause</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">2</td><td><strong>Clause number or NOT FOUND</strong></td><td>No citation, no use</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">3</td><td><strong>SCC before GCC</strong></td><td>Always ask: what modifies this clause?</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">4</td><td><strong>One section, one job, one prompt</strong></td><td>Big tenders get split, not pasted</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">5</td><td><strong>Client documents stay in approved tools</strong></td><td>Practice on synthetic; work in approved accounts</td></tr></table></div>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">1</td><td><strong>It predicts; you verify</strong></td><td>Fluent is not correct — open the clause</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">2</td><td><strong>Clause number or NOT FOUND</strong></td><td>No citation, no use</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">3</td><td><strong>SCC before GCC</strong></td><td>Always ask: what modifies this clause?</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">4</td><td><strong>One section, one job, one prompt</strong></td><td>Big tenders get split, not pasted</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">5</td><td><strong>Client documents stay in approved tools</strong></td><td>Practice on synthetic; work in approved accounts</td></tr></table></div>
 
 <div class="info-box"><strong>Last 20 minutes — department questions.</strong> Bring the tender problem you had last month. Integration asks (P6 / MSP / ERP, an in-house tender knowledge base) are logged for Phase 2 scoping with EDP.</div></div>
 </div>
@@ -716,13 +716,13 @@ Which sector stands out, and what question should the bid committee ask before t
 <div class="section-head" onclick="toggle(this)"><h2>📚 Reserve Case File: When Confident Text Goes Out Unchecked</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="case-study" onclick="toggleCS(this)"><div class="case-study-header"><h3><span class="cs-tag cs-tag-halluc">GLOBAL</span> Deloitte Australia — a government report with invented references</h3><span class="cs-arrow">▼</span></div><div class="case-study-body">
-<div class="cs-block what-happened"><h4 style="color:#FF5252">What happened</h4><p>In 2025 a report Deloitte delivered to an Australian government department was found to contain references that didn't exist and a misattributed court quotation; generative AI had been used in preparing it.</p></div>
-<div class="cs-block lesson"><h4 style="color:#4CAF50">Lesson for the tender desk</h4><p>A technical submission or deviation schedule that cites a clause, standard or project that isn't real costs credibility with an evaluator — permanently. Every reference is checked.</p></div>
-<div class="cs-block discuss"><h4 style="color:#CE93D8">🗣️ Discuss · 2 min</h4><p>Which documents leave the tender desk with references in them? Who checks them today?</p></div></div></div>
+<div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>In 2025 a report Deloitte delivered to an Australian government department was found to contain references that didn't exist and a misattributed court quotation; generative AI had been used in preparing it.</p></div>
+<div class="cs-block lesson"><h4 style="color:var(--green)">Lesson for the tender desk</h4><p>A technical submission or deviation schedule that cites a clause, standard or project that isn't real costs credibility with an evaluator — permanently. Every reference is checked.</p></div>
+<div class="cs-block discuss"><h4 style="color:var(--indigo)">🗣️ Discuss · 2 min</h4><p>Which documents leave the tender desk with references in them? Who checks them today?</p></div></div></div>
 <div class="case-study" onclick="toggleCS(this)"><div class="case-study-header"><h3><span class="cs-tag cs-tag-leak">SUROJ SCENARIO</span> The summary that missed the SCC</h3><span class="cs-arrow">▼</span></div><div class="case-study-body">
-<div class="cs-block what-happened"><h4 style="color:#FF5252">Scenario</h4><p>A busy week. An engineer asks a chat app to “summarise the commercial terms” of a 900-page tender and forwards the summary. It reports price variation on steel — from the GCC. The SCC, 600 pages later, made the price firm. The app had silently stopped reading.</p></div>
-<div class="cs-block lesson"><h4 style="color:#4CAF50">Lesson</h4><p>Split by section; ask “does any SCC clause modify this?”; demand clause numbers.</p></div>
-<div class="cs-block discuss"><h4 style="color:#CE93D8">🗣️ Discuss · 2 min</h4><p>What would have caught it before the bid price was fixed?</p></div></div></div></div>
+<div class="cs-block what-happened"><h4 style="color:var(--red)">Scenario</h4><p>A busy week. An engineer asks a chat app to “summarise the commercial terms” of a 900-page tender and forwards the summary. It reports price variation on steel — from the GCC. The SCC, 600 pages later, made the price firm. The app had silently stopped reading.</p></div>
+<div class="cs-block lesson"><h4 style="color:var(--green)">Lesson</h4><p>Split by section; ask “does any SCC clause modify this?”; demand clause numbers.</p></div>
+<div class="cs-block discuss"><h4 style="color:var(--indigo)">🗣️ Discuss · 2 min</h4><p>What would have caught it before the bid price was fixed?</p></div></div></div></div>
 </div>
 
 </div>

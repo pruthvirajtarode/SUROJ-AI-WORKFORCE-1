@@ -47,24 +47,24 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 
 /* Alerts */
 .tip{background:rgba(255,214,0,0.08);border-left:3px solid var(--accent);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
-.warning{background:rgba(255,82,82,0.08);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
-.success{background:rgba(76,175,80,0.08);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
+.warning{background:rgba(160, 52, 34, 0.15);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
+.success{background:rgba(78, 107, 46, 0.15);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
 .info-box{background:rgba(33,150,243,0.08);border-left:3px solid var(--blue);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px}
 
 /* Prompts */
-.prompt{background:#1e1e2e;border:2px solid #69F0AE;border-radius:8px;padding:16px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;color:#a6e3a1;line-height:1.5;white-space:pre-wrap;position:relative}
-.prompt-label{display:inline-block;background:#69F0AE;color:#1e1e2e;padding:3px 12px;border-radius:15px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
-.copy-btn{position:absolute;top:10px;right:10px;background:rgba(0, 0, 0, 0.05);border:1px solid rgba(255,255,255,0.2);color:#69F0AE;padding:4px 12px;border-radius:5px;cursor:pointer;font-size:11px;font-family:'Segoe UI',sans-serif}
+.prompt{background:var(--card2);border:2px solid var(--green);border-radius:8px;padding:16px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;color:var(--green);line-height:1.5;white-space:pre-wrap;position:relative}
+.prompt-label{display:inline-block;background:var(--green);color:var(--card2);padding:3px 12px;border-radius:15px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.copy-btn{position:absolute;top:10px;right:10px;background:rgba(0, 0, 0, 0.05);border:1px solid rgba(255,255,255,0.2);color:var(--green);padding:4px 12px;border-radius:5px;cursor:pointer;font-size:11px;font-family:'Segoe UI',sans-serif}
 
 /* Exercise */
 .exercise{background:rgba(156,39,176,0.08);border:2px solid rgba(156,39,176,0.2);border-radius:8px;padding:18px;margin:12px 0}
-.exercise h3{color:#CE93D8;font-size:16px;margin-bottom:8px}
+.exercise h3{color:var(--indigo);font-size:16px;margin-bottom:8px}
 
 /* Badges */
 .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
-.badge-safe{background:rgba(76,175,80,0.15);color:var(--green);border:1px solid rgba(76,175,80,0.3)}
-.badge-risky{background:rgba(255,82,82,0.15);color:var(--red);border:1px solid rgba(255,82,82,0.3)}
-.badge-warn{background:rgba(255,152,0,0.15);color:var(--orange);border:1px solid rgba(255,152,0,0.3)}
+.badge-safe{background:rgba(78, 107, 46, 0.15);color:var(--green);border:1px solid rgba(78, 107, 46, 0.15)}
+.badge-risky{background:rgba(160, 52, 34, 0.15);color:var(--red);border:1px solid rgba(160, 52, 34, 0.15)}
+.badge-warn{background:rgba(181, 128, 34, 0.15);color:var(--orange);border:1px solid rgba(181, 128, 34, 0.15)}
 
 /* Case Study */
 .case-study{background:var(--card2);border:1px solid var(--border);border-radius:10px;margin:16px 0;overflow:hidden}
@@ -76,24 +76,24 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .case-study.cs-open .case-study-body{display:block}
 .case-study.cs-open .cs-arrow{transform:rotate(180deg)}
 .cs-tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
-.cs-tag-leak{background:rgba(255,82,82,0.15);color:#FF5252}
-.cs-tag-halluc{background:rgba(255,152,0,0.15);color:#FF9800}
-.cs-tag-good{background:rgba(76,175,80,0.15);color:#4CAF50}
-.cs-tag-policy{background:rgba(33,150,243,0.15);color:#2196F3}
-.cs-tag-global{background:rgba(156,39,176,0.15);color:#CE93D8}
+.cs-tag-leak{background:rgba(160, 52, 34, 0.15);color:var(--red)}
+.cs-tag-halluc{background:rgba(181, 128, 34, 0.15);color:var(--orange)}
+.cs-tag-good{background:rgba(78, 107, 46, 0.15);color:var(--green)}
+.cs-tag-policy{background:rgba(33,150,243,0.15);color:var(--blue)}
+.cs-tag-global{background:rgba(156,39,176,0.15);color:var(--indigo)}
 .cs-block{background:rgba(0,0,0,0.2);border-radius:6px;padding:14px;margin:10px 0;font-size:14px}
 .cs-block h4{font-size:14px;margin-bottom:6px}
-.cs-block.what-happened{border-left:3px solid #FF5252}
-.cs-block.impact{border-left:3px solid #FF9800}
-.cs-block.lesson{border-left:3px solid #4CAF50}
-.cs-block.action{border-left:3px solid #2196F3}
+.cs-block.what-happened{border-left:3px solid var(--red)}
+.cs-block.impact{border-left:3px solid var(--orange)}
+.cs-block.lesson{border-left:3px solid var(--green)}
+.cs-block.action{border-left:3px solid var(--blue)}
 
 /* Theory diagram */
-.diagram{background:rgba(0,0,0,0.3);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
+.diagram{background:var(--card2);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
 .diagram .flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:10px 0}
 .diagram .node{background:rgba(0, 0, 0, 0.04);border:1px solid rgba(0, 0, 0, 0.08);border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600}
-.diagram .node-danger{border-color:rgba(255,82,82,0.4);color:#FF5252}
-.diagram .node-safe{border-color:rgba(76,175,80,0.4);color:#4CAF50}
+.diagram .node-danger{border-color:rgba(160, 52, 34, 0.15);color:var(--red)}
+.diagram .node-safe{border-color:rgba(78, 107, 46, 0.15);color:var(--green)}
 .diagram .arr{color:var(--accent);font-size:20px;font-weight:bold}
 
 
@@ -101,7 +101,7 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .prompt{padding-top:40px}
 .agenda td:first-child{white-space:nowrap;color:var(--accent);font-weight:700}
 .phone{background:rgba(0,188,212,0.07);border:2px solid rgba(0,188,212,0.25);border-radius:10px;padding:18px;margin:14px 0}
-.phone h3{color:#4DD0E1;font-size:17px;margin-bottom:6px}
+.phone h3{color:var(--steel);font-size:17px;margin-bottom:6px}
 .phone .meta{font-size:12px;opacity:0.75;margin-bottom:10px}
 .phone ol{margin:8px 0 8px 22px;font-size:14px}
 .phone ol li{padding:3px 0}
@@ -113,7 +113,7 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .paper tr:hover{background:transparent}
 .paper .stamp{position:absolute;top:10px;right:14px;border:2px solid #c62828;color:#c62828;font-weight:800;font-size:11px;padding:2px 8px;border-radius:4px;transform:rotate(4deg)}
 .paper .copy-btn{top:auto;bottom:10px;color:#1b1b1b;background:#e9e6dc;border-color:#bbb}
-.answer{background:rgba(76,175,80,0.06);border:1px dashed rgba(76,175,80,0.4);border-radius:8px;margin:10px 0}
+.answer{background:rgba(78, 107, 46, 0.15);border:1px dashed rgba(78, 107, 46, 0.15);border-radius:8px;margin:10px 0}
 .answer summary{cursor:pointer;padding:10px 14px;font-size:13px;font-weight:600;color:#81C784}
 .answer div{padding:0 14px 12px;font-size:14px}
 .reveal{cursor:pointer}
@@ -136,23 +136,23 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 .opt:hover{background:rgba(0, 0, 0, 0.04)}
 .opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .q.done .opt{cursor:default}
-.opt.right{background:rgba(76,175,80,0.18);border-color:#4CAF50;color:#A5D6A7;font-weight:600}
-.opt.wrong{background:rgba(255,82,82,0.15);border-color:#FF5252;color:#FF8A80}
-.exp{display:none;margin-top:10px;font-size:13.5px;padding:10px 12px;background:rgba(0,0,0,0.25);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
+.opt.right{background:rgba(78, 107, 46, 0.15);border-color:var(--green);color:var(--green);font-weight:600}
+.opt.wrong{background:rgba(160, 52, 34, 0.15);border-color:var(--red);color:var(--red)}
+.exp{display:none;margin-top:10px;font-size:13.5px;padding:10px 12px;background:rgba(0,0,0,0.05);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
 .q.done .exp{display:block}
 .bb-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:14px}
 .bb-score b{color:var(--accent);font-size:18px}
 .bb-reset{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--text);padding:5px 12px;border-radius:6px;cursor:pointer;font-family:inherit}
 .csround{border:2px solid rgba(156,39,176,0.35)}
-.csround .section-head h2{color:#CE93D8}
-.cs-block.discuss{border-left:3px solid #CE93D8}
+.csround .section-head h2{color:var(--indigo)}
+.cs-block.discuss{border-left:3px solid var(--indigo)}
 .labsec{border:2px solid rgba(0,188,212,0.35)}
-.labsec .section-head h2{color:#4DD0E1}
+.labsec .section-head h2{color:var(--steel)}
 .labmeta{font-size:13px;opacity:0.8;margin-bottom:10px}
 .dlrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .dlbtn{display:inline-block;background:rgba(0,188,212,0.12);border:1px solid rgba(0,188,212,0.45);color:#80DEEA;padding:7px 12px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600}
 .dlbtn:hover{background:rgba(0,188,212,0.22)}
-code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.5px;color:#a6e3a1;word-break:break-all}
+code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--green);word-break:break-all}
 .reserve-divider{margin:40px 0 10px;padding:20px 24px;border:2px dashed rgba(255,255,255,0.25);border-radius:12px}
 .reserve-divider h2{font-size:20px;margin-bottom:6px}
 .reserve-divider p{font-size:14px;opacity:0.8}
@@ -162,15 +162,15 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 @media print{body{background:#fff;color:#000}.section-body{display:block!important}.copy-btn{display:none}}
 
 .sm{font-size:11px;opacity:.7}.mini{margin-top:10px;font-family:monospace;font-size:13px;background:rgba(255,255,255,.05);padding:8px 10px;border-radius:6px}
-.tnote{background:rgba(255,214,0,.07);border-left:3px solid #FFD600;padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
+.tnote{background:rgba(255,214,0,.07);border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
 .sorter,.sorter3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:10px}
 .sc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:14px}.sc .bt{display:flex;gap:6px;margin:8px 0}.sc .bt button{flex:1;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--text);border-radius:6px;padding:6px;cursor:pointer;font-size:13px}
-.sc em{display:none;font-style:normal;font-size:13px;opacity:.85}.sc.done em{display:block}.sc .bt button.right{background:#2E7D32;border-color:#2E7D32;color:#fff}.sc.ok{border-color:#4CAF50}.sc.no{border-color:#FF5252}
+.sc em{display:none;font-style:normal;font-size:13px;opacity:.85}.sc.done em{display:block}.sc .bt button.right{background:#2E7D32;border-color:#2E7D32;color:#fff}.sc.ok{border-color:var(--green)}.sc.no{border-color:var(--red)}
 .demo{background:#12122a;border:1px solid #3949AB;border-radius:12px;padding:16px;margin:14px 0}.demo h3{margin-bottom:8px}.demo .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .dsw,.cbtn{background:transparent;border:1px solid #5C6BC0;color:#C5CAE9;border-radius:16px;padding:6px 12px;cursor:pointer;font-size:13px}.dsw.on,.cbtn{background:#3949AB;color:#fff}
-.sent{font-size:18px;margin:12px 0}.blank{background:#FFD600;color:#000;padding:0 6px;border-radius:4px}
+.sent{font-size:18px;margin:12px 0}.blank{background:var(--accent);color:#000;padding:0 6px;border-radius:4px}
 .nb{display:grid;grid-template-columns:100px 1fr 46px;gap:8px;align-items:center;margin:4px 0;font-size:14px}.nb .t{height:14px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}.nb .t i{display:block;height:100%;background:#7986CB}
-.nxo{margin-top:10px;font-size:14px;line-height:1.8}.demo input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #5C6BC0;background:#0f0f1a;color:#fff;font-size:15px}
+.nxo{margin-top:10px;font-size:14px;line-height:1.8}.demo input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #5C6BC0;background:var(--bg);color:#fff;font-size:15px}
 .tko{margin-top:10px;display:flex;flex-wrap:wrap;gap:3px}.tko span{padding:3px 6px;border-radius:4px;color:#fff;font-family:monospace;font-size:14px}
 .note{font-size:12.5px;opacity:.75;margin-top:6px}
 html{scroll-behavior:smooth}
@@ -178,7 +178,7 @@ html{scroll-behavior:smooth}
 .rn{position:sticky;top:0;height:100vh;overflow-y:auto;background:#11112a;border-left:1px solid var(--border);padding:14px 12px 40px;font-size:13px}
 .rn-h{font-size:11px;letter-spacing:2px;opacity:.6;margin-bottom:8px}
 .rn a{display:block;color:#cfd3e6;text-decoration:none;padding:5px 8px;border-radius:6px;line-height:1.35}
-.rn a:hover{background:rgba(255,255,255,.06)}.rn a.act{background:rgba(255,214,0,.12);color:#FFD600}
+.rn a:hover{background:rgba(255,255,255,.06)}.rn a.act{background:rgba(255,214,0,.12);color:var(--accent)}
 .rn-top{font-weight:700;margin-bottom:6px}
 .rn-g{margin:8px 0;border-top:1px solid var(--border);padding-top:8px}
 .rn-gt{position:relative;padding-right:22px!important;width:100%;text-align:left;background:none;border:0;color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;padding:6px 8px}
@@ -188,18 +188,18 @@ html{scroll-behavior:smooth}
 .rn-hint{font-size:12px;opacity:.7;font-style:italic}
 .rn-items a{font-size:12.5px}
 .rn-btn{display:none}
-.session-sep{height:6px;background:repeating-linear-gradient(90deg,#FFD600 0 20px,transparent 20px 40px);opacity:.4;margin:40px 0 0}
+.session-sep{height:6px;background:repeating-linear-gradient(90deg,var(--accent) 0 20px,transparent 20px 40px);opacity:.4;margin:40px 0 0}
 @media (max-width:1100px){.layout{grid-template-columns:1fr}.rn{position:fixed;right:0;top:0;width:min(320px,88vw);z-index:50;transform:translateX(105%);transition:transform .2s;box-shadow:-10px 0 30px rgba(0,0,0,.5)}
-.rn.on{transform:none}.rn-btn{display:block;position:fixed;right:14px;bottom:14px;z-index:60;background:#FFD600;color:#000;border:0;border-radius:22px;padding:10px 16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
+.rn.on{transform:none}.rn-btn{display:block;position:fixed;right:14px;bottom:14px;z-index:60;background:var(--accent);color:#000;border:0;border-radius:22px;padding:10px 16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rn{transition:none}}
 .fbar{background:rgba(33,150,243,.07);border:1px solid rgba(33,150,243,.35);border-radius:10px;padding:12px 14px;margin:12px 0}
 .fbar-h{font-weight:700;font-size:13.5px;margin-bottom:8px;color:#90CAF9}.fbar-n{font-size:12.5px;opacity:.75;margin-top:6px}
 .fgrp{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:6px 8px;margin:4px 6px 4px 0}
 .fname{font-family:monospace;font-size:12.5px}.fname i{font-style:normal;font-size:10.5px;opacity:.65;border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:0 4px;margin-left:4px;font-family:Segoe UI,sans-serif}
 .fb{background:#1976D2;color:#fff;border:0;border-radius:6px;padding:5px 10px;font-size:12.5px;font-weight:600;cursor:pointer}.fb.ghost{background:transparent;border:1px solid #64B5F6;color:#90CAF9}.fb:hover{filter:brightness(1.15)}
-.fb:focus-visible{outline:2px solid #FFD600;outline-offset:2px}
+.fb:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .goal{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.4);border-radius:10px;padding:14px;margin:12px 0}
-.goal b{color:#A5D6A7;font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
+.goal b{color:var(--green);font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
 .fb.fpv{background:#00897B}
 .pv{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;display:flex;align-items:center;justify-content:center;padding:2vh 2vw}.pv[hidden]{display:none}
 .pv-box{background:#fff;color:#111;width:min(1100px,96vw);height:94vh;border-radius:12px;display:flex;flex-direction:column;overflow:hidden}
@@ -243,8 +243,8 @@ html{scroll-behavior:smooth}
 .mini { background: rgba(0,0,0,0.06) !important; color: #14161A !important; font-weight: 500 !important; }
 .diagram { background: rgba(0,0,0,0.05) !important; }
 .diagram .node { background: #ffffff !important; color: #14161A !important; }
-.diagram .node-danger { border-color: #FF5252 !important; color: #D32F2F !important; }
-.diagram .node-safe { border-color: #4CAF50 !important; color: #2E7D32 !important; }
+.diagram .node-danger { border-color: var(--red) !important; color: #D32F2F !important; }
+.diagram .node-safe { border-color: var(--green) !important; color: #2E7D32 !important; }
 .diagram .sm { color: #555 !important; }
 .diagram .arr { color: #B0431E !important; }
 
@@ -539,7 +539,7 @@ Table per check: Drawing_No | Title | values. First tell me the row count.</div>
 &#x27;For approval&#x27; drawings that must not be built from. Bullet list, under 120 words.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ Pick one flagged drawing: compare the two revision columns yourself.</li><li>▸ Search one duplicated number.</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Issued for construction without approval</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>P01-ARC-116</strong> — Façade details<br/><strong>P01-ELE-110</strong> — Embedded conduit roof<br/><strong>P01-FIRE-101</strong> — Sprinkler GF</td></tr><tr><td>Issued to site while still &#x27;For approval&#x27;</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>P01-ELE-103</strong> — Cable tray layout L2 (TR-387)<br/><strong>P01-FIRE-103</strong> — Sprinkler L2 (TR-271)</td></tr><tr><td>Site working on a superseded revision</td><td style='text-align:center;font-weight:700;color:#FFD600'>6</td><td style='font-size:12.5px'><strong>P01-FIRE-105</strong> — Fire pump room: site has R1, latest IFC is R2<br/><strong>P01-HVAC-110</strong> — Cleanroom ceiling grid: site has R3, latest IFC is R4<br/><strong>P01-HVAC-111</strong> — AHU room section: site has R3, latest IFC is R4<br/><strong>P01-PLB-107</strong> — Sleeve schedule: site has R3, latest IFC is R2<br/><strong>P01-PLB-109</strong> — Pump room: site has R1, latest IFC is R2<br/><strong>P01-STR-118</strong> — PEB foundation: site has R1, latest IFC is R2</td></tr><tr><td>Same drawing number, two titles</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>P01-PLB-107</strong> — Sleeve schedule / Sleeve schedule (revised scope)<br/><strong>P01-STR-108</strong> — L2 slab reinforcement / L2 slab reinforcement (revised scope)</td></tr></table></div></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Issued for construction without approval</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>P01-ARC-116</strong> — Façade details<br/><strong>P01-ELE-110</strong> — Embedded conduit roof<br/><strong>P01-FIRE-101</strong> — Sprinkler GF</td></tr><tr><td>Issued to site while still &#x27;For approval&#x27;</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>P01-ELE-103</strong> — Cable tray layout L2 (TR-387)<br/><strong>P01-FIRE-103</strong> — Sprinkler L2 (TR-271)</td></tr><tr><td>Site working on a superseded revision</td><td style='text-align:center;font-weight:700;color:var(--accent)'>6</td><td style='font-size:12.5px'><strong>P01-FIRE-105</strong> — Fire pump room: site has R1, latest IFC is R2<br/><strong>P01-HVAC-110</strong> — Cleanroom ceiling grid: site has R3, latest IFC is R4<br/><strong>P01-HVAC-111</strong> — AHU room section: site has R3, latest IFC is R4<br/><strong>P01-PLB-107</strong> — Sleeve schedule: site has R3, latest IFC is R2<br/><strong>P01-PLB-109</strong> — Pump room: site has R1, latest IFC is R2<br/><strong>P01-STR-118</strong> — PEB foundation: site has R1, latest IFC is R2</td></tr><tr><td>Same drawing number, two titles</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>P01-PLB-107</strong> — Sleeve schedule / Sleeve schedule (revised scope)<br/><strong>P01-STR-108</strong> — L2 slab reinforcement / L2 slab reinforcement (revised scope)</td></tr></table></div></div></details>
 </div>
 </div>
 
@@ -562,7 +562,7 @@ and who should own fixing it?</div><span class="prompt-label">PROMPT 3 — ESCAL
 Ask for responses by a date [date]. Under 150 words.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One old-revision RFI: look its drawing up in the register.</li><li>▸ One cost-impact RFI: is there really no VO?</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Cost impact with no variation reference</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>RFI-066</strong> — Floor level difference — cost impact, no VO raised<br/><strong>RFI-054</strong> — Duct clashes with beam — cost impact, no VO raised<br/><strong>RFI-064</strong> — Plinth for equipment — cost impact, no VO raised<br/><strong>RFI-032</strong> — Sleeve size mismatch — cost impact, no VO raised</td></tr><tr><td>Raised against an out-of-date revision</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>RFI-015</strong> — Refers to P01-ARC-102 R0; latest was already R1<br/><strong>RFI-008</strong> — Refers to P01-PLB-107 R1; latest was already R2<br/><strong>RFI-019</strong> — Refers to P01-PLB-102 R0; latest was already R1</td></tr><tr><td>Open more than 14 days</td><td style='text-align:center;font-weight:700;color:#FFD600'>6</td><td style='font-size:12.5px'><strong>RFI-029</strong> — Sprinkler main through beam (MEP — Fire, GF) — raised 13-May, 140 days, with Design consultant<br/><strong>RFI-040</strong> — Door size mismatch (Architectural, GF) — raised 21-Jun, 101 days, with Nominated MEPF<br/><strong>RFI-049</strong> — Opening in shear wall (Structural, L1) — raised 12-Jul, 80 days, with Design consultant<br/><strong>RFI-038</strong> — Column size vs architecture (Structural, L2) — raised 17-Jul, 75 days, with Client PMC<br/><strong>RFI-002</strong> — Plinth for equipment (Structural, L1) — raised 01-Aug, 60 days, with Suroj design<br/><strong>RFI-012</strong> — Hydrant chamber location (MEP — Fire, Roof) — raised 11-Aug, 50 days, with Suroj design</td></tr><tr><td>Responded but never closed</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>RFI-005</strong> — Response 01-Jun, still not closed<br/><strong>RFI-017</strong> — Response 14-Jul, still not closed<br/><strong>RFI-033</strong> — Response 18-Jul, still not closed</td></tr><tr><td>Pattern: the same clash, again and again</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>L2 duct vs beam</strong> — 5 RFIs for duct-beam clashes on L2 (mostly grids C–D) — a coordination problem, not five separate queries</td></tr></table></div></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Cost impact with no variation reference</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>RFI-066</strong> — Floor level difference — cost impact, no VO raised<br/><strong>RFI-054</strong> — Duct clashes with beam — cost impact, no VO raised<br/><strong>RFI-064</strong> — Plinth for equipment — cost impact, no VO raised<br/><strong>RFI-032</strong> — Sleeve size mismatch — cost impact, no VO raised</td></tr><tr><td>Raised against an out-of-date revision</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>RFI-015</strong> — Refers to P01-ARC-102 R0; latest was already R1<br/><strong>RFI-008</strong> — Refers to P01-PLB-107 R1; latest was already R2<br/><strong>RFI-019</strong> — Refers to P01-PLB-102 R0; latest was already R1</td></tr><tr><td>Open more than 14 days</td><td style='text-align:center;font-weight:700;color:var(--accent)'>6</td><td style='font-size:12.5px'><strong>RFI-029</strong> — Sprinkler main through beam (MEP — Fire, GF) — raised 13-May, 140 days, with Design consultant<br/><strong>RFI-040</strong> — Door size mismatch (Architectural, GF) — raised 21-Jun, 101 days, with Nominated MEPF<br/><strong>RFI-049</strong> — Opening in shear wall (Structural, L1) — raised 12-Jul, 80 days, with Design consultant<br/><strong>RFI-038</strong> — Column size vs architecture (Structural, L2) — raised 17-Jul, 75 days, with Client PMC<br/><strong>RFI-002</strong> — Plinth for equipment (Structural, L1) — raised 01-Aug, 60 days, with Suroj design<br/><strong>RFI-012</strong> — Hydrant chamber location (MEP — Fire, Roof) — raised 11-Aug, 50 days, with Suroj design</td></tr><tr><td>Responded but never closed</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>RFI-005</strong> — Response 01-Jun, still not closed<br/><strong>RFI-017</strong> — Response 14-Jul, still not closed<br/><strong>RFI-033</strong> — Response 18-Jul, still not closed</td></tr><tr><td>Pattern: the same clash, again and again</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>L2 duct vs beam</strong> — 5 RFIs for duct-beam clashes on L2 (mostly grids C–D) — a coordination problem, not five separate queries</td></tr></table></div></div></details>
 </div>
 </div>
 
@@ -583,7 +583,7 @@ Table per class with Item_ID, level, grid, drawing, rev, dates and Core_Cut_Est_
 For classes B and C, suggest two process changes that would have caught them before the pour.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One class-A item: revision date vs pour date.</li><li>▸ One class-C item: was it on the civil drawing?</li></ul></div>
 <div class="warning"><strong>⚠️ “Recoverable in principle”:</strong> whether Suroj can actually recover depends on the contract's interface and variation clauses. The lab finds the facts; the contracts team decides the claim.</div>
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>On the civil drawing but missed at site (our cost)</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>EMB-018</strong> — Cable tray support insert GF F6: shown, not cast — core cut ₹6,000<br/><strong>EMB-068</strong> — Pipe insert Roof E2: shown, not cast — core cut ₹7,000</td></tr><tr><td>Issued before the pour but never put on the civil drawing (our coordination miss)</td><td style='text-align:center;font-weight:700;color:#FFD600'>2</td><td style='font-size:12.5px'><strong>EMB-034</strong> — Cable tray support insert L1 E4: MEP issued 27-Mar, pour 28-Apr — core cut ₹6,000<br/><strong>EMB-075</strong> — Sleeve 100 mm Roof C6: MEP issued 29-May, pour 08-Jul — core cut ₹14,000</td></tr><tr><td>Added by MEP after the slab was poured (recoverable)</td><td style='text-align:center;font-weight:700;color:#FFD600'>18</td><td style='font-size:12.5px'><strong>EMB-082</strong> — Sleeve 200 mm L2 D5: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹24,000<br/><strong>EMB-083</strong> — Slab opening 600x600 (duct) L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-084</strong> — Sleeve 150 mm L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹18,000<br/><strong>EMB-085</strong> — Slab opening 600x600 (duct) L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-086</strong> — Sleeve 100 mm L2 D5: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹14,000<br/><strong>EMB-087</strong> — Sleeve 200 mm L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹24,000<br/><strong>EMB-088</strong> — Slab opening 600x600 (duct) L2 D2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-089</strong> — Sleeve 150 mm L2 C5: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹18,000<br/><strong>EMB-090</strong> — Sleeve 200 mm L2 D4: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹24,000<br/><strong>EMB-097</strong> — Slab opening 600x600 (duct) L2 C2: first shown in P01-PLB-107 R2 dated 25-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-098</strong> — Slab opening 600x600 (duct) L2 C4: first shown in P01-PLB-107 R2 dated 25-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-099</strong> — Sleeve 100 mm L2 C4: first shown in P01-PLB-107 R2 dated 25-Jun, slab poured 02-Jun — core cut ₹14,000<br/><strong>EMB-091</strong> — Sleeve 200 mm Roof C2: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹24,000<br/><strong>EMB-092</strong> — Sleeve 200 mm Roof C3: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹24,000<br/><strong>EMB-093</strong> — Sleeve 200 mm Roof C4: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹24,000<br/><strong>EMB-094</strong> — Sleeve 100 mm Roof D3: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹14,000<br/><strong>EMB-095</strong> — Sleeve 150 mm Roof D4: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹18,000<br/><strong>EMB-096</strong> — Sleeve 150 mm Roof C2: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹18,000</td></tr><tr><td>Pattern: late MEP revisions drive the core cutting</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>Late MEP revisions</strong> — 18 of 22 uncast items came from MEP revisions issued after the pour — ₹683,000 recoverable in principle (see interface clauses)</td></tr></table></div><p style='margin-top:10px'><strong>Money:</strong> all uncast ₹716,000; recoverable in principle ₹683,000; Suroj's own ₹33,000. The 9 items from P01-HVAC-108 R3 are the warm-up drawing's sleeves and openings.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>On the civil drawing but missed at site (our cost)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>EMB-018</strong> — Cable tray support insert GF F6: shown, not cast — core cut ₹6,000<br/><strong>EMB-068</strong> — Pipe insert Roof E2: shown, not cast — core cut ₹7,000</td></tr><tr><td>Issued before the pour but never put on the civil drawing (our coordination miss)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>2</td><td style='font-size:12.5px'><strong>EMB-034</strong> — Cable tray support insert L1 E4: MEP issued 27-Mar, pour 28-Apr — core cut ₹6,000<br/><strong>EMB-075</strong> — Sleeve 100 mm Roof C6: MEP issued 29-May, pour 08-Jul — core cut ₹14,000</td></tr><tr><td>Added by MEP after the slab was poured (recoverable)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>18</td><td style='font-size:12.5px'><strong>EMB-082</strong> — Sleeve 200 mm L2 D5: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹24,000<br/><strong>EMB-083</strong> — Slab opening 600x600 (duct) L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-084</strong> — Sleeve 150 mm L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹18,000<br/><strong>EMB-085</strong> — Slab opening 600x600 (duct) L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-086</strong> — Sleeve 100 mm L2 D5: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹14,000<br/><strong>EMB-087</strong> — Sleeve 200 mm L2 C2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹24,000<br/><strong>EMB-088</strong> — Slab opening 600x600 (duct) L2 D2: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-089</strong> — Sleeve 150 mm L2 C5: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹18,000<br/><strong>EMB-090</strong> — Sleeve 200 mm L2 D4: first shown in P01-HVAC-108 R3 dated 18-Jun, slab poured 02-Jun — core cut ₹24,000<br/><strong>EMB-097</strong> — Slab opening 600x600 (duct) L2 C2: first shown in P01-PLB-107 R2 dated 25-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-098</strong> — Slab opening 600x600 (duct) L2 C4: first shown in P01-PLB-107 R2 dated 25-Jun, slab poured 02-Jun — core cut ₹85,000<br/><strong>EMB-099</strong> — Sleeve 100 mm L2 C4: first shown in P01-PLB-107 R2 dated 25-Jun, slab poured 02-Jun — core cut ₹14,000<br/><strong>EMB-091</strong> — Sleeve 200 mm Roof C2: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹24,000<br/><strong>EMB-092</strong> — Sleeve 200 mm Roof C3: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹24,000<br/><strong>EMB-093</strong> — Sleeve 200 mm Roof C4: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹24,000<br/><strong>EMB-094</strong> — Sleeve 100 mm Roof D3: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹14,000<br/><strong>EMB-095</strong> — Sleeve 150 mm Roof D4: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹18,000<br/><strong>EMB-096</strong> — Sleeve 150 mm Roof C2: first shown in P01-HVAC-109 R3 dated 20-Jul, slab poured 08-Jul — core cut ₹18,000</td></tr><tr><td>Pattern: late MEP revisions drive the core cutting</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>Late MEP revisions</strong> — 18 of 22 uncast items came from MEP revisions issued after the pour — ₹683,000 recoverable in principle (see interface clauses)</td></tr></table></div><p style='margin-top:10px'><strong>Money:</strong> all uncast ₹716,000; recoverable in principle ₹683,000; Suroj's own ₹33,000. The 9 items from P01-HVAC-108 R3 are the warm-up drawing's sleeves and openings.</p></div></details>
 </div>
 </div>
 
@@ -616,7 +616,7 @@ Compute with code; total the money in (1).</div><span class="prompt-label">PROMP
 (b) A note to our subcontractor holding their excess quantities pending joint measurement. Neutral, specific, under 100 words each.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One under-certified item: (measured − certified) × rate.</li><li>▸ The item with BOQ = 0: what is it, and which lab did it come from?</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Under-certified by the client (&gt;3% below our measurement)</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>Q01</strong> — Excavation: measured 5,750.3 vs certified 5,087.6 cum — ₹2.4 L uncertified<br/><strong>Q09</strong> — AAC masonry 100 mm: measured 2,456.0 vs certified 2,073.8 sqm — ₹2.9 L uncertified<br/><strong>Q15</strong> — VDF flooring: measured 1,034.8 vs certified 864.6 sqm — ₹2.0 L uncertified<br/><strong>Q17</strong> — Waterproofing APP: measured 2,402.9 vs certified 2,082.0 sqm — ₹1.8 L uncertified</td></tr><tr><td>Subcontractor billed more than measured (&gt;3%)</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>Q05</strong> — Reinforcement Fe500D: billed 692.5 vs measured 602.5 MT<br/><strong>Q08</strong> — AAC masonry 200 mm: billed 1,232.9 vs measured 1,076.4 cum<br/><strong>Q11</strong> — External plaster: billed 7,611.5 vs measured 6,879.6 sqm</td></tr><tr><td>Drawing take-off differs from BOQ by &gt;15%</td><td style='text-align:center;font-weight:700;color:#FFD600'>4</td><td style='font-size:12.5px'><strong>Q13</strong> — Standing seam roof: BOQ 1,750 vs drawing 1,365.0 sqm (-22%)<br/><strong>Q21</strong> — RCC drain 600: BOQ 1,250 vs drawing 1,000.0 rmt (-20%)<br/><strong>Q22</strong> — Bituminous road: BOQ 8,600 vs drawing 6,880.0 sqm (-20%)<br/><strong>Q23</strong> — Boundary wall: BOQ 1,040 vs drawing 1,362.4 rmt (+31%)</td></tr><tr><td>Executed work not yet in any certificate</td><td style='text-align:center;font-weight:700;color:#FFD600'>1</td><td style='font-size:12.5px'><strong>Q25</strong> — Core cutting &amp; openings: 22 done, none certified — no BOQ item, needs a variation (links to Lab 3)</td></tr></table></div><p style='margin-top:10px'><strong>Money:</strong> under-certified ≈ INR 9.1 lakh; core cutting & openings not certified ≈ INR 7.2 lakh.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Under-certified by the client (&gt;3% below our measurement)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>Q01</strong> — Excavation: measured 5,750.3 vs certified 5,087.6 cum — ₹2.4 L uncertified<br/><strong>Q09</strong> — AAC masonry 100 mm: measured 2,456.0 vs certified 2,073.8 sqm — ₹2.9 L uncertified<br/><strong>Q15</strong> — VDF flooring: measured 1,034.8 vs certified 864.6 sqm — ₹2.0 L uncertified<br/><strong>Q17</strong> — Waterproofing APP: measured 2,402.9 vs certified 2,082.0 sqm — ₹1.8 L uncertified</td></tr><tr><td>Subcontractor billed more than measured (&gt;3%)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>Q05</strong> — Reinforcement Fe500D: billed 692.5 vs measured 602.5 MT<br/><strong>Q08</strong> — AAC masonry 200 mm: billed 1,232.9 vs measured 1,076.4 cum<br/><strong>Q11</strong> — External plaster: billed 7,611.5 vs measured 6,879.6 sqm</td></tr><tr><td>Drawing take-off differs from BOQ by &gt;15%</td><td style='text-align:center;font-weight:700;color:var(--accent)'>4</td><td style='font-size:12.5px'><strong>Q13</strong> — Standing seam roof: BOQ 1,750 vs drawing 1,365.0 sqm (-22%)<br/><strong>Q21</strong> — RCC drain 600: BOQ 1,250 vs drawing 1,000.0 rmt (-20%)<br/><strong>Q22</strong> — Bituminous road: BOQ 8,600 vs drawing 6,880.0 sqm (-20%)<br/><strong>Q23</strong> — Boundary wall: BOQ 1,040 vs drawing 1,362.4 rmt (+31%)</td></tr><tr><td>Executed work not yet in any certificate</td><td style='text-align:center;font-weight:700;color:var(--accent)'>1</td><td style='font-size:12.5px'><strong>Q25</strong> — Core cutting &amp; openings: 22 done, none certified — no BOQ item, needs a variation (links to Lab 3)</td></tr></table></div><p style='margin-top:10px'><strong>Money:</strong> under-certified ≈ INR 9.1 lakh; core cutting & openings not certified ≈ INR 7.2 lakh.</p></div></details>
 </div>
 </div>
 
@@ -635,7 +635,7 @@ Give the total weight as typed and as recomputed, and by diameter. Use code.</di
 H = Unit wt, I = Weight) that show OK or the correct value. Give one test row with the expected result.</div>
 <div class="exercise"><h3>✅ Check it — before you trust it</h3><ul style='list-style:none'><li>▸ One flagged row on the calculator: d² ÷ 162 and n × L.</li><li>▸ Test the AI's Excel formula on one row you know.</li></ul></div>
 
-<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Total length ≠ number × cut length</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>BB006</strong> — Beam L2-B13: 44 × 1.7 = 74.80, sheet says 87.3<br/><strong>BB015</strong> — Column L2-C21: 30 × 1.92 = 57.60, sheet says 70.1<br/><strong>BB017</strong> — Column L2-C22: 32 × 1.88 = 60.16, sheet says 72.66</td></tr><tr><td>Wrong unit weight (should be d² ÷ 162)</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>BB007</strong> — Beam L2-B14 Ø20: 3.922 kg/m vs 2.469<br/><strong>BB014</strong> — Column L2-C21 Ø25: 2.385 kg/m vs 3.858<br/><strong>BB019</strong> — Column L2-C23 Ø10: 0.495 kg/m vs 0.617</td></tr><tr><td>Weight ≠ total length × unit weight</td><td style='text-align:center;font-weight:700;color:#FFD600'>3</td><td style='font-size:12.5px'><strong>BB010</strong> — Slab L2-S04: 359.6 × 0.889 = 319.7, sheet says 287.71<br/><strong>BB013</strong> — Slab L2-S05: 366.0 × 0.617 = 225.8, sheet says 282.27<br/><strong>BB028</strong> — Beam Roof-RB3: 84.24 × 0.617 = 52.0, sheet says 57.18</td></tr></table></div><p style='margin-top:10px'><strong>Total:</strong> 2,829 kg as typed vs 2,791 kg recomputed.</p></div></details>
+<details class="answer"><summary>Trainer answer key — open only after tables report</summary><div><div class="table-wrap"><table><tr><th>Planted finding</th><th>Count</th><th>References</th></tr><tr><td>Total length ≠ number × cut length</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>BB006</strong> — Beam L2-B13: 44 × 1.7 = 74.80, sheet says 87.3<br/><strong>BB015</strong> — Column L2-C21: 30 × 1.92 = 57.60, sheet says 70.1<br/><strong>BB017</strong> — Column L2-C22: 32 × 1.88 = 60.16, sheet says 72.66</td></tr><tr><td>Wrong unit weight (should be d² ÷ 162)</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>BB007</strong> — Beam L2-B14 Ø20: 3.922 kg/m vs 2.469<br/><strong>BB014</strong> — Column L2-C21 Ø25: 2.385 kg/m vs 3.858<br/><strong>BB019</strong> — Column L2-C23 Ø10: 0.495 kg/m vs 0.617</td></tr><tr><td>Weight ≠ total length × unit weight</td><td style='text-align:center;font-weight:700;color:var(--accent)'>3</td><td style='font-size:12.5px'><strong>BB010</strong> — Slab L2-S04: 359.6 × 0.889 = 319.7, sheet says 287.71<br/><strong>BB013</strong> — Slab L2-S05: 366.0 × 0.617 = 225.8, sheet says 282.27<br/><strong>BB028</strong> — Beam Roof-RB3: 84.24 × 0.617 = 52.0, sheet says 57.18</td></tr></table></div><p style='margin-top:10px'><strong>Total:</strong> 2,829 kg as typed vs 2,791 kg recomputed.</p></div></details>
 </div>
 </div>
 
@@ -660,11 +660,11 @@ H = Unit wt, I = Weight) that show OK or the correct value. Give one test row wi
 <div class="section-head" onclick="toggle(this)"><h2>🎯 Key Takeaways &amp; Questions</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card"><table><tr><th>#</th><th>Rule</th><th>On the drawing and QS desk</th></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">1</td><td><strong>AI reads text, not geometry</strong></td><td>Title blocks yes; counts and dimensions checked by eye</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">2</td><td><strong>ID, row or NOT FOUND</strong></td><td>Every finding traceable</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">3</td><td><strong>Dates are evidence</strong></td><td>Revision date vs pour date decides who pays</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">4</td><td><strong>Five quantities, five meanings</strong></td><td>BOQ, take-off, measured, certified, billed — reconcile before every bill</td></tr>
-<tr><td style="font-size:20px;font-weight:800;color:#FFD600">5</td><td><strong>Client drawings stay in approved tools</strong></td><td>Practice on synthetic; work in approved accounts</td></tr></table></div>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">1</td><td><strong>AI reads text, not geometry</strong></td><td>Title blocks yes; counts and dimensions checked by eye</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">2</td><td><strong>ID, row or NOT FOUND</strong></td><td>Every finding traceable</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">3</td><td><strong>Dates are evidence</strong></td><td>Revision date vs pour date decides who pays</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">4</td><td><strong>Five quantities, five meanings</strong></td><td>BOQ, take-off, measured, certified, billed — reconcile before every bill</td></tr>
+<tr><td style="font-size:20px;font-weight:800;color:var(--accent)">5</td><td><strong>Client drawings stay in approved tools</strong></td><td>Practice on synthetic; work in approved accounts</td></tr></table></div>
 
 <div class="info-box"><strong>Last 20 minutes — department questions.</strong> Use them to learn what MEP and QS actually spend their week on: it shapes Phase 2 for this group more than anything in these files.</div></div>
 </div>
