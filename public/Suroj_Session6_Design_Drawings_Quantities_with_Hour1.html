@@ -174,7 +174,7 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 .tko{margin-top:10px;display:flex;flex-wrap:wrap;gap:3px}.tko span{padding:3px 6px;border-radius:4px;color:#fff;font-family:monospace;font-size:14px}
 .note{font-size:12.5px;opacity:.75;margin-top:6px}
 html{scroll-behavior:smooth}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px}
+.layout{display:block}
 .rn{position:sticky;top:0;height:100vh;overflow-y:auto;background:#11112a;border-left:1px solid var(--border);padding:14px 12px 40px;font-size:13px}
 .rn-h{font-size:11px;letter-spacing:2px;opacity:.6;margin-bottom:8px}
 .rn a{display:block;color:#cfd3e6;text-decoration:none;padding:5px 8px;border-radius:6px;line-height:1.35}
@@ -214,6 +214,56 @@ html{scroll-behavior:smooth}
 <h1>Design, Drawings &amp; Quantities — AI Foundations for MEP, QS and Coordination</h1>
 <p>How LLMs work and where they fail on drawings and quantities, prompting that holds up — then a drawing-reading warm-up, five labs on P01's coordination review, and a look at what Phase 2 builds</p></div>
 <div class="container">
+<!-- CONTENTS GRID -->
+<div class="section open">
+<div class="section-head" onclick="toggle(this)"><h2>📋 Contents</h2><span class="arrow">▼</span></div>
+<div class="section-body">
+<div class="grid-3">
+  <div class="card">
+    <h3>1 · Before you start</h3>
+    <ul>
+      <li><a href="#s6-1" style="color:var(--text);text-decoration:none;font-weight:500;">🎯 Learning Objectives</a></li>
+      <li><a href="#s6-2" style="color:var(--text);text-decoration:none;font-weight:500;">🗓️ Running Order — 3 Hours (Hour 1 first)</a></li>
+      <li><a href="#s6-3" style="color:var(--text);text-decoration:none;font-weight:500;">📱 Phone Setup — First 8 Minutes</a></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>2 · Hour 1 · AI Foundations</h3>
+    <ul>
+      <li><a href="#h1-plan" style="color:var(--text);text-decoration:none;font-weight:500;">🧭 How to Run This Hour</a></li>
+      <li><a href="#h1-open" style="color:var(--text);text-decoration:none;font-weight:500;">🎬 Opening — Why an Hour on Basics</a></li>
+      <li><a href="#h1-m1" style="color:var(--text);text-decoration:none;font-weight:500;">1️⃣ What AI Is — and How It Differs from Normal Software</a></li>
+      <li><a href="#h1-m2" style="color:var(--text);text-decoration:none;font-weight:500;">2️⃣ How an LLM Works — What Happens in the Back End</a></li>
+      <li><a href="#h1-bb1" style="color:var(--text);text-decoration:none;font-weight:500;">⚡ Brain Break A: Hour 1 Quiz A — How It Works</a></li>
+      <li><a href="#h1-m3" style="color:var(--text);text-decoration:none;font-weight:500;">3️⃣ The Tools — and Your First Three Prompts</a></li>
+      <li><a href="#h1-m4" style="color:var(--text);text-decoration:none;font-weight:500;">4️⃣ Prompting Basics — How to Ask</a></li>
+      <li><a href="#h1-m5" style="color:var(--text);text-decoration:none;font-weight:500;">5️⃣ Generative AI vs Agentic AI</a></li>
+      <li><a href="#h1-m6" style="color:var(--text);text-decoration:none;font-weight:500;">6️⃣ What AI Can and Can&#x27;t Do</a></li>
+      <li><a href="#h1-m7" style="color:var(--text);text-decoration:none;font-weight:500;">7️⃣ Safe and Responsible Use</a></li>
+      <li><a href="#h1-bb2" style="color:var(--text);text-decoration:none;font-weight:500;">⚡ Brain Break B: Hour 1 Quiz B — Capabilities and Safety</a></li>
+      <li><a href="#h1-close" style="color:var(--text);text-decoration:none;font-weight:500;">✅ Close of Hour 1 — Bridge to Your Department</a></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>3 · Department session</h3>
+    <ul>
+      <li><a href="#s6-4" style="color:var(--text);text-decoration:none;font-weight:500;">⚡ Brain Break 1: Know Suroj &amp; the Drawing Office</a></li>
+      <li><a href="#s6-5" style="color:var(--text);text-decoration:none;font-weight:500;">🔁 Bridge: Drawing Warm-up — AI Reads a Drawing</a></li>
+      <li><a href="#s6-6" style="color:var(--text);text-decoration:none;font-weight:500;">🏗️ Lab Briefing: The Coordination Review on P01</a></li>
+      <li><a href="#s6-7" style="color:var(--text);text-decoration:none;font-weight:500;">🧪 Data Lab 1: Drawing Control — Is Site Building from the…</a></li>
+      <li><a href="#s6-8" style="color:var(--text);text-decoration:none;font-weight:500;">🧪 Data Lab 2: RFIs — Which Are Stuck, and Which Carry Money?</a></li>
+      <li><a href="#s6-9" style="color:var(--text);text-decoration:none;font-weight:500;">🧪 Data Lab 3: Sleeves &amp; Embedded Items — Whose Core Cutting…</a></li>
+      <li><a href="#s6-10" style="color:var(--text);text-decoration:none;font-weight:500;">⚡ Brain Break 2: Lab Recap</a></li>
+      <li><a href="#s6-11" style="color:var(--text);text-decoration:none;font-weight:500;">🧪 Data Lab 4 (split · tables 1–2): Quantities — Done but Not…</a></li>
+      <li><a href="#s6-12" style="color:var(--text);text-decoration:none;font-weight:500;">🧪 Data Lab 5 (split · table 3): BBS — Does It Add Up?</a></li>
+      <li><a href="#s6-13" style="color:var(--text);text-decoration:none;font-weight:500;">✨ Phase 2 Preview: The Design &amp; Quantity Coordination Room</a></li>
+      <li><a href="#s6-14" style="color:var(--text);text-decoration:none;font-weight:500;">🎯 Key Takeaways &amp; Questions</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+
 <!-- OBJECTIVES -->
 <div id="s6-1" class="section open">
 <div class="section-head" onclick="toggle(this)"><h2>🎯 Learning Objectives</h2><span class="arrow">▼</span></div>
@@ -580,7 +630,7 @@ H = Unit wt, I = Weight) that show OK or the correct value. Give one test row wi
 </div>
 
 </div>
-</main><nav class="rn" id="rn" aria-label="Contents"><div class="rn-h">Contents</div><div class="rn-g"><button class="rn-gt" data-g="pre" aria-expanded="true">1 · Before you start <span>Session 6 · Design, Drawings &amp; Quantities · 10 Oct · 3 – 6 pm</span></button><div class="rn-items" id="g-pre"><a href="#s6-1">🎯 Learning Objectives</a><a href="#s6-2">🗓️ Running Order — 3 Hours (Hour 1 first)</a><a href="#s6-3">📱 Phone Setup — First 8 Minutes</a></div></div><div class="rn-g rn-h1"><button class="rn-gt" data-g="h1" aria-expanded="true">2 · Hour 1 · AI Foundations <span>first 60 minutes</span></button><div class="rn-items" id="g-h1"><a href="#h1-plan">🧭 How to Run This Hour</a><a href="#h1-open">🎬 Opening — Why an Hour on Basics</a><a href="#h1-m1">1️⃣ What AI Is — and How It Differs from Normal Software</a><a href="#h1-m2">2️⃣ How an LLM Works — What Happens in the Back End</a><a href="#h1-bb1">⚡ Brain Break A: Hour 1 Quiz A — How It Works</a><a href="#h1-m3">3️⃣ The Tools — and Your First Three Prompts</a><a href="#h1-m4">4️⃣ Prompting Basics — How to Ask</a><a href="#h1-m5">5️⃣ Generative AI vs Agentic AI</a><a href="#h1-m6">6️⃣ What AI Can and Can&#x27;t Do</a><a href="#h1-m7">7️⃣ Safe and Responsible Use</a><a href="#h1-bb2">⚡ Brain Break B: Hour 1 Quiz B — Capabilities and Safety</a><a href="#h1-close">✅ Close of Hour 1 — Bridge to Your Department</a></div></div><div class="rn-g"><button class="rn-gt" data-g="sess" aria-expanded="true">3 · Department session <span>labs, preview, questions</span></button><div class="rn-items" id="g-sess"><a href="#s6-4">⚡ Brain Break 1: Know Suroj &amp; the Drawing Office</a><a href="#s6-5">🔁 Bridge: Drawing Warm-up — AI Reads a Drawing</a><a href="#s6-6">🏗️ Lab Briefing: The Coordination Review on P01</a><a href="#s6-7">🧪 Data Lab 1: Drawing Control — Is Site Building from the…</a><a href="#s6-8">🧪 Data Lab 2: RFIs — Which Are Stuck, and Which Carry Money?</a><a href="#s6-9">🧪 Data Lab 3: Sleeves &amp; Embedded Items — Whose Core Cutting…</a><a href="#s6-10">⚡ Brain Break 2: Lab Recap</a><a href="#s6-11">🧪 Data Lab 4 (split · tables 1–2): Quantities — Done but Not…</a><a href="#s6-12">🧪 Data Lab 5 (split · table 3): BBS — Does It Add Up?</a><a href="#s6-13">✨ Phase 2 Preview: The Design &amp; Quantity Coordination Room</a><a href="#s6-14">🎯 Key Takeaways &amp; Questions</a></div></div></nav><button class="rn-btn" id="rnb" aria-controls="rn">☰ Contents</button></div><script>
+</main></div><script>
 function toggle(el){el.parentElement.classList.toggle('open')}
 function toggleCS(el){if(el.classList.contains('case-study'))el.classList.toggle('cs-open')}
 function copyPrompt(btn,ev){var c=btn.parentElement.cloneNode(true);c.querySelectorAll('button,.stamp').forEach(function(b){b.remove()});var t=c.innerText.trim();
