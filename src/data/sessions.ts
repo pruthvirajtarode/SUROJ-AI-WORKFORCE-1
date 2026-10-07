@@ -4,7 +4,7 @@ export const sessions = [
     title: "EPC Bids & Design-Build / Tendering & Contracts",
     family: "Winning Work",
     headcount: 42,
-    htmlUrl: "",
+    htmlUrl: "/Suroj_Session1_Tendering_EPC_BD_with_Hour1.html",
     departments: [
       { name: "Contract & Tendering", count: 22 },
       { name: "EPC", count: 19 },
@@ -73,7 +73,7 @@ export const sessions = [
     title: "Cost, Planning & Systems",
     family: "Numbers, Drawings & Systems",
     headcount: 26,
-    htmlUrl: "",
+    htmlUrl: "/Suroj_Session4_Cost_Planning_Systems_with_Hour1.html",
     departments: [
       { name: "Cost Control", count: 11 },
       { name: "Planning", count: 9 },
@@ -118,7 +118,7 @@ export const sessions = [
     title: "Design, Drawings & Quantities",
     family: "Numbers, Drawings & Systems",
     headcount: 18,
-    htmlUrl: "",
+    htmlUrl: "/Suroj_Session6_Design_Drawings_Quantities_with_Hour1.html",
     departments: [
       { name: "MEP", count: 12 },
       { name: "Quantity Surveyor", count: 4 },
