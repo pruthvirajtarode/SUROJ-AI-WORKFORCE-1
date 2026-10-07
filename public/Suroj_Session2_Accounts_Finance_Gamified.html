@@ -96,7 +96,8 @@ tr:hover{background:rgba(0, 0, 0, 0.01)}
 /* Theory diagram */
 .diagram{background:var(--card2);border-radius:10px;padding:20px;margin:15px 0;text-align:center}
 .diagram .flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:10px 0}
-.diagram .node{background:rgba(0, 0, 0, 0.04);border:1px solid rgba(0, 0, 0, 0.08);border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600}
+.diagram .node{background:rgba(0, 0, 0, 0.04);border:1px solid rgba(0, 0, 0, 0.08);border-radius:8px;padding:10px 16px;font-size:16px; padding:12px 18px;font-weight:600}
+.diagram .node .sm { font-size: 14px; font-weight: normal; opacity: 0.9; margin-top: 6px; display: block; }
 .diagram .node-danger{border-color:rgba(160, 52, 34, 0.15);color:var(--red)}
 .diagram .node-safe{border-color:rgba(78, 107, 46, 0.15);color:var(--green)}
 .diagram .arr{color:var(--accent);font-size:20px;font-weight:bold}
@@ -248,7 +249,7 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 
 <!-- OBJECTIVES -->
 <div class="section open">
-<div class="section-head" onclick="toggle(this)"><h2>🎯 Learning Objectives</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎯 Learning Objectives</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="stats">
 <div class="stat"><span class="n">180</span><span class="l">Minutes</span></div>
@@ -274,14 +275,14 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 
 <!-- AGENDA -->
 <div class="section open">
-<div class="section-head" onclick="toggle(this)"><h2>🗓️ Running Order — 3 Hours</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🗓️ Running Order — 3 Hours</h2><span class="arrow">▼</span></div>
 <div class="section-body"><div class="card table-wrap"><table class="agenda"><tr><th>Time</th><th>Block</th><th>What happens</th><th>Change</th></tr><tr><td>3:00 – 3:06</td><td>Phone setup</td><td>Install, sign in, training off</td><td><span class=chg>↓ 2 min</span></td></tr><tr><td>3:06 – 3:41</td><td>🎓 Opening: AI &amp; prompt engineering</td><td>What AI is · how LLMs work · generative vs agentic · prompting · 🎮 Games 1–3</td><td><span class=chg-new>NEW</span></td></tr><tr><td>3:41 – 3:44</td><td>⚡ Brain Break 1</td><td>Know Suroj warm-up</td><td></td></tr><tr><td>3:44 – 3:50</td><td>Part 1 · Reader, not calculator</td><td>Recap — the recompute rule</td><td><span class=chg>↓ 2 min</span></td></tr><tr><td>3:50 – 3:52</td><td>⚡ Brain Break 2</td><td>Reader or calculator?</td><td></td></tr><tr><td>3:52 – 3:57</td><td>Part 2 · Data rules</td><td>Three tiers, anonymisation</td><td><span class=chg>↓ 3 min</span></td></tr><tr><td>3:57 – 3:59</td><td>⚡ Brain Break 3</td><td>Tier rapid-fire</td><td></td></tr><tr><td>3:59 – 4:05</td><td>🎮 Game 4</td><td>GST &amp; TDS Speed Round</td><td><span class=chg-new>NEW</span></td></tr><tr><td>4:05 – 4:15</td><td>Activities 1 &amp; 2</td><td>Invoice photo → table; find the two errors</td><td><span class=chg>↓ 6 min</span></td></tr><tr><td>4:15 – 4:18</td><td>🏗️ Lab briefing</td><td>The quarter-end story</td><td></td></tr><tr><td>4:18 – 4:33</td><td>🧪 Lab 1</td><td>Purchase register audit</td><td><span class=chg>↓ 5 min</span></td></tr><tr><td>4:33 – 4:48</td><td>🧪 Lab 2</td><td>GSTR-2B vs books</td><td><span class=chg>↓ 5 min</span></td></tr><tr><td>4:48 – 4:54</td><td>Break + 🎮 Game 5</td><td>Emoji Accounting</td><td><span class=chg-new>NEW</span></td></tr><tr><td>4:54 – 5:06</td><td>🧪 Lab 3</td><td>AP ageing &amp; MSE watch</td><td><span class=chg>↓ 3 min</span></td></tr><tr><td>5:06 – 5:09</td><td>⚡ Brain Break 4</td><td>Data Lab recap</td><td></td></tr><tr><td>5:09 – 5:14</td><td>🎮 Game 6</td><td>Spot the Error</td><td><span class=chg-new>NEW</span></td></tr><tr><td>5:14 – 5:27</td><td>🧪 Lab 4</td><td>Client RA bills</td><td><span class=chg>↓ 4 min</span></td></tr><tr><td>5:27 – 5:39</td><td>🧪 Lab 5</td><td>Petty-cash hunt</td><td><span class=chg>↓ 3 min</span></td></tr><tr><td>5:39 – 5:43</td><td>🎮 Game 7</td><td>Hallucination Hunter</td><td><span class=chg-new>NEW</span></td></tr><tr><td>5:43 – 5:50</td><td>🏆 Game 8</td><td>Grand Showdown</td><td><span class=chg-new>NEW</span></td></tr><tr><td>5:50 – 6:00</td><td>🎤 Debrief, winners &amp; questions</td><td>What the afternoon proved · scoreboard winners · open floor</td><td><span class=chg>↓ 17 min combined</span></td></tr></table></div><div class="info-box"><strong>Where the time came from:</strong> the 35-minute opening and five new games are paid for by trimming each lab by 3–5 minutes, shortening Parts 1–2 to recaps (the opening covers the general ideas), and folding department questions into the final 10 minutes. If a lab runs long, drop Game 6 first, then Game 7.</div><div class="info-box"><strong>Trainer note — the day before:</strong> share the five CSVs and the workbook to the participants' WhatsApp group, and keep the answer-key workbook to yourself. Ask Accounts to seat people in tables of 5–6 (7 tables for 39). The final “Is this safe?” quiz and the case files are in the reserve bank if time allows. The dummy documents in Activities 1–2 are styled as white paper so they photograph cleanly off the projector. If the room is bright, print the Activity 1 invoice and the Activity 3 statements on A4 — one sheet per table of four is enough.</div>
 </div>
 </div>
 
 <!-- SETUP -->
 <div class="section open">
-<div class="section-head" onclick="toggle(this)"><h2>📱 Phone Setup — First 6 Minutes</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>📱 Phone Setup — First 6 Minutes</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Setup checklist <span class="track">Everyone</span></h3>
@@ -303,7 +304,7 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 <div class="section bbsec open">
 
 <div class="section open opening">
-<div class="section-head" onclick="toggle(this)"><h2>🎓 Opening (35 min): AI &amp; Prompt Engineering — the Basics First</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎓 Opening (35 min): AI &amp; Prompt Engineering — the Basics First</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="stats"><div class="stat"><span class="n">35</span><span class="l">Minutes</span></div><div class="stat"><span class="n">5</span><span class="l">Short modules</span></div><div class="stat"><span class="n">3</span><span class="l">Games inside</span></div><div class="stat"><span class="n">1</span><span class="l">Prompt template to keep</span></div></div>
 <div class="card table-wrap"><table class="agenda"><tr><th>Min</th><th>Module</th><th>Game</th></tr>
@@ -315,7 +316,7 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 </div>
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🅰️ A · What AI Is — Rules vs Learning (8 min)</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🅰️ A · What AI Is — Rules vs Learning (8 min)</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="grid-2"><div class="card"><h3>Normal software: rules a person wrote</h3><p>Tally computes GST because a programmer wrote the rule. Excel totals because someone wrote SUM. Same input → same output, always. It can only do what someone thought of.</p></div>
 <div class="card"><h3>AI: patterns learned from examples</h3><p>Nobody writes the rule for “this looks like a fraudulent payment”. The system sees millions of examples and learns the pattern. It handles new cases — and can be wrong without knowing it.</p></div></div>
@@ -324,7 +325,7 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 </div>
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🅱️ B · How ChatGPT &amp; Claude Actually Work (9 min)</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🅱️ B · How ChatGPT &amp; Claude Actually Work (9 min)</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="diagram"><div class="flow"><div class="node">1 · Pre-training<br/><span class="sm">reads a huge library of text; learns to predict the next word</span></div><div class="arr">→</div><div class="node">2 · Fine-tuning<br/><span class="sm">people rate answers; it learns to be a helpful assistant</span></div><div class="arr">→</div><div class="node node-safe">3 · Your chat<br/><span class="sm">your words → tokens → next word, again and again</span></div></div></div>
 <div class="card"><h3>The one idea</h3><p>An LLM writes its answer one small piece (“token”) at a time, each time choosing a likely next word. It doesn't look facts up unless you give it the document or switch on search. That single idea explains everything in the table below.</p></div><div class="game" data-game="g2"></div>
@@ -339,7 +340,7 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 </div>
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🅲 C · Generative vs Agentic AI — and the Tools (4 min)</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🅲 C · Generative vs Agentic AI — and the Tools (4 min)</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="grid-2"><div class="card"><h3>Generative — you ask, it creates</h3><p>Draft, summarise, extract, explain. You check and you act. Everything this afternoon is generative.</p></div>
 <div class="card"><h3>Agentic — you give a goal, it acts</h3><p>Plans steps, uses tools (downloads, sheets, email), checks, reports — with your approval. More power, so it needs permissions and logs. That's Phase 2.</p></div></div>
@@ -347,7 +348,7 @@ code{background:rgba(0,0,0,0.08);padding:1px 6px;border-radius:4px;font-size:12.
 </div>
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🅳 D · Prompt Engineering for Accounts (14 min)</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🅳 D · Prompt Engineering for Accounts (14 min)</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="diagram"><div class="flow"><div class="node">Role<br/><span class="sm">who it should be</span></div><div class="arr">+</div><div class="node">Task<br/><span class="sm">one clear job</span></div><div class="arr">+</div><div class="node">Context<br/><span class="sm">the file, the period, the rule</span></div><div class="arr">+</div><div class="node">Format<br/><span class="sm">table, columns, length</span></div><div class="arr">+</div><div class="node">Constraints<br/><span class="sm">what not to do</span></div><div class="arr">+</div><div class="node node-safe">Evidence<br/><span class="sm">row / page or NOT FOUND</span></div></div></div>
 <div class="grid-2"><div class="card"><h3>❌ Weak</h3><p style="font-style:italic">“Check this purchase register.”</p><p class="note">You get a nice paragraph that says “mostly fine”.</p></div>
@@ -367,7 +368,7 @@ Constraints: Use only the attached data. Don&#x27;t calculate in your head — u
 Evidence: Give the row / invoice number for every finding. If it isn&#x27;t there, write NOT FOUND.</div>
 <div class="phone"><h3>📱 Try it now — 4 minutes</h3><ol><li>Send: <em>“Explain input tax credit to a new accounts trainee in 5 simple lines, with one construction example.”</em></li><li>Reply: <em>“Now in Hindi.”</em> then <em>“Make it a 3-row table.”</em></li><li>Ask something it cannot know: <em>“What was Suroj's ITC last month?”</em> — does it say it doesn't know, or invent a number?</li></ol></div><div class="game" data-game="g3"></div></div>
 </div>
-<div class="section-head" onclick="toggle(this)"><h2>⚡ Brain Break 1: Know Suroj — Warm-Up</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>⚡ Brain Break 1: Know Suroj — Warm-Up</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="bb-meta">⏱ 5 minutes · Icebreaker · Read the question aloud, take a show of hands, then tap an answer</div>
 <div class="q"><p class="qt"><strong>1.</strong> Where is Suroj Buildcon's head office?</p><div class="opts"><button class="opt" data-ok="0">A. Nagpur</button><button class="opt" data-ok="0">B. Ahmedabad</button><button class="opt" data-ok="1">C. Pune — Koregaon Park</button><button class="opt" data-ok="0">D. Mumbai</button></div><div class="exp"><strong>C is correct.</strong> Bungalow No. 3, Liberty Society, Koregaon Park, Pune — as listed on suroj.in.</div></div><div class="q"><p class="qt"><strong>2.</strong> For which client did Suroj build the aircraft manufacturing facility in Nagpur, linked to the Falcon 2000 programme?</p><div class="opts"><button class="opt" data-ok="0">A. KSB Pumps</button><button class="opt" data-ok="0">B. Alstom Transport</button><button class="opt" data-ok="0">C. Siemens India</button><button class="opt" data-ok="1">D. Dassault Reliance Aerospace (DRAL)</button></div><div class="exp"><strong>D is correct.</strong> DRAL's CEO and Dassault Aviation's COO both credit Suroj in testimonials on suroj.in. It's the kind of project that goes into every pre-qualification — and every AI-drafted proposal must get its facts exactly right.</div></div><div class="q"><p class="qt"><strong>3.</strong> Suroj's website lists the sectors it builds for. Which one is NOT on the list?</p><div class="opts"><button class="opt" data-ok="0">A. Defence</button><button class="opt" data-ok="0">B. Automobile</button><button class="opt" data-ok="0">C. Pharmaceutical</button><button class="opt" data-ok="1">D. Shipbuilding</button></div><div class="exp"><strong>D is correct.</strong> Listed: pharma, chemical, food, beverages, automobile, heavy engineering, warehousing, petro-chemical, white goods, defence, restoration, institutional. Shipbuilding isn't — and if AI adds it to a company profile, that's an invented claim.</div></div><div class="q"><p class="qt"><strong>4.</strong> In a client RA bill, “retention money” is:</p><div class="opts"><button class="opt" data-ok="0">A. GST withheld by the client</button><button class="opt" data-ok="0">B. An advance paid to Suroj at mobilisation</button><button class="opt" data-ok="0">C. A penalty for delay</button><button class="opt" data-ok="1">D. A portion of each bill the client holds back until completion or the defects liability period</button></div><div class="exp"><strong>D is correct.</strong> Retention sits on Suroj's balance sheet as a receivable for months or years. Tracking its release is one of the most valuable spreadsheets in Accounts.</div></div>
@@ -377,7 +378,7 @@ Evidence: Give the row / invoice number for every finding. If it isn&#x27;t ther
 </div>
 <!-- PART 1 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🧠 Part 1 (recap, 6 min): What AI Is Good and Bad at in Accounts</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧠 Part 1 (recap, 6 min): What AI Is Good and Bad at in Accounts</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card">
 <h3>AI is a reader and a writer, not a calculator</h3>
@@ -428,7 +429,7 @@ At the end, list every figure I should verify on a calculator.</div>
 
 <!-- BRAIN BREAK 2 -->
 <div class="section bbsec open">
-<div class="section-head" onclick="toggle(this)"><h2>⚡ Brain Break 2: Reader or Calculator? — Site Bills</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>⚡ Brain Break 2: Reader or Calculator? — Site Bills</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="bb-meta">⏱ 3 minutes · Checks Part 1 · Read the question aloud, take a show of hands, then tap an answer</div>
 <div class="q"><p class="qt"><strong>1.</strong> AI extracts a client RA bill: work done ₹48.60 L, retention 5%, mobilisation advance recovery 10%, GST, net payable. What do you recompute yourself?</p><div class="opts"><button class="opt" data-ok="0">A. Only the GST</button><button class="opt" data-ok="0">B. Only the net payable</button><button class="opt" data-ok="1">C. Every derived figure — retention, recovery, GST, net</button><button class="opt" data-ok="0">D. Nothing — it's printed on the bill</button></div><div class="exp"><strong>C is correct.</strong> Each figure depends on the one above it. One wrong base and every line below it is wrong in the same confident format.</div></div><div class="q"><p class="qt"><strong>2.</strong> A subcontractor's bill claims 42.5 m³ of PCC. The measurement book shows 38.2 m³. AI's job is to:</p><div class="opts"><button class="opt" data-ok="0">A. Decide which figure is right</button><button class="opt" data-ok="0">B. Average the two</button><button class="opt" data-ok="0">C. Accept the bill figure</button><button class="opt" data-ok="1">D. Flag the mismatch against the MB for the site engineer</button></div><div class="exp"><strong>D is correct.</strong> The MB is the record. AI can catch the gap across fifty lines in seconds — the site engineer resolves it.</div></div><div class="q"><p class="qt"><strong>3.</strong> AI summarises a client work order and says “price escalation: applicable”. The clause has a formula and base dates. You:</p><div class="opts"><button class="opt" data-ok="0">A. Trust the summary</button><button class="opt" data-ok="0">B. Ask AI “are you sure?”</button><button class="opt" data-ok="1">C. Read the actual clause, base index and formula yourself</button><button class="opt" data-ok="0">D. Bill escalation next month</button></div><div class="exp"><strong>C is correct.</strong> Escalation clauses are where money is won or lost. A one-word summary is not a clause.</div></div>
@@ -438,7 +439,7 @@ At the end, list every figure I should verify on a calculator.</div>
 </div>
 <!-- PART 2 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🔒 Part 2 (5 min): The Accounts Data Rules — Three Tiers</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🔒 Part 2 (5 min): The Accounts Data Rules — Three Tiers</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card table-wrap">
 <table>
@@ -459,7 +460,7 @@ At the end, list every figure I should verify on a calculator.</div>
 </ul>
 <div class="tip"><strong>💡 Why scaling works for reconciliation:</strong> if the ledger and the statement are both divided by 7, the difference is also divided by 7. The AI can still find which entries cause it. You multiply back afterwards.</div>
 </div>
-<div class="case-study" onclick="toggleCS(this)">
+<div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-global">GLOBAL</span> Samsung — internal material pasted into a public chatbot</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>In 2023, Samsung staff pasted internal source code and meeting notes into ChatGPT to debug and summarise. The material left the company's control.</p></div>
@@ -467,7 +468,7 @@ At the end, list every figure I should verify on a calculator.</div>
 <div class="cs-block lesson"><h4 style="color:var(--green)">Lesson for Suroj Accounts</h4><p>These were trained engineers doing something that felt like routine work. "Please format this bank statement" feels equally routine. The instinct to be efficient is exactly what causes the leak.</p></div>
 </div>
 </div>
-<div class="case-study" onclick="toggleCS(this)">
+<div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-leak">SUROJ SCENARIO</span> The vendor bank change that looked like a formatting job</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">Scenario</h4><p>An accountant receives an email from a "vendor" asking to update bank details, with a scanned letter. To save time she photographs the letter and asks AI to extract the new account details into the vendor master format.</p></div>
@@ -481,7 +482,7 @@ At the end, list every figure I should verify on a calculator.</div>
 
 <!-- BRAIN BREAK 3 -->
 <div class="section bbsec open">
-<div class="section-head" onclick="toggle(this)"><h2>⚡ Brain Break 3: Tier Rapid-Fire — Construction Paperwork</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>⚡ Brain Break 3: Tier Rapid-Fire — Construction Paperwork</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="bb-meta">⏱ 3 minutes · Checks Part 2 · Shout the answer · Read the question aloud, take a show of hands, then tap an answer</div>
 <div class="q"><p class="qt"><strong>1.</strong> A client's signed work order with contract value and payment terms — which tier?</p><div class="opts"><button class="opt" data-ok="0">A. Tier 2 if the client name is removed</button><button class="opt" data-ok="1">B. Tier 3 — never</button><button class="opt" data-ok="0">C. Tier 1</button><button class="opt" data-ok="0">D. Tier 2</button></div><div class="exp"><strong>B is correct.</strong> Value, terms and scope together are Suroj's commercial position — and the client's confidential document.</div></div><div class="q"><p class="qt"><strong>2.</strong> A performance bank guarantee copy — which tier?</p><div class="opts"><button class="opt" data-ok="1">A. Tier 3 — never</button><button class="opt" data-ok="0">B. Tier 1, it's a standard format</button><button class="opt" data-ok="0">C. Tier 1</button><button class="opt" data-ok="0">D. Tier 2</button></div><div class="exp"><strong>A is correct.</strong> Bank, amount, beneficiary, expiry. Also a fraud template if it leaks.</div></div><div class="q"><p class="qt"><strong>3.</strong> A site-wise cost ledger with sites renamed S1–S9 and every amount ÷ 7 — safe to paste?</p><div class="opts"><button class="opt" data-ok="0">A. Only after audit</button><button class="opt" data-ok="0">B. Only for sites under ₹10 cr</button><button class="opt" data-ok="0">C. No, never</button><button class="opt" data-ok="1">D. Yes — anonymised Tier 2</button></div><div class="exp"><strong>D is correct.</strong> The shape survives; identities and real values don't. Multiply back in your own Excel.</div></div><div class="q"><p class="qt"><strong>4.</strong> A published government FAQ on GST for works contracts — which tier?</p><div class="opts"><button class="opt" data-ok="0">A. Tier 2</button><button class="opt" data-ok="0">B. Tier 3</button><button class="opt" data-ok="1">C. Tier 1 · Public</button><button class="opt" data-ok="0">D. Depends who downloaded it</button></div><div class="exp"><strong>C is correct.</strong> Public. Paste freely — but check AI's reading against the text.</div></div>
@@ -493,10 +494,10 @@ At the end, list every figure I should verify on a calculator.</div>
 <div class="section">
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 4 · GST &amp; TDS Speed Round</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎮 Game 4 · GST &amp; TDS Speed Round</h2><span class="arrow">▼</span></div>
 <div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Warm up the technical brain before the labs — the GST and TDS rules the labs depend on.</p></div><div><b>🏁 How it plays</b><p>20-second timer per question. Tables race; the trainer awards +1 to the first correct table.</p></div></div><div class="labmeta">⏱ 6 minutes · after the data rules, before the activities</div><div class="game" data-game="g4"></div></div>
 </div>
-<div class="section-head" onclick="toggle(this)"><h2>📸 Activity 1: Invoice Photo → Clean Table</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>📸 Activity 1: Invoice Photo → Clean Table</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Photograph, extract, structure</h3>
@@ -544,7 +545,7 @@ Write [unreadable] for anything you cannot read clearly.</div>
 
 <!-- ACTIVITY 2 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🔍 Activity 2: The Audit — Find the Two Errors</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🔍 Activity 2: The Audit — Find the Two Errors</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Make AI check the invoice — then check the AI</h3>
@@ -585,7 +586,7 @@ as [verify current rate].</div>
 
 <!-- DATA LAB BRIEFING -->
 <div class="section open labsec">
-<div class="section-head" onclick="toggle(this)"><h2>🏗️ Data Lab Briefing: Quarter-End at Suroj — Five Datasets, One Afternoon</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🏗️ Data Lab Briefing: Quarter-End at Suroj — Five Datasets, One Afternoon</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card">
 <h3>The story that runs through all five labs</h3>
@@ -638,7 +639,7 @@ It holds all five datasets (searchable on a phone), 28 missions that auto-check 
 
 <!-- LEADERBOARD -->
 <div class="section open labsec">
-<div class="section-head" onclick="toggle(this)"><h2>🏆 Table Leaderboard</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🏆 Table Leaderboard</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <p style="opacity:0.8;margin-bottom:10px">Type each table's score after every lab. The 🎮 Games column fills itself when you award points in a game. Totals update automatically. Keep this open on the projector between labs.</p>
 <div class="table-wrap"><table id="lb"><tr><th>Table</th><th>Lab 1</th><th>Lab 2</th><th>Lab 3</th><th>Lab 4</th><th>Lab 5</th><th>Brain Breaks</th><th>🎮 Games</th><th>Total</th></tr>
@@ -653,7 +654,7 @@ t.addEventListener('input',u);u();})();
 
 <!-- DATA LAB 1 -->
 <div class="section labsec">
-<div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 1: Purchase Register Audit — Find It Before Audit Does</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧪 Data Lab 1: Purchase Register Audit — Find It Before Audit Does</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 20 minutes · Tables of 5–6 · File: 1_Purchase_Register.csv · 199 entries · 6 projects · 4 states</div>
 <div class="card"><h3>The situation</h3><p>Suroj's purchase register for the quarter: steel, cement, RMC, PEB structures, JCB and shuttering hire, labour supply — booked across six sites. Somebody in the team has been rushing. The auditor's checklist is the one you'd use yourself. Run it at the speed of AI, then prove it at the speed of a calculator.</p><div class="dlrow"><a class="dlbtn" href="data:text/csv;charset=utf-8,Column1,Column2%0ADummy,Data%0AFor,1_Purchase_Register.csv" download="1_Purchase_Register.csv">📄 1_Purchase_Register.csv</a></div></div>
@@ -697,7 +698,7 @@ Add [confirm] against any figure I should re-check in Excel before sending.</div
 
 <!-- DATA LAB 2 -->
 <div class="section labsec">
-<div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 2: GSTR-2B vs Books — How Much ITC Is Really Safe?</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧪 Data Lab 2: GSTR-2B vs Books — How Much ITC Is Really Safe?</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 20 minutes · Same tables · Files: 2_GSTR2B_MH.csv + 1_Purchase_Register.csv · Maharashtra GSTIN only</div>
 <div class="card"><h3>The situation</h3><p>The Maharashtra GSTIN covers three sites — Kurkumbh (P01), Chakan (P03) and Bhiwandi (P05). Books say one ITC figure, the 2B says another. Before the return is filed, the CFO wants every rupee of difference explained and the list of vendors to chase. You already know from Lab 1 that the books contain duplicates — they must come out before you match.</p><div class="dlrow"><a class="dlbtn" href="data:text/csv;charset=utf-8,Column1,Column2%0ADummy,Data%0AFor,2_GSTR2B_MH.csv" download="2_GSTR2B_MH.csv">📄 2_GSTR2B_MH.csv</a><a class="dlbtn" href="data:text/csv;charset=utf-8,Column1,Column2%0ADummy,Data%0AFor,1_Purchase_Register.csv" download="1_Purchase_Register.csv">📄 1_Purchase_Register.csv</a></div></div>
@@ -737,10 +738,10 @@ Keep each under 50 words. Do not threaten ITC reversal or interest — just ask 
 <div class="section labsec">
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 5 · Emoji Accounting (break game)</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎮 Game 5 · Emoji Accounting (break game)</h2><span class="arrow">▼</span></div>
 <div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Keep energy up during the break with accounts terms in emoji.</p></div><div><b>🏁 How it plays</b><p>Put it on screen; tables shout answers. +1 per correct guess.</p></div></div><div class="labmeta">⏱ during the 6-minute break</div><div class="game" data-game="g5"></div></div>
 </div>
-<div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 3: AP Ageing &amp; the MSE Payment Watch</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧪 Data Lab 3: AP Ageing &amp; the MSE Payment Watch</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 15 minutes · File: 3_AP_Open_Items.csv · 90 open items · as at 30-Sep-2026</div>
 <div class="card"><h3>The situation</h3><p>Treasury has a fixed amount for vendor payments this week. The Purchase head wants his biggest suppliers paid; the tax team wants the MSE vendors cleared first. Your job is the list that settles the argument with facts: ageing, top exposures, and which Micro and Small enterprise invoices are past 45 days from acceptance.</p><div class="dlrow"><a class="dlbtn" href="data:text/csv;charset=utf-8,Column1,Column2%0ADummy,Data%0AFor,3_AP_Open_Items.csv" download="3_AP_Open_Items.csv">📄 3_AP_Open_Items.csv</a></div></div>
@@ -772,7 +773,7 @@ Then write a 100-word note to the CFO explaining the order. No legal conclusions
 
 <!-- BRAIN BREAK 4 -->
 <div class="section bbsec open">
-<div class="section-head" onclick="toggle(this)"><h2>⚡ Brain Break 4: Data Lab Recap — Books, 2B &amp; Vendors</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>⚡ Brain Break 4: Data Lab Recap — Books, 2B &amp; Vendors</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="bb-meta">⏱ 3 minutes · After Lab 3 · Read the question aloud, take a show of hands, then tap an answer</div>
 <div class="q"><p class="qt"><strong>1.</strong> Books show PUN-897 and PUN/26-27/0897 from the same vendor for the same amount. That is:</p><div class="opts"><button class="opt" data-ok="1">A. A near-duplicate — the same invoice booked twice</button><button class="opt" data-ok="0">B. Two different invoices</button><button class="opt" data-ok="0">C. A GSTIN error</button><button class="opt" data-ok="0">D. A 2B timing difference</button></div><div class="exp"><strong>A is correct.</strong> The number was typed two ways. Exact-match duplicate checks miss it — which is why the checklist spells out normalisation.</div></div><div class="q"><p class="qt"><strong>2.</strong> An invoice sits in “books, not in 2B” and a near-identical one sits in “2B, not in books” with a different GSTIN. Most likely:</p><div class="opts"><button class="opt" data-ok="0">A. The 2B is wrong</button><button class="opt" data-ok="0">B. The vendor didn't file</button><button class="opt" data-ok="0">C. It's a new vendor</button><button class="opt" data-ok="1">D. We keyed the GSTIN wrong in our books</button></div><div class="exp"><strong>D is correct.</strong> Our typo, not their default. Fix the vendor master before chasing anyone.</div></div><div class="q"><p class="qt"><strong>3.</strong> In Lab 3, a Medium enterprise invoice is 144 days old. Under the 45-day MSE rule used in the lab, it is:</p><div class="opts"><button class="opt" data-ok="0">A. An MSE breach</button><button class="opt" data-ok="0">B. Automatically disallowed</button><button class="opt" data-ok="1">C. Not an MSE breach — but still overdue against agreed terms</button><button class="opt" data-ok="0">D. Fine to ignore</button></div><div class="exp"><strong>C is correct.</strong> The lab's MSE rule covers Micro and Small only. Overdue is still overdue — it just isn't that particular breach. Confirm the current rule with the tax team.</div></div><div class="q"><p class="qt"><strong>4.</strong> A negative Outstanding in the AP file means:</p><div class="opts"><button class="opt" data-ok="0">A. A credit note from the client</button><button class="opt" data-ok="0">B. A data error</button><button class="opt" data-ok="1">C. An advance paid to the vendor, not yet adjusted</button><button class="opt" data-ok="0">D. TDS payable</button></div><div class="exp"><strong>C is correct.</strong> One vendor's advance exceeds everything we owe them — Suroj is the creditor. Don't pay that vendor this week without adjusting it.</div></div>
@@ -785,10 +786,10 @@ Then write a 100-word note to the CFO explaining the order. No legal conclusions
 <div class="section labsec">
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 6 · Spot the Error</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎮 Game 6 · Spot the Error</h2><span class="arrow">▼</span></div>
 <div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Train the eye that every lab needs: one wrong cell in a clean-looking table.</p></div><div><b>🏁 How it plays</b><p>Tap the wrong cell. +2 to the first table that points to it and says why.</p></div></div><div class="labmeta">⏱ 5 minutes · after Brain Break 4, before Lab 4</div><div class="game" data-game="g6"></div></div>
 </div>
-<div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 4: Client RA Bills — Retention, Advance Recovery &amp; What Clients Really Owe</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧪 Data Lab 4: Client RA Bills — Retention, Advance Recovery &amp; What Clients Really Owe</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 17 minutes · File: 4_Client_RA_Bills.csv · 48 RA bills · 6 projects · Oct 2025 – Sep 2026</div>
 <div class="card"><h3>The situation</h3><p>Every RA bill Suroj raises carries deductions — retention, mobilisation advance recovery, TDS — and each one is money that has to come back or be accounted for. A 5% retention wrongly deducted at 10% is lakhs sitting with the client. An advance recovered past its value is Suroj's cash the client is holding. The project teams say the register is fine. Check it.</p><div class="dlrow"><a class="dlbtn" href="data:text/csv;charset=utf-8,Column1,Column2%0ADummy,Data%0AFor,4_Client_RA_Bills.csv" download="4_Client_RA_Bills.csv">📄 4_Client_RA_Bills.csv</a></div></div>
@@ -827,7 +828,7 @@ Do not claim interest or make any legal argument.</div>
 
 <!-- DATA LAB 5 -->
 <div class="section labsec">
-<div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 5: The Petty-Cash Hunt — Team Competition</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧪 Data Lab 5: The Petty-Cash Hunt — Team Competition</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 15 minutes · File: 5_Site_Petty_Cash.csv · 245 vouchers · 12 claimants · 6 sites · Approval limit ₹5,000</div>
 <div class="card"><h3>The situation</h3><p>Site imprest is where small amounts add up and where controls quietly slip — split bills to stay under the approval limit, the same bill claimed twice, vouchers dated on holidays, people approving their own claims. The goal isn't to catch anyone. It's to walk into audit week with the questions already asked.</p><div class="dlrow"><a class="dlbtn" href="data:text/csv;charset=utf-8,Column1,Column2%0ADummy,Data%0AFor,5_Site_Petty_Cash.csv" download="5_Site_Petty_Cash.csv">📄 5_Site_Petty_Cash.csv</a></div></div>
@@ -859,15 +860,15 @@ Then suggest three simple controls that would stop these patterns, each in one l
 <div class="section labsec">
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 7 · Hallucination Hunter</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎮 Game 7 · Hallucination Hunter</h2><span class="arrow">▼</span></div>
 <div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Practise the most important AI skill: finding the confident sentence that isn't true.</p></div><div><b>🏁 How it plays</b><p>Four AI answers, four statements each — one is invented. +2 per catch.</p></div></div><div class="labmeta">⏱ 4 minutes · after Lab 5</div><div class="game" data-game="g7"></div></div>
 </div>
 
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 8 · Grand Showdown</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎮 Game 8 · Grand Showdown</h2><span class="arrow">▼</span></div>
 <div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Recap the afternoon — AI basics, prompting, GST and the labs — and settle the scoreboard.</p></div><div><b>🏁 How it plays</b><p>Ten questions, 20 seconds each; the last two count double. Winners announced in the debrief.</p></div></div><div class="labmeta">⏱ 7 minutes · just before the debrief</div><div class="game" data-game="g8"></div></div>
 </div>
-<div class="section-head" onclick="toggle(this)"><h2>🎤 Lab Debrief — What the Afternoon Proved</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎤 Lab Debrief — What the Afternoon Proved</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card table-wrap">
 <table>
@@ -885,7 +886,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 </div>
 <!-- Q&A + TAKEAWAYS -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎯 Key Takeaways, 30-Day Challenge &amp; Questions</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎯 Key Takeaways, 30-Day Challenge &amp; Questions</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card">
 <table>
@@ -915,7 +916,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 <div class="reserve-divider"><h2>🗂️ Reserve Bank — use if a lab runs short, or for a follow-up session</h2><p>The case files, the single-invoice activities and the extra Brain Break from the earlier version of this session. They overlap with the Data Labs, so they are kept here rather than in the running order. Each case is referenced from the lab it supports.</p></div>
 <!-- QUIZ -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🧪 Reserve Quiz: "Is This Safe?" — 12 Accounts Scenarios</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🧪 Reserve Quiz: "Is This Safe?" — 12 Accounts Scenarios</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <p style="margin-bottom:15px;opacity:0.8">Read each aloud, take a show of hands, then tap the row to reveal. <span class="badge badge-safe">SAFE ✓</span> <span class="badge badge-risky">RISKY ✗</span> <span class="badge badge-warn">ANONYMISE / VERIFY ⚠</span></p>
 <div class="table-wrap">
@@ -942,10 +943,10 @@ Then suggest three simple controls that would stop these patterns, each in one l
 
 <!-- CASE FILE 1 -->
 <div class="section csround">
-<div class="section-head" onclick="toggle(this)"><h2>📚 Reserve Case File, Round 1: When the Money Moves</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>📚 Reserve Case File, Round 1: When the Money Moves</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <p style="margin-bottom:12px;opacity:0.85">⏱ 10 minutes · Three cases · Tables take one case each, then report in 60 seconds</p>
-<div class="case-study" onclick="toggleCS(this)">
+<div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-global">GLOBAL</span> Arup — US$25 million lost to a deepfake video call</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>In early 2024, an employee in the Hong Kong office of engineering firm Arup joined a video call with what appeared to be the company's CFO and several colleagues. All of them were AI-generated deepfakes. He was instructed to make a series of transfers — around HK$200 million (about US$25 million) in total.</p></div>
@@ -953,7 +954,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 <div class="cs-block lesson"><h4 style="color:var(--green)">Lesson for Suroj</h4><p>Voice and video are no longer proof of identity. A call from “the MD” or “the CFO” asking for an urgent, confidential payment is exactly what this attack looks like.</p></div>
 <div class="cs-block discuss"><h4 style="color:var(--indigo)">🗣️ Table discussion · 2 min</h4><p>What is Suroj's current rule if a senior person calls or WhatsApps asking for an urgent payment outside the normal approval chain? Is it written down? Who would you call back, and on which number?</p></div>
 </div>
-</div><div class="case-study" onclick="toggleCS(this)">
+</div><div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-halluc">GLOBAL</span> Deloitte Australia — a government report with invented references</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>In 2025, Deloitte delivered a report to an Australian government department. Reviewers found references to academic papers that did not exist and a quotation attributed to a court judgment that the judgment didn't contain. Deloitte acknowledged generative AI had been used in preparing it.</p></div>
@@ -961,7 +962,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 <div class="cs-block lesson"><h4 style="color:var(--green)">Lesson for Suroj</h4><p>If it can happen to a firm with review layers and partners signing off, it can happen to a notice reply or an audit response. Every reference in anything that leaves Accounts is checked against the source.</p></div>
 <div class="cs-block discuss"><h4 style="color:var(--indigo)">🗣️ Table discussion · 2 min</h4><p>Which Accounts documents go outside Suroj with references in them — notice replies, audit responses, bank submissions? Who checks the references today?</p></div>
 </div>
-</div><div class="case-study" onclick="toggleCS(this)">
+</div><div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-leak">SUROJ SCENARIO</span> The reconciliation that balanced too well</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>An accountant pastes an anonymised bank reconciliation into AI at month-end and asks it to “make it balance”. The AI produces a clean statement that ties to zero — by adding a line called “unidentified difference — adjustment” for ₹41,370 (scaled).</p></div>
@@ -975,10 +976,10 @@ Then suggest three simple controls that would stop these patterns, each in one l
 </div>
 <!-- CASE FILE 2 -->
 <div class="section csround">
-<div class="section-head" onclick="toggle(this)"><h2>📚 Reserve Case File, Round 2: When AI Speaks for You</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>📚 Reserve Case File, Round 2: When AI Speaks for You</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <p style="margin-bottom:12px;opacity:0.85">⏱ 8 minutes · Run with Activity 7 · Whole room</p>
-<div class="case-study" onclick="toggleCS(this)">
+<div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-global">GLOBAL</span> Air Canada — the company is responsible for its chatbot</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>In 2022, a customer asked Air Canada's website chatbot about bereavement fares. It told him he could claim a discount retroactively. The airline's actual policy said otherwise, and it refused the refund.</p></div>
@@ -986,7 +987,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 <div class="cs-block lesson"><h4 style="color:var(--green)">Lesson for Suroj</h4><p>Whatever an AI-drafted message says in Suroj's name, Suroj said it. A vendor email that promises “payment by Friday” is a commitment — even if you didn't notice the AI added it.</p></div>
 <div class="cs-block discuss"><h4 style="color:var(--indigo)">🗣️ Table discussion · 2 min</h4><p>Look at the Activity 6 vendor email you drafted. Is there any sentence in it you would not want quoted back to you?</p></div>
 </div>
-</div><div class="case-study" onclick="toggleCS(this)">
+</div><div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-halluc">SUROJ SCENARIO</span> The summary that dropped the deadline</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>A senior accountant gets a long letter from the bank about a change to a working-capital facility. She asks AI for a “short summary” and forwards it to the CFO. The summary covers the new rate and limit well — and leaves out one line: documents to be submitted within 15 days to avoid a penal charge.</p></div>
@@ -994,7 +995,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 <div class="cs-block lesson"><h4 style="color:var(--green)">Lesson for Suroj</h4><p>Short summaries drop things, and they don't tell you what they dropped. For anything with obligations, ask for “every date, deadline, amount and obligation, listed separately” before the summary.</p></div>
 <div class="cs-block discuss"><h4 style="color:var(--indigo)">🗣️ Table discussion · 2 min</h4><p>Add one line to the Activity 4 Prompt A so this can't happen. Read it out.</p></div>
 </div>
-</div><div class="case-study" onclick="toggleCS(this)">
+</div><div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-good">SUROJ SCENARIO</span> What good looks like — 2B mismatch sorted in a day</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>A notice arrives on ITC mismatch. An accountant anonymises the supplier list (S1–S14, amounts ÷ 9), asks AI to build a supplier-wise comparison template and a checklist of likely causes, then fills the real figures in Excel herself. The consultant receives an organised file on day two instead of day twenty.</p></div>
@@ -1008,7 +1009,7 @@ Then suggest three simple controls that would stop these patterns, each in one l
 </div>
 <!-- ACTIVITY 3 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>⚖️ Reserve Activity 3: Vendor Ledger vs Vendor Statement</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>⚖️ Reserve Activity 3: Vendor Ledger vs Vendor Statement</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Explain every rupee of the difference</h3>
@@ -1078,7 +1079,7 @@ Both are training dummies.
 
 <!-- ACTIVITY 4 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>📄 Reserve Activity 4: GST Notice → Summary, Checklist, Reply Skeleton</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>📄 Reserve Activity 4: GST Notice → Summary, Checklist, Reply Skeleton</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Understand a notice in two minutes, respond in twenty</h3>
@@ -1125,7 +1126,7 @@ This draft will be reviewed by our tax consultant before it is filed.</div>
 
 <!-- BRAIN BREAK 4 -->
 <div class="section bbsec open">
-<div class="section-head" onclick="toggle(this)"><h2>⚡ Reserve Brain Break: Recap — Reconciliation, Notice &amp; Site Money</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>⚡ Reserve Brain Break: Recap — Reconciliation, Notice &amp; Site Money</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="bb-meta">⏱ 4 minutes · Use with Activities 3 &amp; 4 · Read the question aloud, take a show of hands, then tap an answer</div>
 <div class="q"><p class="qt"><strong>1.</strong> In the Vendor A reconciliation, which item needs action <em>first</em>?</p><div class="opts"><button class="opt" data-ok="0">A. Opening balance</button><button class="opt" data-ok="1">B. Duplicate booking of Inv 1057</button><button class="opt" data-ok="0">C. TDS not in vendor's books</button><button class="opt" data-ok="0">D. Payment in transit</button></div><div class="exp"><strong>B is correct.</strong> Our error, and it risks paying ₹64,500 twice.</div></div><div class="q"><p class="qt"><strong>2.</strong> The dummy notice is dated 02-09-2026 and allows 30 days. The last day to reply is:</p><div class="opts"><button class="opt" data-ok="0">A. 01-Oct-2026</button><button class="opt" data-ok="0">B. 02-Nov-2026</button><button class="opt" data-ok="0">C. 30-Sep-2026</button><button class="opt" data-ok="1">D. 02-Oct-2026</button></div><div class="exp"><strong>D is correct.</strong> 2 September + 30 days = 2 October. Did your AI show the working?</div></div><div class="q"><p class="qt"><strong>3.</strong> The client pays an RA bill after deducting TDS. Suroj's receipt is lower than the bill. That difference is:</p><div class="opts"><button class="opt" data-ok="0">A. An unexplained short payment</button><button class="opt" data-ok="1">B. TDS credit to reconcile with Form 26AS / the client's certificate</button><button class="opt" data-ok="0">C. A bad debt</button><button class="opt" data-ok="0">D. Retention</button></div><div class="exp"><strong>B is correct.</strong> Construction receivables are full of these: TDS, retention, advance recovery, labour cess. Each needs to be named before the balance means anything.</div></div><div class="q"><p class="qt"><strong>4.</strong> Work done at a site but not yet certified by the client at month-end appears in the books as:</p><div class="opts"><button class="opt" data-ok="1">A. Unbilled revenue / work-in-progress</button><button class="opt" data-ok="0">B. A debtor</button><button class="opt" data-ok="0">C. Retention</button><button class="opt" data-ok="0">D. A mobilisation advance</button></div><div class="exp"><strong>A is correct.</strong> Certified vs executed is the gap that Cost Control, Planning and Accounts argue about every month. AI can reconcile the lists; engineers certify the work.</div></div>
@@ -1135,7 +1136,7 @@ This draft will be reviewed by our tax consultant before it is filed.</div>
 </div>
 <!-- ACTIVITY 5 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>📊 Reserve Activity 5: Excel Formulas From Plain English</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>📊 Reserve Activity 5: Excel Formulas From Plain English</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Describe the result, get the formula, test it</h3>
@@ -1172,7 +1173,7 @@ Then:
 
 <!-- ACTIVITY 6 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🎙️ Reserve Activity 6: Voice Note → Vendor Email and Site Message</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🎙️ Reserve Activity 6: Voice Note → Vendor Email and Site Message</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Speak for 30 seconds, send in 2 minutes</h3>
@@ -1202,7 +1203,7 @@ I didn't mention. Keep the storekeeper message under 50 words.</div>
 
 <!-- ACTIVITY 7 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🪤 Reserve Activity 7: The Hallucination Trap</h2><span class="arrow">▼</span></div>
+<div class="section-head" ><h2>🪤 Reserve Activity 7: The Hallucination Trap</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Ask a question that has a checkable answer</h3>
@@ -1218,7 +1219,7 @@ I didn't mention. Keep the storekeeper message under 50 words.</div>
 subcontractor that is a company, what is the threshold for a single
 payment and for the year, and which notification or rule last changed it?</div>
 <div class="tip"><strong>💡 What to look for:</strong> the rate is often right. Thresholds, "last changed by" and any notification number are where answers diverge between phones — and every one of them sounds authoritative. Rates, thresholds and due dates change with every Budget. They come from the portal or your consultant, every time.</div>
-<div class="case-study" onclick="toggleCS(this)">
+<div class="case-study" >
 <div class="case-study-header"><h3><span class="cs-tag cs-tag-halluc">GLOBAL</span> The lawyers who filed invented case law</h3><span class="cs-arrow">▼</span></div>
 <div class="case-study-body">
 <div class="cs-block what-happened"><h4 style="color:var(--red)">What happened</h4><p>In 2023, lawyers in a US case (Mata v. Avianca) filed a brief citing court decisions generated by ChatGPT. The cases did not exist. The court sanctioned them.</p></div>
@@ -1328,6 +1329,17 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var b=docum
 if(LB)LB.addEventListener('input',function(){document.querySelectorAll('.g-team[data-k]').forEach(function(b){var t=teams()[+b.dataset.k];if(t)b.textContent=t+' '+b.textContent.split(' ').pop()})});
 })();
 
-</script>
-</body>
+
+
+    document.querySelectorAll('.section-head').forEach(function(el) {
+        el.addEventListener('click', function() {
+            if(this.parentElement.classList.contains('case-study')) {
+                this.parentElement.classList.toggle('cs-open');
+            } else {
+                this.parentElement.classList.toggle('open');
+            }
+        });
+    });
+    
+</script></body>
 </html>
