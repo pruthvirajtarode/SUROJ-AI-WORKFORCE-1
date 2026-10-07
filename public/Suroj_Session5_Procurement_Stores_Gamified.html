@@ -6,9 +6,9 @@
 <title>S5: Procurement & Stores — Suroj Buildcon AI Workshop</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#F6F2E9;--card:#EFE9DB;--card2:#E7DFCB;--border:#C9C0AA;--text:#14161A;--accent:#B0431E;--blue:#35566B;--green:#4E6B2E;--red:#A03422;--orange:#B58022}
+:root{--bg:#0f0f1a;--card:#1a1a2e;--card2:#16213e;--border:rgba(255,255,255,0.08);--text:#e0e0e0;--accent:#FFD600;--blue:#2196F3;--green:#4CAF50;--red:#FF5252;--orange:#FF9800}
 body{font-family:'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:60px}
-.module-header{background:var(--card);color:var(--text);border-bottom:3px solid var(--accent);padding:40px 30px;text-align:center;border-bottom:3px solid var(--accent)}
+.module-header{background:linear-gradient(135deg,#B71C1C 0%,#D32F2F 60%,#E53935 100%);padding:40px 30px;text-align:center;border-bottom:3px solid var(--accent)}
 .module-header .tag{display:inline-block;background:rgba(0,0,0,0.3);padding:4px 14px;border-radius:15px;font-size:12px;font-weight:600;margin-bottom:10px;letter-spacing:1px}
 .module-header h1{font-size:36px;font-weight:800;margin-bottom:8px}
 .module-header p{font-size:18px;opacity:0.85;max-width:750px;margin:0 auto}
@@ -166,323 +166,54 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 @media print{body{background:#fff;color:#000}.section-body{display:block!important}.copy-btn{display:none}}
 
 .module-header{background:linear-gradient(135deg,#BF360C 0%,#E65100 60%,#F57C00 100%)}
-.module-header { position: relative; } .module-header .tag { color: white !important; background: rgba(0,0,0,0.5) !important; } .module-header h1, .module-header p { color: white !important; } 
-  /* Table and Row Enhancements */
-  table {
-    border-collapse: separate !important;
-    border-spacing: 0 10px !important;
-    width: 100% !important;
-  }
-  tr {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  }
-  tr:hover {
-    transform: scale(1.02) translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
-    z-index: 10;
-  }
-  td, th {
-    border: none !important;
-    padding: 16px 20px !important;
-  }
-  td:first-child, th:first-child {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-  }
-  td:last-child, th:last-child {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-  /* Typography enhancements for the tables */
-  td {
-    line-height: 1.6 !important;
-    color: #334155 !important;
-    transition: color 0.3s ease;
-  }
-  tr:hover td {
-    color: #0f172a !important;
-  }
-  /* Enhance the Tier labels / Badges */
-  span[style*="font-family: monospace"] {
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-  tr:hover span[style*="font-family: monospace"] {
-    transform: scale(1.05);
-    font-weight: 700;
-  }
-  
-  /* Additional block enhancements for 'The anonymisation method' */
-  .tab-content > div[style*="background: var(--card-bg)"] {
-    transition: all 0.3s ease !important;
-    border: 1px solid transparent;
-  }
-  .tab-content > div[style*="background: var(--card-bg)"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(176, 67, 30, 0.1) !important;
-    border-color: rgba(176, 67, 30, 0.2);
-  }
-
-
-  /* Increase Text Size Globally */
-  body {
-    font-size: 16px !important;
-  }
-  p, li, td, th, .tab-content div {
-    font-size: 16px !important;
-    line-height: 1.7 !important;
-  }
-  h3 {
-    font-size: 20px !important;
-    margin-bottom: 16px !important;
-  }
-  h2 {
-    font-size: 26px !important;
-  }
-  .module-header h1 {
-    font-size: 38px !important;
-    line-height: 1.2 !important;
-  }
-  .tabs-container button {
-    font-size: 15px !important;
-    padding: 12px 24px !important;
-  }
-  span[style*="font-family: monospace"], code, pre {
-    font-size: 14px !important;
-  }
-  
-  /* Additional spacing adjustments for the larger text */
-  div[style*="background: var(--safe-bg)"],
-  div[style*="background: var(--danger-bg)"],
-  div[style*="background: var(--card-bg)"] {
-    padding: 24px !important;
-  }
-  ul li {
-    padding: 10px 14px !important;
-    margin-bottom: 12px !important;
-  }
-
-
-  /* Interactive Flowchart Enhancements */
-  .flow {
-    position: relative;
-  }
-  .flow .node {
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-  }
-  .flow .node:hover {
-    transform: translateY(-5px) scale(1.05) !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-  .flow .node::after {
-    content: 'Click to reveal next step';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 10px;
-    color: #B0431E;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-  }
-  .flow .node:not(.locked):hover::after {
-    opacity: 1;
-  }
-  
-  .flow .node.locked {
-    opacity: 0;
-    transform: scale(0.8) translateX(-20px);
-    pointer-events: none;
-    display: none; /* Hide entirely until unlocked */
-  }
-  .flow .arr.locked {
-    opacity: 0;
-    transform: translateX(-10px);
-    display: none;
-  }
-  
-  .flow .node.unlocked {
-    display: block;
-    animation: popSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  }
-  .flow .arr.unlocked {
-    display: block;
-    animation: fadeIn 0.5s ease forwards;
-  }
-  
-  @keyframes popSlideIn {
-    0% { transform: scale(0.8) translateX(-30px); opacity: 0; }
-    100% { transform: scale(1) translateX(0); opacity: 1; }
-  }
-  @keyframes fadeIn {
-    0% { opacity: 0; transform: translateX(-10px); }
-    100% { opacity: 1; transform: translateX(0); }
-  }
-  
-  .flow-hint {
-    font-size: 13px;
-    color: #B0431E;
-    margin-top: 15px;
-    font-weight: 600;
-    text-align: center;
-    animation: pulseHint 2s infinite;
-  }
-  @keyframes pulseHint {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
-  }
-
-
-  /* Interactive Flowchart Fixes */
-  .flow .node.locked {
-    opacity: 0 !important;
-    transform: scale(0.8) translateX(-20px) !important;
-    pointer-events: none !important;
-    display: none !important;
-  }
-  .flow .arr.locked {
-    opacity: 0 !important;
-    transform: translateX(-10px) !important;
-    display: none !important;
-  }
-  .flow .node.unlocked {
-    display: block !important;
-    animation: popSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
-  }
-  .flow .arr.unlocked {
-    display: block !important;
-    animation: fadeIn 0.5s ease forwards !important;
-  }
-
-
-  /* Fix Copy Button Visibility inside Paper cards */
-  .paper .copy-btn {
-    color: #1f2937 !important; 
-    background: #e5e7eb !important; 
-    border: 1px solid #9ca3af !important;
-    font-weight: 600 !important;
-  }
-  .paper .copy-btn:hover {
-    background: #d1d5db !important;
-  }
-
-
-  /* Ensure only one flow hint shows */
-  .flow-hint ~ .flow-hint { display: none !important; }
-  
-
-  /* Fix download button visibility */
-  .dlbtn {
-    color: #0f172a !important;
-    background: #e2e8f0 !important;
-    border: 1px solid #94a3b8 !important;
-    font-weight: 700 !important;
-    display: inline-flex !important;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  .dlbtn:hover {
-    background: #cbd5e1 !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-
-/* Global Fixes applied by AI */
-.goal b { color: #2E7D32 !important; }
-.mini { background: rgba(0,0,0,0.06) !important; color: #14161A !important; font-weight: 500 !important; }
-.diagram { background: rgba(0,0,0,0.05) !important; }
-.diagram .node { background: #ffffff !important; color: #14161A !important; }
-.diagram .node-danger { border-color: #FF5252 !important; color: #D32F2F !important; }
-.diagram .node-safe { border-color: #4CAF50 !important; color: #2E7D32 !important; }
-.diagram .sm { color: #555 !important; }
-.diagram .arr { color: #B0431E !important; }
+.hdrbadges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}.hdrbadges span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 12px;font-size:13px;font-weight:600}
+.tnote{background:rgba(255,214,0,.07);border-left:3px solid #FFD600;padding:10px 14px;border-radius:6px;margin:12px 0;font-size:14px}
+.sm{font-size:11px;opacity:.7}.note{font-size:12.5px;opacity:.75;margin-top:6px}
+.chg{font-size:11.5px;color:#FF9800;font-weight:700}.chg-new{font-size:11px;background:#E040FB;color:#fff;border-radius:4px;padding:1px 6px;font-weight:700}
+.goal{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.4);border-radius:10px;padding:14px;margin:12px 0}.goal b{color:#A5D6A7;font-size:14px}.goal p{margin-top:4px;font-size:14.5px}@media(max-width:700px){.goal{grid-template-columns:1fr}}
+.section.opening{border:2px solid #7C4DFF}
+.game{background:radial-gradient(120% 140% at 0% 0%,#2a1650 0%,#141432 55%,#0f1a2e 100%);border:2px solid #7C4DFF;border-radius:16px;padding:16px;margin:16px 0;box-shadow:0 0 0 4px rgba(124,77,255,.12),0 10px 30px rgba(0,0,0,.35)}
+.game.big{position:fixed;inset:0;z-index:95;margin:0;border-radius:0;overflow:auto;padding:3vh 4vw;font-size:1.25em}
+.game.big .g-q{font-size:30px}.game.big .g-opt{font-size:21px;padding:18px}.game.big .g-spot td,.game.big .g-spot th{font-size:19px;padding:12px}
+.g-top{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}.g-ic{font-size:38px;line-height:1}.g-tt{flex:1;min-width:220px}.g-tt b{display:block;font-size:21px;color:#FFD600;letter-spacing:.3px}.g-tt span{font-size:14px;opacity:.85}
+.g-tools{display:flex;gap:6px}
+.g-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:7px 12px;font-size:13.5px;font-weight:600;cursor:pointer}.g-btn:hover{background:rgba(255,255,255,.16)}.g-btn.on{background:#7C4DFF;border-color:#7C4DFF}
+.g-btn:focus-visible,.g-opt:focus-visible,.g-team:focus-visible,.g-spot td:focus-visible{outline:3px solid #FFD600;outline-offset:2px}
+.g-prog{display:flex;gap:6px;margin:14px 0 8px;flex-wrap:wrap}.g-prog span{width:22px;height:8px;border-radius:4px;background:rgba(255,255,255,.18)}.g-prog span.cur{outline:2px solid #FFD600}.g-prog span.ok{background:#4CAF50}.g-prog span.no{background:#FF5252}
+.g-card{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px}
+.g-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;opacity:.95}.g-n{font-weight:700}.g-pts{background:#FFD600;color:#000;border-radius:12px;padding:2px 10px;font-weight:800;font-size:12px}.g-start{margin-left:auto}
+.g-bar{height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin:10px 0 12px;overflow:hidden}.g-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#FF5252,#FFD600,#4CAF50)}
+.g-q{font-size:21px;font-weight:700;line-height:1.35;margin-bottom:12px}
+.g-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.g-opts.two{grid-template-columns:1fr 1fr}@media(max-width:650px){.g-opts{grid-template-columns:1fr}}
+.g-opt{display:flex;gap:10px;align-items:center;text-align:left;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.18);color:#fff;border-radius:12px;padding:12px 14px;font-size:16px;cursor:pointer;transition:transform .12s}
+.g-opt span{flex:none;width:30px;height:30px;border-radius:50%;background:#7C4DFF;display:grid;place-items:center;font-weight:800}
+.g-opt:hover{transform:translateY(-2px);border-color:#B388FF}.g-opt.right{background:rgba(76,175,80,.25);border-color:#4CAF50}.g-opt.right span{background:#4CAF50}.g-opt.wrong{background:rgba(255,82,82,.2);border-color:#FF5252;animation:shake .35s}.g-opt.wrong span{background:#FF5252}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}@media (prefers-reduced-motion:reduce){.g-opt.wrong{animation:none}.g-opt{transition:none}}
+.g-exp{margin-top:12px;padding:12px 14px;border-radius:10px;font-size:15px}.g-exp.ok{background:rgba(76,175,80,.15);border:1px solid #4CAF50}.g-exp.no{background:rgba(255,82,82,.12);border:1px solid #FF5252}
+.g-spot{overflow-x:auto}.g-spot table{border-collapse:separate;border-spacing:3px;width:100%}.g-spot th{font-size:12px;text-transform:uppercase;opacity:.7;text-align:left;padding:6px 8px}
+.g-spot td{background:rgba(255,255,255,.07);border-radius:6px;padding:10px;font-family:ui-monospace,Menlo,monospace;font-size:14.5px;cursor:pointer;white-space:nowrap}.g-spot td:hover{background:rgba(124,77,255,.3)}
+.g-spot td.hit,.g-spot tr.hit td{background:rgba(76,175,80,.35);outline:2px solid #4CAF50}.g-spot td.miss{background:rgba(255,82,82,.35);outline:2px solid #FF5252}
+.g-award{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:12px;font-size:13px}.g-award>span:first-child{opacity:.75;margin-right:4px}.g-teams{display:flex;gap:6px;flex-wrap:wrap}
+.g-team{background:#1565C0;border:0;color:#fff;border-radius:18px;padding:6px 12px;font-size:13px;font-weight:700;cursor:pointer}.g-team:hover{background:#1E88E5}.g-team.neg{background:transparent;border:1px dashed rgba(255,255,255,.4);font-weight:500}
+.g-nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+.nw-row,.nw-ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}.blank{background:#FFD600;color:#000;padding:0 8px;border-radius:4px}
+.nb{display:grid;grid-template-columns:110px 1fr 46px;gap:8px;align-items:center;margin:5px 0;font-size:15px}.nb .t{height:16px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}.nb .t i{display:block;height:100%;background:linear-gradient(90deg,#7C4DFF,#E040FB)}
+.nw-out{font-size:15px;line-height:1.8}
+.gtoast{position:fixed;left:50%;top:18px;transform:translate(-50%,-80px);opacity:0;background:#FFD600;color:#000;font-weight:800;padding:10px 18px;border-radius:22px;z-index:120;transition:transform .25s;box-shadow:0 6px 20px rgba(0,0,0,.4)}.gtoast.on{transform:translate(-50%,0);opacity:1}
+.gconf{position:fixed;inset:0;pointer-events:none;z-index:110}
+.sb-btn{position:fixed;right:16px;bottom:16px;z-index:100;background:#FFD600;color:#000;border:0;border-radius:24px;padding:11px 18px;font-weight:800;font-size:15px;box-shadow:0 6px 18px rgba(0,0,0,.45);cursor:pointer}
+.sb-panel{position:fixed;right:16px;bottom:72px;z-index:100;width:min(320px,90vw);background:#1a1a2e;border:2px solid #FFD600;border-radius:14px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.sb-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.sb-x{background:none;border:0;color:#fff;font-size:18px;cursor:pointer}
+.sb-r{display:grid;grid-template-columns:1fr auto 40px;gap:8px;align-items:center;padding:7px 8px;border-radius:8px;font-size:14px}.sb-r:nth-child(odd){background:rgba(255,255,255,.04)}.sb-r.lead{background:rgba(255,214,0,.15)}.sb-r b{text-align:right;font-size:16px}.sb-g{font-size:12px;opacity:.7}
+.sb-link{display:block;text-align:center;margin-top:8px;color:#FFD600;font-size:13px}
 
 </style>
-
-
-
-
-<style>
-  /* Elegant Dynamic Enhancements */
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* Make the main cards interactive */
-  div[style*="background: var(--safe-bg)"],
-  div[style*="background: var(--danger-bg)"],
-  div[style*="background: var(--card-bg)"],
-  div[style*="background: #FDFBF5"] {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    position: relative;
-  }
-  
-  div[style*="background: var(--safe-bg)"]:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(78, 107, 46, 0.15) !important;
-    border-color: rgba(78, 107, 46, 0.3) !important;
-  }
-  
-  div[style*="background: var(--danger-bg)"]:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(176, 67, 30, 0.15) !important;
-    border-color: rgba(176, 67, 30, 0.3) !important;
-  }
-
-  /* Flowchart / Process Boxes hover */
-  div[style*="border: 1px solid var(--border)"] {
-    transition: all 0.3s ease !important;
-  }
-  div[style*="border: 1px solid var(--border)"]:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06) !important;
-    border-color: #B0431E !important;
-    transform: translateY(-2px);
-  }
-
-  /* Bullet Points Micro-animations */
-  ul li {
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  ul li:hover {
-    transform: translateX(6px);
-    color: #14161A !important;
-    font-weight: 500;
-  }
-
-  /* Dynamic Title Colors on Hover */
-  h3 {
-    transition: color 0.3s ease;
-  }
-  div[style*="background: var(--safe-bg)"]:hover h3 {
-    color: #4E6B2E !important;
-  }
-  div[style*="background: var(--danger-bg)"]:hover h3 {
-    color: #B0431E !important;
-  }
-  
-  /* Button Hover Enhancements */
-  button, .module-header {
-    transition: all 0.3s ease !important;
-  }
-  .module-header:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-  }
-</style>
-
 </head>
 <body>
 <div class="module-header">
 <div class="tag">SUROJ BUILDCON × BE10X · SESSION 5 · 10 OCT 2026 · 10 AM – 1 PM</div>
 <h1>Procurement &amp; Stores — Audit Week, From Indent to Machine</h1>
+<div class="hdrbadges"><span>🎓 35-min AI &amp; prompting opening</span><span>🎮 8 games · 60+ questions</span><span>🏆 one scoreboard</span></div>
 <p>POs, quotations, goods receipts, site stock and plant — five linked synthetic Suroj datasets, 93 hidden findings and four traps, worked hands-on on your phone. Every lab ends in the action you'd send on Monday.</p>
 </div>
 
@@ -525,38 +256,19 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 <div class="section-head" onclick="toggle(this)"><h2>🗓️ Running Order — 3 Hours</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card table-wrap">
-<table class="agenda">
-<tr><th>Time</th><th>Block</th><th>What happens</th></tr>
-<tr><td>10:00 – 10:08</td><td>Phone setup</td><td>Install, sign in, switch off training · CSVs and Field Kit link already in the WhatsApp group</td></tr>
-<tr><td>10:08 – 10:12</td><td>⚡ Brain Break 1</td><td>Know Suroj &amp; the site store — start the scoreboard</td></tr>
-<tr><td>10:12 – 10:20</td><td>Part 1 · The material chain</td><td>Indent → PO → GRN → issue → reconciliation</td></tr>
-<tr><td>10:20 – 10:24</td><td>⚡ Brain Break 2</td><td>Numbers every buyer should know — calculators out</td></tr>
-<tr><td>10:24 – 10:32</td><td>Part 2 · Procurement data rules</td><td>Rates are Tier 3</td></tr>
-<tr><td>10:32 – 10:46</td><td>Activity 2</td><td>Warm-up: three quotations → comparative statement</td></tr>
-<tr><td>10:46 – 10:49</td><td>⚡ Brain Break 3</td><td>Comparative statement recap</td></tr>
-<tr><td>10:49 – 10:53</td><td>🏗️ Data Lab briefing</td><td>The audit-week story, seating, roles, scoring</td></tr>
-<tr><td>10:53 – 11:11</td><td>🧪 Lab 1</td><td>Indents &amp; POs — RC breaches, over-orders, split POs · Purchase</td></tr>
-<tr><td>11:11 – 11:29</td><td>🧪 Lab 2</td><td>Quotations — L1, validity, the shared GSTIN · Purchase</td></tr>
-<tr><td>11:29 – 11:37</td><td>Break</td><td>Leaderboard on screen</td></tr>
-<tr><td>11:37 – 11:54</td><td>🧪 Lab 3</td><td>Goods receipts — short, untested, duplicated · Store</td></tr>
-<tr><td>11:54 – 11:57</td><td>⚡ Brain Break 4</td><td>Data Lab recap — PO to receipt</td></tr>
-<tr><td>11:57 – 12:14</td><td>🧪 Lab 4</td><td>Stock ledger — book vs ground, formwork · Store + Shuttering</td></tr>
-<tr><td>12:14 – 12:31</td><td>🧪 Lab 5</td><td>Machines — diesel, service, hire bills · V&amp;M</td></tr>
-<tr><td>12:31 – 12:40</td><td>🎤 Debrief + winners</td><td>What audit would have found · winning table · takeaways</td></tr>
-<tr><td>12:40 – 1:00</td><td>Department questions</td><td>Open floor, live demos</td></tr>
-</table>
-</div>
+<table class="agenda"><tr><th>Time</th><th>Block</th><th>What happens</th><th>Change</th></tr><tr><td>10:00 – 10:06</td><td>Phone setup</td><td>Install, sign in, training off</td><td><span class=chg>↓ 2 min</span></td></tr><tr><td>10:06 – 10:41</td><td>🎓 Opening: AI &amp; prompt engineering</td><td>What AI is · how LLMs work · generative vs agentic · prompting · 🎮 Games 1–3</td><td><span class=chg-new>NEW</span></td></tr><tr><td>10:41 – 10:44</td><td>⚡ Brain Break 1</td><td>Know Suroj &amp; the site store</td><td><span class=chg>↓ 1 min</span></td></tr><tr><td>10:44 – 10:50</td><td>Part 1 · The material chain</td><td>Recap — indent → PO → GRN → issue → reconciliation</td><td><span class=chg>↓ 2 min</span></td></tr><tr><td>10:50 – 10:53</td><td>⚡ Brain Break 2</td><td>Numbers every buyer should know</td><td><span class=chg>↓ 1 min</span></td></tr><tr><td>10:53 – 10:58</td><td>Part 2 · Procurement data rules</td><td>Rates are Tier 3</td><td><span class=chg>↓ 3 min</span></td></tr><tr><td>10:58 – 11:04</td><td>🎮 Game 4</td><td>Purchase, Stores &amp; Plant Speed Round</td><td><span class=chg-new>NEW</span></td></tr><tr><td>11:04 – 11:14</td><td>Activity 2</td><td>Three quotations → comparative statement</td><td><span class=chg>↓ 4 min</span></td></tr><tr><td>11:14 – 11:16</td><td>⚡ Brain Break 3</td><td>Comparative statement recap</td><td><span class=chg>↓ 1 min</span></td></tr><tr><td>11:16 – 11:19</td><td>🏗️ Lab briefing</td><td>Audit week, seating, roles</td><td><span class=chg>↓ 1 min</span></td></tr><tr><td>11:19 – 11:34</td><td>🧪 Lab 1</td><td>Indents &amp; POs · Purchase</td><td><span class=chg>↓ 3 min</span></td></tr><tr><td>11:34 – 11:49</td><td>🧪 Lab 2</td><td>Quotations &amp; CS · Purchase</td><td><span class=chg>↓ 3 min</span></td></tr><tr><td>11:49 – 11:55</td><td>Break + 🎮 Game 5</td><td>Emoji Decoder</td><td><span class=chg-new>NEW</span></td></tr><tr><td>11:55 – 12:07</td><td>🧪 Lab 3</td><td>Goods receipts · Store</td><td><span class=chg>↓ 5 min</span></td></tr><tr><td>12:07 – 12:10</td><td>⚡ Brain Break 4</td><td>Data Lab recap</td><td></td></tr><tr><td>12:10 – 12:15</td><td>🎮 Game 6</td><td>Spot the Error</td><td><span class=chg-new>NEW</span></td></tr><tr><td>12:15 – 12:28</td><td>🧪 Lab 4</td><td>Stock ledger · Store + Shuttering</td><td><span class=chg>↓ 4 min</span></td></tr><tr><td>12:28 – 12:39</td><td>🧪 Lab 5</td><td>Machines · V&amp;M</td><td><span class=chg>↓ 6 min</span></td></tr><tr><td>12:39 – 12:43</td><td>🎮 Game 7</td><td>Hallucination Hunter</td><td><span class=chg-new>NEW</span></td></tr><tr><td>12:43 – 12:50</td><td>🏆 Game 8</td><td>Grand Showdown</td><td><span class=chg-new>NEW</span></td></tr><tr><td>12:50 – 1:00</td><td>🎤 Debrief, winners &amp; questions</td><td>What audit would have found · scoreboard winners · open floor</td><td><span class=chg>↓ 19 min combined</span></td></tr></table>
+</div><div class="info-box"><strong>Where the time came from:</strong> the 35-minute opening and five new games are paid for by trimming each lab by 3–6 minutes, shortening Parts 1–2 (the opening covers the general ideas), and folding department questions into the final 10 minutes. If a lab runs long, drop Game 6 first, then Game 7.</div>
 <div class="info-box"><strong>Trainer note:</strong> print the Activity 2 quotations and Activity 4 challan on A4, one set per table. Photographing paper is the realistic workflow for Store and V&amp;M — that's how records arrive from site.</div>
 </div>
 </div>
 
 <!-- SETUP -->
 <div class="section open">
-<div class="section-head" onclick="toggle(this)"><h2>📱 Phone Setup — First 8 Minutes</h2><span class="arrow">▼</span></div>
+<div class="section-head" onclick="toggle(this)"><h2>📱 Phone Setup — First 6 Minutes</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
 <h3>📱 Setup checklist <span class="track">Everyone</span></h3>
-<div class="meta">⏱ 10 minutes · Pairs</div>
+<div class="meta">⏱ 6 minutes · Pairs</div>
 <ol>
 <li>Install <strong>one</strong> of: ChatGPT, Gemini, Claude or Microsoft Copilot — or the company-licensed app if Suroj has one.</li>
 <li>Sign in. In <strong>Settings → Data / Privacy</strong>, switch off the option that uses your chats to train or improve the model.</li>
@@ -571,6 +283,64 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 
 <!-- BRAIN BREAK 1 -->
 <div class="section bbsec open">
+
+<div class="section open opening">
+<div class="section-head" onclick="toggle(this)"><h2>🎓 Opening (35 min): AI &amp; Prompt Engineering — the Basics First</h2><span class="arrow">▼</span></div>
+<div class="section-body">
+<div class="stats"><div class="stat"><span class="n">35</span><span class="l">Minutes</span></div><div class="stat"><span class="n">4</span><span class="l">Short modules</span></div><div class="stat"><span class="n">3</span><span class="l">Games inside</span></div><div class="stat"><span class="n">1</span><span class="l">Prompt template to keep</span></div></div>
+<div class="card table-wrap"><table class="agenda"><tr><th>Min</th><th>Module</th><th>Game</th></tr>
+<tr><td>0–8</td><td>A · What AI is (and isn't)</td><td>🤖 Game 1 · AI or Not AI?</td></tr><tr><td>8–17</td><td>B · How ChatGPT &amp; Claude actually work</td><td>🔮 Game 2 · Guess the Next Word</td></tr>
+<tr><td>17–21</td><td>C · Generative vs agentic AI · the tools</td><td></td></tr><tr><td>21–35</td><td>D · Prompt engineering for purchase, stores &amp; machinery</td><td>🩺 Game 3 · Prompt Doctor</td></tr></table></div>
+<div class="info-box"><strong>Why first:</strong> people who understand <em>why</em> AI works also understand <em>when it fails</em>. Every game awards points on the scoreboard (🏆 button, bottom right) — the competition starts here.</div><div class="tnote">🎤 <b>Trainer:</b> Ask for hands: who has used ChatGPT? Who uses it weekly for work? Who has had it give a confident wrong answer? The last group is your hook.</div></div>
+</div>
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🅰️ A · What AI Is — Rules vs Learning (8 min)</h2><span class="arrow">▼</span></div>
+<div class="section-body">
+<div class="grid-2"><div class="card"><h3>Normal software: rules a person wrote</h3><p>The ERP computes PO value = quantity × rate because someone wrote that formula. A reorder alert fires when stock drops below a fixed minimum because someone set it. Same input → same output, always. It can only do what someone thought of.</p></div>
+<div class="card"><h3>AI: patterns learned from examples</h3><p>Nobody writes the rule for “these two quotations look like they came from the same office” or “this excavator is about to break down”. The system learns from examples. It handles new cases — and can be wrong without knowing it.</p></div></div>
+<div class="diagram"><div class="flow"><div class="node">Artificial Intelligence</div><div class="arr">⊃</div><div class="node">Machine learning</div><div class="arr">⊃</div><div class="node">Deep learning</div><div class="arr">⊃</div><div class="node">Generative AI</div><div class="arr">⊃</div><div class="node node-safe">LLMs — ChatGPT, Claude, Gemini, Copilot</div></div></div>
+<div class="card table-wrap"><table><tr><th>Family</th><th>Does what</th><th>In purchase, stores &amp; machinery</th></tr><tr><td><b>Predictive</b></td><td>Forecasts, classifies</td><td>Forecasts cement demand from the schedule and past consumption; predicts machine breakdowns</td></tr><tr><td><b>Generative</b></td><td>Creates text, tables, code</td><td>Turns a photographed challan into a GRN table; drafts a PO follow-up in Hindi</td></tr><tr><td><b>Agentic</b></td><td>Takes steps with tools</td><td>Chases open POs, reads delivery challans and drafts debit notes for the store in-charge to approve</td></tr></table></div><div class="game" data-game="g1"></div></div>
+</div>
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🅱️ B · How ChatGPT &amp; Claude Actually Work (9 min)</h2><span class="arrow">▼</span></div>
+<div class="section-body">
+<div class="diagram"><div class="flow"><div class="node">1 · Pre-training<br/><span class="sm">reads a huge library of text; learns to predict the next word</span></div><div class="arr">→</div><div class="node">2 · Fine-tuning<br/><span class="sm">people rate answers; it learns to be a helpful assistant</span></div><div class="arr">→</div><div class="node node-safe">3 · Your chat<br/><span class="sm">your words → tokens → next word, again and again</span></div></div></div>
+<div class="card"><h3>The one idea</h3><p>An LLM writes its answer one small piece (“token”) at a time, each time choosing a likely next word. It doesn't look facts up unless you give it the document or switch on search. That single idea explains everything in the table below.</p></div><div class="game" data-game="g2"></div>
+<div class="card table-wrap"><h3>Because it predicts, it…</h3><table><tr><th>Behaviour</th><th>What you do</th></tr>
+<tr><td>Writes fluently in any tone or language</td><td>Tell it the reader, tone and length</td></tr>
+<tr><td>Sounds sure when wrong (“hallucination”)</td><td>Ask for the source row / clause; check it</td></tr>
+<tr><td>Gives different answers each time</td><td>Ask for a fixed format</td></tr>
+<tr><td>Doesn't know Suroj's rate contracts or today's stock</td><td>Attach the file or paste the policy</td></tr>
+<tr><td>Doesn't know recent rule changes</td><td>Use search mode; confirm on the official source</td></tr>
+<tr><td>Gets long arithmetic wrong in its head</td><td>Ask for the formula or code — and check on a calculator</td></tr>
+<tr><td>Loses track in very long chats</td><td>One task per chat; split big files</td></tr></table></div></div>
+</div>
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🅲 C · Generative vs Agentic AI — and the Tools (4 min)</h2><span class="arrow">▼</span></div>
+<div class="section-body">
+<div class="grid-2"><div class="card"><h3>Generative — you ask, it creates</h3><p>Draft, summarise, extract, translate, explain. You check and you act. Everything today is generative.</p></div>
+<div class="card"><h3>Agentic — you give a goal, it acts</h3><p>Plans steps, uses tools, checks, reports — with your approval. Example: an assistant that watches open POs, reads each delivery challan, compares it with the PO and drafts the debit note for approval. More power, so it needs permissions and logs. That's Phase 2.</p></div></div>
+<div class="card table-wrap"><table><tr><th>Tool</th><th>Good for</th></tr><tr><td>ChatGPT</td><td>All-round: drafting, file analysis, images, voice</td></tr><tr><td>Claude</td><td>Long documents, careful analysis and writing</td></tr><tr><td>Gemini</td><td>Inside Google Sheets / Gmail</td></tr><tr><td>Microsoft Copilot</td><td>Inside Excel, Word and Outlook — with a business licence, data stays in Microsoft 365</td></tr></table><p class="note">Features change every few months. The habits don't.</p></div></div>
+</div>
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🅳 D · Prompt Engineering for Procurement &amp; Stores (14 min)</h2><span class="arrow">▼</span></div>
+<div class="section-body">
+<div class="diagram"><div class="flow"><div class="node">Role<br/><span class="sm">who it should be</span></div><div class="arr">+</div><div class="node">Task<br/><span class="sm">one clear job</span></div><div class="arr">+</div><div class="node">Context<br/><span class="sm">the file, the reader, the rule</span></div><div class="arr">+</div><div class="node">Format<br/><span class="sm">table, length, language</span></div><div class="arr">+</div><div class="node">Constraints<br/><span class="sm">what not to do</span></div><div class="arr">+</div><div class="node node-safe">Evidence<br/><span class="sm">row / clause or NOT FOUND</span></div></div></div>
+<div class="grid-2"><div class="card"><h3>❌ Weak</h3><p style="font-style:italic">“Compare these quotes.”</p><p class="note">You get “Vendor A is cheapest” — on basic rate, ignoring freight, GST and validity.</p></div>
+<div class="card"><h3>✅ Strong</h3><p style="font-style:italic">“You are a purchase executive at an Indian construction company. Compare the three attached quotations for 2,000 bags of OPC 53 cement delivered to our Pune site. Table: vendor, basic rate, freight per bag, landed rate, payment terms, validity date, delivery days. Calculate landed rate with code, not in your head. Mark L1 on landed rate. Flag any quote that has expired or is missing information — write NOT STATED.”</p></div></div>
+<div class="card table-wrap"><h3>Six techniques that work</h3><table><tr><th>Technique</th><th>Say it like this</th></tr><tr><td><b>Give a role</b></td><td>“You are a store in-charge checking a GRN…”</td></tr><tr><td><b>Shape the output</b></td><td>“Table: item, PO qty, received, accepted, rejected, short %”</td></tr><tr><td><b>Show an example</b></td><td>“Format: GR2101 | Cement | 500 | 495 | 5 | 1.0%”</td></tr><tr><td><b>Make it calculate</b></td><td>“Compute landed rate with code and show the formula”</td></tr><tr><td><b>Allow ‘not stated’</b></td><td>“If freight or validity is missing, write NOT STATED”</td></tr><tr><td><b>Let it ask first</b></td><td>“Ask me 3 questions about the indent before you draft the PO”</td></tr></table></div><span class="prompt-label">THE PROCUREMENT &AMP; STORES PROMPT TEMPLATE — SAVE IN YOUR PHONE NOTES</span>
+<div class="prompt"><button class="copy-btn" onclick="copyPrompt(this,event)">📋 Copy</button>Role: You are a [purchase executive / store in-charge / plant &amp; machinery engineer] at an Indian construction company.
+Task: [one clear job — compare / reconcile / check / draft]
+Context: The attached file is [quotations / PO / GRN / stock ledger / machine log] for [site / period].
+Format: Table with columns [..]. Then a 2-line summary.
+Constraints: Use only the attached data. Calculate with code or show the formula — never in your head.
+Evidence: Give the PO / GRN / row number for every finding. If something is missing, write NOT STATED.</div>
+<div class="phone"><h3>📱 Try it now — 4 minutes</h3><ol><li>Send: <em>“Explain ‘landed rate’ to a new purchase trainee in 5 lines, with a cement example.”</em></li><li>Reply: <em>“Now as a Hindi WhatsApp to a site store keeper, under 50 words.”</em></li><li>Ask something it cannot know: <em>“What is our rate contract price for TMT steel?”</em> — does it say it doesn't know, or invent a number?</li></ol></div><div class="game" data-game="g3"></div></div>
+</div>
 <div class="section-head" onclick="toggle(this)"><h2>⚡ Brain Break 1: Know Suroj &amp; the Site Store — Warm-Up</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="bb-meta">⏱ 5 minutes · Icebreaker · Read the question aloud, take a show of hands, then tap an answer</div>
@@ -581,7 +351,7 @@ code{background:rgba(0,0,0,0.35);padding:1px 6px;border-radius:4px;font-size:12.
 </div>
 <!-- PART 1 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🔗 Part 1: Where AI Fits in the Material Chain</h2><span class="arrow">▼</span></div>
+<div class="section-head" onclick="toggle(this)"><h2>🔗 Part 1 (recap, 6 min): Where AI Fits in the Material Chain</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="diagram">
 <p style="font-size:13px;opacity:0.7;margin-bottom:10px">The chain everyone in this room works on:</p>
@@ -628,7 +398,7 @@ I can check it on a calculator.</div>
 </div>
 <!-- PART 2 -->
 <div class="section">
-<div class="section-head" onclick="toggle(this)"><h2>🔒 Part 2: Procurement Data Rules</h2><span class="arrow">▼</span></div>
+<div class="section-head" onclick="toggle(this)"><h2>🔒 Part 2 (5 min): Procurement Data Rules</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card table-wrap">
 <table>
@@ -656,6 +426,11 @@ I can check it on a calculator.</div>
 
 <!-- ACTIVITY 2 -->
 <div class="section">
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 4 · Purchase, Stores &amp; Plant Speed Round</h2><span class="arrow">▼</span></div>
+<div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Warm up on the trade rules the labs depend on — L1, GRN, MTC, bar weights, FIFO, rate contracts, diesel per hour.</p></div><div><b>🏁 How it plays</b><p>20-second timer per question. Tables race; the trainer awards +1 to the first correct table.</p></div></div><div class="labmeta">⏱ 6 minutes · before the warm-up activity</div><div class="game" data-game="g4"></div></div>
+</div>
 <div class="section-head" onclick="toggle(this)"><h2>⚖️ Activity 2: Three Quotations → Comparative Statement</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="phone">
@@ -751,8 +526,8 @@ All six files searchable on a phone, 31 missions that auto-check the IDs tables 
 <div class="section open labsec">
 <div class="section-head" onclick="toggle(this)"><h2>🏆 Table Leaderboard</h2><span class="arrow">▼</span></div>
 <div class="section-body">
-<div class="table-wrap"><table id="lb"><tr><th>Table</th><th>Lab 1</th><th>Lab 2</th><th>Lab 3</th><th>Lab 4</th><th>Lab 5</th><th>Brain Breaks</th><th>Total</th></tr>
-<tr><td contenteditable="true">Table 1</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td class="lbt">0</td></tr><tr><td contenteditable="true">Table 2</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td class="lbt">0</td></tr><tr><td contenteditable="true">Table 3</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td class="lbt">0</td></tr><tr><td contenteditable="true">Table 4</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td class="lbt">0</td></tr></table></div>
+<div class="table-wrap"><table id="lb"><tr><th>Table</th><th>Lab 1</th><th>Lab 2</th><th>Lab 3</th><th>Lab 4</th><th>Lab 5</th><th>Brain Breaks</th><th>🎮 Games</th><th>Total</th></tr>
+<tr><td contenteditable="true">Table 1</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin lbgame" value="0" aria-label="game score"></td><td class="lbt">0</td></tr><tr><td contenteditable="true">Table 2</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin lbgame" value="0" aria-label="game score"></td><td class="lbt">0</td></tr><tr><td contenteditable="true">Table 3</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin lbgame" value="0" aria-label="game score"></td><td class="lbt">0</td></tr><tr><td contenteditable="true">Table 4</td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin" value="0" aria-label="score"></td><td><input type="number" class="lbin lbgame" value="0" aria-label="game score"></td><td class="lbt">0</td></tr></table></div>
 <script>(function(){var t=document.getElementById('lb');function u(){var rows=[].slice.call(t.querySelectorAll('tr')).slice(1);rows.forEach(function(r){var s=0;r.querySelectorAll('input').forEach(function(x){s+=Number(x.value)||0});r.querySelector('.lbt').textContent=s});var mx=Math.max.apply(null,rows.map(function(r){return Number(r.querySelector('.lbt').textContent)}));rows.forEach(function(r){r.classList.toggle('lead',mx>0&&Number(r.querySelector('.lbt').textContent)===mx)})}t.addEventListener('input',u);u()})();</script>
 </div></div>
 
@@ -761,7 +536,7 @@ All six files searchable on a phone, 31 missions that auto-check the IDs tables 
 <div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 1: Indents &amp; POs — Above Contract, Over-Ordered, Split</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 18 minutes · File: 1_Indents_POs.csv · 154 POs · 6 sites · led by Purchase</div>
-<div class="card"><h3>The situation</h3><p>The PO register is the first thing audit samples. Rate contracts exist for steel, cement, binding wire and RMC — did buyers stick to them? Did anyone order more than site asked for? And did anyone break an order in two to keep it below the ₹5 lakh line that needs the Head of Procurement's signature?</p><div class="dlrow"><a class="dlbtn" href="/1_Indents_POs.csv" download="1_Indents_POs.csv" target="_top">📄 1_Indents_POs.csv</a></div></div>
+<div class="card"><h3>The situation</h3><p>The PO register is the first thing audit samples. Rate contracts exist for steel, cement, binding wire and RMC — did buyers stick to them? Did anyone order more than site asked for? And did anyone break an order in two to keep it below the ₹5 lakh line that needs the Head of Procurement's signature?</p><div class="dlrow"><a class="dlbtn" href="#files">📄 1_Indents_POs.csv</a></div></div>
 <div class="phone"><h3>📱 How your table runs it</h3><ol><li>Upload the CSV. Send Prompt 1 — profile first.</li><li>Send Prompt 2 — the seven checks. Scribe records counts.</li><li>Challenger sends Prompt 3 — the split-PO hunt. It's the one AI misses without being told how to look.</li><li>Checker proves two findings.</li><li>Writer sends Prompt 4.</li></ol></div>
 <span class="prompt-label">PROMPT 1 — PROFILE</span>
 <div class="prompt"><button class="copy-btn" onclick="copyPrompt(this,event)">📋 Copy</button>The attached file is a SYNTHETIC indent and PO register of an Indian construction company. How many POs, total PO value, and value by Site and by Material? How many POs are above ₹5,00,000? Show your working. Don&#x27;t look for problems yet.</div><span class="prompt-label">PROMPT 2 — SEVEN CHECKS</span>
@@ -789,7 +564,7 @@ List PO_Nos with the values that prove each.</div><span class="prompt-label">PRO
 <div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 2: Quotations &amp; CS — Did the Cheapest Vendor Win?</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 18 minutes · File: 2_Quotations_CS.csv · 151 quotes · 46 RFQs · led by Purchase</div>
-<div class="card"><h3>The situation</h3><p>Every PO should trace back to at least three quotes and a comparative statement where L1 on landed rate wins — unless someone wrote down why not. Audit will recalculate the CS, not read it. And they'll notice something the buyers may not have: two vendor codes that share one GSTIN, and always quote a few percent apart.</p><div class="dlrow"><a class="dlbtn" href="/2_Quotations_CS.csv" download="2_Quotations_CS.csv" target="_top">📄 2_Quotations_CS.csv</a></div></div>
+<div class="card"><h3>The situation</h3><p>Every PO should trace back to at least three quotes and a comparative statement where L1 on landed rate wins — unless someone wrote down why not. Audit will recalculate the CS, not read it. And they'll notice something the buyers may not have: two vendor codes that share one GSTIN, and always quote a few percent apart.</p><div class="dlrow"><a class="dlbtn" href="#files">📄 2_Quotations_CS.csv</a></div></div>
 <div class="phone"><h3>📱 How your table runs it</h3><ol><li>Upload the CSV. Send Prompt 1 — recalculate every CS.</li><li>Send Prompt 2 — the award checks. Challenger watches for the two justified non-L1 awards — flagging them costs you the trap points.</li><li>Send Prompt 3 — the GSTIN question.</li><li>Writer sends Prompt 4.</li></ol></div>
 <span class="prompt-label">PROMPT 1 — RECALCULATE THE CS</span>
 <div class="prompt"><button class="copy-btn" onclick="copyPrompt(this,event)">📋 Copy</button>The attached file is SYNTHETIC quotation data. For every quote, recalculate landed rate = Basic_Rate + Freight_per_Unit. List any Quote_ID where the Landed_Rate in the file doesn&#x27;t match. Then, for each RFQ, rank quotes on your recalculated landed rate.</div><span class="prompt-label">PROMPT 2 — AWARD CHECKS</span>
@@ -810,10 +585,15 @@ Separate &quot;not L1 with justification&quot; from &quot;not L1 without justifi
 
 <!-- DATA LAB 3 -->
 <div class="section labsec">
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 5 · Emoji Decoder (break game)</h2><span class="arrow">▼</span></div>
+<div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Keep energy up in the break with department terms in emoji.</p></div><div><b>🏁 How it plays</b><p>Put it on screen; tables shout answers. +1 per correct guess.</p></div></div><div class="labmeta">⏱ during the 6-minute break</div><div class="game" data-game="g5"></div></div>
+</div>
 <div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 3: Goods Receipts — Accepted What Didn't Arrive?</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 17 minutes · File: 3_GRN_Register.csv · 137 GRNs, linked to the PO register · led by Store</div>
-<div class="card"><h3>The situation</h3><p>The GRN is where money becomes material. Accounts pays on it. A short delivery with no debit note is paid in full. Steel accepted without a mill test certificate is a quality risk sitting in a column. A second GRN against the same challan is a double payment waiting to happen.</p><div class="dlrow"><a class="dlbtn" href="/3_GRN_Register.csv" download="3_GRN_Register.csv" target="_top">📄 3_GRN_Register.csv</a></div></div>
+<div class="card"><h3>The situation</h3><p>The GRN is where money becomes material. Accounts pays on it. A short delivery with no debit note is paid in full. Steel accepted without a mill test certificate is a quality risk sitting in a column. A second GRN against the same challan is a double payment waiting to happen.</p><div class="dlrow"><a class="dlbtn" href="#files">📄 3_GRN_Register.csv</a></div></div>
 <div class="phone"><h3>📱 How your table runs it</h3><ol><li>Upload the CSV. Send Prompt 1 — the six checks.</li><li>Challenger: two short receipts already have debit notes. Don't flag them.</li><li>Send Prompt 2 — over-receipt by PO.</li><li>Writer sends Prompt 3.</li></ol></div>
 <span class="prompt-label">PROMPT 1 — SIX CHECKS</span>
 <div class="prompt"><button class="copy-btn" onclick="copyPrompt(this,event)">📋 Copy</button>The attached file is a SYNTHETIC goods receipt register. Rules: short receipt over 1% of Challan_Qty needs Debit_Note_Raised = Y; if MTC_Required = Y, MTC_Received must be Y before acceptance; Accepted_Qty + Rejected_Qty = Received_Qty; Accepted_Qty can&#x27;t exceed Received_Qty; one GRN per PO_No + Challan_No.
@@ -842,10 +622,15 @@ List every GRN that breaks a rule, the rule, and the values. List separately any
 
 <!-- DATA LAB 4 -->
 <div class="section labsec">
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 6 · Spot the Error</h2><span class="arrow">▼</span></div>
+<div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Train the eye every lab needs: one wrong cell in a clean-looking table.</p></div><div><b>🏁 How it plays</b><p>Tap the wrong cell. +2 to the first table that points to it and says why.</p></div></div><div class="labmeta">⏱ 5 minutes · after Brain Break 4</div><div class="game" data-game="g6"></div></div>
+</div>
 <div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 4: Site Stock Ledger — Does the Book Match the Ground?</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 17 minutes · File: 4_Stock_Ledger.csv · 126 rows · 6 sites × 7 materials × 3 months · led by Store, with Shuttering</div>
-<div class="card"><h3>The situation</h3><p>Audit will pick a site, count the store, and compare it with the book. Before they do: do the ledgers add up, do openings carry forward, is physical stock where the book says, and did any site consume more cement or steel than the work done allows? And shuttering plates and props are reusable — they should never go down. At one site, they do.</p><div class="dlrow"><a class="dlbtn" href="/4_Stock_Ledger.csv" download="4_Stock_Ledger.csv" target="_top">📄 4_Stock_Ledger.csv</a></div></div>
+<div class="card"><h3>The situation</h3><p>Audit will pick a site, count the store, and compare it with the book. Before they do: do the ledgers add up, do openings carry forward, is physical stock where the book says, and did any site consume more cement or steel than the work done allows? And shuttering plates and props are reusable — they should never go down. At one site, they do.</p><div class="dlrow"><a class="dlbtn" href="#files">📄 4_Stock_Ledger.csv</a></div></div>
 <div class="phone"><h3>📱 How your table runs it</h3><ol><li>Upload the CSV. Send Prompt 1 — the four integrity checks.</li><li>Send Prompt 2 — the formwork question. Shuttering lead has the final word.</li><li>Writer sends Prompt 3.</li></ol></div>
 <span class="prompt-label">PROMPT 1 — FOUR INTEGRITY CHECKS</span>
 <div class="prompt"><button class="copy-btn" onclick="copyPrompt(this,event)">📋 Copy</button>The attached file is a SYNTHETIC site stock ledger. For every row check:
@@ -870,7 +655,7 @@ List Ledger_IDs that fail, with the numbers.</div><span class="prompt-label">PRO
 <div class="section-head" onclick="toggle(this)"><h2>🧪 Data Lab 5: Plant &amp; Machinery — Diesel, Service and Hire Bills</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="labmeta">⏱ 17 minutes · Files: 5_Machine_Log_Sep.csv + 5b_Machine_Master.csv · 312 daily logs · 12 machines · led by V&amp;M</div>
-<div class="card"><h3>The situation</h3><p>Diesel is one of the largest uncontrolled costs on a site. Hour meters are the only independent record of how hard a machine worked. Hire vendors bill by the hour. When the log, the meter, the diesel register and the hire bill disagree, somebody is paying for hours that didn't happen.</p><div class="dlrow"><a class="dlbtn" href="/5_Machine_Log_Sep.csv" download="5_Machine_Log_Sep.csv" target="_top">📄 5_Machine_Log_Sep.csv</a><a class="dlbtn" href="/5b_Machine_Master.csv" download="5b_Machine_Master.csv" target="_top">📄 5b_Machine_Master.csv</a></div></div>
+<div class="card"><h3>The situation</h3><p>Diesel is one of the largest uncontrolled costs on a site. Hour meters are the only independent record of how hard a machine worked. Hire vendors bill by the hour. When the log, the meter, the diesel register and the hire bill disagree, somebody is paying for hours that didn't happen.</p><div class="dlrow"><a class="dlbtn" href="#files">📄 5_Machine_Log_Sep.csv</a><a class="dlbtn" href="#files">📄 5b_Machine_Master.csv</a></div></div>
 <div class="phone"><h3>📱 How your table runs it</h3><ol><li>Upload both CSVs. Send Prompt 1 — log integrity.</li><li>Send Prompt 2 — diesel spikes. The V&amp;M lead decides what "normal" means for each machine type.</li><li>Send Prompt 3 — service and hire bills.</li><li>Writer sends Prompt 4.</li></ol></div>
 <span class="prompt-label">PROMPT 1 — LOG INTEGRITY</span>
 <div class="prompt"><button class="copy-btn" onclick="copyPrompt(this,event)">📋 Copy</button>File 1 is a SYNTHETIC daily machine log; File 2 is the machine master. Check:
@@ -894,6 +679,16 @@ List Log_IDs with the values.</div><span class="prompt-label">PROMPT 2 — DIESE
 
 <!-- LAB DEBRIEF -->
 <div class="section labsec">
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 7 · Hallucination Hunter</h2><span class="arrow">▼</span></div>
+<div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Practise the most important AI skill: finding the confident sentence that isn't true.</p></div><div><b>🏁 How it plays</b><p>Four AI answers built on today's labs — one statement in each is invented. +2 per catch.</p></div></div><div class="labmeta">⏱ 4 minutes · after Lab 5</div><div class="game" data-game="g7"></div></div>
+</div>
+
+<div class="section">
+<div class="section-head" onclick="toggle(this)"><h2>🎮 Game 8 · Grand Showdown</h2><span class="arrow">▼</span></div>
+<div class="section-body"><div class="goal"><div><b>🎯 What we are doing</b><p>Recap the morning — AI basics, prompting, the rules of the trade and the labs — and settle the scoreboard.</p></div><div><b>🏁 How it plays</b><p>Ten questions, 20 seconds each; the last two count double. Winners announced in the debrief.</p></div></div><div class="labmeta">⏱ 7 minutes · just before the debrief</div><div class="game" data-game="g8"></div></div>
+</div>
 <div class="section-head" onclick="toggle(this)"><h2>🎤 Lab Debrief — What Audit Would Have Found</h2><span class="arrow">▼</span></div>
 <div class="section-body">
 <div class="card table-wrap"><table>
@@ -1349,8 +1144,8 @@ market price per tonne for Fe500D TMT in Pune?</div>
 </div>
 
 <script>
-function toggle(el){ var p=el.parentElement; var o=p.classList.toggle('open'); if(o){setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'start'})},100);} }
-function toggleCS(el){if(el.classList.contains('case-study')){var o=el.classList.toggle('cs-open');if(o){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},100);}}}
+function toggle(el){el.parentElement.classList.toggle('open')}
+function toggleCS(el){if(el.classList.contains('case-study'))el.classList.toggle('cs-open')}
 function copyPrompt(btn,ev){var c=btn.parentElement.cloneNode(true);c.querySelectorAll('button,.stamp').forEach(function(b){b.remove()});var t=c.innerText.trim();
 function done(){btn.textContent='✓ Copied!';setTimeout(function(){btn.textContent='📋 Copy'},2000)}
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
@@ -1374,366 +1169,87 @@ document.querySelectorAll('.bbsec').forEach(function(sec){
  });
 });
 </script>
-
-<!-- INJECTED TABS START -->
-
-<style>
-/* Override colors for light theme readability */
-.diagram { background: var(--card2) !important; color: var(--text) !important; border: 1px solid var(--border) !important; }
-.diagram .node { background: var(--card) !important; color: var(--text) !important; border-color: var(--border) !important; }
-.diagram .node-danger { border-color: var(--red) !important; color: var(--red) !important; }
-.diagram .node-safe { border-color: var(--green) !important; color: var(--green) !important; }
-.tip { background: rgba(176, 67, 30, 0.08) !important; color: var(--text) !important; border-color: var(--accent) !important; }
-.warning { background: rgba(160, 52, 34, 0.08) !important; color: var(--text) !important; border-color: var(--red) !important; }
-.success { background: rgba(78, 107, 46, 0.08) !important; color: var(--text) !important; border-color: var(--green) !important; }
-.info-box { background: rgba(53, 86, 107, 0.08) !important; color: var(--text) !important; border-color: var(--blue) !important; }
-.prompt { background: #2d2d2d !important; border-color: var(--border) !important; color: #e0e0e0 !important; }
-.prompt-label { background: var(--text) !important; color: var(--card) !important; }
-.copy-btn { color: #e0e0e0 !important; }
-
-/* Tabs Layout CSS */
-.tabs-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
-  background: var(--card2);
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-.tab-btn {
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.tab-btn:hover {
-  background: rgba(0,0,0,0.05);
-}
-.tab-btn.active {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-}
-.module-header { position: relative; } .module-header .tag { color: white !important; background: rgba(0,0,0,0.5) !important; } .module-header h1, .module-header p { color: white !important; } </style>
-
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const container = document.querySelector('.container');
-  const sections = Array.from(document.querySelectorAll('.section'));
-  
-  if (sections.length === 0) return;
+(function(){
+var GD={"G": {"g1": {"title": "AI or Not AI?", "icon": "🤖", "timer": 10, "pts": 1, "intro": "Each card is something purchase, stores or V&M sees every week. Rule a person wrote — or pattern a machine learned?", "items": [{"q": "ERP computing PO value = quantity × rate", "o": ["AI", "Not AI — a rule"], "a": 1, "e": "A formula."}, {"q": "Reorder alert when cement stock falls below 300 bags", "o": ["AI", "Not AI — a rule"], "a": 1, "e": "A fixed threshold someone set."}, {"q": "Forecasting next month's cement demand from the schedule and past use", "o": ["AI", "Not AI — a rule"], "a": 0, "e": "Learned from patterns in past consumption."}, {"q": "Your phone reading a photographed delivery challan into a table", "o": ["AI", "Not AI — a rule"], "a": 0, "e": "Text recognition is learned."}, {"q": "Picking L1 as the lowest landed rate in a comparative statement", "o": ["AI", "Not AI — a rule"], "a": 1, "e": "A rule — once landed rate is computed correctly."}, {"q": "Noticing two vendors' quotes look like they came from the same office", "o": ["AI", "Not AI — a rule"], "a": 0, "e": "Spotting similarity is pattern-learning — Lab 2's shared GSTIN."}, {"q": "Telematics warning that an excavator's engine may fail soon", "o": ["AI", "Not AI — a rule"], "a": 0, "e": "Predictive maintenance learns from sensor patterns."}, {"q": "ChatGPT drafting a PO follow-up email", "o": ["AI", "Not AI — a rule"], "a": 0, "e": "Generative AI."}]}, "g3": {"title": "Prompt Doctor", "icon": "🩺", "timer": 20, "pts": 2, "intro": "Each prompt is ‘sick’. Diagnose it — or pick the cure.", "items": [{"q": "“Compare these quotes.” What is it missing most?", "o": ["Politeness", "What to compare on (landed rate, validity, terms) and the output table", "Emojis", "The vendor's phone number"], "a": 1, "e": "Without landed rate it will crown the lowest basic rate."}, {"q": "AI picked L1 on basic rate and ignored freight. Best follow-up?", "o": ["“Wrong, try again.”", "“Recalculate landed rate = basic + freight per bag (use code), show the formula, then re-rank.”", "“Be careful.”", "Accept it"], "a": 1, "e": "Name the rule and make it compute."}, {"q": "Best prompt to check a GRN photo against the PO?", "o": ["“Check this.”", "“You are a store in-charge. Compare the challan photo with PO 4417: item, PO qty, received, short %. Flag shortages over 1% and any missing MTC — write NOT STATED if a field isn't on the challan.”", "“Is it OK?”", "“Summarise.”"], "a": 1, "e": "Role, the PO, the rule, the output, and ‘not stated’."}, {"q": "Which line stops AI inventing an MTC number that isn't on the document?", "o": ["“Be thorough.”", "“If it isn't on the document, write NOT STATED.”", "“Use bold.”", "“Answer fast.”"], "a": 1, "e": "Permission to say ‘not there’."}, {"q": "You paste one example row of the CS you want. This is:", "o": ["Few-shot prompting", "Tendering", "Fine-tuning", "Debugging"], "a": 0, "e": "Examples show the structure."}, {"q": "Which should NOT go into a free personal AI app?", "o": ["A synthetic training CSV", "“Explain FIFO”", "Our negotiated rate contracts with vendor names", "A request to draft a polite follow-up"], "a": 2, "e": "Rates and vendor terms are Tier 3."}]}, "g4": {"title": "Purchase, Stores & Plant Speed Round", "icon": "⚡", "timer": 20, "pts": 1, "intro": "Ten quick technical questions. First table with the right answer takes the point.", "items": [{"q": "‘L1’ in a comparative statement means:", "o": ["The first quote received", "The lowest evaluated (landed) bid", "The largest vendor", "Level-1 approval"], "a": 1, "e": "Lowest on a like-for-like landed basis."}, {"q": "GRN stands for:", "o": ["General Requisition Note", "Goods Receipt Note", "Gate Release Number", "GST Return Number"], "a": 1, "e": "The store's record of what arrived."}, {"q": "MTC stands for:", "o": ["Material Transfer Challan", "Mill Test Certificate", "Monthly Tax Credit", "Machine Time Card"], "a": 1, "e": "Steel without an MTC shouldn't be accepted — Lab 3."}, {"q": "Weight of 12 mm TMT bar per metre (d² ÷ 162):", "o": ["0.62 kg", "0.89 kg", "1.58 kg", "2.47 kg"], "a": 1, "e": "144 ÷ 162 = 0.889 kg/m."}, {"q": "A standard bag of cement weighs:", "o": ["25 kg", "40 kg", "50 kg", "60 kg"], "a": 2, "e": "50 kg."}, {"q": "FIFO in stores means:", "o": ["Fast In, Fast Out", "First In, First Out", "Fixed Inventory, Fixed Order", "Final Issue, Final Order"], "a": 1, "e": "Older stock is issued first — vital for cement."}, {"q": "Reorder level is:", "o": ["The maximum stock", "The stock level at which a new order is placed", "The order quantity", "The safety stock"], "a": 1, "e": "Set so material arrives before you run out."}, {"q": "A rate contract (RC) is:", "o": ["A one-time PO", "A pre-agreed rate with a vendor for a period", "A labour contract", "A tender bond"], "a": 1, "e": "Lab 1 checks POs above the RC rate."}, {"q": "Diesel use of an excavator is normally checked as:", "o": ["Litres per day only", "Litres per hour against the hour meter", "Litres per tonne", "Kilometres per litre"], "a": 1, "e": "Lab 5 compares L/h with the machine's normal."}, {"q": "Steel bought from a Gujarat mill for the Pune site — tax on the invoice:", "o": ["CGST + SGST", "IGST", "No GST", "Reverse charge"], "a": 1, "e": "Inter-state supply → IGST."}]}, "g5": {"title": "Emoji Decoder", "icon": "😎", "timer": 15, "pts": 1, "intro": "Break-time game. Decode the emojis.", "items": [{"q": "🧾📦✅", "o": ["GRN", "PO", "Indent", "Invoice"], "a": 0, "e": "Goods Receipt Note."}, {"q": "🚚📄", "o": ["Delivery challan", "E-way bill", "Gate pass", "Way bill"], "a": 0, "e": "What arrives with the truck."}, {"q": "🪵🧱🔁", "o": ["Shuttering / formwork reuse", "Brickwork", "Carpentry", "Scaffolding hire"], "a": 0, "e": "Lab 4's missing formwork pieces."}, {"q": "⛽⏱️🚜", "o": ["Diesel per hour", "Overtime", "Machine hire", "Fuel theft"], "a": 0, "e": "Lab 5."}, {"q": "📉📦⚠️", "o": ["Stock-out", "Overstock", "Write-off", "Return"], "a": 0, "e": "What the reorder level prevents."}, {"q": "💰📃🤝", "o": ["Rate contract", "Advance payment", "Bank guarantee", "Credit note"], "a": 0, "e": "Agreed rate for a period."}, {"q": "🥇💸", "o": ["L1", "Bonus", "Discount", "Advance"], "a": 0, "e": "Lowest landed bid."}, {"q": "🧪📜🔩", "o": ["Mill Test Certificate", "Lab report", "Quality plan", "Warranty"], "a": 0, "e": "MTC for steel."}]}, "g7": {"title": "Hallucination Hunter", "icon": "🕵️", "timer": 25, "pts": 2, "intro": "Each ‘AI answer’ has four statements built on today's labs. Three are right. Find the one the AI made up.", "items": [{"q": "AI on Lab 2 (quotations) — which is made up?", "o": ["V214 and V219 share a GSTIN", "V214 won every RFQ they both quoted on", "Two non-L1 awards had written justifications", "A vendor may quote after the RFQ closes if it ends up L1"], "a": 3, "e": "Late quotes break the process, however cheap."}, {"q": "AI on Lab 3 (goods receipts) — which is made up?", "o": ["Shortages over 1% need a debit note", "Steel accepted without an MTC is a risk", "Two short receipts already had debit notes raised", "Accepted quantity can exceed received if the vendor promises the balance"], "a": 3, "e": "You can't accept what didn't arrive."}, {"q": "AI on Lab 5 (machines) — which is made up?", "o": ["Tower crane M07 shows zero diesel because it is electric", "M04 and M11 hire bills were overbilled", "Diesel booked during breakdown hours is a flag", "An hour meter going backwards is normal after servicing"], "a": 3, "e": "A meter running backwards is a data or tampering problem."}, {"q": "AI on Lab 4 (stock) — which is made up?", "o": ["About 320 formwork pieces went missing at P04 over three months", "Opening stock must equal last month's closing", "Physical shortages over 0.5% are flagged", "Cement wastage of any amount is fine if it was issued against an indent"], "a": 3, "e": "Issue against an indent doesn't make excess wastage acceptable."}]}, "g8": {"title": "Grand Showdown", "icon": "🏆", "timer": 20, "pts": 1, "intro": "Ten questions from the whole morning. The last two count double.", "items": [{"q": "An LLM like ChatGPT produces an answer by:", "o": ["Searching the ERP", "Predicting the next word, again and again", "Asking the vendor", "Copying old POs"], "a": 1, "e": "Prediction."}, {"q": "Best way to get a correct landed rate from AI:", "o": ["Ask it to add in its head", "Ask it to calculate with code and show the formula — then check", "Ask twice", "Round off"], "a": 1, "e": "AI reads; code or you calculate."}, {"q": "Which never goes into a free personal AI app?", "o": ["A synthetic CSV", "An FIFO question", "Negotiated rate contracts with vendor names", "A follow-up template"], "a": 2, "e": "Tier 3."}, {"q": "Agentic AI is different because it:", "o": ["Writes better Hindi", "Takes steps toward a goal using tools — and needs approval", "Is offline", "Never errs"], "a": 1, "e": "Generative answers; agentic acts."}, {"q": "L1 is decided on:", "o": ["Basic rate", "Landed rate", "Vendor size", "Delivery speed only"], "a": 1, "e": "Like-for-like landed cost."}, {"q": "Weight of 12 mm bar per metre:", "o": ["0.62", "0.89", "1.21", "1.58"], "a": 1, "e": "d²/162."}, {"q": "GRN accepted + rejected should equal:", "o": ["PO quantity", "Received quantity", "Invoice quantity", "Indent quantity"], "a": 1, "e": "Lab 3's arithmetic check."}, {"q": "Opening stock this month should equal:", "o": ["Last month's closing", "Last month's receipts", "This month's issues", "The PO quantity"], "a": 0, "e": "Lab 4."}, {"q": "⭐ DOUBLE — Which two vendors shared a GSTIN in Lab 2?", "o": ["V201 & V207", "V214 & V219", "V203 & V211", "V219 & V226"], "a": 1, "e": "Same GSTIN, and V214 always won — a cover-quote pattern.", "x2": true}, {"q": "⭐ DOUBLE — Why is tower crane M07's zero diesel NOT a finding?", "o": ["It was idle all month", "It runs on electricity", "Diesel was booked to another machine", "The log was lost"], "a": 1, "e": "Electric tower crane — the trap in Lab 5.", "x2": true}]}}, "SPOT": {"title": "Spot the Error", "icon": "🔎", "timer": 25, "pts": 2, "intro": "Tap the one cell (or row) that's wrong. Calculators allowed.", "items": [{"q": "Purchase order — which value is wrong?", "h": ["Item", "Qty", "Rate ₹", "PO value ₹"], "r": [["Cement 50 kg (bags)", "2,000", "365", "7,30,000"], ["TMT 12 mm (MT)", "40", "58,500", "23,40,000"], ["RMC M30 (cum)", "120", "6,200", "7,24,000"], ["Binding wire (kg)", "500", "92", "46,000"]], "a": [2, 3], "e": "120 × 6,200 = 7,44,000."}, {"q": "GRN — which cell is impossible?", "h": ["GRN", "PO qty", "Received", "Accepted", "Rejected"], "r": [["GR2101", "500", "500", "495", "5"], ["GR2102", "300", "290", "300", "0"], ["GR2103", "200", "200", "200", "0"], ["GR2104", "1,000", "980", "975", "5"]], "a": [1, 3], "e": "Accepted 300 when only 290 arrived."}, {"q": "Landed rate per bag = basic + freight — which cell is wrong?", "h": ["Vendor", "Basic ₹", "Freight ₹", "Landed ₹"], "r": [["V201", "350", "15", "365"], ["V207", "342", "28", "370"], ["V214", "355", "5", "360"], ["V219", "348", "10", "368"]], "a": [3, 3], "e": "348 + 10 = 358 — which makes V219, not V214, the real L1."}, {"q": "Stock ledger — closing = opening + receipts − issues. Which cell is wrong?", "h": ["Item", "Opening", "Receipts", "Issues", "Closing"], "r": [["Cement bags", "420", "2,000", "1,950", "470"], ["TMT 12 mm (MT)", "18.5", "40", "44.0", "14.5"], ["Plywood sheets", "260", "120", "150", "250"], ["Binding wire (kg)", "310", "500", "480", "330"]], "a": [2, 4], "e": "260 + 120 − 150 = 230, not 250."}, {"q": "Machine log for M04 — which ROW is wrong?", "h": ["Date", "Meter start", "Meter end", "Diesel L"], "r": [["02-Sep", "1,240", "1,248", "96"], ["03-Sep", "1,248", "1,257", "104"], ["04-Sep", "1,257", "1,251", "90"], ["05-Sep", "1,266", "1,274", "98"]], "a": [2, -1], "e": "The meter runs backwards on 04-Sep — and 90 litres were booked for it."}]}, "NEXTW": [{"s": "The material was received short and a debit", "w": [["note", 0.7], ["memo", 0.12], ["entry", 0.09], ["advice", 0.06], ["voucher", 0.03]]}, {"s": "Please quote your best rate inclusive of GST and freight up to our", "w": [["site", 0.58], ["store", 0.18], ["project", 0.12], ["location", 0.08], ["warehouse", 0.04]]}, {"s": "The excavator was idle for six hours today due to", "w": [["breakdown", 0.45], ["rain", 0.25], ["no operator", 0.12], ["fuel shortage", 0.1], ["shifting", 0.08]]}]};var G=GD.G;G.g6=GD.SPOT;G.g6.type='spot';
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var LETTERS=['A','B','C','D','E','F'];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+// ---------- teams via leaderboard ----------
+var LB=document.getElementById('lb');
+function teams(){if(!LB)return ['Table 1','Table 2','Table 3','Table 4','Table 5','Table 6','Table 7'];return [].slice.call(LB.querySelectorAll('tr')).slice(1).map(function(r){return r.cells[0].textContent.trim()||'Table'})}
+function award(i,pts,label){if(!LB)return;var r=LB.querySelectorAll('tr')[i+1];if(!r)return;var inp=r.querySelector('.lbgame');inp.value=(Number(inp.value)||0)+pts;LB.dispatchEvent(new Event('input',{bubbles:true}));toast((pts>0?'+':'')+pts+' · '+teams()[i]+(label?' · '+label:''));if(pts>0)confetti();refreshBoard()}
+// ---------- sound ----------
+var AC=null,soundOn=true;function beep(f,d,type){if(!soundOn)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain();o.type=type||'sine';o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.15,AC.currentTime);g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+d);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function good(){beep(660,.12);setTimeout(function(){beep(880,.18)},110)}function bad(){beep(200,.3,'sawtooth')}function ding(){beep(1046,.4)}
+// ---------- toast & confetti ----------
+var tst=document.createElement('div');tst.className='gtoast';tst.setAttribute('role','status');document.body.appendChild(tst);var tt;
+function toast(m){tst.textContent=m;tst.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){tst.classList.remove('on')},1800)}
+var cv=document.createElement('canvas');cv.className='gconf';document.body.appendChild(cv);var parts=[],raf=null;
+function confetti(){if(reduce)return;cv.width=innerWidth;cv.height=innerHeight;for(var i=0;i<90;i++)parts.push({x:innerWidth/2+(Math.random()-.5)*200,y:innerHeight*.35,vx:(Math.random()-.5)*12,vy:-Math.random()*12-4,c:['#FFD600','#4CAF50','#2196F3','#FF5252','#E040FB','#FF9800'][i%6],s:4+Math.random()*5,l:70+Math.random()*40});if(!raf)loop()}
+function loop(){var x=cv.getContext('2d');x.clearRect(0,0,cv.width,cv.height);parts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.l--;x.fillStyle=p.c;x.fillRect(p.x,p.y,p.s,p.s*.6)});parts=parts.filter(function(p){return p.l>0&&p.y<cv.height+20});if(parts.length)raf=requestAnimationFrame(loop);else{raf=null;x.clearRect(0,0,cv.width,cv.height)}}
+// ---------- generic game ----------
+function build(el){var id=el.dataset.game;if(id==='g2')return nextWord(el);var g=G[id];if(!g)return;var n=g.items.length,i=0,timer=null,left=0,answered={};
+ el.innerHTML='<div class="g-top"><span class="g-ic">'+g.icon+'</span><div class="g-tt"><b>'+esc(g.title)+'</b><span>'+esc(g.intro)+'</span></div><div class="g-tools"><button class="g-btn g-big" title="Big screen">⛶ Big screen</button><button class="g-btn g-snd" title="Sound">🔊</button></div></div>'+
+ '<div class="g-prog"></div><div class="g-card"><div class="g-meta"><span class="g-n"></span><span class="g-pts"></span><button class="g-btn g-start">⏱ Start '+g.timer+'s</button></div><div class="g-bar"><i></i></div><div class="g-q" aria-live="polite"></div><div class="g-body"></div><div class="g-exp" hidden></div></div>'+
+ '<div class="g-award"><span>Award:</span><span class="g-teams"></span></div><div class="g-nav"><button class="g-btn g-prev">← Prev</button><button class="g-btn g-reset">↺ Reset question</button><button class="g-btn g-next">Next →</button></div>';
+ var q=el.querySelector('.g-q'),body=el.querySelector('.g-body'),exp=el.querySelector('.g-exp'),bar=el.querySelector('.g-bar i'),prog=el.querySelector('.g-prog');
+ function pts(){return g.pts*(g.items[i].x2?2:1)}
+ function stop(){clearInterval(timer);timer=null}
+ function startT(){stop();left=g.timer;bar.style.transition='none';bar.style.width='100%';void bar.offsetWidth;bar.style.transition='width '+g.timer+'s linear';bar.style.width='0%';el.querySelector('.g-start').textContent='⏱ '+left+'s';
+  timer=setInterval(function(){left--;el.querySelector('.g-start').textContent=left>0?'⏱ '+left+'s':'⏰ Time!';if(left<=3&&left>0)beep(520,.08);if(left<=0){stop();ding()}},1000)}
+ function reveal(ok){stop();exp.hidden=false;exp.className='g-exp '+(ok?'ok':'no');exp.innerHTML=(ok?'✅ <b>Correct!</b> ':'❌ <b>Not quite.</b> ')+esc(g.items[i].e);answered[i]=ok;ok?good():bad();if(ok&&!reduce)confettiSmall();dots()}
+ function confettiSmall(){}
+ function dots(){prog.innerHTML=g.items.map(function(_,k){return '<span class="'+(k===i?'cur ':'')+(answered[k]===true?'ok':answered[k]===false?'no':'')+'"></span>'}).join('')}
+ function show(){stop();bar.style.transition='none';bar.style.width='100%';var it=g.items[i];el.querySelector('.g-n').textContent='Question '+(i+1)+' of '+n;el.querySelector('.g-pts').textContent=pts()+' pt'+(pts()>1?'s':'')+(it.x2?' · ⭐ DOUBLE':'');el.querySelector('.g-start').textContent='⏱ Start '+g.timer+'s';
+  q.innerHTML=esc(it.q);exp.hidden=true;
+  if(g.type==='spot'){body.innerHTML='<div class="g-spot"><table><tr>'+it.h.map(function(h){return '<th>'+esc(h)+'</th>'}).join('')+'</tr>'+it.r.map(function(r,ri){return '<tr>'+r.map(function(c,ci){return '<td tabindex="0" data-r="'+ri+'" data-c="'+ci+'">'+esc(c)+'</td>'}).join('')+'</tr>'}).join('')+'</table></div>';
+   body.querySelectorAll('td').forEach(function(td){function go(){if(exp.hidden===false)return;var r=+td.dataset.r,c=+td.dataset.c,ok=(r===it.a[0]&&(it.a[1]===-1||c===it.a[1]));
+    if(it.a[1]===-1){body.querySelectorAll('tr')[it.a[0]+1].classList.add('hit')}else{body.querySelectorAll('tr')[it.a[0]+1].cells[it.a[1]].classList.add('hit')}if(!ok)td.classList.add('miss');reveal(ok)}td.onclick=go;td.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}}})}
+  else{body.innerHTML='<div class="g-opts '+(it.o.length===2?'two':'')+'">'+it.o.map(function(o,k){return '<button class="g-opt" data-k="'+k+'"><span>'+LETTERS[k]+'</span>'+esc(o)+'</button>'}).join('')+'</div>';
+   body.querySelectorAll('.g-opt').forEach(function(b){b.onclick=function(){if(exp.hidden===false)return;var k=+b.dataset.k,ok=k===it.a;body.querySelectorAll('.g-opt')[it.a].classList.add('right');if(!ok)b.classList.add('wrong');reveal(ok)}})}
+  el.querySelector('.g-teams').innerHTML=teams().map(function(t,k){return '<button class="g-team" data-k="'+k+'">'+esc(t)+' +'+pts()+'</button>'}).join('')+'<button class="g-team neg" title="Take back a point from the last team awarded">undo</button>';
+  dots()}
+ var lastAward=null;
+ el.querySelector('.g-teams').addEventListener('click',function(e){var b=e.target.closest('.g-team');if(!b)return;if(b.classList.contains('neg')){if(lastAward){award(lastAward[0],-lastAward[1],'undo');lastAward=null}return}var k=+b.dataset.k;award(k,pts(),g.title);lastAward=[k,pts()]});
+ el.querySelector('.g-start').onclick=startT;el.querySelector('.g-next').onclick=function(){if(i<n-1){i++;show()}else{toast('🏁 End of '+g.title);ding()}};el.querySelector('.g-prev').onclick=function(){if(i>0){i--;show()}};
+ el.querySelector('.g-reset').onclick=function(){delete answered[i];show()};
+ el.querySelector('.g-snd').onclick=function(){soundOn=!soundOn;this.textContent=soundOn?'🔊':'🔇'};
+ el.querySelector('.g-big').onclick=function(){el.classList.toggle('big');this.textContent=el.classList.contains('big')?'✕ Exit big screen':'⛶ Big screen';document.body.style.overflow=el.classList.contains('big')?'hidden':''};
+ show()}
+function nextWord(el){var S=GD.NEXTW,cur=0,shown=false;
+ el.innerHTML='<div class="g-top"><span class="g-ic">🔮</span><div class="g-tt"><b>Guess the Next Word</b><span>This is how an LLM writes: it scores every possible next word and picks one. Tables guess the top word first — then reveal what the “model” thinks.</span></div><div class="g-tools"><button class="g-btn g-big">⛶ Big screen</button></div></div>'+
+ '<div class="g-card"><div class="g-meta"><span class="g-n"></span><span class="g-pts">2 pts for guessing the top word</span></div><div class="nw-row">'+S.map(function(s,k){return '<button class="g-btn nw-s" data-k="'+k+'">Sentence '+(k+1)+'</button>'}).join('')+'</div>'+
+ '<div class="g-q nw-sent"></div><div class="nw-bars"></div><div class="nw-ctl"><button class="g-btn g-reveal">👀 Reveal the model\'s guesses</button><label>Temperature <input type="range" min="0.1" max="2" step="0.1" value="1" class="nw-t"></label><b class="nw-tv">1.0</b><button class="g-btn nw-go">🎲 Generate 5 answers</button></div><div class="nw-out"></div>'+
+ '<p class="note">Illustrative numbers, not from a real model. Low temperature → nearly always the top word; high → more variety and more odd answers. That randomness is why the same question can get different answers.</p></div>'+
+ '<div class="g-award"><span>Award:</span><span class="g-teams"></span></div>';
+ function probs(){var T=+el.querySelector('.nw-t').value,w=S[cur].w,e=w.map(function(x){return Math.pow(x[1],1/T)}),s=e.reduce(function(a,b){return a+b},0);return w.map(function(x,i){return [x[0],e[i]/s]})}
+ function draw(){el.querySelector('.nw-tv').textContent=(+el.querySelector('.nw-t').value).toFixed(1);el.querySelector('.g-n').textContent='Sentence '+(cur+1)+' of '+S.length;el.querySelector('.nw-sent').innerHTML=esc(S[cur].s)+(S[cur].s.slice(-1)==='-'?'':' ')+'<span class="blank">___</span>';
+  el.querySelectorAll('.nw-s').forEach(function(b,k){b.classList.toggle('on',k===cur)});
+  el.querySelector('.nw-bars').innerHTML=shown?probs().map(function(p){return '<div class="nb"><span>'+esc(p[0])+'</span><span class="t"><i style="width:'+(p[1]*100).toFixed(0)+'%"></i></span><span>'+(p[1]*100).toFixed(0)+'%</span></div>'}).join(''):'<p class="note" style="margin:10px 0">Bars hidden — take guesses from the room first.</p>'}
+ el.querySelectorAll('.nw-s').forEach(function(b){b.onclick=function(){cur=+b.dataset.k;shown=false;el.querySelector('.nw-out').innerHTML='';draw()}});
+ el.querySelector('.g-reveal').onclick=function(){shown=true;draw();good()};el.querySelector('.nw-t').oninput=draw;
+ el.querySelector('.nw-go').onclick=function(){shown=true;draw();var p=probs(),o=[];for(var k=0;k<5;k++){var r=Math.random(),a=0;for(var j=0;j<p.length;j++){a+=p[j][1];if(r<=a||j===p.length-1){o.push(p[j][0]);break}}}el.querySelector('.nw-out').innerHTML=o.map(function(w,k){return '<div>'+(k+1)+'. …'+esc(S[cur].s.split(' ').slice(-4).join(' '))+(S[cur].s.slice(-1)==='-'?'':' ')+'<b>'+esc(w)+'</b></div>'}).join('')};
+ el.querySelector('.g-teams').innerHTML=teams().map(function(t,k){return '<button class="g-team" data-k="'+k+'">'+esc(t)+' +2</button>'}).join('');
+ el.querySelector('.g-teams').onclick=function(e){var b=e.target.closest('.g-team');if(b)award(+b.dataset.k,2,'Next Word')};
+ el.querySelector('.g-big').onclick=function(){el.classList.toggle('big');this.textContent=el.classList.contains('big')?'✕ Exit big screen':'⛶ Big screen';document.body.style.overflow=el.classList.contains('big')?'hidden':''};
+ draw()}
+document.querySelectorAll('.game').forEach(build);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){var b=document.querySelector('.game.big');if(b){b.classList.remove('big');var t=b.querySelector('.g-big');if(t)t.textContent='⛶ Big screen';document.body.style.overflow=''}}});
+// keep award chips in sync when names are edited
+if(LB)LB.addEventListener('input',function(){document.querySelectorAll('.g-team[data-k]').forEach(function(b){var t=teams()[+b.dataset.k];if(t)b.textContent=t+' '+b.textContent.split(' ').pop()})});
+// ---------- floating scoreboard ----------
+var fb=document.createElement('button');fb.className='sb-btn';fb.innerHTML='🏆 Scores';fb.setAttribute('aria-expanded','false');document.body.appendChild(fb);
+var pn=document.createElement('div');pn.className='sb-panel';pn.hidden=true;pn.setAttribute('role','dialog');pn.setAttribute('aria-label','Scoreboard');document.body.appendChild(pn);
+function refreshBoard(){if(!LB){pn.innerHTML='<p>No leaderboard found.</p>';return}var rows=[].slice.call(LB.querySelectorAll('tr')).slice(1).map(function(r){return {n:r.cells[0].textContent.trim(),g:Number(r.querySelector('.lbgame').value)||0,t:Number(r.querySelector('.lbt').textContent)||0}});
+ rows.sort(function(a,b){return b.t-a.t});var mx=rows.length?rows[0].t:0;
+ pn.innerHTML='<div class="sb-h"><b>🏆 Scoreboard</b><button class="sb-x" aria-label="Close">✕</button></div>'+rows.map(function(r,k){return '<div class="sb-r'+(r.t===mx&&mx>0?' lead':'')+'"><span>'+(k===0&&mx>0?'🥇':k===1?'🥈':k===2?'🥉':(k+1)+'.')+' '+esc(r.n)+'</span><span class="sb-g">🎮 '+r.g+'</span><b>'+r.t+'</b></div>'}).join('')+'<a href="#lb" class="sb-link">Open full leaderboard ↓</a>';
+ pn.querySelector('.sb-x').onclick=function(){pn.hidden=true;fb.setAttribute('aria-expanded','false')};
+ pn.querySelector('.sb-link').onclick=function(){var s=LB.closest('.section');if(s)s.classList.add('open');pn.hidden=true}}
+fb.onclick=function(){refreshBoard();pn.hidden=!pn.hidden;fb.setAttribute('aria-expanded',String(!pn.hidden))};
+if(LB)LB.addEventListener('input',function(){if(!pn.hidden)refreshBoard()});
+})();
 
-  const tabsContainer = document.createElement('div');
-  tabsContainer.className = 'tabs-container';
-  
-  sections.forEach((sec, idx) => {
-    const head = sec.querySelector('.section-head h2');
-    let title = head ? head.innerText.trim() : 'Tab ' + (idx + 1);
-    title = title.replace('▼', '').trim();
-    
-    if (title.length > 30) {
-      const match = title.match(/^(?:Part \d+:|Brain Break \d+[:-])?([^—-]+)/i);
-      if (match) title = match[0].trim();
-    }
-    
-    const btn = document.createElement('button');
-    btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
-    btn.innerText = title;
-    btn.onclick = () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      sections.forEach((s, i) => {
-        if (i === idx) {
-          s.style.display = 'block';
-          const body = s.querySelector('.section-body');
-          if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
-        } else {
-          s.style.display = 'none';
-        }
-      });
-    };
-    tabsContainer.appendChild(btn);
-    
-          const sectionHead = sec.querySelector('.section-head');
-      if (sectionHead) sectionHead.style.display = 'none';
-      
-      const navContainer = document.createElement('div');
-      navContainer.style.display = 'flex';
-      navContainer.style.justifyContent = 'space-between';
-      navContainer.style.marginTop = '20px';
-      navContainer.style.padding = '10px 24px 24px';
-      
-      if (idx > 0) {
-        const prevBtn = document.createElement('button');
-        prevBtn.innerText = '<- Previous';
-        prevBtn.className = 'tab-btn';
-        prevBtn.onclick = () => {
-            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
-            if(tabs[idx - 1]) tabs[idx - 1].click();
-        };
-        navContainer.appendChild(prevBtn);
-      } else {
-        navContainer.appendChild(document.createElement('div'));
-      }
-      
-      if (idx < sections.length - 1) {
-        const nextBtn = document.createElement('button');
-        nextBtn.innerText = 'Next ->';
-        nextBtn.className = 'tab-btn';
-        nextBtn.style.background = 'var(--accent)';
-        nextBtn.style.color = 'white';
-        nextBtn.onclick = () => {
-            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
-            if(tabs[idx + 1]) tabs[idx + 1].click();
-        };
-        navContainer.appendChild(nextBtn);
-      }
-      
-      sec.appendChild(navContainer);
-      
-      if (idx === 0) {
-      sec.style.display = 'block';
-      const body = sec.querySelector('.section-body');
-      if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
-    } else {
-      sec.style.display = 'none';
-    }
-  });
-  
-  container.insertBefore(tabsContainer, sections[0]);
-});
 </script>
-
-<!-- INJECTED TABS END -->
-
-<!-- INJECTED TABS START -->
-
-<style>
-/* Override colors for light theme readability */
-.diagram { background: var(--card2) !important; color: var(--text) !important; border: 1px solid var(--border) !important; }
-.diagram .node { background: var(--card) !important; color: var(--text) !important; border-color: var(--border) !important; }
-.diagram .node-danger { border-color: var(--red) !important; color: var(--red) !important; }
-.diagram .node-safe { border-color: var(--green) !important; color: var(--green) !important; }
-.tip { background: rgba(176, 67, 30, 0.08) !important; color: var(--text) !important; border-color: var(--accent) !important; }
-.warning { background: rgba(160, 52, 34, 0.08) !important; color: var(--text) !important; border-color: var(--red) !important; }
-.success { background: rgba(78, 107, 46, 0.08) !important; color: var(--text) !important; border-color: var(--green) !important; }
-.info-box { background: rgba(53, 86, 107, 0.08) !important; color: var(--text) !important; border-color: var(--blue) !important; }
-.prompt { background: #2d2d2d !important; border-color: var(--border) !important; color: #e0e0e0 !important; }
-.prompt-label { background: var(--text) !important; color: var(--card) !important; }
-.copy-btn { color: #e0e0e0 !important; }
-
-/* Fix Quiz Option Colors */
-.opt { background: var(--card) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
-.opt:hover { background: rgba(0,0,0,0.05) !important; }
-.opt.right { background: rgba(78, 107, 46, 0.15) !important; border-color: var(--green) !important; color: var(--green) !important; }
-.opt.wrong { background: rgba(160, 52, 34, 0.15) !important; border-color: var(--red) !important; color: var(--red) !important; }
-
-/* Tabs Layout CSS */
-.tabs-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
-  background: var(--card2);
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-.tab-btn {
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.tab-btn:hover {
-  background: rgba(0,0,0,0.05);
-}
-.tab-btn.active {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-}
-.module-header { position: relative; } .module-header .tag { color: white !important; background: rgba(0,0,0,0.5) !important; } .module-header h1, .module-header p { color: white !important; } </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const container = document.querySelector('.container');
-  const sections = Array.from(document.querySelectorAll('.section'));
-  
-  if (sections.length === 0) return;
-
-  // Don't inject multiple tabs containers
-  if (document.querySelector('.tabs-container')) return;
-
-  const tabsContainer = document.createElement('div');
-  tabsContainer.className = 'tabs-container';
-  
-  sections.forEach((sec, idx) => {
-    const head = sec.querySelector('.section-head h2');
-    let title = head ? head.innerText.trim() : 'Tab ' + (idx + 1);
-    title = title.replace('▼', '').trim();
-    
-    if (title.length > 30) {
-      const match = title.match(/^(?:Part \d+:|Brain Break \d+[:-])?([^—-]+)/i);
-      if (match) title = match[0].trim();
-    }
-    
-    const btn = document.createElement('button');
-    btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
-    btn.innerText = title;
-    btn.onclick = () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      sections.forEach((s, i) => {
-        if (i === idx) {
-          s.style.display = 'block';
-          const body = s.querySelector('.section-body');
-          if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
-        } else {
-          s.style.display = 'none';
-        }
-      });
-    };
-    tabsContainer.appendChild(btn);
-    
-          const sectionHead = sec.querySelector('.section-head');
-      if (sectionHead) sectionHead.style.display = 'none';
-      
-      const navContainer = document.createElement('div');
-      navContainer.style.display = 'flex';
-      navContainer.style.justifyContent = 'space-between';
-      navContainer.style.marginTop = '20px';
-      navContainer.style.padding = '10px 24px 24px';
-      
-      if (idx > 0) {
-        const prevBtn = document.createElement('button');
-        prevBtn.innerText = '<- Previous';
-        prevBtn.className = 'tab-btn';
-        prevBtn.onclick = () => {
-            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
-            if(tabs[idx - 1]) tabs[idx - 1].click();
-        };
-        navContainer.appendChild(prevBtn);
-      } else {
-        navContainer.appendChild(document.createElement('div'));
-      }
-      
-      if (idx < sections.length - 1) {
-        const nextBtn = document.createElement('button');
-        nextBtn.innerText = 'Next ->';
-        nextBtn.className = 'tab-btn';
-        nextBtn.style.background = 'var(--accent)';
-        nextBtn.style.color = 'white';
-        nextBtn.onclick = () => {
-            const tabs = document.querySelectorAll('.tabs-container .tab-btn');
-            if(tabs[idx + 1]) tabs[idx + 1].click();
-        };
-        navContainer.appendChild(nextBtn);
-      }
-      
-      sec.appendChild(navContainer);
-      
-      if (idx === 0) {
-      sec.style.display = 'block';
-      const body = sec.querySelector('.section-body');
-      if (body) body.style.display = 'block'; setTimeout(() => (typeof s !== 'undefined' ? s : sec).scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
-    } else {
-      sec.style.display = 'none';
-    }
-  });
-  
-  container.insertBefore(tabsContainer, sections[0]);
-});
-</script>
-
-<!-- INJECTED TABS END -->
-
-<script>
-  // Execute immediately when the script runs (placed at the bottom of the body)
-  (function() {
-    function initFlowcharts() {
-      document.querySelectorAll('.flow').forEach(flow => {
-        const children = Array.from(flow.children);
-        const nodes = children.filter(c => c.classList.contains('node'));
-        const arrows = children.filter(c => c.classList.contains('arr'));
-        
-        // Initial state: hide everything except the first node
-        nodes.forEach((node, index) => {
-          if (index > 0) {
-            node.classList.add('locked');
-            node.classList.remove('unlocked');
-          } else {
-            node.classList.add('unlocked');
-            node.classList.remove('locked');
-          }
-          
-          // Ensure no duplicate listeners by cloning
-          const newNode = node.cloneNode(true);
-          node.parentNode.replaceChild(newNode, node);
-          
-          newNode.addEventListener('click', () => {
-            if (index < nodes.length - 1) {
-              const nextNode = flow.querySelectorAll('.node')[index + 1];
-              const nextArrow = flow.querySelectorAll('.arr')[index];
-              
-              if (nextArrow && nextArrow.classList.contains('locked')) {
-                nextArrow.classList.remove('locked');
-                nextArrow.classList.add('unlocked');
-              }
-              
-              if (nextNode && nextNode.classList.contains('locked')) {
-                nextNode.classList.remove('locked');
-                nextNode.classList.add('unlocked');
-                
-                if (index + 1 === nodes.length - 1) {
-                  const hint = flow.parentElement.querySelector('.flow-hint');
-                  if (hint) hint.style.display = 'none';
-                }
-              }
-            }
-          });
-        });
-        
-        arrows.forEach(arr => {
-          arr.classList.add('locked');
-          arr.classList.remove('unlocked');
-        });
-        
-        // Add a helpful hint below the diagram
-        if (nodes.length > 1 && !flow.parentElement.querySelector('.flow-hint')) {
-          const hint = document.createElement('div');
-          hint.className = 'flow-hint';
-          hint.innerHTML = '👆 Click the first box to reveal the workflow step-by-step';
-          flow.parentElement.appendChild(hint);
-        }
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initFlowcharts);
-    } else {
-      initFlowcharts();
-    }
-  })();
-</script>
-
 </body>
 </html>
-
-
-
-
-
-

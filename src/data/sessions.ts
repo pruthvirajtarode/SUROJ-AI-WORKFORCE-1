@@ -30,7 +30,7 @@ export const sessions = [
     title: "Accounts & Finance",
     family: "Numbers, Drawings & Systems",
     headcount: 39,
-    htmlUrl: "/Suroj_Session2_Accounts_Finance.html",
+    htmlUrl: "/Suroj_Session2_Accounts_Finance_Gamified.html",
     departments: [
       { name: "Accounts", count: 39 }
     ],
@@ -50,7 +50,7 @@ export const sessions = [
     title: "People, Admin & Communication",
     family: "People & Communication",
     headcount: 29,
-    htmlUrl: "/Suroj_Session3_People_Admin_Communication.html",
+    htmlUrl: "/Suroj_Session3_People_Admin_Communication_Gamified.html",
     departments: [
       { name: "HR & Admin", count: 23 },
       { name: "EHS", count: 3 },
@@ -95,7 +95,7 @@ export const sessions = [
     title: "Procurement & Stores",
     family: "Running Site & Materials",
     headcount: 23,
-    htmlUrl: "/Suroj_Session5_Procurement_Stores.html",
+    htmlUrl: "/Suroj_Session5_Procurement_Stores_Gamified.html",
     departments: [
       { name: "Purchase", count: 11 },
       { name: "Store", count: 6 },
