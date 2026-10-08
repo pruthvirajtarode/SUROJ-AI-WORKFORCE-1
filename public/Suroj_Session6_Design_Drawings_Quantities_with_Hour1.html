@@ -784,8 +784,7 @@ document.addEventListener('click',function(e){var b=e.target.closest('.fpv');if(
     // In case the click was on .case-study originally, let's also support that if .case-study-header is not present or if they click the case study directly.
     document.querySelectorAll('.case-study').forEach(function(el) {
         el.addEventListener('click', function(e) {
-            // only toggle if they clicked the header or the case study itself, not inner content that might be selectable
-            if(e.target === el || e.target.classList.contains('case-study-header') || e.target.closest('.case-study-header')) {
+            if(e.target === el) {
                 el.classList.toggle('cs-open');
             }
         });
